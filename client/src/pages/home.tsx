@@ -21,16 +21,16 @@ export default function Home() {
           position: 'absolute',
           left: '217px',
           top: '76px',
-          width: '238px',
-          height: '29px'
+          width: '250px',
+          height: '50px'
         }}
       >
         <img 
           src="/heavans-logo.png" 
           alt="HeaVans Logo" 
           style={{
-            width: '238px',
-            height: '29px',
+            width: '250px',
+            height: '50px',
             objectFit: 'contain'
           }}
         />
