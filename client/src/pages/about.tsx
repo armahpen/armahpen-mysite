@@ -407,45 +407,258 @@ export default function About() {
           )
         ))}
 
-        {/* Skill Buttons */}
+        {/* Planet & Sun Skill Buttons */}
         <div style={{
           position: 'absolute',
           bottom: '20px',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
-          gap: '15px',
+          gap: '12px',
           flexWrap: 'wrap',
           padding: '0 20px',
           zIndex: 10
         }}>
-          {['JAVASCRIPT', 'HTML/CSS', 'ILLUSTRATION', 'CREATIVE SOFTWARE', 'CREATIVE DIRECTION', 'SERVER TECHNOLOGIES', 'VIDEO PRODUCTION', 'APPS', 'NODE.JS'].map((skill) => (
-            <div 
-              key={skill}
-              style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                color: '#d3c0a7',
-                border: '1px solid #4a4060',
-                padding: '10px 20px',
-                borderRadius: '5px',
-                fontFamily: 'Arial, sans-serif',
-                fontSize: '14px',
-                textTransform: 'uppercase',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 215, 0, 0.2)';
-                e.currentTarget.style.color = '#fff';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
-                e.currentTarget.style.color = '#d3c0a7';
-              }}
-            >
-              {skill}
-            </div>
-          ))}
+          {/* Sun Skills */}
+          <div 
+            style={{
+              background: 'rgba(255, 215, 0, 0.15)',
+              color: '#ffd700',
+              border: '1px solid #ffd700',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.3)';
+              e.currentTarget.style.color = '#fff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.15)';
+              e.currentTarget.style.color = '#ffd700';
+            }}
+          >
+            LEADERSHIP
+          </div>
+
+          {/* Planet 1: Creative Builder */}
+          <div 
+            style={{
+              background: 'rgba(173, 216, 230, 0.15)',
+              color: '#add8e6',
+              border: '1px solid #add8e6',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(173, 216, 230, 0.3)';
+              e.currentTarget.style.color = '#fff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(173, 216, 230, 0.15)';
+              e.currentTarget.style.color = '#add8e6';
+            }}
+          >
+            APPS
+          </div>
+
+          {/* Planet 2: Poet & Sound Explorer */}
+          <div 
+            style={{
+              background: 'rgba(255, 255, 255, 0.15)',
+              color: '#ffffff',
+              border: '1px solid #ffffff',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)';
+              e.currentTarget.style.color = '#000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+              e.currentTarget.style.color = '#ffffff';
+            }}
+          >
+            CREATIVE WRITING
+          </div>
+
+          {/* Planet 3: Design Thinker */}
+          <div 
+            style={{
+              background: 'rgba(255, 165, 0, 0.15)',
+              color: '#ffa500',
+              border: '1px solid #ffa500',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 165, 0, 0.3)';
+              e.currentTarget.style.color = '#fff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 165, 0, 0.15)';
+              e.currentTarget.style.color = '#ffa500';
+            }}
+          >
+            ILLUSTRATION
+          </div>
+
+          {/* Planet 4: Full-Stack Developer */}
+          <div 
+            style={{
+              background: 'rgba(255, 255, 0, 0.15)',
+              color: '#ffff00',
+              border: '1px solid #ffff00',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.3)';
+              e.currentTarget.style.color = '#000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.15)';
+              e.currentTarget.style.color = '#ffff00';
+            }}
+          >
+            JAVASCRIPT
+          </div>
+
+          <div 
+            style={{
+              background: 'rgba(255, 255, 0, 0.15)',
+              color: '#ffff00',
+              border: '1px solid #ffff00',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.3)';
+              e.currentTarget.style.color = '#000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.15)';
+              e.currentTarget.style.color = '#ffff00';
+            }}
+          >
+            NODE.JS
+          </div>
+
+          <div 
+            style={{
+              background: 'rgba(255, 255, 0, 0.15)',
+              color: '#ffff00',
+              border: '1px solid #ffff00',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.3)';
+              e.currentTarget.style.color = '#000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.15)';
+              e.currentTarget.style.color = '#ffff00';
+            }}
+          >
+            HTML/CSS
+          </div>
+
+          {/* Planet 5: Motion Creator */}
+          <div 
+            style={{
+              background: 'rgba(255, 69, 0, 0.15)',
+              color: '#ff4500',
+              border: '1px solid #ff4500',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 69, 0, 0.3)';
+              e.currentTarget.style.color = '#fff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 69, 0, 0.15)';
+              e.currentTarget.style.color = '#ff4500';
+            }}
+          >
+            VIDEO PRODUCTION
+          </div>
+
+          {/* Planet 6: Creative Collaborator */}
+          <div 
+            style={{
+              background: 'rgba(153, 50, 204, 0.15)',
+              color: '#9932cc',
+              border: '1px solid #9932cc',
+              padding: '8px 16px',
+              borderRadius: '5px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(153, 50, 204, 0.3)';
+              e.currentTarget.style.color = '#fff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(153, 50, 204, 0.15)';
+              e.currentTarget.style.color = '#9932cc';
+            }}
+          >
+            CREATIVE DIRECTION
+          </div>
         </div>
       </div>
     </div>
