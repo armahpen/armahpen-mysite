@@ -168,23 +168,7 @@ export default function About() {
         alignItems: 'center',
         perspective: '1000px'
       }}>
-        {/* Skills Text */}
-        <div style={{
-          position: 'absolute',
-          top: '30%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          color: '#d3c0a7',
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '48px',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          textShadow: '2px 2px 10px rgba(255, 215, 0, 0.5)',
-          opacity: 0.8,
-          zIndex: 15
-        }}>
-          SKILLS
-        </div>
+
 
         {/* Solar System SVG */}
         <svg 
@@ -204,51 +188,41 @@ export default function About() {
             </radialGradient>
           </defs>
           
-          {/* Elliptical orbits for side view */}
+          {/* Planet Orbital Lines */}
           <ellipse cx="400" cy="300" rx="100" ry="50" 
             style={{
               fill: 'none',
-              stroke: '#4a4060',
-              strokeWidth: 1,
-              opacity: 0.7,
-              transformOrigin: 'center',
-              transform: 'rotateX(70deg)'
+              stroke: 'rgba(255, 255, 255, 0.3)',
+              strokeWidth: 2,
+              opacity: 0.8
             }} />
           <ellipse cx="400" cy="300" rx="150" ry="75" 
             style={{
               fill: 'none',
-              stroke: '#4a4060',
-              strokeWidth: 1,
-              opacity: 0.7,
-              transformOrigin: 'center',
-              transform: 'rotateX(70deg)'
+              stroke: 'rgba(255, 255, 255, 0.25)',
+              strokeWidth: 2,
+              opacity: 0.7
             }} />
           <ellipse cx="400" cy="300" rx="200" ry="100" 
             style={{
               fill: 'none',
-              stroke: '#4a4060',
-              strokeWidth: 1,
-              opacity: 0.7,
-              transformOrigin: 'center',
-              transform: 'rotateX(70deg)'
+              stroke: 'rgba(255, 255, 255, 0.25)',
+              strokeWidth: 2,
+              opacity: 0.7
             }} />
           <ellipse cx="400" cy="300" rx="250" ry="125" 
             style={{
               fill: 'none',
-              stroke: '#4a4060',
-              strokeWidth: 1,
-              opacity: 0.7,
-              transformOrigin: 'center',
-              transform: 'rotateX(70deg)'
+              stroke: 'rgba(255, 255, 255, 0.2)',
+              strokeWidth: 2,
+              opacity: 0.6
             }} />
           <ellipse cx="400" cy="300" rx="300" ry="150" 
             style={{
               fill: 'none',
-              stroke: '#4a4060',
-              strokeWidth: 1,
-              opacity: 0.7,
-              transformOrigin: 'center',
-              transform: 'rotateX(70deg)'
+              stroke: 'rgba(255, 255, 255, 0.2)',
+              strokeWidth: 2,
+              opacity: 0.6
             }} />
           
           {/* Central Sun */}
