@@ -43,7 +43,7 @@ export default function CreativeBuilder() {
       <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
         <Link href="/">
           <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
+            color: 'rgba(0, 0, 0, 0.65)',
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
@@ -55,7 +55,7 @@ export default function CreativeBuilder() {
         </Link>
         <Link href="/about">
           <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
+            color: 'rgba(0, 0, 0, 0.65)',
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
@@ -67,7 +67,7 @@ export default function CreativeBuilder() {
         </Link>
         <Link href="/evans">
           <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
+            color: 'rgba(0, 0, 0, 0.65)',
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
@@ -175,7 +175,7 @@ export default function CreativeBuilder() {
             </h2>
             
             <div style={{
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: 'rgba(0, 0, 0, 0.9)',
               fontSize: '1.1rem',
               lineHeight: '1.7',
               fontFamily: 'DM Sans'
@@ -203,7 +203,7 @@ export default function CreativeBuilder() {
             </h2>
             
             <div style={{
-              color: 'rgba(255, 255, 255, 0.9)',
+              color: 'rgba(0, 0, 0, 0.9)',
               fontSize: '1.1rem',
               lineHeight: '1.7',
               fontFamily: 'DM Sans'
@@ -281,7 +281,7 @@ export default function CreativeBuilder() {
                   {project}
                 </h4>
                 <p style={{
-                  color: 'rgba(255, 255, 255, 0.7)',
+                  color: 'rgba(0, 0, 0, 0.7)',
                   fontSize: '0.9rem',
                   fontFamily: 'DM Sans'
                 }}>
@@ -396,7 +396,7 @@ export default function CreativeBuilder() {
                 <Link href="/" style={{
                   fontFamily: 'DM Sans',
                   fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
+                  color: 'rgba(0, 0, 0, 0.7)',
                   textDecoration: 'none'
                 }}>Home</Link>
               </li>
@@ -404,7 +404,7 @@ export default function CreativeBuilder() {
                 <Link href="/about" style={{
                   fontFamily: 'DM Sans',
                   fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
+                  color: 'rgba(0, 0, 0, 0.7)',
                   textDecoration: 'none'
                 }}>About</Link>
               </li>
@@ -423,7 +423,7 @@ export default function CreativeBuilder() {
             <div style={{
               fontFamily: 'DM Sans',
               fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.7)',
+              color: 'rgba(0, 0, 0, 0.7)',
               lineHeight: '1.6'
             }}>
               <p style={{margin: '0 0 8px 0'}}>evans@heavans.com</p>
@@ -442,21 +442,21 @@ export default function CreativeBuilder() {
             }}>Follow Me</h4>
             <div style={{display: 'flex', gap: '12px'}}>
               <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'rgba(0, 0, 0, 0.7)',
                 fontFamily: 'Public Sans',
                 fontSize: '14px',
                 textDecoration: 'none',
                 fontWeight: '600'
               }}>Tw</a>
               <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'rgba(0, 0, 0, 0.7)',
                 fontFamily: 'Public Sans',
                 fontSize: '14px',
                 textDecoration: 'none',
                 fontWeight: '600'
               }}>In</a>
               <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: 'rgba(0, 0, 0, 0.7)',
                 fontFamily: 'Public Sans',
                 fontSize: '14px',
                 textDecoration: 'none',
@@ -475,7 +475,7 @@ export default function CreativeBuilder() {
           <p style={{
             fontFamily: 'DM Sans',
             fontSize: '12px',
-            color: 'rgba(255, 255, 255, 0.6)',
+            color: 'rgba(0, 0, 0, 0.6)',
             margin: '0'
           }}>
             © 2025 HeaVans. All rights reserved. | Designed & Developed by Evans
