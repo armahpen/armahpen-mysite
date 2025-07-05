@@ -23,15 +23,22 @@ export default function Home() {
         zIndex: 20,
         cursor: 'pointer'
       }} onClick={() => window.location.href = '/'}>
-        <img 
-          src="/attached_assets/heavans logo_1751732647807.PNG" 
-          alt="HeaVans Logo" 
-          style={{
-            width: '100px',
-            height: '30px',
-            objectFit: 'contain'
-          }}
-        />
+        <div style={{
+          width: '100px',
+          height: '30px',
+          background: 'linear-gradient(135deg, #4a90e2 0%, #67b8f5 50%, #8cc8f7 100%)',
+          borderRadius: '4px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: 'Poppins, sans-serif',
+          fontSize: '14px',
+          fontWeight: '600',
+          color: '#fff',
+          textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+        }}>
+          HeaVans
+        </div>
       </div>
       {/* Vector 4 - Decorative line */}
       <svg style={{
