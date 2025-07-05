@@ -88,10 +88,13 @@ export default function About() {
     const animate = () => {
       if (!isAnimating) return;
       
+      // Different speeds for varied motion
+      const speeds = [0.004, 0.003, 0.0025, 0.002, 0.0015, 0.001];
+      
       const newPositions = orbits.map((orbit, index) => {
         // Only increment angle if this specific planet is not hovered
         if (hoveredPlanet !== index) {
-          angles[index] += 0.003; // Slower, smoother animation
+          angles[index] += speeds[index];
         }
         
         return {
@@ -345,19 +348,19 @@ export default function About() {
             <div 
               key={`tooltip-${planet.id}`}
               style={{
-                position: 'absolute',
-                top: `${planetPositions[index]?.y ? (planetPositions[index].y / 800) * 100 - 8 : 40}%`,
-                left: `${planetPositions[index]?.x ? (planetPositions[index].x / 1400) * 100 : 50 + index * 10}%`,
-                transform: 'translateX(-50%)',
+                position: 'fixed',
+                top: `${planetPositions[index]?.y ? planetPositions[index].y - 100 : 200}px`,
+                left: `${planetPositions[index]?.x ? planetPositions[index].x + 50 : 400 + index * 50}px`,
+                transform: 'translateY(-50%)',
                 background: 'rgba(0, 0, 0, 0.95)',
                 border: `2px solid ${planet.color}`,
                 borderRadius: '16px',
-                padding: '24px',
-                minWidth: '320px',
-                maxWidth: '380px',
+                padding: '20px',
+                width: '300px',
                 animation: 'fadeIn 0.4s ease-out',
                 backdropFilter: 'blur(15px)',
-                zIndex: 20
+                zIndex: 20,
+                pointerEvents: 'none'
               }}
             >
               {/* Tooltip */}
