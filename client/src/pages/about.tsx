@@ -449,7 +449,7 @@ export default function About() {
               {/* Description */}
               <p style={{
                 fontSize: '15px',
-                color: 'rgba(255, 255, 255, 0.95)',
+                color: planet.color,
                 lineHeight: '1.6',
                 marginBottom: '20px',
                 textAlign: 'center'
