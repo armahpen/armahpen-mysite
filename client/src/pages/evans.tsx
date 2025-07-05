@@ -107,260 +107,455 @@ export default function Evans() {
       <div style={{
         marginLeft: '150px',
         padding: '120px 60px 60px 60px',
-        maxWidth: '1200px'
+        maxWidth: '1000px'
       }}>
-        {/* Hero Section */}
+        {/* Hero Section - Simplified */}
         <div style={{
-          textAlign: 'center',
           marginBottom: '80px'
         }}>
-          {/* Main Title with Glow Effect */}
           <h1 style={{
-            fontSize: '4rem',
-            fontWeight: '700',
-            background: 'linear-gradient(135deg, #ffd700, #ffcc00, #ff4500)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            marginBottom: '20px',
-            textShadow: '0 0 30px rgba(255, 215, 0, 0.5)',
-            fontFamily: 'Inter, Arial, sans-serif'
+            fontSize: '3.5rem',
+            fontWeight: '300',
+            color: '#ffd700',
+            marginBottom: '30px',
+            fontFamily: 'Georgia, serif',
+            lineHeight: '1.2'
           }}>
             Evans (Heavans)
           </h1>
           
-          {/* Subtitle */}
           <p style={{
-            fontSize: '1.5rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            marginBottom: '30px',
-            fontFamily: 'DM Sans',
-            fontWeight: '300'
-          }}>
-            Creative Planet Builder
-          </p>
-          
-          {/* Quote */}
-          <div style={{
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontStyle: 'italic',
+            fontSize: '1.4rem',
+            color: 'rgba(255, 255, 255, 0.9)',
+            lineHeight: '1.6',
             marginBottom: '40px',
             fontFamily: 'Georgia, serif',
-            maxWidth: '600px',
-            margin: '0 auto 40px auto',
-            lineHeight: '1.6'
+            maxWidth: '600px'
           }}>
-            "A creative planet builder — orbiting ideas, design, code, and imagination."
-          </div>
+            I'm a creative planet builder based in the digital universe. Since starting my journey, I've enjoyed turning complex problems into simple, beautiful and intuitive solutions. When I'm not building digital experiences, you'll find me writing poetry, exploring music, or collaborating with other creatives.
+          </p>
         </div>
 
-        {/* About Section */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '60px',
-          alignItems: 'start',
-          marginBottom: '80px'
-        }}>
-          {/* Left Column - About */}
-          <div>
-            <h2 style={{
-              fontSize: '2rem',
-              color: '#ffd700',
-              marginBottom: '25px',
-              fontFamily: 'Inter',
-              fontWeight: '600'
-            }}>
-              Who I Am
-            </h2>
-            
-            <div style={{
-              color: 'rgba(255, 255, 255, 0.9)',
-              fontSize: '1.1rem',
-              lineHeight: '1.7',
-              fontFamily: 'DM Sans',
-              marginBottom: '30px'
-            }}>
-              <p style={{marginBottom: '20px'}}>
-                I'm Evans, but my creative universe goes by <strong style={{color: '#ffd700'}}>Heavans</strong>. 
-                I exist at the intersection of imagination and execution, where wild ideas become digital realities.
-              </p>
-              
-              <p style={{marginBottom: '20px'}}>
-                Like a central star in my own creative solar system, I'm surrounded by orbiting skills and passions—each one a planet with its own unique energy and purpose.
-              </p>
-              
-              <p>
-                I believe that great work happens when creativity meets strategy, when design meets functionality, 
-                and when individual talents collaborate in harmony.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column - Philosophy */}
-          <div>
-            <h2 style={{
-              fontSize: '2rem',
-              color: '#ffd700',
-              marginBottom: '25px',
-              fontFamily: 'Inter',
-              fontWeight: '600'
-            }}>
-              My Philosophy
-            </h2>
-            
-            <div style={{
-              color: 'rgba(255, 255, 255, 0.9)',
-              fontSize: '1.1rem',
-              lineHeight: '1.7',
-              fontFamily: 'DM Sans'
-            }}>
-              <p style={{marginBottom: '20px'}}>
-                Every project is a universe waiting to be born. I approach each challenge as an opportunity 
-                to create something that didn't exist before—something that matters.
-              </p>
-              
-              <p style={{marginBottom: '20px'}}>
-                My work spans multiple dimensions: building functional products, crafting beautiful interfaces, 
-                writing meaningful words, and collaborating with other creators to amplify our collective impact.
-              </p>
-              
-              <p>
-                I'm not just building websites or apps—I'm building experiences, stories, and connections 
-                that resonate with real people.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Skills Galaxy Preview */}
+        {/* Main Profile Image Placeholder */}
         <div style={{
           textAlign: 'center',
           marginBottom: '60px'
         }}>
-          <h2 style={{
-            fontSize: '2.5rem',
-            color: '#ffd700',
-            marginBottom: '30px',
-            fontFamily: 'Inter',
-            fontWeight: '600'
-          }}>
-            My Creative Galaxy
-          </h2>
-          
-          <p style={{
+          <div style={{
+            width: '300px',
+            height: '300px',
+            background: 'rgba(255, 215, 0, 0.1)',
+            border: '2px solid rgba(255, 215, 0, 0.3)',
+            borderRadius: '12px',
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             fontSize: '1.2rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            marginBottom: '40px',
-            maxWidth: '700px',
-            margin: '0 auto 40px auto',
-            lineHeight: '1.6',
+            color: '#ffd700',
             fontFamily: 'DM Sans'
           }}>
-            Explore the planets in my creative solar system. Each one represents a different skill and passion that orbits around my core mission.
-          </p>
+            Main Profile Image
+          </div>
+        </div>
 
-          {/* Quick Navigation to Planets */}
+        {/* Image Grid - 6 lifestyle/workspace images */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '15px',
+          marginBottom: '80px'
+        }}>
+          {['Workspace', 'Creative Process', 'Projects', 'Collaboration', 'Inspiration', 'Daily Life'].map((item, index) => (
+            <div key={index} style={{
+              aspectRatio: '1',
+              background: 'rgba(255, 215, 0, 0.1)',
+              border: '1px solid rgba(255, 215, 0, 0.2)',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '0.9rem',
+              color: '#ffd700',
+              fontFamily: 'DM Sans',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.2)';
+              e.currentTarget.style.transform = 'scale(1.02)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.1)';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+
+        {/* Two Column Section - Part Builder, Part Creator */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '60px',
+          marginBottom: '80px'
+        }}>
+          {/* Left Column */}
+          <div>
+            <h2 style={{
+              fontSize: '2rem',
+              color: '#ffd700',
+              marginBottom: '30px',
+              fontFamily: 'Georgia, serif',
+              fontWeight: '400'
+            }}>
+              Part builder
+            </h2>
+            
+            <ul style={{
+              listStyle: 'none',
+              padding: '0',
+              margin: '0',
+              fontSize: '1.1rem',
+              lineHeight: '2',
+              color: 'rgba(255, 255, 255, 0.8)',
+              fontFamily: 'Georgia, serif'
+            }}>
+              <li>• Product development</li>
+              <li>• Full-stack coding</li>
+              <li>• System architecture</li>
+              <li>• Problem solving</li>
+              <li>• "Making it work"</li>
+            </ul>
+          </div>
+
+          {/* Right Column */}
+          <div>
+            <h2 style={{
+              fontSize: '2rem',
+              color: '#ffd700',
+              marginBottom: '30px',
+              fontFamily: 'Georgia, serif',
+              fontWeight: '400'
+            }}>
+              Part creator
+            </h2>
+            
+            <ul style={{
+              listStyle: 'none',
+              padding: '0',
+              margin: '0',
+              fontSize: '1.1rem',
+              lineHeight: '2',
+              color: 'rgba(255, 255, 255, 0.8)',
+              fontFamily: 'Georgia, serif'
+            }}>
+              <li>• UI/UX design</li>
+              <li>• Visual storytelling</li>
+              <li>• Poetry & writing</li>
+              <li>• Motion graphics</li>
+              <li>• Creative collaboration</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Chart Placeholder */}
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '80px'
+        }}>
+          <div style={{
+            width: '300px',
+            height: '300px',
+            background: 'rgba(255, 215, 0, 0.1)',
+            border: '1px solid rgba(255, 215, 0, 0.2)',
+            borderRadius: '50%',
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            color: '#ffd700',
+            fontFamily: 'DM Sans'
+          }}>
+            Part Builder, Part Creator Chart
+          </div>
+        </div>
+
+        {/* Random Facts */}
+        <div style={{
+          marginBottom: '80px'
+        }}>
+          <h2 style={{
+            fontSize: '2rem',
+            color: '#ffd700',
+            marginBottom: '30px',
+            fontFamily: 'Georgia, serif',
+            fontWeight: '400'
+          }}>
+            Random facts
+          </h2>
+          
+          <ul style={{
+            listStyle: 'none',
+            padding: '0',
+            margin: '0',
+            fontSize: '1.1rem',
+            lineHeight: '1.8',
+            color: 'rgba(255, 255, 255, 0.8)',
+            fontFamily: 'Georgia, serif',
+            columns: '2',
+            columnGap: '60px'
+          }}>
+            <li style={{marginBottom: '10px'}}>• I love building things that solve real problems</li>
+            <li style={{marginBottom: '10px'}}>• Poetry is my creative recharge time</li>
+            <li style={{marginBottom: '10px'}}>• I want to revolutionize digital experiences</li>
+            <li style={{marginBottom: '10px'}}>• I'm passionate about clean code</li>
+            <li style={{marginBottom: '10px'}}>• I thrive in collaborative environments</li>
+            <li style={{marginBottom: '10px'}}>• I'm into motion design</li>
+            <li style={{marginBottom: '10px'}}>• I enjoy creating meaningful connections</li>
+            <li style={{marginBottom: '10px'}}>• Music inspires my creative process</li>
+            <li style={{marginBottom: '10px'}}>• I believe in design with purpose</li>
+          </ul>
+        </div>
+
+        {/* My Skills */}
+        <div style={{
+          marginBottom: '80px'
+        }}>
+          <h2 style={{
+            fontSize: '2rem',
+            color: '#ffd700',
+            marginBottom: '30px',
+            fontFamily: 'Georgia, serif',
+            fontWeight: '400'
+          }}>
+            My skills
+          </h2>
+          
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '20px',
-            maxWidth: '800px',
-            margin: '0 auto'
+            gap: '20px'
           }}>
             {[
-              { name: 'Creative Builder', color: '#4fc3f7', link: '/creative-builder' },
-              { name: 'Poet & Sound Explorer', color: '#ab47bc', link: '/poet' },
-              { name: 'Design Thinker', color: '#66bb6a', link: '/design' },
-              { name: 'Full-Stack Developer', color: '#ef5350', link: '/developer' },
-              { name: 'Motion Creator', color: '#ff9800', link: '/motion' },
-              { name: 'Creative Collaborator', color: '#9c27b0', link: '/collaborator' }
-            ].map((planet, index) => (
-              <Link key={index} href={planet.link}>
+              { skill: 'Creative Vision', level: 95 },
+              { skill: 'Full-Stack Development', level: 90 },
+              { skill: 'UI/UX Design', level: 85 },
+              { skill: 'Poetry & Writing', level: 80 },
+              { skill: 'Motion Graphics', level: 75 },
+              { skill: 'Collaboration', level: 90 }
+            ].map((item, index) => (
+              <div key={index} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '20px'
+              }}>
                 <div style={{
-                  background: `${planet.color}15`,
-                  border: `2px solid ${planet.color}`,
-                  borderRadius: '12px',
-                  padding: '20px',
-                  textAlign: 'center',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  color: planet.color,
+                  fontSize: '1.1rem',
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  fontFamily: 'Georgia, serif',
+                  minWidth: '180px'
+                }}>
+                  {item.skill}
+                </div>
+                <div style={{
+                  flex: '1',
+                  height: '6px',
+                  background: 'rgba(255, 215, 0, 0.2)',
+                  borderRadius: '3px',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{
+                    width: `${item.level}%`,
+                    height: '100%',
+                    background: 'linear-gradient(90deg, #ffd700, #ffcc00)',
+                    borderRadius: '3px',
+                    transition: 'width 2s ease-out'
+                  }} />
+                </div>
+                <div style={{
+                  fontSize: '1rem',
+                  color: '#ffd700',
                   fontFamily: 'DM Sans',
                   fontWeight: '600',
-                  fontSize: '0.95rem'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = `${planet.color}25`;
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = `0 10px 30px ${planet.color}40`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = `${planet.color}15`;
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-                >
-                  {planet.name}
+                  minWidth: '40px'
+                }}>
+                  {item.level}%
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Call to Action */}
+        {/* Featured Work */}
         <div style={{
-          textAlign: 'center',
-          padding: '40px',
-          background: 'rgba(255, 215, 0, 0.1)',
-          borderRadius: '16px',
-          border: '1px solid rgba(255, 215, 0, 0.3)'
+          marginBottom: '80px'
         }}>
-          <h3 style={{
-            fontSize: '1.8rem',
+          <h2 style={{
+            fontSize: '2rem',
             color: '#ffd700',
             marginBottom: '20px',
-            fontFamily: 'Inter',
-            fontWeight: '600'
+            fontFamily: 'Georgia, serif',
+            fontWeight: '400'
           }}>
-            Ready to Build Something Amazing?
-          </h3>
+            Featured here & there
+          </h2>
           
           <p style={{
             fontSize: '1.1rem',
             color: 'rgba(255, 255, 255, 0.8)',
-            marginBottom: '30px',
-            fontFamily: 'DM Sans'
+            lineHeight: '1.6',
+            marginBottom: '40px',
+            fontFamily: 'Georgia, serif'
           }}>
-            Let's collaborate and create something that matters. Whether it's a product, a story, or an experience.
+            I've been lucky enough to have my work featured in various digital platforms and design communities. I've also spoken at creative events and enjoy sharing my passion for building meaningful digital experiences.
           </p>
           
           <Link href="/about">
-            <button style={{
-              background: 'linear-gradient(135deg, #ffd700, #ffcc00)',
-              color: '#1E1E1E',
-              border: 'none',
-              padding: '15px 30px',
-              borderRadius: '8px',
-              fontSize: '1rem',
-              fontWeight: '600',
+            <div style={{
+              color: '#ffd700',
+              fontSize: '1.1rem',
+              fontFamily: 'Georgia, serif',
+              textDecoration: 'underline',
               cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              fontFamily: 'DM Sans'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 8px 25px rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-            >
-              Explore My Galaxy
-            </button>
+              marginBottom: '30px',
+              display: 'inline-block'
+            }}>
+              View featured work
+            </div>
           </Link>
+          
+          <div style={{
+            width: '100%',
+            height: '300px',
+            background: 'rgba(255, 215, 0, 0.1)',
+            border: '1px solid rgba(255, 215, 0, 0.2)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            color: '#ffd700',
+            fontFamily: 'DM Sans',
+            cursor: 'pointer'
+          }}>
+            Featured Work Image
+          </div>
+        </div>
+
+        {/* My Galaxy */}
+        <div style={{
+          marginBottom: '80px'
+        }}>
+          <h2 style={{
+            fontSize: '2rem',
+            color: '#ffd700',
+            marginBottom: '20px',
+            fontFamily: 'Georgia, serif',
+            fontWeight: '400'
+          }}>
+            My creative galaxy
+          </h2>
+          
+          <p style={{
+            fontSize: '1.1rem',
+            color: 'rgba(255, 255, 255, 0.8)',
+            lineHeight: '1.6',
+            marginBottom: '40px',
+            fontFamily: 'Georgia, serif'
+          }}>
+            Explore the planets in my creative solar system. Each one represents a different skill and passion that orbits around my core mission of building meaningful digital experiences.
+          </p>
+          
+          <Link href="/about">
+            <div style={{
+              color: '#ffd700',
+              fontSize: '1.1rem',
+              fontFamily: 'Georgia, serif',
+              textDecoration: 'underline',
+              cursor: 'pointer',
+              marginBottom: '30px',
+              display: 'inline-block'
+            }}>
+              Explore my galaxy
+            </div>
+          </Link>
+          
+          <div style={{
+            width: '100%',
+            height: '300px',
+            background: 'rgba(255, 215, 0, 0.1)',
+            border: '1px solid rgba(255, 215, 0, 0.2)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            color: '#ffd700',
+            fontFamily: 'DM Sans',
+            cursor: 'pointer'
+          }}>
+            Galaxy System Image
+          </div>
+        </div>
+
+        {/* My Story */}
+        <div style={{
+          marginBottom: '80px'
+        }}>
+          <h2 style={{
+            fontSize: '2rem',
+            color: '#ffd700',
+            marginBottom: '20px',
+            fontFamily: 'Georgia, serif',
+            fontWeight: '400'
+          }}>
+            My story
+          </h2>
+          
+          <p style={{
+            fontSize: '1.1rem',
+            color: 'rgba(255, 255, 255, 0.8)',
+            lineHeight: '1.6',
+            marginBottom: '40px',
+            fontFamily: 'Georgia, serif'
+          }}>
+            Learn a little bit more about me, how I got into creative development, and how I built my career spanning design, code, and creative collaboration. I've included key insights I've learned, inspirations, and even some behind-the-scenes glimpses of my creative process.
+          </p>
+          
+          <Link href="/about">
+            <div style={{
+              color: '#ffd700',
+              fontSize: '1.1rem',
+              fontFamily: 'Georgia, serif',
+              textDecoration: 'underline',
+              cursor: 'pointer',
+              marginBottom: '30px',
+              display: 'inline-block'
+            }}>
+              Read my story
+            </div>
+          </Link>
+          
+          <div style={{
+            width: '100%',
+            height: '300px',
+            background: 'rgba(255, 215, 0, 0.1)',
+            border: '1px solid rgba(255, 215, 0, 0.2)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.1rem',
+            color: '#ffd700',
+            fontFamily: 'DM Sans',
+            cursor: 'pointer'
+          }}>
+            Story/Workspace Image
+          </div>
         </div>
       </div>
 

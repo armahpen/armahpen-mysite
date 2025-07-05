@@ -9,7 +9,7 @@ const planets = [
     tooltip: "I bring real ideas to life.",
     description: "I've founded Student Help and DEMS, creating tools that solve real problems.",
     cta: "View Projects",
-    link: "/projects",
+    link: "/creative-builder",
     color: "#4fc3f7",
     svgColor: "#4fc3f7"
   },
@@ -506,32 +506,34 @@ export default function About() {
 
         {/* Planet Names */}
         {planets.slice(0, 6).map((planet, index) => (
-          <div 
-            key={planet.id}
-            style={{
-              background: clickedPlanet === index ? `${planet.color}40` : `${planet.color}15`,
-              color: planet.color,
-              border: `2px solid ${planet.color}`,
-              padding: '10px 18px',
-              borderRadius: '8px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '13px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onClick={() => setClickedPlanet(clickedPlanet === index ? null : index)}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = `${planet.color}30`;
-              e.currentTarget.style.transform = 'scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = clickedPlanet === index ? `${planet.color}40` : `${planet.color}15`;
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-          >
-            {planet.name}
-          </div>
+          <Link key={planet.id} href={planet.link}>
+            <div 
+              style={{
+                background: `${planet.color}15`,
+                color: planet.color,
+                border: `2px solid ${planet.color}`,
+                padding: '10px 18px',
+                borderRadius: '8px',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: '13px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                textDecoration: 'none',
+                display: 'inline-block'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = `${planet.color}30`;
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = `${planet.color}15`;
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              {planet.name}
+            </div>
+          </Link>
         ))}
       </div>
 
