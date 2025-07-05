@@ -223,12 +223,11 @@ export default function Home() {
         width: '320px',
         height: '140px'
       }}>
-        {/* Header with < DevHea> and < Dev> */}
+        {/* Header with < DevHea> and Dev Icon */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
-          width: '100%',
+          gap: '24px',
           marginBottom: '8px'
         }}>
           <div style={{
