@@ -4,56 +4,62 @@ const planets = [
   {
     id: 1,
     title: "Creative Builder",
-    description: "I've founded Student Help and DEMS, bringing real ideas to life.",
+    tooltip: "I bring real ideas to life.",
+    description: "I've founded Student Help and DEMS, creating tools that solve real problems.",
+    cta: "View Projects",
     link: "/projects",
     color: "#4fc3f7",
-    orbitRadius: 180,
-    size: 22
+    svgColor: "#add8e6"
   },
   {
     id: 2,
     title: "Poet & Sound Explorer", 
-    description: "I write poetry and explore music as creative outlets.",
+    tooltip: "I feel deeply. I write freely.",
+    description: "I write poems and explore music to express emotion and recharge creatively.",
+    cta: "Read & Listen",
     link: "/poetry",
     color: "#ab47bc",
-    orbitRadius: 220,
-    size: 20
+    svgColor: "#ffffff"
   },
   {
     id: 3,
     title: "Design Thinker",
-    description: "I craft intuitive UI/UX and graphics that connect.",
+    tooltip: "I design with clarity and feeling.",
+    description: "My UI/UX and graphics connect people to experiences in a meaningful way.",
+    cta: "See Designs",
     link: "/design", 
     color: "#66bb6a",
-    orbitRadius: 260,
-    size: 24
+    svgColor: "#ffa500"
   },
   {
     id: 4,
     title: "Full-Stack Developer",
-    description: "I build functional, clean, and scalable digital tools.",
+    tooltip: "Code is my language of structure.",
+    description: "I build scalable, responsive, and modern web applications for real-world impact.",
+    cta: "Explore Code",
     link: "/code",
     color: "#ef5350",
-    orbitRadius: 300,
-    size: 21
+    svgColor: "#ffff00"
   },
   {
     id: 5,
     title: "Motion Creator",
-    description: "I use animation to give visuals life and meaning.",
+    tooltip: "I move visuals with intention.",
+    description: "I use motion design to breathe life into ideas, visuals, and interfaces.",
+    cta: "Watch Motion",
     link: "/motion",
     color: "#ff9800",
-    orbitRadius: 340,
-    size: 19
+    svgColor: "#ff4500"
   },
   {
     id: 6,
     title: "Creative Collaborator",
-    description: "I love working with others to make ideas real.",
-    link: "/contact",
-    color: "#26c6da",
-    orbitRadius: 380,
-    size: 18
+    tooltip: "Great things are built together.",
+    description: "I thrive in collaboration—sharing ideas, feedback, and energy with other creatives.",
+    cta: "Let's Connect",
+    link: "/collaborate",
+    color: "#9c27b0",
+    svgColor: "#9932cc"
   }
 ];
 
@@ -225,54 +231,181 @@ export default function About() {
               opacity: 0.6
             }} />
           
-          {/* Central Sun */}
+          {/* Central Sun - Evans (Heavans) */}
           <circle 
             cx="400" 
             cy="300" 
             r="30" 
             fill="url(#sunGradient)"
             style={{
-              filter: 'drop-shadow(0 0 20px #ffd700)'
+              filter: 'drop-shadow(0 0 20px #ffd700)',
+              cursor: 'pointer'
             }}
+            onMouseEnter={() => setHoveredPlanet(0)}
+            onMouseLeave={() => setHoveredPlanet(null)}
           />
           
+          {/* Sun Label */}
+          <text
+            x="400"
+            y="350"
+            textAnchor="middle"
+            style={{
+              fill: '#ffd700',
+              fontSize: '14px',
+              fontWeight: 'bold',
+              fontFamily: 'Arial, sans-serif'
+            }}
+          >
+            Evans (Heavans)
+          </text>
+          
           {/* Animated Planets */}
-          <circle 
-            className="planet p1" 
-            cx={planetPositions[0]?.x || 500}
-            cy={planetPositions[0]?.y || 250}
-            r="12" 
-            fill="#add8e6"
-          />
-          <circle 
-            className="planet p2" 
-            cx={planetPositions[1]?.x || 550}
-            cy={planetPositions[1]?.y || 225}
-            r="12" 
-            fill="#ffffff"
-          />
-          <circle 
-            className="planet p3" 
-            cx={planetPositions[2]?.x || 600}
-            cy={planetPositions[2]?.y || 200}
-            r="12" 
-            fill="#ffa500"
-          />
-          <circle 
-            className="planet p4" 
-            cx={planetPositions[3]?.x || 650}
-            cy={planetPositions[3]?.y || 175}
-            r="12" 
-            fill="#ffff00"
-          />
-          <circle 
-            className="planet p5" 
-            cx={planetPositions[4]?.x || 700}
-            cy={planetPositions[4]?.y || 150}
-            r="12" 
-            fill="#ff4500"
-          />
+          {planets.slice(0, 5).map((planet, index) => (
+            <circle 
+              key={planet.id}
+              className={`planet p${index + 1}`}
+              cx={planetPositions[index]?.x || (500 + index * 50)}
+              cy={planetPositions[index]?.y || (250 - index * 25)}
+              r="12" 
+              fill={planet.svgColor}
+              style={{
+                cursor: 'pointer',
+                filter: hoveredPlanet === planet.id ? `drop-shadow(0 0 10px ${planet.svgColor})` : 'none',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={() => setHoveredPlanet(planet.id)}
+              onMouseLeave={() => setHoveredPlanet(null)}
+            />
+          ))}
         </svg>
+
+        {/* Planet Tooltips and Info Cards */}
+        {hoveredPlanet === 0 && (
+          <div style={{
+            position: 'absolute',
+            top: '45%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: 'rgba(0, 0, 0, 0.9)',
+            border: '2px solid #ffd700',
+            borderRadius: '12px',
+            padding: '20px',
+            minWidth: '300px',
+            textAlign: 'center',
+            animation: 'fadeIn 0.3s ease-out',
+            zIndex: 20
+          }}>
+            <h3 style={{
+              color: '#ffd700',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              marginBottom: '8px'
+            }}>
+              Evans (Heavans)
+            </h3>
+            <p style={{
+              color: 'rgba(255, 255, 255, 0.9)',
+              fontSize: '14px',
+              lineHeight: '1.4'
+            }}>
+              A creative planet builder — orbiting ideas, design, code, and imagination.
+            </p>
+          </div>
+        )}
+
+        {planets.slice(0, 5).map((planet, index) => (
+          hoveredPlanet === planet.id && (
+            <div 
+              key={`tooltip-${planet.id}`}
+              style={{
+                position: 'absolute',
+                top: `${planetPositions[index]?.y ? (planetPositions[index].y / 600) * 100 - 8 : 40}%`,
+                left: `${planetPositions[index]?.x ? (planetPositions[index].x / 800) * 100 : 50 + index * 10}%`,
+                transform: 'translateX(-50%)',
+                background: 'rgba(0, 0, 0, 0.95)',
+                border: `2px solid ${planet.color}`,
+                borderRadius: '16px',
+                padding: '24px',
+                minWidth: '320px',
+                maxWidth: '380px',
+                animation: 'fadeIn 0.4s ease-out',
+                backdropFilter: 'blur(15px)',
+                zIndex: 20
+              }}
+            >
+              {/* Tooltip */}
+              <div style={{
+                fontSize: '12px',
+                color: planet.color,
+                fontStyle: 'italic',
+                marginBottom: '12px',
+                textAlign: 'center'
+              }}>
+                "{planet.tooltip}"
+              </div>
+              
+              {/* Planet Title */}
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: '700',
+                color: planet.color,
+                marginBottom: '12px',
+                textShadow: `0 0 12px ${planet.color}88`,
+                textAlign: 'center'
+              }}>
+                {planet.title}
+              </h3>
+              
+              {/* Description */}
+              <p style={{
+                fontSize: '15px',
+                color: 'rgba(255, 255, 255, 0.95)',
+                lineHeight: '1.6',
+                marginBottom: '20px',
+                textAlign: 'center'
+              }}>
+                {planet.description}
+              </p>
+              
+              {/* CTA Button */}
+              <div style={{ textAlign: 'center' }}>
+                <a
+                  href={planet.link}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: planet.color,
+                    fontSize: '14px',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    padding: '12px 24px',
+                    border: `2px solid ${planet.color}55`,
+                    borderRadius: '8px',
+                    transition: 'all 0.3s ease',
+                    background: `${planet.color}15`,
+                    textShadow: `0 0 6px ${planet.color}66`
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = `${planet.color}25`;
+                    e.currentTarget.style.transform = 'translateY(-2px) scale(1.05)';
+                    e.currentTarget.style.boxShadow = `0 6px 20px ${planet.color}44`;
+                    e.currentTarget.style.borderColor = `${planet.color}88`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = `${planet.color}15`;
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = 'none';
+                    e.currentTarget.style.borderColor = `${planet.color}55`;
+                  }}
+                >
+                  {planet.cta} →
+                </a>
+              </div>
+            </div>
+          )
+        ))}
 
         {/* Skill Buttons */}
         <div style={{
