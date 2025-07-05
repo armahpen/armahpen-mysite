@@ -240,15 +240,15 @@ export default function Home() {
           }}>
             <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,1)'}}>{'< DevHea>'}</span>
           </div>
-          <div style={{
-            color: '#FFF',
-            fontFamily: 'Rubik Doodle Triangles',
-            fontSize: '24px',
-            fontWeight: '400',
-            lineHeight: 'normal'
-          }}>
-            <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '24px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
-          </div>
+          <img 
+            src="/dev-icon.png"
+            alt="Dev Icon"
+            style={{
+              height: '24px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+          />
         </div>
         
         {/* Divider Lines */}
