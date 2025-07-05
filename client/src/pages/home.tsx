@@ -5,22 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Mail, Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
 
 export default function Home() {
-  const designSkills = [
-    "UI Design",
-    "UX",
-    "Figma",
-    "Design Systems",
-    "Prototyping"
-  ];
-
-  const techSkills = [
-    { name: "HTML5", color: "bg-orange-100 text-orange-800 hover:bg-orange-200" },
-    { name: "CSS3", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
-    { name: "JavaScript", color: "bg-yellow-100 text-yellow-800 hover:bg-yellow-200" },
-    { name: "React", color: "bg-cyan-100 text-cyan-800 hover:bg-cyan-200" },
-    { name: "TypeScript", color: "bg-blue-100 text-blue-800 hover:bg-blue-200" },
-    { name: "Node.js", color: "bg-green-100 text-green-800 hover:bg-green-200" }
-  ];
+  const techSkills = ["HTML5", "CSS3", "JavaScript", "React", "TypeScript", "Node.js"];
 
   const socialLinks = [
     { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
@@ -29,86 +14,92 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="w-full py-8">
-        <div className="container mx-auto px-4">
-          <nav className="flex justify-center">
-            <div className="text-sm font-medium text-gray-500">Portfolio</div>
+      <header className="w-full py-6 px-8">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center">
+            <div className="w-3 h-3 bg-white transform rotate-45"></div>
+          </div>
+          
+          {/* Navigation */}
+          <nav className="hidden md:flex space-x-8 text-sm">
+            <a href="#about" className="hover:text-gray-300 transition-colors">about</a>
+            <a href="#learn" className="hover:text-gray-300 transition-colors">learn</a>
+            <a href="#portfolio" className="hover:text-gray-300 transition-colors">portfolio</a>
+            <a href="#blog" className="hover:text-gray-300 transition-colors">blog</a>
+            <a href="#contact" className="hover:text-gray-300 transition-colors">contact</a>
           </nav>
+          
+          {/* Social Icons */}
+          <div className="flex space-x-4">
+            <Twitter className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer" />
+            <Linkedin className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer" />
+            <div className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer">f</div>
+            <div className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer">@</div>
+          </div>
         </div>
       </header>
 
       {/* Main Portfolio Section */}
-      <main className="flex-1 py-16">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 items-center min-h-[600px]">
+      <main className="flex-1 py-20">
+        <div className="container mx-auto px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center min-h-[500px]">
             
             {/* Left Column - Designer */}
-            <div className="text-center lg:text-left space-y-6">
+            <div className="text-left space-y-6">
               <div className="space-y-4">
-                <h1 className="text-6xl lg:text-7xl font-black text-black">
+                <h1 className="text-6xl lg:text-7xl font-normal text-gray-400">
                   designer
                 </h1>
-                <p className="text-lg text-gray-500 max-w-sm mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-base text-gray-400 max-w-xs leading-relaxed">
                   Product designer specialising in UI design and design systems.
                 </p>
               </div>
-              
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                {designSkills.map((skill) => (
-                  <Badge 
-                    key={skill}
-                    variant="secondary"
-                    className="px-3 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
+            </div>
+
+            {/* Center Column - Profile Image */}
+            <div className="flex justify-center">
+              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+                {/* Placeholder for profile image - will be replaced with actual image */}
+                <div className="w-full h-full bg-gradient-to-br from-red-400 via-yellow-400 to-blue-400 rounded-full overflow-hidden">
+                  {/* This will be replaced with the actual profile image */}
+                  <div className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600 text-lg">
+                    Profile Image
+                  </div>
+                </div>
+                
+                {/* Code elements overlay */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-10 right-4 text-xs text-gray-500 font-mono">&lt;html&gt;</div>
+                  <div className="absolute top-20 right-8 text-xs text-gray-500 font-mono">CSS3</div>
+                  <div className="absolute bottom-20 left-4 text-xs text-gray-500 font-mono">React</div>
+                  <div className="absolute bottom-32 right-12 text-xs text-gray-500 font-mono">HTML5</div>
+                  <div className="absolute top-32 left-8 text-xs text-gray-500 font-mono">JavaScript</div>
+                </div>
               </div>
             </div>
 
-            {/* Center Column - Name Card */}
-            <div className="flex justify-center">
-              <Card className="bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 shadow-lg hover:shadow-xl transition-shadow duration-300 w-full max-w-sm">
-                <div className="text-center">
-                  <div className="space-y-2">
-                    <div className="text-8xl lg:text-9xl font-black leading-none text-black">
-                      <div>H</div>
-                      <div className="flex items-center justify-center space-x-4">
-                        <span>I</span>
-                        <span className="text-4xl">'</span>
-                        <span>M</span>
-                      </div>
-                    </div>
-                    <div className="text-4xl lg:text-5xl font-black mt-4 text-black">
-                      EVANS
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
             {/* Right Column - Coder */}
-            <div className="text-center lg:text-right space-y-6">
+            <div className="text-right space-y-6">
               <div className="space-y-4">
-                <h1 className="text-6xl lg:text-7xl font-black text-black">
+                <h1 className="text-6xl lg:text-7xl font-normal text-gray-400">
                   &lt;coder&gt;
                 </h1>
-                <p className="text-lg text-gray-500 max-w-sm mx-auto lg:mx-0 lg:ml-auto leading-relaxed">
+                <p className="text-base text-gray-400 max-w-xs ml-auto leading-relaxed">
                   Front-end developer who writes clean, elegant and efficient code.
                 </p>
               </div>
               
-              <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
+              <div className="flex flex-wrap gap-2 justify-end">
                 {techSkills.map((skill) => (
-                  <Badge 
-                    key={skill.name}
-                    variant="secondary"
-                    className={`px-3 py-1 text-sm font-medium transition-colors ${skill.color}`}
+                  <span 
+                    key={skill}
+                    className="px-3 py-1 text-sm bg-gray-800 text-gray-300 rounded hover:bg-gray-700 transition-colors"
                   >
-                    {skill.name}
-                  </Badge>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
