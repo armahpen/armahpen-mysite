@@ -142,7 +142,7 @@ export default function Evans() {
           marginBottom: '60px'
         }}>
           <img
-            src="/attached_assets/WhatsApp Image 2025-07-05 at 3.50.37 PM (1)_1751756232826.jpeg"
+            src="/attached_assets/WhatsApp Image 2025-07-05 at 3.54.30 PM_1751757017392.jpeg"
             alt="Evans (Heavans) - Creative Planet Builder"
             style={{
               width: '300px',
