@@ -121,8 +121,8 @@ export default function Home() {
         width: '259px',
         height: '178px',
         position: 'absolute',
-        left: '186px',
-        top: '225px',
+        left: '197px',
+        top: '282px',
         zIndex: 20
       }}>
         <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'50px',width:'102px',height:'14px'}}>
@@ -149,8 +149,8 @@ export default function Home() {
       {/* Work Collection - Developer Section */}
       <div style={{
         position: 'absolute',
-        left: '186px',
-        top: '538px',
+        left: '197px',
+        top: '595px',
         zIndex: 20
       }}>
         <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'0px',width:'100px',height:'14px'}}>
@@ -175,22 +175,32 @@ export default function Home() {
           <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '28px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
         </div>
       </div>
-      {/* Center Portrait - Updated with latest Figma image code */}
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d46a89e51c005e2dd05bd543b2887ec919485b0b?width=2546"
-        alt="ChatGPT Image"
-        style={{
-          width: '1273px',
-          height: '857px',
-          flexShrink: 0,
-          aspectRatio: '1273/857',
-          borderRadius: '62px',
-          mixBlendMode: 'luminosity',
-          position: 'absolute',
-          left: '286px',
-          top: '218px'
-        }}
-      />
+      {/* Frame 7 with Image - Updated with Figma positioning */}
+      <div style={{
+        display: 'flex',
+        width: '529px',
+        height: '645px',
+        padding: '10px',
+        alignItems: 'center',
+        gap: '10px',
+        position: 'absolute',
+        left: '197px',
+        top: '318px'
+      }}>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
+          alt="ChatGPT Image"
+          style={{
+            width: '1195px',
+            height: '957px',
+            flexShrink: 0,
+            aspectRatio: '1195/957',
+            borderRadius: '62px',
+            mixBlendMode: 'luminosity',
+            position: 'relative'
+          }}
+        />
+      </div>
       
       {/* Semi-transparent overlay covering from shoulders - Rectangle 8 */}
       <svg style={{
@@ -204,13 +214,13 @@ export default function Home() {
       }} width="1613" height="159" viewBox="0 0 1613 159" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0H806.5H1613V159H0V0Z" fill="#1E1E1E"/>
       </svg>
-      {/* Hero Section - Repositioned to match Figma */}
+      {/* Hero Section - Updated with Figma positioning */}
       <div style={{
         width: '357px',
         height: '227px',
         position: 'absolute',
-        left: '1229px',
-        top: '289px',
+        left: '1014px',
+        top: '233px',
         zIndex: 10
       }}>
         {/* Human Icon */}
