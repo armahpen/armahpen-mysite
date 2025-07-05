@@ -65,6 +65,7 @@ const planets = [
 
 export default function About() {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
+  const [clickedPlanet, setClickedPlanet] = useState<number | null>(null);
   const [planetPositions, setPlanetPositions] = useState<Array<{x: number, y: number}>>([]);
   const anglesRef = useRef([0, 0, 0, 0, 0, 0]); // Persistent angles that don't reset
 
@@ -92,8 +93,8 @@ export default function About() {
       const speeds = [0.004, 0.003, 0.0025, 0.002, 0.0015, 0.001];
       
       const newPositions = orbits.map((orbit, index) => {
-        // Stop ALL planets when ANY planet is hovered, but only increment angles when no planet is hovered
-        if (hoveredPlanet === null) {
+        // Stop ALL planets when ANY planet is hovered or clicked
+        if (hoveredPlanet === null && clickedPlanet === null) {
           anglesRef.current[index] += speeds[index];
         }
         
@@ -115,7 +116,7 @@ export default function About() {
         cancelAnimationFrame(animationId);
       }
     };
-  }, [hoveredPlanet]);
+  }, [hoveredPlanet, clickedPlanet]);
 
   return (
     <div style={{
@@ -272,6 +273,7 @@ export default function About() {
             }}
             onMouseEnter={() => setHoveredPlanet(-1)}
             onMouseLeave={() => setHoveredPlanet(null)}
+            onClick={() => setClickedPlanet(clickedPlanet === -1 ? null : -1)}
           />
           
           {/* Sun Label */}
@@ -305,12 +307,13 @@ export default function About() {
               }}
               onMouseEnter={() => setHoveredPlanet(index)}
               onMouseLeave={() => setHoveredPlanet(null)}
+              onClick={() => setClickedPlanet(clickedPlanet === index ? null : index)}
             />
           ))}
         </svg>
 
         {/* Planet Tooltips and Info Cards */}
-        {hoveredPlanet === -1 && (
+        {(hoveredPlanet === -1 || clickedPlanet === -1) && (
           <div style={{
             position: 'absolute',
             top: '45%',
@@ -344,7 +347,7 @@ export default function About() {
         )}
 
         {planets.slice(0, 6).map((planet, index) => (
-          hoveredPlanet === index && (
+          (hoveredPlanet === index || clickedPlanet === index) && (
             <div 
               key={`tooltip-${planet.id}`}
               style={{
@@ -435,258 +438,74 @@ export default function About() {
           )
         ))}
 
-        {/* Planet & Sun Skill Buttons */}
+        {/* Clickable Planet Names */}
         <div style={{
           position: 'absolute',
           bottom: '20px',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
-          gap: '12px',
+          gap: '15px',
           flexWrap: 'wrap',
           padding: '0 20px',
           zIndex: 10
         }}>
-          {/* Sun Skills */}
+          {/* Sun */}
           <div 
             style={{
-              background: 'rgba(255, 215, 0, 0.15)',
+              background: clickedPlanet === -1 ? 'rgba(255, 215, 0, 0.4)' : 'rgba(255, 215, 0, 0.15)',
               color: '#ffd700',
-              border: '1px solid #ffd700',
-              padding: '8px 16px',
-              borderRadius: '5px',
+              border: '2px solid #ffd700',
+              padding: '10px 18px',
+              borderRadius: '8px',
               fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
+              fontSize: '13px',
               fontWeight: 'bold',
-              textTransform: 'uppercase',
               cursor: 'pointer',
               transition: 'all 0.3s ease'
             }}
+            onClick={() => setClickedPlanet(clickedPlanet === -1 ? null : -1)}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = 'rgba(255, 215, 0, 0.3)';
-              e.currentTarget.style.color = '#fff';
+              e.currentTarget.style.transform = 'scale(1.05)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.15)';
-              e.currentTarget.style.color = '#ffd700';
+              e.currentTarget.style.background = clickedPlanet === -1 ? 'rgba(255, 215, 0, 0.4)' : 'rgba(255, 215, 0, 0.15)';
+              e.currentTarget.style.transform = 'scale(1)';
             }}
           >
-            LEADERSHIP
+            Evans (Heavans)
           </div>
 
-          {/* Planet 1: Creative Builder */}
-          <div 
-            style={{
-              background: 'rgba(173, 216, 230, 0.15)',
-              color: '#add8e6',
-              border: '1px solid #add8e6',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(173, 216, 230, 0.3)';
-              e.currentTarget.style.color = '#fff';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(173, 216, 230, 0.15)';
-              e.currentTarget.style.color = '#add8e6';
-            }}
-          >
-            APPS
-          </div>
-
-          {/* Planet 2: Poet & Sound Explorer */}
-          <div 
-            style={{
-              background: 'rgba(255, 255, 255, 0.15)',
-              color: '#ffffff',
-              border: '1px solid #ffffff',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)';
-              e.currentTarget.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
-              e.currentTarget.style.color = '#ffffff';
-            }}
-          >
-            CREATIVE WRITING
-          </div>
-
-          {/* Planet 3: Design Thinker */}
-          <div 
-            style={{
-              background: 'rgba(255, 165, 0, 0.15)',
-              color: '#ffa500',
-              border: '1px solid #ffa500',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 165, 0, 0.3)';
-              e.currentTarget.style.color = '#fff';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 165, 0, 0.15)';
-              e.currentTarget.style.color = '#ffa500';
-            }}
-          >
-            ILLUSTRATION
-          </div>
-
-          {/* Planet 4: Full-Stack Developer */}
-          <div 
-            style={{
-              background: 'rgba(255, 255, 0, 0.15)',
-              color: '#ffff00',
-              border: '1px solid #ffff00',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.3)';
-              e.currentTarget.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.15)';
-              e.currentTarget.style.color = '#ffff00';
-            }}
-          >
-            JAVASCRIPT
-          </div>
-
-          <div 
-            style={{
-              background: 'rgba(255, 255, 0, 0.15)',
-              color: '#ffff00',
-              border: '1px solid #ffff00',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.3)';
-              e.currentTarget.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.15)';
-              e.currentTarget.style.color = '#ffff00';
-            }}
-          >
-            NODE.JS
-          </div>
-
-          <div 
-            style={{
-              background: 'rgba(255, 255, 0, 0.15)',
-              color: '#ffff00',
-              border: '1px solid #ffff00',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.3)';
-              e.currentTarget.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 0, 0.15)';
-              e.currentTarget.style.color = '#ffff00';
-            }}
-          >
-            HTML/CSS
-          </div>
-
-          {/* Planet 5: Motion Creator */}
-          <div 
-            style={{
-              background: 'rgba(255, 69, 0, 0.15)',
-              color: '#ff4500',
-              border: '1px solid #ff4500',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 69, 0, 0.3)';
-              e.currentTarget.style.color = '#fff';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 69, 0, 0.15)';
-              e.currentTarget.style.color = '#ff4500';
-            }}
-          >
-            VIDEO PRODUCTION
-          </div>
-
-          {/* Planet 6: Creative Collaborator */}
-          <div 
-            style={{
-              background: 'rgba(153, 50, 204, 0.15)',
-              color: '#9932cc',
-              border: '1px solid #9932cc',
-              padding: '8px 16px',
-              borderRadius: '5px',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(153, 50, 204, 0.3)';
-              e.currentTarget.style.color = '#fff';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(153, 50, 204, 0.15)';
-              e.currentTarget.style.color = '#9932cc';
-            }}
-          >
-            CREATIVE DIRECTION
-          </div>
+          {/* Planet Names */}
+          {planets.slice(0, 6).map((planet, index) => (
+            <div 
+              key={planet.id}
+              style={{
+                background: clickedPlanet === index ? `${planet.color}40` : `${planet.color}15`,
+                color: planet.color,
+                border: `2px solid ${planet.color}`,
+                padding: '10px 18px',
+                borderRadius: '8px',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: '13px',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onClick={() => setClickedPlanet(clickedPlanet === index ? null : index)}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = `${planet.color}30`;
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = clickedPlanet === index ? `${planet.color}40` : `${planet.color}15`;
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              {planet.name}
+            </div>
+          ))}
         </div>
       </div>
     </div>
