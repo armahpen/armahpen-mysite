@@ -370,7 +370,7 @@ export default function Home() {
           lineHeight: '1.6',
           maxWidth: '350px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}}>Evans (Heavans) is a creative web developer blending design, code, and motion to build modern, impactful digital experiences.</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}}>I create standout web experiences—where design meets purpose and code brings it to life.</span>
         </div>
       </div>
       {/* Start Work Button - Updated with latest Figma positioning */}
