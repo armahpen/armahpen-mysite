@@ -175,15 +175,15 @@ export default function Home() {
           <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '28px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
         </div>
       </div>
-      {/* Center Portrait - Applied exact Figma image code */}
+      {/* Center Portrait - Updated with latest Figma image code */}
       <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff5a6e453d722f063aaeb97088c4f8edf7acc885?width=2434"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d46a89e51c005e2dd05bd543b2887ec919485b0b?width=2546"
         alt="ChatGPT Image"
         style={{
-          width: '1050px',
-          height: '920px',
+          width: '1273px',
+          height: '857px',
           flexShrink: 0,
-          aspectRatio: '1217/1065',
+          aspectRatio: '1273/857',
           borderRadius: '62px',
           mixBlendMode: 'luminosity',
           position: 'absolute',
