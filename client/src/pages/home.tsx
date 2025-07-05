@@ -106,71 +106,23 @@ export default function Home() {
         }}>Contact</div>
       </div>
 
-      {/* Work Collection Section */}
-      <div style={{
-        color: '#FFF',
-        fontFamily: 'Public Sans',
-        fontSize: '20px',
-        fontWeight: '600',
-        position: 'absolute',
-        left: '217px',
-        top: '404px'
-      }}>Work Collection</div>
-
-
-
-      <div style={{
-        width: '243px',
-        color: '#FFF',
-        fontFamily: 'Public Sans',
-        fontSize: '14px',
-        fontWeight: '400',
-        position: 'absolute',
-        left: '217px',
-        top: '431px'
-      }}>Multidisciplinary designer in ux/ui, grphic design and motion graphics</div>
-
-      <div style={{
-        color: 'rgba(255, 255, 255, 0.45)',
-        fontFamily: 'Public Sans',
-        fontSize: '14px',
-        fontWeight: '400',
-        position: 'absolute',
-        left: '219px',
-        top: '476px'
-      }}>see collections</div>
-
-      {/* DevHan Work Collection Card */}
+      {/* Work Collection Image */}
       <div style={{
         position: 'absolute',
         left: '86px',
-        top: '250px',
-        width: '170px',
-        background: 'rgba(0, 0, 0, 0.4)',
-        padding: '16px',
-        borderRadius: '8px'
+        top: '350px',
+        width: '400px',
+        height: 'auto'
       }}>
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '16px',
-          fontWeight: '500',
-          marginBottom: '4px'
-        }}>&lt; DevHan /&gt;</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.7)',
-          fontFamily: 'Public Sans',
-          fontSize: '12px',
-          fontWeight: '400',
-          marginBottom: '8px'
-        }}>Work Collection</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.6)',
-          fontFamily: 'Public Sans',
-          fontSize: '11px',
-          fontWeight: '400',
-          lineHeight: '14px'
-        }}>Full stack developer blending ideas design with front and backend for 3 years.</div>
+        <img 
+          src="/attached_assets/jfkfff_1751725480650.PNG" 
+          alt="Work Collection" 
+          style={{
+            width: '100%',
+            height: 'auto',
+            objectFit: 'contain'
+          }}
+        />
       </div>
 
       {/* 3D Wireframe Portrait */}
