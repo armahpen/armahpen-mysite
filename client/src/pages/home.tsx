@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <div 
-      className="relative w-full min-h-screen overflow-hidden" 
-      style={{backgroundColor: '#1E1E1E', width: '1600px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
+      className="relative w-full" 
+      style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
     >
       {/* Left Border */}
       <div 
@@ -301,9 +301,10 @@ export default function Home() {
         background: '#63767C',
         position: 'absolute',
         left: '0px',
-        top: '925px',
+        top: '1050px',
         padding: '40px 80px',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        zIndex: 20
       }}>
         <div style={{
           display: 'flex',
@@ -530,37 +531,7 @@ export default function Home() {
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.75)'}}>Read More...</span>
       </div>
-      {/* Social Links */}
-      <div style={{
-        transform: 'rotate(-90deg)',
-        color: 'rgba(255, 255, 255, 0.50)',
-        fontFamily: 'Public Sans',
-        fontSize: '20px',
-        fontWeight: '700',
-        position: 'absolute',
-        left: '58px',
-        top: '1019px'
-      }}>Fb</div>
-      <div style={{
-        transform: 'rotate(-90deg)',
-        color: 'rgba(255, 255, 255, 0.50)',
-        fontFamily: 'Public Sans',
-        fontSize: '20px',
-        fontWeight: '700',
-        position: 'absolute',
-        left: '58px',
-        top: '935px'
-      }}>In</div>
-      <div style={{
-        transform: 'rotate(-90deg)',
-        color: 'rgba(255, 255, 255, 0.50)',
-        fontFamily: 'Public Sans',
-        fontSize: '20px',
-        fontWeight: '700',
-        position: 'absolute',
-        left: '58px',
-        top: '844px'
-      }}>Tw</div>
+
       
       {/* Final Line Separator */}
       <div style={{
