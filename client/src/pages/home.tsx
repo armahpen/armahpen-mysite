@@ -297,7 +297,7 @@ export default function Home() {
         alignItems: 'center',
         gap: '10px',
         position: 'absolute',
-        left: '0px',
+        left: '24px',
         top: '318px'
       }}>
         <img
