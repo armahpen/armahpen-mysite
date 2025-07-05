@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <div 
-      className="relative w-full h-screen overflow-hidden" 
-      style={{backgroundColor: '#1E1E1E'}}
+      className="relative w-full min-h-screen overflow-x-auto" 
+      style={{backgroundColor: '#1E1E1E', minWidth: '1728px', transform: 'scale(0.8)', transformOrigin: 'top left'}}
     >
       {/* Left Border */}
       <div 
