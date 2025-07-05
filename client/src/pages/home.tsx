@@ -62,7 +62,7 @@ export default function Home() {
           position: 'absolute',
           left: '0px',
           top: '0px'
-        }}>Home</div>
+        }} className="animate-slideInDown delay-100 hover-grow">Home</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -71,7 +71,7 @@ export default function Home() {
           position: 'absolute',
           left: '96px',
           top: '0px'
-        }}>About</div>
+        }} className="animate-slideInDown delay-200 hover-grow">About</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -80,7 +80,7 @@ export default function Home() {
           position: 'absolute',
           left: '194px',
           top: '0px'
-        }}>Experience</div>
+        }} className="animate-slideInDown delay-300 hover-grow">Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -89,7 +89,7 @@ export default function Home() {
           position: 'absolute',
           left: '317px',
           top: '0px'
-        }}>Skills</div>
+        }} className="animate-slideInDown delay-400 hover-grow">Skills</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -98,7 +98,7 @@ export default function Home() {
           position: 'absolute',
           left: '388px',
           top: '0px'
-        }}>Contact</div>
+        }} className="animate-slideInDown delay-500 hover-grow">Contact</div>
       </div>
       {/* HeaDesign Work Collection Section - Properly Organized */}
       <div style={{
@@ -131,7 +131,7 @@ export default function Home() {
           top: '50px',
           width: '120px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>HeaDesign</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-fadeInRight delay-200 hover-grow">HeaDesign</span>
         </div>
         
         {/* Divider Lines */}
@@ -166,7 +166,7 @@ export default function Home() {
           top: '96px',
           width: '180px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>Work Collection</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-fadeInUp delay-300 hover-grow">Work Collection</span>
         </div>
         
         {/* Description Text */}
@@ -181,7 +181,7 @@ export default function Home() {
           top: '125px',
           width: '280px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}}>Multidisciplinary designer in UX/UI, graphic design and motion graphics</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-fadeInLeft delay-400 hover-grow">Multidisciplinary designer in UX/UI, graphic design and motion graphics</span>
         </div>
         
         {/* Call to Action Link */}
@@ -358,7 +358,7 @@ export default function Home() {
         }}>
           <span
             style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '38px', color: 'rgba(255,255,255,1)'}}
-            className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px]">Shape the Future with Heavan</span>
+            className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px] animate-fadeInUp delay-200 animate-textGlow hover-grow">Shape the Future with Heavan</span>
         </div>
         
         {/* Description */}
@@ -370,7 +370,7 @@ export default function Home() {
           lineHeight: '1.6',
           maxWidth: '350px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}}>I create standout web experiences—where design meets purpose and code brings it to life.</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}} className="animate-fadeInLeft delay-300 hover-grow">I create standout web experiences—where design meets purpose and code brings it to life.</span>
         </div>
       </div>
       
@@ -400,7 +400,7 @@ export default function Home() {
               fontWeight: '600',
               color: '#FFF',
               marginBottom: '12px'
-            }}>HeaVans.</div>
+            }} className="animate-fadeInLeft delay-100 hover-grow">HeaVans.</div>
             <p style={{
               fontFamily: 'Public Sans',
               fontSize: '14px',
@@ -562,7 +562,7 @@ export default function Home() {
         height: '31px',
         zIndex: 10
       }}>
-        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}}>Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
+        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}} className="animate-fadeInUp delay-300 animate-pulse-subtle hover-grow">Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
       </div>
       
       {/* Final Line Separator */}
