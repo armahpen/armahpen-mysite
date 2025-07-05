@@ -62,7 +62,7 @@ export default function Home() {
           position: 'absolute',
           left: '0px',
           top: '0px'
-        }} className="animate-slideInDown delay-100 hover-grow">Home</div>
+        }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -71,7 +71,7 @@ export default function Home() {
           position: 'absolute',
           left: '96px',
           top: '0px'
-        }} className="animate-slideInDown delay-200 hover-grow">About</div>
+        }} className="animate-slideInDown delay-200 menu-button" onClick={() => alert('About section coming soon!')}>About</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -80,7 +80,7 @@ export default function Home() {
           position: 'absolute',
           left: '194px',
           top: '0px'
-        }} className="animate-slideInDown delay-300 hover-grow">Experience</div>
+        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -89,7 +89,7 @@ export default function Home() {
           position: 'absolute',
           left: '317px',
           top: '0px'
-        }} className="animate-slideInDown delay-400 hover-grow">Skills</div>
+        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -98,7 +98,7 @@ export default function Home() {
           position: 'absolute',
           left: '388px',
           top: '0px'
-        }} className="animate-slideInDown delay-500 hover-grow">Contact</div>
+        }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
       {/* HeaDesign Work Collection Section - Properly Organized */}
       <div style={{

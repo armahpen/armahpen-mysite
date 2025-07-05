@@ -92,12 +92,32 @@
 
 /* Hover Effects */
 .hover-grow {
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
 }
 
 .hover-grow:hover {
   transform: scale(1.05);
   color: rgba(255, 255, 255, 1);
+}
+
+/* Menu Button Styles */
+.menu-button {
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+.menu-button:active {
+  transform: translateY(0px);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .hover-slide {
