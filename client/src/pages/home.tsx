@@ -547,22 +547,7 @@ export default function Home() {
       <svg style={{width: '3px', height: '3px', position: 'absolute', left: '187px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
         <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
       </svg>
-      {/* Artist of the Month */}
-      <div style={{
-        color: 'rgba(255, 255, 255, 0.85)',
-        fontFamily: 'DM Sans',
-        fontSize: '16px',
-        fontWeight: '500',
-        lineHeight: '0px',
-        position: 'absolute',
-        left: '1123px',
-        top: '746px',
-        width: '285px',
-        height: '11px',
-        zIndex: 10
-      }}>
-        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.8500000238418579)'}}>Meet Artist of the Month: @Alex Chen</span>
-      </div>
+
       {/* Artist Description */}
       <div style={{
         width: '462px',
