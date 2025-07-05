@@ -70,6 +70,8 @@ export default function About() {
   // Animation for planets
   useEffect(() => {
     let angle = 0;
+    let animationId: number;
+    let isAnimating = true;
     const centerX = 400;
     const centerY = 300;
     const orbits = [
@@ -81,7 +83,9 @@ export default function About() {
     ];
 
     const animate = () => {
-      // Only animate if no planet or sun is being hovered
+      if (!isAnimating) return;
+      
+      // Only update positions and increment angle if no planet or sun is being hovered
       if (hoveredPlanet === null) {
         const newPositions = orbits.map((orbit, index) => ({
           x: centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2),
@@ -89,14 +93,21 @@ export default function About() {
         }));
         
         setPlanetPositions(newPositions);
-        angle += 0.005; // Slower animation (was 0.02)
+        angle += 0.005; // Slower animation
       }
-      requestAnimationFrame(animate);
+      
+      animationId = requestAnimationFrame(animate);
     };
 
-    const animationId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationId);
-  }, [hoveredPlanet]);
+    animationId = requestAnimationFrame(animate);
+    
+    return () => {
+      isAnimating = false;
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, []); // Remove hoveredPlanet dependency to prevent restarting
 
   return (
     <div style={{
