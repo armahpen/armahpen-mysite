@@ -307,7 +307,7 @@ export default function About() {
         </svg>
 
         {/* Planet Tooltips and Info Cards */}
-        {hoveredPlanet === 0 && (
+        {hoveredPlanet === -1 && (
           <div style={{
             position: 'absolute',
             top: '45%',
@@ -340,14 +340,14 @@ export default function About() {
           </div>
         )}
 
-        {planets.slice(0, 5).map((planet, index) => (
-          hoveredPlanet === planet.id && (
+        {planets.slice(0, 6).map((planet, index) => (
+          hoveredPlanet === index && (
             <div 
               key={`tooltip-${planet.id}`}
               style={{
                 position: 'absolute',
-                top: `${planetPositions[index]?.y ? (planetPositions[index].y / 600) * 100 - 8 : 40}%`,
-                left: `${planetPositions[index]?.x ? (planetPositions[index].x / 800) * 100 : 50 + index * 10}%`,
+                top: `${planetPositions[index]?.y ? (planetPositions[index].y / 800) * 100 - 8 : 40}%`,
+                left: `${planetPositions[index]?.x ? (planetPositions[index].x / 1400) * 100 : 50 + index * 10}%`,
                 transform: 'translateX(-50%)',
                 background: 'rgba(0, 0, 0, 0.95)',
                 border: `2px solid ${planet.color}`,
