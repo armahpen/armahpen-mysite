@@ -66,6 +66,44 @@ const planets = [
 export default function About() {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
   const [planetPositions, setPlanetPositions] = useState<Array<{x: number, y: number}>>([]);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [shouldPause, setShouldPause] = useState(false);
+
+  // Track mouse position
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Check proximity to celestial bodies
+  useEffect(() => {
+    const centerX = 400;
+    const centerY = 300;
+    const proximityThreshold = 80; // Distance threshold for pausing
+
+    // Check distance to sun
+    const sunDistance = Math.sqrt(
+      Math.pow(mousePosition.x - centerX, 2) + Math.pow(mousePosition.y - centerY, 2)
+    );
+
+    let nearCelestialBody = sunDistance < proximityThreshold;
+
+    // Check distance to each planet
+    planetPositions.forEach((planet) => {
+      const planetDistance = Math.sqrt(
+        Math.pow(mousePosition.x - planet.x, 2) + Math.pow(mousePosition.y - planet.y, 2)
+      );
+      if (planetDistance < proximityThreshold) {
+        nearCelestialBody = true;
+      }
+    });
+
+    setShouldPause(nearCelestialBody || hoveredPlanet !== null);
+  }, [mousePosition, planetPositions, hoveredPlanet]);
 
   // Animation for planets
   useEffect(() => {
@@ -85,8 +123,8 @@ export default function About() {
     const animate = () => {
       if (!isAnimating) return;
       
-      // Only update positions and increment angle if no planet or sun is being hovered
-      if (hoveredPlanet === null) {
+      // Only update positions and increment angle if not paused
+      if (!shouldPause) {
         const newPositions = orbits.map((orbit, index) => ({
           x: centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2),
           y: centerY + orbit.ry * Math.sin(angle + index * Math.PI / 2)
@@ -107,7 +145,7 @@ export default function About() {
         cancelAnimationFrame(animationId);
       }
     };
-  }, []); // Remove hoveredPlanet dependency to prevent restarting
+  }, [shouldPause]);
 
   return (
     <div style={{
