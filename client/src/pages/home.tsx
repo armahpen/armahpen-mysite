@@ -143,19 +143,36 @@ export default function Home() {
         padding: '10px',
         alignItems: 'center'
       }}>
-        <img 
-          src="/center-portrait.png" 
-          alt="Center Portrait" 
-          style={{
-            width: '607px',
-            height: '911px',
-            aspectRatio: '607/911',
-            borderRadius: '62px',
-            mixBlendMode: 'luminosity',
-            objectFit: 'cover',
-            position: 'relative'
-          }}
-        />
+        <div style={{
+          position: 'relative',
+          width: '607px',
+          height: '911px',
+          borderRadius: '62px',
+          overflow: 'hidden'
+        }}>
+          <img 
+            src="/center-portrait.png" 
+            alt="Center Portrait" 
+            style={{
+              width: '607px',
+              height: '911px',
+              aspectRatio: '607/911',
+              mixBlendMode: 'luminosity',
+              objectFit: 'cover',
+              position: 'relative'
+            }}
+          />
+          <div style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '150px',
+            height: '100%',
+            background: 'linear-gradient(to right, #1E1E1E 0%, rgba(30, 30, 30, 0.8) 30%, rgba(30, 30, 30, 0.3) 70%, transparent 100%)',
+            pointerEvents: 'none',
+            zIndex: 1
+          }} />
+        </div>
       </div>
       {/* Hero Section */}
       <div style={{
