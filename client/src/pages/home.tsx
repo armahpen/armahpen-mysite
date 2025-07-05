@@ -33,7 +33,6 @@ export default function Home() {
           }}
           className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
-
       {/* Menu Icon */}
       <svg 
         style={{
@@ -367,7 +366,9 @@ export default function Home() {
           lineHeight: '1.1',
           marginBottom: '20px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '38px', color: 'rgba(255,255,255,1)'}}>Shape the Future with Heavan</span>
+          <span
+            style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '38px', color: 'rgba(255,255,255,1)'}}
+            className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px]">Shape the Future with Heavan</span>
         </div>
         
         {/* Description */}
