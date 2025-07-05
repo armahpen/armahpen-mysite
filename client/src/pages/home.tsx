@@ -19,7 +19,7 @@ export default function Home() {
       <div 
         style={{
           position: 'absolute',
-          left: '217px',
+          left: '361px',
           top: '156px',
           width: '238px',
           height: '29px'
@@ -135,7 +135,7 @@ export default function Home() {
       {/* Center Portrait */}
       <div style={{
         position: 'absolute',
-        left: '400px',
+        left: '544px',
         top: '60px',
         width: '750px',
         height: '1100px',
