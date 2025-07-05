@@ -72,17 +72,17 @@ export default function About() {
     let angles = [0, 0, 0, 0, 0, 0]; // Individual angles for each planet
     let animationId: number;
     let isAnimating = true;
-    const centerX = 400;
-    const centerY = 300;
+    const centerX = 700;
+    const centerY = 400;
     
     // Updated orbit spacing: 2 inches (192px) between each orbit
     const orbits = [
-      { rx: 144, ry: 72 },   // ~1.5 inches from center
-      { rx: 240, ry: 120 },  // ~2.5 inches from center (+2 inches spacing)
-      { rx: 336, ry: 168 },  // ~3.5 inches from center (+2 inches spacing)
-      { rx: 432, ry: 216 },  // ~4.5 inches from center (+2 inches spacing)
-      { rx: 528, ry: 264 },  // ~5.5 inches from center (+2 inches spacing)
-      { rx: 624, ry: 312 }   // ~6.5 inches from center (+2 inches spacing)
+      { rx: 120, ry: 60 },   // Closer orbit
+      { rx: 180, ry: 90 },   // 
+      { rx: 240, ry: 120 },  // 
+      { rx: 300, ry: 150 },  // 
+      { rx: 360, ry: 180 },  // 
+      { rx: 420, ry: 210 }   // 
     ];
 
     const animate = () => {
@@ -197,12 +197,12 @@ export default function About() {
 
         {/* Solar System SVG */}
         <svg 
-          viewBox="0 0 800 600" 
+          viewBox="0 0 1400 800" 
           style={{
             width: '100%',
             height: '100%',
-            maxWidth: '800px',
-            maxHeight: '600px'
+            maxWidth: '1400px',
+            maxHeight: '800px'
           }}
         >
           <defs>
@@ -213,68 +213,68 @@ export default function About() {
             </radialGradient>
           </defs>
           
-          {/* Planet Orbital Lines - Updated with 2-inch spacing */}
-          <ellipse cx="400" cy="300" rx="144" ry="72" 
+          {/* Planet Orbital Lines - Updated positions */}
+          <ellipse cx="700" cy="400" rx="120" ry="60" 
+            style={{
+              fill: 'none',
+              stroke: 'rgba(255, 255, 255, 0.4)',
+              strokeWidth: 1,
+              opacity: 0.8
+            }} />
+          <ellipse cx="700" cy="400" rx="180" ry="90" 
+            style={{
+              fill: 'none',
+              stroke: 'rgba(255, 255, 255, 0.35)',
+              strokeWidth: 1,
+              opacity: 0.7
+            }} />
+          <ellipse cx="700" cy="400" rx="240" ry="120" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.3)',
-              strokeWidth: 2,
-              opacity: 0.8
+              strokeWidth: 1,
+              opacity: 0.7
             }} />
-          <ellipse cx="400" cy="300" rx="240" ry="120" 
+          <ellipse cx="700" cy="400" rx="300" ry="150" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.25)',
-              strokeWidth: 2,
-              opacity: 0.7
+              strokeWidth: 1,
+              opacity: 0.6
             }} />
-          <ellipse cx="400" cy="300" rx="336" ry="168" 
-            style={{
-              fill: 'none',
-              stroke: 'rgba(255, 255, 255, 0.25)',
-              strokeWidth: 2,
-              opacity: 0.7
-            }} />
-          <ellipse cx="400" cy="300" rx="432" ry="216" 
+          <ellipse cx="700" cy="400" rx="360" ry="180" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.2)',
-              strokeWidth: 2,
+              strokeWidth: 1,
               opacity: 0.6
             }} />
-          <ellipse cx="400" cy="300" rx="528" ry="264" 
-            style={{
-              fill: 'none',
-              stroke: 'rgba(255, 255, 255, 0.2)',
-              strokeWidth: 2,
-              opacity: 0.6
-            }} />
-          <ellipse cx="400" cy="300" rx="624" ry="312" 
+          <ellipse cx="700" cy="400" rx="420" ry="210" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.15)',
-              strokeWidth: 2,
+              strokeWidth: 1,
               opacity: 0.5
             }} />
           
           {/* Central Sun - Evans (Heavans) */}
           <circle 
-            cx="400" 
-            cy="300" 
-            r="30" 
+            cx="700" 
+            cy="400" 
+            r="25" 
             fill="url(#sunGradient)"
             style={{
               filter: 'drop-shadow(0 0 20px #ffd700)',
               cursor: 'pointer'
             }}
-            onMouseEnter={() => setHoveredPlanet(0)}
+            onMouseEnter={() => setHoveredPlanet(-1)}
             onMouseLeave={() => setHoveredPlanet(null)}
           />
           
           {/* Sun Label */}
           <text
-            x="400"
-            y="350"
+            x="700"
+            y="440"
             textAnchor="middle"
             style={{
               fill: '#ffd700',
@@ -286,18 +286,18 @@ export default function About() {
             Evans (Heavans)
           </text>
           
-          {/* Animated Planets - 0.5 inch diameter (24px radius) */}
+          {/* Animated Planets - Smaller size (12px radius) */}
           {planets.slice(0, 6).map((planet, index) => (
             <circle 
               key={planet.id}
               className={`planet p${index + 1}`}
               cx={planetPositions[index]?.x || (500 + index * 50)}
               cy={planetPositions[index]?.y || (250 - index * 25)}
-              r="24" 
+              r="12" 
               fill={planet.svgColor}
               style={{
                 cursor: 'pointer',
-                filter: hoveredPlanet === index ? `drop-shadow(0 0 15px ${planet.svgColor})` : 'none',
+                filter: hoveredPlanet === index ? `drop-shadow(0 0 10px ${planet.svgColor})` : 'none',
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={() => setHoveredPlanet(index)}
