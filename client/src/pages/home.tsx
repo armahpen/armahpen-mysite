@@ -102,23 +102,35 @@ export default function Home() {
           top: '0px'
         }}>Contact</div>
       </div>
-      {/* Work Collection Image */}
+      {/* Work Collection */}
       <div style={{
         position: 'absolute',
         left: '86px',
         top: '350px',
-        width: '400px',
-        height: 'auto'
+        width: '259px',
+        height: '178px'
       }}>
-        <img
-          src="/work-collection.png"
-          alt="Work Collection"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'contain'
-          }}
-          className="ml-[107px] mr-[107px]" />
+        <div style={{width:'259px',height:'178px',position:'absolute',left:'0px',top:'0px'}}>
+          <div style={{width:'150px',color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'600',lineHeight:'normal',position:'absolute',left:'0px',top:'96px',height:'14px'}}>
+            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>Work Collection</span>
+          </div>
+          <div style={{width:'243px',color:'#FFF',fontFamily:'Public Sans',fontSize:'14px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'123px',height:'26px'}}>
+            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}}>Multidisciplinary designer in ux/ui, grphic design and motion graphics </span>
+          </div>
+          <div style={{width:'150px',color:'rgba(255, 255, 255, 0.45)',fontFamily:'Public Sans',fontSize:'14px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'2px',top:'168px',height:'10px'}}>
+            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.45)'}}>see collections </span>
+          </div>
+          <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'50px',width:'102px',height:'14px'}}>
+            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>HeaDesign</span>
+          </div>
+          <svg style={{width:'259px',height:'4px',position:'absolute',left:'0px',top:'77px'}} width="259" height="4" viewBox="0 0 259 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 2H258.583" stroke="#63767C" strokeWidth="3"/>
+          </svg>
+          <svg style={{width:'70px',height:'4px',position:'absolute',left:'189px',top:'77px'}} width="71" height="4" viewBox="0 0 71 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.5 2L70.5833 2.00001" stroke="black" strokeOpacity="0.34" strokeWidth="3"/>
+          </svg>
+          <img style={{width:'71px',height:'76px',transform:'rotate(131.367deg)',position:'absolute',left:'77px',top:'0px'}} src="https://cdn.builder.io/api/v1/image/assets/TEMP/bdae1da462e182cde4834fff2e3bde1f5bbefa26?width=142" alt="" />
+        </div>
       </div>
       {/* 3D Wireframe Portrait */}
       <div style={{
