@@ -475,31 +475,34 @@ export default function About() {
         zIndex: 10
       }}>
         {/* Sun */}
-        <div 
-          style={{
-            background: clickedPlanet === -1 ? 'rgba(255, 215, 0, 0.4)' : 'rgba(255, 215, 0, 0.15)',
-            color: '#ffd700',
-            border: '2px solid #ffd700',
-            padding: '10px 18px',
-            borderRadius: '8px',
-            fontFamily: 'Arial, sans-serif',
-            fontSize: '13px',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
-          }}
-          onClick={() => setClickedPlanet(clickedPlanet === -1 ? null : -1)}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255, 215, 0, 0.3)';
-            e.currentTarget.style.transform = 'scale(1.05)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = clickedPlanet === -1 ? 'rgba(255, 215, 0, 0.4)' : 'rgba(255, 215, 0, 0.15)';
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-        >
-          Evans (Heavans)
-        </div>
+        <Link href="/evans">
+          <div 
+            style={{
+              background: 'rgba(255, 215, 0, 0.15)',
+              color: '#ffd700',
+              border: '2px solid #ffd700',
+              padding: '10px 18px',
+              borderRadius: '8px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '13px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              textDecoration: 'none',
+              display: 'inline-block'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.3)';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.15)';
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          >
+            Evans (Heavans)
+          </div>
+        </Link>
 
         {/* Planet Names */}
         {planets.slice(0, 6).map((planet, index) => (
