@@ -43,6 +43,66 @@ export default function About() {
         </nav>
       </header>
 
+      {/* Anatomical Icons Section */}
+      <div style={{
+        background: '#3B3B3B',
+        padding: '80px 0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '120px',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+      }}>
+        {/* Heart Icon */}
+        <div className="animate-fadeInUp delay-200 hover-grow" style={{ cursor: 'pointer' }}>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 110c-2-1.5-4.5-3.5-7.5-6C35 88 15 68 15 45c0-18 12-30 30-30 8 0 15 4 20 10 5-6 12-10 20-10 18 0 30 12 30 30 0 23-20 43-37.5 59-3 2.5-5.5 4.5-7.5 6z" 
+                  stroke="rgba(255, 255, 255, 0.8)" 
+                  strokeWidth="2" 
+                  fill="none"/>
+            <path d="M30 35h15M52 35h13M30 45h10M65 45h10M35 55h8M70 55h8" 
+                  stroke="rgba(255, 255, 255, 0.6)" 
+                  strokeWidth="1.5"/>
+            <circle cx="40" cy="25" r="3" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="80" cy="25" r="3" fill="rgba(255, 255, 255, 0.4)"/>
+          </svg>
+        </div>
+
+        {/* Brain Icon */}
+        <div className="animate-fadeInUp delay-300 hover-grow" style={{ cursor: 'pointer' }}>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 45c0-15 10-25 25-25h20c15 0 25 10 25 25v35c0 15-10 25-25 25H50c-15 0-25-10-25-25V45z" 
+                  stroke="rgba(255, 255, 255, 0.8)" 
+                  strokeWidth="2" 
+                  fill="none"/>
+            <path d="M35 35c5-8 15-12 25-12s20 4 25 12M60 25v80M40 40c3-2 6-3 10-3s7 1 10 3M40 55c3-2 6-3 10-3s7 1 10 3M70 40c3-2 6-3 10-3s7 1 10 3M70 55c3-2 6-3 10-3s7 1 10 3" 
+                  stroke="rgba(255, 255, 255, 0.6)" 
+                  strokeWidth="1.5"/>
+            <circle cx="45" cy="45" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="75" cy="45" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="45" cy="65" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="75" cy="65" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+          </svg>
+        </div>
+
+        {/* Hand Icon */}
+        <div className="animate-fadeInUp delay-400 hover-grow" style={{ cursor: 'pointer' }}>
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45 90V45c0-5 3-8 8-8s8 3 8 8v20M61 50V30c0-5 3-8 8-8s8 3 8 8v35M77 50V35c0-5 3-8 8-8s8 3 8 8v30M93 55V45c0-5 3-8 8-8s8 3 8 8v25c0 15-12 27-27 27H65c-10 0-20-8-20-18V70" 
+                  stroke="rgba(255, 255, 255, 0.8)" 
+                  strokeWidth="2" 
+                  fill="none"/>
+            <path d="M50 35h6M66 25h6M82 30h6M98 40h6" 
+                  stroke="rgba(255, 255, 255, 0.6)" 
+                  strokeWidth="1.5"/>
+            <circle cx="53" cy="25" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="69" cy="20" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="85" cy="25" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+            <circle cx="101" cy="35" r="2" fill="rgba(255, 255, 255, 0.4)"/>
+          </svg>
+        </div>
+      </div>
+
       {/* Main Content Grid */}
       <div style={{
         display: 'grid',
