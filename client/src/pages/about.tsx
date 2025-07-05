@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const planets = [
   {
@@ -66,10 +66,10 @@ const planets = [
 export default function About() {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
   const [planetPositions, setPlanetPositions] = useState<Array<{x: number, y: number}>>([]);
+  const anglesRef = useRef([0, 0, 0, 0, 0, 0]); // Persistent angles that don't reset
 
   // Animation for planets with individual pause control
   useEffect(() => {
-    let angles = [0, 0, 0, 0, 0, 0]; // Individual angles for each planet
     let animationId: number;
     let isAnimating = true;
     const centerX = 700;
@@ -94,12 +94,12 @@ export default function About() {
       const newPositions = orbits.map((orbit, index) => {
         // Only increment angle if this specific planet is not hovered
         if (hoveredPlanet !== index) {
-          angles[index] += speeds[index];
+          anglesRef.current[index] += speeds[index];
         }
         
         return {
-          x: centerX + orbit.rx * Math.cos(angles[index]),
-          y: centerY + orbit.ry * Math.sin(angles[index])
+          x: centerX + orbit.rx * Math.cos(anglesRef.current[index]),
+          y: centerY + orbit.ry * Math.sin(anglesRef.current[index])
         };
       });
       
