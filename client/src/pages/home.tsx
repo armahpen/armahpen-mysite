@@ -15,9 +15,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="w-full py-6 px-8">
+      <header className="w-full py-6 px-8 bg-black">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center">
@@ -25,7 +25,7 @@ export default function Home() {
           </div>
           
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-8 text-sm">
+          <nav className="hidden md:flex space-x-8 text-sm text-white">
             <a href="#about" className="hover:text-gray-300 transition-colors">about</a>
             <a href="#learn" className="hover:text-gray-300 transition-colors">learn</a>
             <a href="#portfolio" className="hover:text-gray-300 transition-colors">portfolio</a>
@@ -34,7 +34,7 @@ export default function Home() {
           </nav>
           
           {/* Social Icons */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 text-white">
             <Twitter className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer" />
             <Linkedin className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer" />
             <div className="w-4 h-4 hover:text-gray-300 transition-colors cursor-pointer">f</div>
@@ -44,17 +44,17 @@ export default function Home() {
       </header>
 
       {/* Main Portfolio Section */}
-      <main className="flex-1 py-20">
+      <main className="flex-1 py-20 bg-white">
         <div className="container mx-auto px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center min-h-[500px]">
             
             {/* Left Column - Designer */}
             <div className="text-left space-y-6">
               <div className="space-y-4">
-                <h1 className="text-6xl lg:text-7xl font-normal text-gray-400">
+                <h1 className="text-6xl lg:text-7xl font-bold text-gray-800">
                   designer
                 </h1>
-                <p className="text-base text-gray-400 max-w-xs leading-relaxed">
+                <p className="text-base text-gray-500 max-w-xs leading-relaxed">
                   Product designer specialising in UI design and design systems.
                 </p>
               </div>
@@ -74,12 +74,12 @@ export default function Home() {
                 
                 {/* Code elements overlay */}
                 <div className="absolute inset-0 pointer-events-none">
-                  <div className="absolute top-10 right-4 text-xs text-gray-400 font-mono">&lt;html&gt;</div>
-                  <div className="absolute top-20 right-8 text-xs text-gray-400 font-mono">CSS3</div>
-                  <div className="absolute bottom-20 left-4 text-xs text-gray-400 font-mono">React</div>
-                  <div className="absolute bottom-32 right-12 text-xs text-gray-400 font-mono">HTML5</div>
-                  <div className="absolute top-32 left-8 text-xs text-gray-400 font-mono">JavaScript</div>
-                  <div className="absolute top-16 left-16 text-xs text-gray-400 font-mono">TypeScript</div>
+                  <div className="absolute top-12 right-6 text-sm text-gray-400 font-mono opacity-70">&lt;/&gt;</div>
+                  <div className="absolute top-24 right-12 text-sm text-gray-400 font-mono opacity-70">CSS3</div>
+                  <div className="absolute bottom-24 left-6 text-sm text-gray-400 font-mono opacity-70">React</div>
+                  <div className="absolute bottom-36 right-8 text-sm text-gray-400 font-mono opacity-70">HTML5</div>
+                  <div className="absolute top-36 left-12 text-sm text-gray-400 font-mono opacity-70">JavaScript</div>
+                  <div className="absolute top-48 right-4 text-sm text-gray-400 font-mono opacity-70">Node.js</div>
                 </div>
               </div>
             </div>
@@ -87,10 +87,10 @@ export default function Home() {
             {/* Right Column - Coder */}
             <div className="text-right space-y-6">
               <div className="space-y-4">
-                <h1 className="text-6xl lg:text-7xl font-normal text-gray-400">
+                <h1 className="text-6xl lg:text-7xl font-bold text-gray-800">
                   &lt;coder&gt;
                 </h1>
-                <p className="text-base text-gray-400 max-w-xs ml-auto leading-relaxed">
+                <p className="text-base text-gray-500 max-w-xs ml-auto leading-relaxed">
                   Front-end developer who writes clean, elegant and efficient code.
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function Home() {
                 {techSkills.map((skill) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1 text-sm bg-gray-800 text-gray-300 rounded hover:bg-gray-700 transition-colors"
+                    className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
                   >
                     {skill}
                   </span>
