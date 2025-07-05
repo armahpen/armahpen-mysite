@@ -182,39 +182,18 @@ export default function About() {
         padding: '40px 20px 20px',
         animation: 'fadeIn 1s ease-out'
       }}>
-        <img 
-          src="attached_assets/heavans logo_1751733380888.PNG" 
-          alt="Welcome to HeaVans"
-          style={{
-            maxWidth: '300px',
-            height: 'auto',
-            filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5))',
-            borderRadius: '8px'
-          }}
-          onError={(e) => {
-            // Try alternative encodings for spaces in filename
-            const alternatives = [
-              'attached_assets/heavans%20logo_1751733380888.PNG',
-              'attached_assets/heavans_logo_1751733380888.PNG',
-              'attached_assets/cnbcncnc_1751743422698.PNG',
-              'attached_assets/gfggggg_1751739902426.PNG'
-            ];
-            
-            let currentTry = 0;
-            const tryNext = () => {
-              if (currentTry < alternatives.length) {
-                e.currentTarget.src = alternatives[currentTry];
-                currentTry++;
-              } else {
-                console.log('All image paths failed to load');
-                e.currentTarget.style.display = 'none';
-              }
-            };
-            
-            e.currentTarget.onerror = tryNext;
-            tryNext();
-          }}
-        />
+        <div style={{
+          background: 'linear-gradient(45deg, #ffd700, #ff4500)',
+          padding: '20px 40px',
+          borderRadius: '12px',
+          fontSize: '28px',
+          fontWeight: 'bold',
+          color: 'white',
+          textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+          boxShadow: '0 8px 32px rgba(255, 215, 0, 0.3)'
+        }}>
+          Welcome to HeaVans Universe
+        </div>
       </div>
 
       {/* Skills Solar System */}
