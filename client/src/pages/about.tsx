@@ -1,10 +1,96 @@
+import { useState } from 'react';
+
+interface PlanetData {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  orbitRadius: number;
+  size: number;
+  color: string;
+  animationDuration: string;
+}
+
+const planets: PlanetData[] = [
+  {
+    id: 'creative',
+    title: 'Creative Builder',
+    subtitle: 'Creative Projects',
+    description: 'From building tutoring networks like Student Help to launching platforms like DEMS, I turn ideas into real tools.',
+    orbitRadius: 120,
+    size: 20,
+    color: '#4facfe',
+    animationDuration: '20s'
+  },
+  {
+    id: 'poetry',
+    title: 'Poet & Wordsmith',
+    subtitle: 'Poetry & Expression',
+    description: 'I write and read poetry, and explore music for creative expression. Words help me think, feel, and build better.',
+    orbitRadius: 160,
+    size: 18,
+    color: '#f093fb',
+    animationDuration: '25s'
+  },
+  {
+    id: 'design',
+    title: 'Designer & Visual Thinker',
+    subtitle: 'UI/UX & Graphic Design',
+    description: 'I design sleek user interfaces, motion graphics, and branding that speaks clearly and emotionally.',
+    orbitRadius: 200,
+    size: 22,
+    color: '#43e97b',
+    animationDuration: '30s'
+  },
+  {
+    id: 'developer',
+    title: 'Code Architect',
+    subtitle: 'Developer Life',
+    description: 'Full-stack development with modern tools. Clean, scalable, efficient—built for real-world impact.',
+    orbitRadius: 240,
+    size: 19,
+    color: '#fa709a',
+    animationDuration: '35s'
+  },
+  {
+    id: 'motion',
+    title: 'Visual Movement',
+    subtitle: 'Motion Graphics',
+    description: 'I bring interfaces and stories to life with fluid motion design and interactive visual thinking.',
+    orbitRadius: 280,
+    size: 17,
+    color: '#38f9d7',
+    animationDuration: '40s'
+  },
+  {
+    id: 'collaboration',
+    title: 'Creative Networker',
+    subtitle: 'Collaboration',
+    description: 'I love connecting with like-minded creators to brainstorm, build, and grow together.',
+    orbitRadius: 320,
+    size: 16,
+    color: '#ffecd2',
+    animationDuration: '45s'
+  }
+];
+
 export default function About() {
+  const [hoveredPlanet, setHoveredPlanet] = useState<PlanetData | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handlePlanetClick = (planet: PlanetData) => {
+    setHoveredPlanet(planet);
+    setModalOpen(true);
+  };
+
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#1a1a1a',
+      background: 'radial-gradient(ellipse at center, #1a1a2e 0%, #0f0f1e 50%, #0a0a15 100%)',
       color: 'white',
-      fontFamily: 'Inter, system-ui, -apple-system, sans-serif'
+      fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
       {/* Header with Navigation */}
       <header style={{
@@ -15,7 +101,8 @@ export default function About() {
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         position: 'sticky',
         top: 0,
-        background: '#1a1a1a',
+        background: 'rgba(26, 26, 46, 0.8)',
+        backdropFilter: 'blur(10px)',
         zIndex: 1000
       }}>
         <div style={{
@@ -42,168 +129,223 @@ export default function About() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <div style={{
-        textAlign: 'center',
-        padding: '80px 40px 60px',
-        maxWidth: '800px',
-        margin: '0 auto'
-      }}>
-        <h1 className="animate-fadeInUp delay-200" style={{
-          fontSize: '48px',
-          fontWeight: '700',
-          marginBottom: '20px',
-          color: 'white',
-          lineHeight: '1.2'
-        }}>
-          Hi, I'm Evans (Heavans)
-        </h1>
-        <p className="animate-fadeInUp delay-300" style={{
-          fontSize: '20px',
-          color: 'rgba(255, 255, 255, 0.8)',
-          lineHeight: '1.6',
-          maxWidth: '600px',
-          margin: '0 auto'
-        }}>
-          I craft digital experiences, blending creativity, code, and emotion.
-        </p>
-      </div>
+      {/* Galaxy Background Stars */}
+      <div className="stars"></div>
 
-      {/* Cards Grid */}
+      {/* Orbital System Container */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '30px',
-        padding: '0 40px 80px',
-        maxWidth: '1200px',
-        margin: '0 auto'
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden'
       }}>
         
-        {/* Card 1: Creative Work & Projects */}
-        <div className="about-card animate-fadeInUp delay-400" style={{
-          background: 'rgba(255, 255, 255, 0.03)',
-          borderRadius: '20px',
-          padding: '40px',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-          cursor: 'pointer',
-          transition: 'all 0.4s ease'
+        {/* Orbital Paths */}
+        {planets.map((planet) => (
+          <div
+            key={`orbit-${planet.id}`}
+            className="orbit-ring"
+            style={{
+              position: 'absolute',
+              width: `${planet.orbitRadius * 2}px`,
+              height: `${planet.orbitRadius * 2}px`,
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '50%',
+              animation: `pulse 4s ease-in-out infinite`
+            }}
+          />
+        ))}
+
+        {/* Central Sun */}
+        <div style={{
+          position: 'absolute',
+          width: '80px',
+          height: '80px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, #ffd700 0%, #ff6b35 50%, #ff8e53 100%)',
+          boxShadow: '0 0 60px rgba(255, 215, 0, 0.6), 0 0 120px rgba(255, 215, 0, 0.3)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+          animation: 'sunGlow 3s ease-in-out infinite alternate'
         }}>
-          <h3 style={{
-            fontSize: '24px',
-            fontWeight: '600',
-            marginBottom: '16px',
-            color: 'rgba(255, 255, 255, 0.95)'
-          }}>
-            Creative Builder & Visionary
-          </h3>
-          <p style={{
-            fontSize: '16px',
-            lineHeight: '1.7',
-            color: 'rgba(255, 255, 255, 0.75)',
-            marginBottom: '24px'
-          }}>
-            I bring ideas to life—from functional websites and client portals to SaaS platforms and creative tools. I've founded services like Student Help (a tutoring network) and DEMS (a data and AI support business). My work is focused on building real solutions for real users.
-          </p>
-          <button style={{
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            color: 'white',
-            padding: '12px 24px',
-            borderRadius: '12px',
+          <div style={{
+            position: 'absolute',
+            bottom: '-40px',
+            left: '50%',
+            transform: 'translateX(-50%)',
             fontSize: '14px',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
+            fontWeight: '600',
+            color: 'white',
+            textAlign: 'center',
+            whiteSpace: 'nowrap'
           }}>
-            View My Work
-          </button>
+            Evans (Heavans)
+          </div>
         </div>
 
-        {/* Card 2: Poetry, Music & Expression */}
-        <div className="about-card animate-fadeInUp delay-500" style={{
-          background: 'rgba(255, 255, 255, 0.03)',
-          borderRadius: '20px',
-          padding: '40px',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-          cursor: 'pointer',
-          transition: 'all 0.4s ease'
-        }}>
-          <h3 style={{
-            fontSize: '24px',
-            fontWeight: '600',
-            marginBottom: '16px',
-            color: 'rgba(255, 255, 255, 0.95)'
-          }}>
-            Words, Rhythm & Reflection
-          </h3>
-          <p style={{
-            fontSize: '16px',
-            lineHeight: '1.7',
-            color: 'rgba(255, 255, 255, 0.75)',
-            marginBottom: '24px'
-          }}>
-            Beyond code and design, I write poetry and explore music as a form of emotional storytelling. These passions keep me grounded, inspired, and deeply connected to the human experience—fueling everything I create.
-          </p>
-          <button style={{
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            color: 'white',
-            padding: '12px 24px',
-            borderRadius: '12px',
-            fontSize: '14px',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
-          }}>
-            Read a Poem or Listen In
-          </button>
-        </div>
+        {/* Planets */}
+        {planets.map((planet, index) => (
+          <div
+            key={planet.id}
+            className="planet-orbit"
+            style={{
+              position: 'absolute',
+              width: `${planet.orbitRadius * 2}px`,
+              height: `${planet.orbitRadius * 2}px`,
+              animation: `rotate ${planet.animationDuration} linear infinite`,
+              animationDelay: `${index * -2}s`
+            }}
+          >
+            <div
+              className="planet"
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: `${planet.size}px`,
+                height: `${planet.size}px`,
+                borderRadius: '50%',
+                background: `radial-gradient(circle at 30% 30%, ${planet.color}, ${planet.color}88)`,
+                boxShadow: `0 0 20px ${planet.color}66`,
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                zIndex: 5
+              }}
+              onClick={() => handlePlanetClick(planet)}
+              onMouseEnter={() => setHoveredPlanet(planet)}
+              onMouseLeave={() => setHoveredPlanet(null)}
+            />
+          </div>
+        ))}
 
-        {/* Card 3: Design & User Experience */}
-        <div className="about-card animate-fadeInUp delay-600" style={{
-          background: 'rgba(255, 255, 255, 0.03)',
-          borderRadius: '20px',
-          padding: '40px',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-          cursor: 'pointer',
-          transition: 'all 0.4s ease'
-        }}>
-          <h3 style={{
-            fontSize: '24px',
-            fontWeight: '600',
-            marginBottom: '16px',
-            color: 'rgba(255, 255, 255, 0.95)'
-          }}>
-            Designing With Feeling
-          </h3>
-          <p style={{
-            fontSize: '16px',
-            lineHeight: '1.7',
-            color: 'rgba(255, 255, 255, 0.75)',
-            marginBottom: '24px'
-          }}>
-            I specialize in UI/UX, motion graphics, and branding—creating experiences that look sharp and feel intuitive. My design approach blends creativity, structure, and clarity to connect users with meaning.
-          </p>
-          <button style={{
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+        {/* Hover Tooltip */}
+        {hoveredPlanet && !modalOpen && (
+          <div style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            background: 'rgba(0, 0, 0, 0.9)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            color: 'white',
-            padding: '12px 24px',
             borderRadius: '12px',
-            fontSize: '14px',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease'
+            padding: '20px',
+            maxWidth: '300px',
+            zIndex: 1000,
+            animation: 'fadeIn 0.3s ease'
           }}>
-            View My Design Work
-          </button>
-        </div>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: '600',
+              marginBottom: '8px',
+              color: hoveredPlanet.color
+            }}>
+              {hoveredPlanet.title}
+            </h3>
+            <p style={{
+              fontSize: '14px',
+              color: 'rgba(255, 255, 255, 0.8)',
+              margin: '0',
+              lineHeight: '1.5'
+            }}>
+              {hoveredPlanet.description}
+            </p>
+            <div style={{
+              fontSize: '12px',
+              color: 'rgba(255, 255, 255, 0.6)',
+              marginTop: '8px'
+            }}>
+              Click to explore
+            </div>
+          </div>
+        )}
+
+        {/* Modal */}
+        {modalOpen && hoveredPlanet && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgba(0, 0, 0, 0.8)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 2000,
+            animation: 'fadeIn 0.3s ease'
+          }}
+          onClick={() => setModalOpen(false)}>
+            <div style={{
+              background: 'rgba(26, 26, 46, 0.95)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '20px',
+              padding: '40px',
+              maxWidth: '500px',
+              margin: '20px',
+              animation: 'slideIn 0.3s ease'
+            }}
+            onClick={(e) => e.stopPropagation()}>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                background: `radial-gradient(circle, ${hoveredPlanet.color}, ${hoveredPlanet.color}88)`,
+                boxShadow: `0 0 30px ${hoveredPlanet.color}66`,
+                marginBottom: '20px'
+              }}></div>
+              
+              <h2 style={{
+                fontSize: '28px',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: hoveredPlanet.color
+              }}>
+                {hoveredPlanet.title}
+              </h2>
+              
+              <h3 style={{
+                fontSize: '16px',
+                fontWeight: '500',
+                marginBottom: '20px',
+                color: 'rgba(255, 255, 255, 0.7)'
+              }}>
+                {hoveredPlanet.subtitle}
+              </h3>
+              
+              <p style={{
+                fontSize: '16px',
+                lineHeight: '1.6',
+                color: 'rgba(255, 255, 255, 0.9)',
+                marginBottom: '30px'
+              }}>
+                {hoveredPlanet.description}
+              </p>
+              
+              <button
+                onClick={() => setModalOpen(false)}
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  color: 'white',
+                  padding: '12px 24px',
+                  borderRadius: '12px',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
