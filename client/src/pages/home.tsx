@@ -20,17 +20,17 @@ export default function Home() {
         style={{
           position: 'absolute',
           left: '217px',
-          top: '76px',
-          width: '250px',
-          height: '50px'
+          top: '156px',
+          width: '238px',
+          height: '29px'
         }}
       >
         <img 
           src="/heavans-logo.png" 
           alt="HeaVans Logo" 
           style={{
-            width: '250px',
-            height: '50px',
+            width: '238px',
+            height: '29px',
             objectFit: 'contain'
           }}
         />
