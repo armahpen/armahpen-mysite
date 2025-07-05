@@ -150,6 +150,36 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* 3D Icon Effects */
+.icon-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.icon-3d:hover {
+  transform: rotateX(15deg) rotateY(15deg) translateZ(20px);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+.icon-3d svg {
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.icon-3d:hover svg {
+  transform: translateZ(30px);
+}
+
+.icon-gradient {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
 .hover-slide {
   transition: transform 0.3s ease;
 }
