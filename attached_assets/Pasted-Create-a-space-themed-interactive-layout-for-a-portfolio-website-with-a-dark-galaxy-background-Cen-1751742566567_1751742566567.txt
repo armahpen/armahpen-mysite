@@ -1,0 +1,60 @@
+Create a space-themed interactive layout for a portfolio website with a dark galaxy background.
+
+Centerpiece: a glowing orb labeled Evans (Heavans), acting as the sun or energy source.
+
+Surrounding this core, animate several small sci-fi spaceships or satellites orbiting in smooth circular paths—each representing a key area of my work and identity.
+
+When a user hovers or taps a spaceship, it should gently stop and zoom in to show a card or modal with details (title + description + CTA).
+
+Add subtle star particles in the background for a space vibe. Use glow effects, soft shadows, and motion trails for a cinematic feel.
+
+Core Theme:
+Space exploration meets creativity and digital skills.
+
+Center (Sun):
+Evans (Heavans)
+Text: A multidisciplinary creative at the center of code, design, and storytelling.
+
+Spaceships & Cards:
+1. Creative Projects
+Title: Creative Builder
+Text: I’ve founded projects like Student Help (education support) and DEMS (AI-powered data services).
+CTA: View Projects
+
+2. Poetry & Music
+Title: Poet & Sound Explorer
+Text: I write poetry and explore music as an emotional outlet that inspires my digital creations.
+CTA: Read & Listen
+
+3. UI/UX & Design
+Title: Design Thinker
+Text: I create engaging interfaces and visuals that are both beautiful and intuitive.
+CTA: Explore Designs
+
+4. Web Development
+Title: Full-Stack Developer
+Text: I build modern, scalable web apps using clean code and real-world logic.
+CTA: See Code
+
+5. Motion Graphics
+Title: Motion Creator
+Text: I use animation to bring static designs to life—making stories and products more memorable.
+CTA: Watch Motion
+
+6. Collaboration
+Title: Creative Collaborator
+Text: I love working with other passionate minds to build meaningful, creative things.
+CTA: Let’s Connect
+
+Motion & Style:
+Background: dark space with glowing stars
+
+Spaceships: stylized icons or SVGs orbiting around the center
+
+Hover: slow zoom + display card
+
+Font: modern, futuristic sans-serif
+
+Make it responsive and optimized for mobile view
+
+Optional: Add soft sound effects or animated light flares for extra cinematic touch

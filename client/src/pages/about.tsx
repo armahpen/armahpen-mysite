@@ -11,75 +11,75 @@ interface PlanetData {
   animationDuration: string;
 }
 
-const planets: PlanetData[] = [
+const spaceships: PlanetData[] = [
   {
     id: 'creative',
     title: 'Creative Builder',
     subtitle: 'Creative Projects',
-    description: 'From building tutoring networks like Student Help to launching platforms like DEMS, I turn ideas into real tools.',
-    orbitRadius: 120,
-    size: 20,
-    color: '#4facfe',
-    animationDuration: '20s'
-  },
-  {
-    id: 'poetry',
-    title: 'Poet & Wordsmith',
-    subtitle: 'Poetry & Expression',
-    description: 'I write and read poetry, and explore music for creative expression. Words help me think, feel, and build better.',
-    orbitRadius: 160,
-    size: 18,
-    color: '#f093fb',
+    description: 'I\'ve founded projects like Student Help (education support) and DEMS (AI-powered data services).',
+    orbitRadius: 140,
+    size: 24,
+    color: '#00d4ff',
     animationDuration: '25s'
   },
   {
-    id: 'design',
-    title: 'Designer & Visual Thinker',
-    subtitle: 'UI/UX & Graphic Design',
-    description: 'I design sleek user interfaces, motion graphics, and branding that speaks clearly and emotionally.',
-    orbitRadius: 200,
+    id: 'poetry',
+    title: 'Poet & Sound Explorer',
+    subtitle: 'Poetry & Music',
+    description: 'I write poetry and explore music as an emotional outlet that inspires my digital creations.',
+    orbitRadius: 180,
     size: 22,
-    color: '#43e97b',
+    color: '#ff6b9d',
     animationDuration: '30s'
   },
   {
-    id: 'developer',
-    title: 'Code Architect',
-    subtitle: 'Developer Life',
-    description: 'Full-stack development with modern tools. Clean, scalable, efficient—built for real-world impact.',
-    orbitRadius: 240,
-    size: 19,
-    color: '#fa709a',
+    id: 'design',
+    title: 'Design Thinker',
+    subtitle: 'UI/UX & Design',
+    description: 'I create engaging interfaces and visuals that are both beautiful and intuitive.',
+    orbitRadius: 220,
+    size: 26,
+    color: '#39ff14',
     animationDuration: '35s'
   },
   {
-    id: 'motion',
-    title: 'Visual Movement',
-    subtitle: 'Motion Graphics',
-    description: 'I bring interfaces and stories to life with fluid motion design and interactive visual thinking.',
-    orbitRadius: 280,
-    size: 17,
-    color: '#38f9d7',
+    id: 'developer',
+    title: 'Full-Stack Developer',
+    subtitle: 'Web Development',
+    description: 'I build modern, scalable web apps using clean code and real-world logic.',
+    orbitRadius: 260,
+    size: 23,
+    color: '#ff4757',
     animationDuration: '40s'
   },
   {
-    id: 'collaboration',
-    title: 'Creative Networker',
-    subtitle: 'Collaboration',
-    description: 'I love connecting with like-minded creators to brainstorm, build, and grow together.',
-    orbitRadius: 320,
-    size: 16,
-    color: '#ffecd2',
+    id: 'motion',
+    title: 'Motion Creator',
+    subtitle: 'Motion Graphics',
+    description: 'I use animation to bring static designs to life—making stories and products more memorable.',
+    orbitRadius: 300,
+    size: 21,
+    color: '#7bed9f',
     animationDuration: '45s'
+  },
+  {
+    id: 'collaboration',
+    title: 'Creative Collaborator',
+    subtitle: 'Collaboration',
+    description: 'I love working with other passionate minds to build meaningful, creative things.',
+    orbitRadius: 340,
+    size: 20,
+    color: '#ffa502',
+    animationDuration: '50s'
   }
 ];
 
 export default function About() {
-  const [hoveredPlanet, setHoveredPlanet] = useState<PlanetData | null>(null);
+  const [hoveredSpaceship, setHoveredSpaceship] = useState<PlanetData | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handlePlanetClick = (planet: PlanetData) => {
-    setHoveredPlanet(planet);
+  const handleSpaceshipClick = (spaceship: PlanetData) => {
+    setHoveredSpaceship(spaceship);
     setModalOpen(true);
   };
 
@@ -144,205 +144,333 @@ export default function About() {
       }}>
         
         {/* Orbital Paths */}
-        {planets.map((planet) => (
+        {spaceships.map((spaceship) => (
           <div
-            key={`orbit-${planet.id}`}
+            key={`orbit-${spaceship.id}`}
             className="orbit-ring"
             style={{
               position: 'absolute',
-              width: `${planet.orbitRadius * 2}px`,
-              height: `${planet.orbitRadius * 2}px`,
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              width: `${spaceship.orbitRadius * 2}px`,
+              height: `${spaceship.orbitRadius * 2}px`,
+              border: '1px solid rgba(0, 255, 255, 0.2)',
               borderRadius: '50%',
-              animation: `pulse 4s ease-in-out infinite`
+              animation: `pulse 4s ease-in-out infinite`,
+              boxShadow: `inset 0 0 20px rgba(0, 255, 255, 0.1)`
             }}
           />
         ))}
 
-        {/* Central Sun */}
+        {/* Central Energy Core */}
         <div style={{
           position: 'absolute',
-          width: '80px',
-          height: '80px',
+          width: '100px',
+          height: '100px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, #ffd700 0%, #ff6b35 50%, #ff8e53 100%)',
-          boxShadow: '0 0 60px rgba(255, 215, 0, 0.6), 0 0 120px rgba(255, 215, 0, 0.3)',
+          background: 'radial-gradient(circle, #00d4ff 0%, #0099cc 30%, #006699 60%, #003d5c 100%)',
+          boxShadow: '0 0 80px rgba(0, 212, 255, 0.8), 0 0 160px rgba(0, 212, 255, 0.4), inset 0 0 40px rgba(255, 255, 255, 0.2)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 10,
-          animation: 'sunGlow 3s ease-in-out infinite alternate'
+          animation: 'coreGlow 4s ease-in-out infinite alternate',
+          border: '2px solid rgba(0, 212, 255, 0.6)'
         }}>
+          {/* Core Pulse Effect */}
           <div style={{
             position: 'absolute',
-            bottom: '-40px',
+            width: '60px',
+            height: '60px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%)',
+            animation: 'corePulse 2s ease-in-out infinite'
+          }} />
+          
+          <div style={{
+            position: 'absolute',
+            bottom: '-50px',
             left: '50%',
             transform: 'translateX(-50%)',
-            fontSize: '14px',
-            fontWeight: '600',
-            color: 'white',
+            fontSize: '16px',
+            fontWeight: '700',
+            color: '#00d4ff',
             textAlign: 'center',
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
+            textShadow: '0 0 20px rgba(0, 212, 255, 0.8)',
+            letterSpacing: '0.5px'
           }}>
             Evans (Heavans)
           </div>
+          
+          <div style={{
+            position: 'absolute',
+            bottom: '-75px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            fontSize: '12px',
+            fontWeight: '500',
+            color: 'rgba(255, 255, 255, 0.7)',
+            textAlign: 'center',
+            whiteSpace: 'nowrap',
+            maxWidth: '200px'
+          }}>
+            A multidisciplinary creative at the center of code, design, and storytelling
+          </div>
         </div>
 
-        {/* Planets */}
-        {planets.map((planet, index) => (
+        {/* Spaceships */}
+        {spaceships.map((spaceship, index) => (
           <div
-            key={planet.id}
-            className="planet-orbit"
+            key={spaceship.id}
+            className="spaceship-orbit"
             style={{
               position: 'absolute',
-              width: `${planet.orbitRadius * 2}px`,
-              height: `${planet.orbitRadius * 2}px`,
-              animation: `rotate ${planet.animationDuration} linear infinite`,
-              animationDelay: `${index * -2}s`
+              width: `${spaceship.orbitRadius * 2}px`,
+              height: `${spaceship.orbitRadius * 2}px`,
+              animation: `rotate ${spaceship.animationDuration} linear infinite`,
+              animationDelay: `${index * -3}s`
             }}
           >
             <div
-              className="planet"
+              className="spaceship"
               style={{
                 position: 'absolute',
                 top: '0',
                 left: '50%',
                 transform: 'translateX(-50%)',
-                width: `${planet.size}px`,
-                height: `${planet.size}px`,
-                borderRadius: '50%',
-                background: `radial-gradient(circle at 30% 30%, ${planet.color}, ${planet.color}88)`,
-                boxShadow: `0 0 20px ${planet.color}66`,
                 cursor: 'pointer',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.4s ease',
                 zIndex: 5
               }}
-              onClick={() => handlePlanetClick(planet)}
-              onMouseEnter={() => setHoveredPlanet(planet)}
-              onMouseLeave={() => setHoveredPlanet(null)}
-            />
+              onClick={() => handleSpaceshipClick(spaceship)}
+              onMouseEnter={() => setHoveredSpaceship(spaceship)}
+              onMouseLeave={() => setHoveredSpaceship(null)}
+            >
+              {/* Spaceship SVG */}
+              <svg 
+                width={spaceship.size} 
+                height={spaceship.size} 
+                viewBox="0 0 24 24" 
+                fill="none"
+                style={{
+                  filter: `drop-shadow(0 0 8px ${spaceship.color}66)`
+                }}
+              >
+                <path 
+                  d="M12 2L18 7V12L15 14L12 16L9 14L6 12V7L12 2Z" 
+                  fill={spaceship.color}
+                  stroke={spaceship.color}
+                  strokeWidth="0.5"
+                />
+                <path 
+                  d="M12 7L16 10V13L12 11L8 13V10L12 7Z" 
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <circle cx="12" cy="10" r="2" fill="rgba(255,255,255,0.8)"/>
+                <path 
+                  d="M10 16L12 22L14 16" 
+                  stroke={spaceship.color} 
+                  strokeWidth="2" 
+                  fill="none"
+                />
+              </svg>
+              
+              {/* Motion Trail */}
+              <div 
+                className="motion-trail"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '-20px',
+                  width: '15px',
+                  height: '2px',
+                  background: `linear-gradient(90deg, transparent, ${spaceship.color}44)`,
+                  borderRadius: '1px',
+                  transform: 'translateY(-50%)'
+                }}
+              />
+            </div>
           </div>
         ))}
 
         {/* Hover Tooltip */}
-        {hoveredPlanet && !modalOpen && (
+        {hoveredSpaceship && !modalOpen && (
           <div style={{
             position: 'fixed',
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            background: 'rgba(0, 0, 0, 0.9)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            borderRadius: '12px',
-            padding: '20px',
-            maxWidth: '300px',
+            background: 'rgba(0, 10, 20, 0.95)',
+            border: `1px solid ${hoveredSpaceship.color}44`,
+            borderRadius: '16px',
+            padding: '24px',
+            maxWidth: '320px',
             zIndex: 1000,
-            animation: 'fadeIn 0.3s ease'
+            animation: 'fadeIn 0.3s ease',
+            boxShadow: `0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px ${hoveredSpaceship.color}22`,
+            backdropFilter: 'blur(10px)'
           }}>
             <h3 style={{
-              fontSize: '18px',
-              fontWeight: '600',
+              fontSize: '20px',
+              fontWeight: '700',
               marginBottom: '8px',
-              color: hoveredPlanet.color
+              color: hoveredSpaceship.color,
+              textShadow: `0 0 10px ${hoveredSpaceship.color}66`
             }}>
-              {hoveredPlanet.title}
+              {hoveredSpaceship.title}
             </h3>
             <p style={{
               fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: 'rgba(255, 255, 255, 0.9)',
               margin: '0',
-              lineHeight: '1.5'
+              lineHeight: '1.6'
             }}>
-              {hoveredPlanet.description}
+              {hoveredSpaceship.description}
             </p>
             <div style={{
               fontSize: '12px',
-              color: 'rgba(255, 255, 255, 0.6)',
-              marginTop: '8px'
+              color: hoveredSpaceship.color,
+              marginTop: '12px',
+              fontWeight: '500'
             }}>
-              Click to explore
+              ▶ Click to explore mission
             </div>
           </div>
         )}
 
         {/* Modal */}
-        {modalOpen && hoveredPlanet && (
+        {modalOpen && hoveredSpaceship && (
           <div style={{
             position: 'fixed',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            background: 'rgba(0, 0, 0, 0.8)',
+            background: 'rgba(0, 0, 0, 0.85)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 2000,
-            animation: 'fadeIn 0.3s ease'
+            animation: 'fadeIn 0.3s ease',
+            backdropFilter: 'blur(8px)'
           }}
           onClick={() => setModalOpen(false)}>
             <div style={{
-              background: 'rgba(26, 26, 46, 0.95)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              borderRadius: '20px',
-              padding: '40px',
-              maxWidth: '500px',
+              background: 'rgba(5, 15, 25, 0.95)',
+              border: `2px solid ${hoveredSpaceship.color}44`,
+              borderRadius: '24px',
+              padding: '50px',
+              maxWidth: '550px',
               margin: '20px',
-              animation: 'slideIn 0.3s ease'
+              animation: 'slideIn 0.3s ease',
+              boxShadow: `0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px ${hoveredSpaceship.color}22`
             }}
             onClick={(e) => e.stopPropagation()}>
+              
+              {/* Spaceship Icon */}
               <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                background: `radial-gradient(circle, ${hoveredPlanet.color}, ${hoveredPlanet.color}88)`,
-                boxShadow: `0 0 30px ${hoveredPlanet.color}66`,
-                marginBottom: '20px'
-              }}></div>
-              
-              <h2 style={{
-                fontSize: '28px',
-                fontWeight: '700',
-                marginBottom: '8px',
-                color: hoveredPlanet.color
+                display: 'flex',
+                alignItems: 'center',
+                marginBottom: '24px'
               }}>
-                {hoveredPlanet.title}
-              </h2>
-              
-              <h3 style={{
-                fontSize: '16px',
-                fontWeight: '500',
-                marginBottom: '20px',
-                color: 'rgba(255, 255, 255, 0.7)'
-              }}>
-                {hoveredPlanet.subtitle}
-              </h3>
+                <svg 
+                  width="48" 
+                  height="48" 
+                  viewBox="0 0 24 24" 
+                  fill="none"
+                  style={{
+                    filter: `drop-shadow(0 0 12px ${hoveredSpaceship.color}88)`,
+                    marginRight: '16px'
+                  }}
+                >
+                  <path 
+                    d="M12 2L18 7V12L15 14L12 16L9 14L6 12V7L12 2Z" 
+                    fill={hoveredSpaceship.color}
+                    stroke={hoveredSpaceship.color}
+                    strokeWidth="0.5"
+                  />
+                  <path 
+                    d="M12 7L16 10V13L12 11L8 13V10L12 7Z" 
+                    fill="rgba(255,255,255,0.4)"
+                  />
+                  <circle cx="12" cy="10" r="2" fill="rgba(255,255,255,0.9)"/>
+                  <path 
+                    d="M10 16L12 22L14 16" 
+                    stroke={hoveredSpaceship.color} 
+                    strokeWidth="2" 
+                    fill="none"
+                  />
+                </svg>
+                
+                <div>
+                  <h2 style={{
+                    fontSize: '32px',
+                    fontWeight: '700',
+                    marginBottom: '4px',
+                    color: hoveredSpaceship.color,
+                    textShadow: `0 0 15px ${hoveredSpaceship.color}66`
+                  }}>
+                    {hoveredSpaceship.title}
+                  </h2>
+                  
+                  <h3 style={{
+                    fontSize: '16px',
+                    fontWeight: '500',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    margin: '0'
+                  }}>
+                    {hoveredSpaceship.subtitle}
+                  </h3>
+                </div>
+              </div>
               
               <p style={{
-                fontSize: '16px',
-                lineHeight: '1.6',
-                color: 'rgba(255, 255, 255, 0.9)',
-                marginBottom: '30px'
+                fontSize: '18px',
+                lineHeight: '1.7',
+                color: 'rgba(255, 255, 255, 0.95)',
+                marginBottom: '40px'
               }}>
-                {hoveredPlanet.description}
+                {hoveredSpaceship.description}
               </p>
               
-              <button
-                onClick={() => setModalOpen(false)}
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  color: 'white',
-                  padding: '12px 24px',
-                  borderRadius: '12px',
-                  fontSize: '14px',
-                  fontWeight: '500',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-              >
-                Close
-              </button>
+              <div style={{
+                display: 'flex',
+                gap: '16px'
+              }}>
+                <button
+                  style={{
+                    background: `linear-gradient(135deg, ${hoveredSpaceship.color}44, ${hoveredSpaceship.color}22)`,
+                    border: `1px solid ${hoveredSpaceship.color}66`,
+                    color: 'white',
+                    padding: '14px 28px',
+                    borderRadius: '12px',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: `0 4px 15px ${hoveredSpaceship.color}33`
+                  }}
+                  onClick={() => alert('Mission details coming soon!')}
+                >
+                  Explore Mission
+                </button>
+                
+                <button
+                  onClick={() => setModalOpen(false)}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    color: 'white',
+                    padding: '14px 28px',
+                    borderRadius: '12px',
+                    fontSize: '16px',
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         )}
