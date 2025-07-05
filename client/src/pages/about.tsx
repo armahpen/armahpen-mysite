@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const planets = [
   {
@@ -59,6 +59,35 @@ const planets = [
 
 export default function About() {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
+  const [planetPositions, setPlanetPositions] = useState<Array<{x: number, y: number}>>([]);
+
+  // Animation for planets
+  useEffect(() => {
+    let angle = 0;
+    const centerX = 400;
+    const centerY = 300;
+    const orbits = [
+      { rx: 100, ry: 50 },
+      { rx: 150, ry: 75 },
+      { rx: 200, ry: 100 },
+      { rx: 250, ry: 125 },
+      { rx: 300, ry: 150 }
+    ];
+
+    const animate = () => {
+      const newPositions = orbits.map((orbit, index) => ({
+        x: centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2),
+        y: centerY + orbit.ry * Math.sin(angle + index * Math.PI / 2)
+      }));
+      
+      setPlanetPositions(newPositions);
+      angle += 0.02;
+      requestAnimationFrame(animate);
+    };
+
+    const animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, []);
 
   return (
     <div style={{
@@ -129,271 +158,188 @@ export default function About() {
         />
       </div>
 
-      {/* Orbital System Container */}
+      {/* Skills Solar System */}
       <div style={{
         position: 'relative',
-        width: '100vw',
+        width: '100%',
         height: 'calc(100vh - 80px)',
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'hidden'
+        alignItems: 'center',
+        perspective: '1000px'
       }}>
-        
-        {/* Orbital Paths */}
-        {planets.map((planet) => (
-          <div
-            key={`orbit-${planet.id}`}
-            className="orbit-path"
-            style={{
-              position: 'absolute',
-              width: `${planet.orbitRadius * 2}px`,
-              height: `${planet.orbitRadius * 2}px`,
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '50%',
-              animation: 'orbitGlow 6s ease-in-out infinite alternate'
-            }}
-          />
-        ))}
-
-        {/* Central Glowing Orb */}
+        {/* Skills Text */}
         <div style={{
           position: 'absolute',
-          width: '140px',
-          height: '140px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(135, 206, 250, 0.8) 30%, rgba(100, 149, 237, 0.6) 60%, rgba(72, 61, 139, 0.4) 100%)',
-          boxShadow: '0 0 60px rgba(135, 206, 250, 0.8), 0 0 120px rgba(135, 206, 250, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.3)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 10,
-          animation: 'centralGlow 4s ease-in-out infinite alternate',
-          cursor: 'pointer'
+          top: '30%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          color: '#d3c0a7',
+          fontFamily: 'Arial, sans-serif',
+          fontSize: '48px',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          textShadow: '2px 2px 10px rgba(255, 215, 0, 0.5)',
+          opacity: 0.8,
+          zIndex: 15
         }}>
-          {/* Inner Core */}
-          <div style={{
-            position: 'absolute',
-            width: '80px',
-            height: '80px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%)',
-            animation: 'coreRotate 8s linear infinite'
-          }} />
-          
-          <div style={{
-            position: 'absolute',
-            bottom: '-60px',
-            textAlign: 'center',
-            maxWidth: '300px',
-            zIndex: 15
-          }}>
-            <div style={{
-              fontSize: '18px',
-              fontWeight: '700',
-              color: 'white',
-              marginBottom: '8px',
-              textShadow: '0 0 15px rgba(135, 206, 250, 0.8)'
-            }}>
-              Evans (Heavans)
-            </div>
-            <div style={{
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.9)',
-              lineHeight: '1.4',
-              textAlign: 'center'
-            }}>
-              A multidisciplinary creative at the center of code, design, and storytelling
-            </div>
-          </div>
+          SKILLS
         </div>
 
-        {/* Orbiting Planets */}
-        {planets.map((planet, index) => (
-          <div
-            key={planet.id}
-            className="planet-orbit"
+        {/* Solar System SVG */}
+        <svg 
+          viewBox="0 0 800 600" 
+          style={{
+            width: '100%',
+            height: '100%',
+            maxWidth: '800px',
+            maxHeight: '600px'
+          }}
+        >
+          <defs>
+            <radialGradient id="sunGradient" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" style={{stopColor: '#ffd700'}} />
+              <stop offset="70%" style={{stopColor: '#ffcc00'}} />
+              <stop offset="100%" style={{stopColor: '#ff4500'}} />
+            </radialGradient>
+          </defs>
+          
+          {/* Elliptical orbits for side view */}
+          <ellipse cx="400" cy="300" rx="100" ry="50" 
             style={{
-              position: 'absolute',
-              width: `${planet.orbitRadius * 2}px`,
-              height: `${planet.orbitRadius * 2}px`,
-              animation: `orbitRotate ${20 + index * 5}s linear infinite`,
-              animationDelay: `${index * -2}s`
+              fill: 'none',
+              stroke: '#4a4060',
+              strokeWidth: 1,
+              opacity: 0.7,
+              transformOrigin: 'center',
+              transform: 'rotateX(70deg)'
+            }} />
+          <ellipse cx="400" cy="300" rx="150" ry="75" 
+            style={{
+              fill: 'none',
+              stroke: '#4a4060',
+              strokeWidth: 1,
+              opacity: 0.7,
+              transformOrigin: 'center',
+              transform: 'rotateX(70deg)'
+            }} />
+          <ellipse cx="400" cy="300" rx="200" ry="100" 
+            style={{
+              fill: 'none',
+              stroke: '#4a4060',
+              strokeWidth: 1,
+              opacity: 0.7,
+              transformOrigin: 'center',
+              transform: 'rotateX(70deg)'
+            }} />
+          <ellipse cx="400" cy="300" rx="250" ry="125" 
+            style={{
+              fill: 'none',
+              stroke: '#4a4060',
+              strokeWidth: 1,
+              opacity: 0.7,
+              transformOrigin: 'center',
+              transform: 'rotateX(70deg)'
+            }} />
+          <ellipse cx="400" cy="300" rx="300" ry="150" 
+            style={{
+              fill: 'none',
+              stroke: '#4a4060',
+              strokeWidth: 1,
+              opacity: 0.7,
+              transformOrigin: 'center',
+              transform: 'rotateX(70deg)'
+            }} />
+          
+          {/* Central Sun */}
+          <circle 
+            cx="400" 
+            cy="300" 
+            r="30" 
+            fill="url(#sunGradient)"
+            style={{
+              filter: 'drop-shadow(0 0 20px #ffd700)'
             }}
-          >
-            <div
-              className="planet"
-              style={{
-                position: 'absolute',
-                top: '0',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                cursor: 'pointer',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                zIndex: hoveredPlanet === planet.id ? 20 : 5
-              }}
-              onMouseEnter={() => setHoveredPlanet(planet.id)}
-              onMouseLeave={() => setHoveredPlanet(null)}
-            >
-              {/* Planet Visual */}
-              <div style={{
-                width: `${planet.size}px`,
-                height: `${planet.size}px`,
-                borderRadius: '50%',
-                background: `radial-gradient(circle at 30% 30%, ${planet.color}, ${planet.color}CC, ${planet.color}88)`,
-                boxShadow: `0 0 15px ${planet.color}AA, inset -5px -5px 10px rgba(0,0,0,0.3)`,
-                border: `1px solid ${planet.color}DD`,
-                position: 'relative',
-                color: planet.color
-              }}>
-                {/* Planet Surface Details */}
-                <div style={{
-                  position: 'absolute',
-                  top: '20%',
-                  left: '25%',
-                  width: '8px',
-                  height: '4px',
-                  borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.4)',
-                  boxShadow: `0 0 4px rgba(255, 255, 255, 0.6)`
-                }} />
-                <div style={{
-                  position: 'absolute',
-                  bottom: '30%',
-                  right: '20%',
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.3)',
-                  boxShadow: `0 0 3px rgba(255, 255, 255, 0.5)`
-                }} />
-                
-                {/* Planet Glow Ring */}
-                <div 
-                  className="planet-glow-ring"
-                  style={{
-                    position: 'absolute',
-                    top: '-8px',
-                    left: '-8px',
-                    right: '-8px',
-                    bottom: '-8px',
-                    borderRadius: '50%',
-                    border: `2px solid ${planet.color}66`,
-                    opacity: hoveredPlanet === planet.id ? 1 : 0,
-                    color: planet.color
-                  }} 
-                />
-                
-                {/* Atmosphere Glow */}
-                <div style={{
-                  position: 'absolute',
-                  top: '-4px',
-                  left: '-4px',
-                  right: '-4px',
-                  bottom: '-4px',
-                  borderRadius: '50%',
-                  background: `radial-gradient(circle, transparent 60%, ${planet.color}33 80%, transparent 100%)`,
-                  opacity: hoveredPlanet === planet.id ? 0.8 : 0,
-                  transition: 'opacity 0.6s ease'
-                }} />
-              </div>
+          />
+          
+          {/* Animated Planets */}
+          <circle 
+            className="planet p1" 
+            cx={planetPositions[0]?.x || 500}
+            cy={planetPositions[0]?.y || 250}
+            r="12" 
+            fill="#add8e6"
+          />
+          <circle 
+            className="planet p2" 
+            cx={planetPositions[1]?.x || 550}
+            cy={planetPositions[1]?.y || 225}
+            r="12" 
+            fill="#ffffff"
+          />
+          <circle 
+            className="planet p3" 
+            cx={planetPositions[2]?.x || 600}
+            cy={planetPositions[2]?.y || 200}
+            r="12" 
+            fill="#ffa500"
+          />
+          <circle 
+            className="planet p4" 
+            cx={planetPositions[3]?.x || 650}
+            cy={planetPositions[3]?.y || 175}
+            r="12" 
+            fill="#ffff00"
+          />
+          <circle 
+            className="planet p5" 
+            cx={planetPositions[4]?.x || 700}
+            cy={planetPositions[4]?.y || 150}
+            r="12" 
+            fill="#ff4500"
+          />
+        </svg>
 
-              {/* Planet Info Card */}
-              {hoveredPlanet === planet.id && (
-                <div 
-                  className="planet-info-card"
-                  style={{
-                    position: 'absolute',
-                    top: `${planet.size + 30}px`,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    color: planet.color
-                  }}
-                >
-                  <div style={{
-                    background: 'rgba(0, 0, 0, 0.95)',
-                    border: `2px solid ${planet.color}66`,
-                    borderRadius: '16px',
-                    padding: '24px',
-                    minWidth: '300px',
-                    maxWidth: '340px',
-                    animation: 'cardFadeIn 0.4s ease-out',
-                    backdropFilter: 'blur(15px)',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}>
-                    {/* Card Glow Background */}
-                    <div style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: `radial-gradient(circle at center, ${planet.color}11 0%, transparent 70%)`,
-                      pointerEvents: 'none'
-                    }} />
-                    
-                    {/* Card Content */}
-                    <div style={{ position: 'relative', zIndex: 2 }}>
-                      <h3 style={{
-                        fontSize: '20px',
-                        fontWeight: '700',
-                        color: planet.color,
-                        marginBottom: '12px',
-                        textShadow: `0 0 12px ${planet.color}88`
-                      }}>
-                        {planet.title}
-                      </h3>
-                      
-                      <p style={{
-                        fontSize: '15px',
-                        color: 'rgba(255, 255, 255, 0.95)',
-                        lineHeight: '1.6',
-                        marginBottom: '20px'
-                      }}>
-                        {planet.description}
-                      </p>
-                      
-                      <a
-                        href={planet.link}
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          color: planet.color,
-                          fontSize: '14px',
-                          fontWeight: '600',
-                          textDecoration: 'none',
-                          padding: '10px 20px',
-                          border: `2px solid ${planet.color}55`,
-                          borderRadius: '8px',
-                          transition: 'all 0.3s ease',
-                          background: `${planet.color}15`,
-                          textShadow: `0 0 6px ${planet.color}66`
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = `${planet.color}25`;
-                          e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                          e.currentTarget.style.boxShadow = `0 6px 20px ${planet.color}44`;
-                          e.currentTarget.style.borderColor = `${planet.color}88`;
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = `${planet.color}15`;
-                          e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                          e.currentTarget.style.boxShadow = 'none';
-                          e.currentTarget.style.borderColor = `${planet.color}55`;
-                        }}
-                      >
-                        Explore →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
+        {/* Skill Buttons */}
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '15px',
+          flexWrap: 'wrap',
+          padding: '0 20px',
+          zIndex: 10
+        }}>
+          {['JAVASCRIPT', 'HTML/CSS', 'ILLUSTRATION', 'CREATIVE SOFTWARE', 'CREATIVE DIRECTION', 'SERVER TECHNOLOGIES', 'VIDEO PRODUCTION', 'APPS', 'NODE.JS'].map((skill) => (
+            <div 
+              key={skill}
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                color: '#d3c0a7',
+                border: '1px solid #4a4060',
+                padding: '10px 20px',
+                borderRadius: '5px',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: '14px',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 215, 0, 0.2)';
+                e.currentTarget.style.color = '#fff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.color = '#d3c0a7';
+              }}
+            >
+              {skill}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

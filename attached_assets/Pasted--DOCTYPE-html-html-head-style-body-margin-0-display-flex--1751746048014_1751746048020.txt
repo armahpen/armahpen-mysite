@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0a0f2b; /* Dark blue starry background */
+      overflow: hidden;
+    }
+    .solar-system {
+      position: relative;
+      width: 800px;
+      height: 600px;
+    }
+    .skills-text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #d3c0a7; /* Light beige for "SKILLS" text */
+      font-family: Arial, sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5); /* Glow effect */
+      opacity: 0.8;
+    }
+    .skill-buttons {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .skill-button {
+      background: rgba(255, 255, 255, 0.1);
+      color: #d3c0a7;
+      border: 1px solid #4a4060;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: default;
+      transition: background 0.3s, color 0.3s;
+    }
+    .skill-button:hover {
+      background: rgba(255, 215, 0, 0.2);
+      color: #fff;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    .orbit {
+      fill: none;
+      stroke: #4a4060; /* Light purple orbit lines */
+      stroke-width: 1;
+      opacity: 0.7;
+      transform-origin: center;
+      transform: rotateX(70deg); /* Tilt for side view */
+    }
+    .sun {
+      fill: url(#sunGradient); /* Gradient for sun glow */
+      cx: 400;
+      cy: 300;
+      r: 30;
+    }
+    .planet {
+      r: 12;
+    }
+    /* Starry background */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.3;
+    }
+    /* Gradient for sun */
+    <defs>
+      <radialGradient id="sunGradient" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0%" style="stop-color:#ffd700;" />
+        <stop offset="70%" style="stop-color:#ffcc00;" />
+        <stop offset="100%" style="stop-color:#ff4500;" />
+      </radialGradient>
+    </defs>
+  </style>
+</head>
+<body>
+  <div class="solar-system">
+    <div class="stars"></div>
+    <div class="skills-text">SKILLS</div>
+    <div class="skill-buttons">
+      <div class="skill-button">JAVASCRIPT</div>
+      <div class="skill-button">HTML/CSS</div>
+      <div class="skill-button">ILLUSTRATION</div>
+      <div class="skill-button">CREATIVE SOFTWARE</div>
+      <div class="skill-button">CREATIVE DIRECTION</div>
+      <div class="skill-button">SERVER TECHNOLOGIES</div>
+      <div class="skill-button">VIDEO PRODUCTION</div>
+      <div class="skill-button">APPS</div>
+      <div class="skill-button">NODE.JS</div>
+    </div>
+    <svg viewBox="0 0 800 600">
+      <!-- Elliptical orbits for side view (adjusted rx and ry) -->
+      <ellipse class="orbit" cx="400" cy="300" rx="100" ry="50" />
+      <ellipse class="orbit" cx="400" cy="300" rx="150" ry="75" />
+      <ellipse class="orbit" cx="400" cy="300" rx="200" ry="100" />
+      <ellipse class="orbit" cx="400" cy="300" rx="250" ry="125" />
+      <ellipse class="orbit" cx="400" cy="300" rx="300" ry="150" />
+      <circle class="sun" cx="400" cy="300" r="30" />
+      <circle class="planet p1" cx="500" cy="250" r="12" fill="#add8e6" />
+      <circle class="planet p2" cx="550" cy="225" r="12" fill="#ffffff" />
+      <circle class="planet p3" cx="600" cy="200" r="12" fill="#ffa500" />
+      <circle class="planet p4" cx="650" cy="175" r="12" fill="#ffff00" />
+      <circle class="planet p5" cx="700" cy="150" r="12" fill="#ff4500" />
+    </svg>
+  </div>
+  <script>
+    const planets = document.querySelectorAll('.planet');
+    let angle = 0;
+
+    function animate() {
+      const centerX = 400;
+      const centerY = 300;
+      const orbits = [
+        { rx: 100, ry: 50 },
+        { rx: 150, ry: 75 },
+        { rx: 200, ry: 100 },
+        { rx: 250, ry: 125 },
+        { rx: 300, ry: 150 }
+      ];
+
+      planets.forEach((planet, index) => {
+        const orbit = orbits[index];
+        const x = centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2);
+        const y = centerY + orbit.ry * Math.sin(angle + index * Math.PI / 2);
+        planet.setAttribute('cx', x);
+        planet.setAttribute('cy', y);
+      });
+
+      angle += 0.02;
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
