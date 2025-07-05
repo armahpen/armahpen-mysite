@@ -150,9 +150,9 @@ export default function Home() {
           borderRadius: '62px',
           overflow: 'hidden'
         }}>
-          <img 
-            src="/center-portrait.png" 
-            alt="Center Portrait" 
+          <img
+            src="/center-portrait.png"
+            alt="Center Portrait"
             style={{
               width: '607px',
               height: '911px',
@@ -161,7 +161,7 @@ export default function Home() {
               objectFit: 'cover',
               position: 'relative'
             }}
-          />
+            className="ml-[76px] mr-[76px] pl-[-60px] pr-[-60px] mt-[-81px] mb-[-81px]" />
           <div style={{
             position: 'absolute',
             top: '0',
