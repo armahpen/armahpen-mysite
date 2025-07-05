@@ -577,7 +577,7 @@ export default function Home() {
         height: '31px',
         zIndex: 10
       }}>
-        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}}>Discover Alex's stunning 3D worlds created with Artoo. Read More for an exclusive interview.</span>
+        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}}>Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
       </div>
       
       {/* Final Line Separator */}
