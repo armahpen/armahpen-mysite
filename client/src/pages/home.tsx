@@ -295,15 +295,168 @@ export default function Home() {
           <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,0.800000011920929)'}}>Start work</span>
         </div>
       </div>
-      {/* Rectangle 1 Footer - Applied exact Figma design */}
-      <div style={{
-        width: '1587px',
-        height: '135px',
+      {/* Professional Footer */}
+      <footer style={{
+        width: '1600px',
         background: '#63767C',
         position: 'absolute',
         left: '0px',
-        top: '925px'
-      }} />
+        top: '925px',
+        padding: '40px 80px',
+        boxSizing: 'border-box'
+      }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          maxWidth: '1440px',
+          margin: '0 auto'
+        }}>
+          {/* Logo and Description */}
+          <div style={{flex: '1', marginRight: '60px'}}>
+            <div style={{
+              fontFamily: 'Poppins',
+              fontSize: '24px',
+              fontWeight: '600',
+              color: '#FFF',
+              marginBottom: '12px'
+            }}>HeaVans.</div>
+            <p style={{
+              fontFamily: 'Public Sans',
+              fontSize: '14px',
+              color: 'rgba(255, 255, 255, 0.8)',
+              lineHeight: '1.5',
+              margin: '0',
+              maxWidth: '280px'
+            }}>
+              Creative web developer blending design, code, and motion to build modern, impactful digital experiences.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div style={{flex: '0 0 auto', marginRight: '60px'}}>
+            <h4 style={{
+              fontFamily: 'DM Sans',
+              fontSize: '16px',
+              fontWeight: '600',
+              color: '#FFF',
+              marginBottom: '16px',
+              margin: '0 0 16px 0'
+            }}>Quick Links</h4>
+            <ul style={{
+              listStyle: 'none',
+              padding: '0',
+              margin: '0'
+            }}>
+              <li style={{marginBottom: '8px'}}>
+                <a href="#home" style={{
+                  fontFamily: 'DM Sans',
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  textDecoration: 'none'
+                }}>Home</a>
+              </li>
+              <li style={{marginBottom: '8px'}}>
+                <a href="#about" style={{
+                  fontFamily: 'DM Sans',
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  textDecoration: 'none'
+                }}>About</a>
+              </li>
+              <li style={{marginBottom: '8px'}}>
+                <a href="#experience" style={{
+                  fontFamily: 'DM Sans',
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  textDecoration: 'none'
+                }}>Experience</a>
+              </li>
+              <li style={{marginBottom: '8px'}}>
+                <a href="#contact" style={{
+                  fontFamily: 'DM Sans',
+                  fontSize: '14px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  textDecoration: 'none'
+                }}>Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div style={{flex: '0 0 auto', marginRight: '60px'}}>
+            <h4 style={{
+              fontFamily: 'DM Sans',
+              fontSize: '16px',
+              fontWeight: '600',
+              color: '#FFF',
+              marginBottom: '16px',
+              margin: '0 0 16px 0'
+            }}>Get In Touch</h4>
+            <div style={{
+              fontFamily: 'DM Sans',
+              fontSize: '14px',
+              color: 'rgba(255, 255, 255, 0.7)',
+              lineHeight: '1.6'
+            }}>
+              <p style={{margin: '0 0 8px 0'}}>evans@heavans.com</p>
+              <p style={{margin: '0 0 8px 0'}}>Available for freelance work</p>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div style={{flex: '0 0 auto'}}>
+            <h4 style={{
+              fontFamily: 'DM Sans',
+              fontSize: '16px',
+              fontWeight: '600',
+              color: '#FFF',
+              marginBottom: '16px',
+              margin: '0 0 16px 0'
+            }}>Follow Me</h4>
+            <div style={{display: 'flex', gap: '12px'}}>
+              <a href="#" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontFamily: 'Public Sans',
+                fontSize: '14px',
+                textDecoration: 'none',
+                fontWeight: '600'
+              }}>Tw</a>
+              <a href="#" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontFamily: 'Public Sans',
+                fontSize: '14px',
+                textDecoration: 'none',
+                fontWeight: '600'
+              }}>In</a>
+              <a href="#" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontFamily: 'Public Sans',
+                fontSize: '14px',
+                textDecoration: 'none',
+                fontWeight: '600'
+              }}>Fb</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div style={{
+          borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+          marginTop: '32px',
+          paddingTop: '20px',
+          textAlign: 'center'
+        }}>
+          <p style={{
+            fontFamily: 'DM Sans',
+            fontSize: '12px',
+            color: 'rgba(255, 255, 255, 0.6)',
+            margin: '0'
+          }}>
+            © 2025 HeaVans. All rights reserved. | Designed & Developed by Evans
+          </p>
+        </div>
+      </footer>
       {/* Latest Work Dots */}
       <svg style={{width: '4px', height: '4px', position: 'absolute', left: '170px', top: '1098px'}} viewBox="0 0 4 4" fill="none">
         <circle cx="2" cy="2" r="2" fill="white"/>
