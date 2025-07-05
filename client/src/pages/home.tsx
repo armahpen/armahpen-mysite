@@ -604,22 +604,7 @@ export default function Home() {
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}}>Discover Alex's stunning 3D worlds created with Artoo. Read More for an exclusive interview.</span>
       </div>
-      {/* Read More Link */}
-      <div style={{
-        color: 'rgba(255, 255, 255, 0.75)',
-        fontFamily: 'DM Sans',
-        fontSize: '16px',
-        fontWeight: '400',
-        lineHeight: '20px',
-        position: 'absolute',
-        left: '1147px',
-        top: '1013px',
-        width: '89px',
-        height: '11px',
-        zIndex: 10
-      }}>
-        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.75)'}}>Read More...</span>
-      </div>
+      
       {/* Final Line Separator */}
       <div style={{
         width: '1600px',
