@@ -66,74 +66,41 @@ const planets = [
 export default function About() {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
   const [planetPositions, setPlanetPositions] = useState<Array<{x: number, y: number}>>([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [shouldPause, setShouldPause] = useState(false);
 
-  // Track mouse position
+  // Animation for planets with individual pause control
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  // Check proximity to celestial bodies
-  useEffect(() => {
-    const centerX = 400;
-    const centerY = 300;
-    const proximityThreshold = 80; // Distance threshold for pausing
-
-    // Check distance to sun
-    const sunDistance = Math.sqrt(
-      Math.pow(mousePosition.x - centerX, 2) + Math.pow(mousePosition.y - centerY, 2)
-    );
-
-    let nearCelestialBody = sunDistance < proximityThreshold;
-
-    // Check distance to each planet
-    planetPositions.forEach((planet) => {
-      const planetDistance = Math.sqrt(
-        Math.pow(mousePosition.x - planet.x, 2) + Math.pow(mousePosition.y - planet.y, 2)
-      );
-      if (planetDistance < proximityThreshold) {
-        nearCelestialBody = true;
-      }
-    });
-
-    setShouldPause(nearCelestialBody || hoveredPlanet !== null);
-  }, [mousePosition, planetPositions, hoveredPlanet]);
-
-  // Animation for planets
-  useEffect(() => {
-    let angle = 0;
+    let angles = [0, 0, 0, 0, 0, 0]; // Individual angles for each planet
     let animationId: number;
     let isAnimating = true;
     const centerX = 400;
     const centerY = 300;
+    
+    // Updated orbit spacing: 2 inches (192px) between each orbit
     const orbits = [
-      { rx: 100, ry: 50 },
-      { rx: 150, ry: 75 },
-      { rx: 200, ry: 100 },
-      { rx: 250, ry: 125 },
-      { rx: 300, ry: 150 }
+      { rx: 144, ry: 72 },   // ~1.5 inches from center
+      { rx: 240, ry: 120 },  // ~2.5 inches from center (+2 inches spacing)
+      { rx: 336, ry: 168 },  // ~3.5 inches from center (+2 inches spacing)
+      { rx: 432, ry: 216 },  // ~4.5 inches from center (+2 inches spacing)
+      { rx: 528, ry: 264 },  // ~5.5 inches from center (+2 inches spacing)
+      { rx: 624, ry: 312 }   // ~6.5 inches from center (+2 inches spacing)
     ];
 
     const animate = () => {
       if (!isAnimating) return;
       
-      // Only update positions and increment angle if not paused
-      if (!shouldPause) {
-        const newPositions = orbits.map((orbit, index) => ({
-          x: centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2),
-          y: centerY + orbit.ry * Math.sin(angle + index * Math.PI / 2)
-        }));
+      const newPositions = orbits.map((orbit, index) => {
+        // Only increment angle if this specific planet is not hovered
+        if (hoveredPlanet !== index) {
+          angles[index] += 0.003; // Slower, smoother animation
+        }
         
-        setPlanetPositions(newPositions);
-        angle += 0.005; // Slower animation
-      }
+        return {
+          x: centerX + orbit.rx * Math.cos(angles[index]),
+          y: centerY + orbit.ry * Math.sin(angles[index])
+        };
+      });
       
+      setPlanetPositions(newPositions);
       animationId = requestAnimationFrame(animate);
     };
 
@@ -145,7 +112,7 @@ export default function About() {
         cancelAnimationFrame(animationId);
       }
     };
-  }, [shouldPause]);
+  }, [hoveredPlanet]);
 
   return (
     <div style={{
@@ -246,41 +213,48 @@ export default function About() {
             </radialGradient>
           </defs>
           
-          {/* Planet Orbital Lines */}
-          <ellipse cx="400" cy="300" rx="100" ry="50" 
+          {/* Planet Orbital Lines - Updated with 2-inch spacing */}
+          <ellipse cx="400" cy="300" rx="144" ry="72" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.3)',
               strokeWidth: 2,
               opacity: 0.8
             }} />
-          <ellipse cx="400" cy="300" rx="150" ry="75" 
+          <ellipse cx="400" cy="300" rx="240" ry="120" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.25)',
               strokeWidth: 2,
               opacity: 0.7
             }} />
-          <ellipse cx="400" cy="300" rx="200" ry="100" 
+          <ellipse cx="400" cy="300" rx="336" ry="168" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.25)',
               strokeWidth: 2,
               opacity: 0.7
             }} />
-          <ellipse cx="400" cy="300" rx="250" ry="125" 
+          <ellipse cx="400" cy="300" rx="432" ry="216" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.2)',
               strokeWidth: 2,
               opacity: 0.6
             }} />
-          <ellipse cx="400" cy="300" rx="300" ry="150" 
+          <ellipse cx="400" cy="300" rx="528" ry="264" 
             style={{
               fill: 'none',
               stroke: 'rgba(255, 255, 255, 0.2)',
               strokeWidth: 2,
               opacity: 0.6
+            }} />
+          <ellipse cx="400" cy="300" rx="624" ry="312" 
+            style={{
+              fill: 'none',
+              stroke: 'rgba(255, 255, 255, 0.15)',
+              strokeWidth: 2,
+              opacity: 0.5
             }} />
           
           {/* Central Sun - Evans (Heavans) */}
@@ -312,21 +286,21 @@ export default function About() {
             Evans (Heavans)
           </text>
           
-          {/* Animated Planets */}
-          {planets.slice(0, 5).map((planet, index) => (
+          {/* Animated Planets - 1 inch diameter (48px radius) */}
+          {planets.slice(0, 6).map((planet, index) => (
             <circle 
               key={planet.id}
               className={`planet p${index + 1}`}
               cx={planetPositions[index]?.x || (500 + index * 50)}
               cy={planetPositions[index]?.y || (250 - index * 25)}
-              r="12" 
+              r="48" 
               fill={planet.svgColor}
               style={{
                 cursor: 'pointer',
-                filter: hoveredPlanet === planet.id ? `drop-shadow(0 0 10px ${planet.svgColor})` : 'none',
+                filter: hoveredPlanet === index ? `drop-shadow(0 0 20px ${planet.svgColor})` : 'none',
                 transition: 'all 0.3s ease'
               }}
-              onMouseEnter={() => setHoveredPlanet(planet.id)}
+              onMouseEnter={() => setHoveredPlanet(index)}
               onMouseLeave={() => setHoveredPlanet(null)}
             />
           ))}
