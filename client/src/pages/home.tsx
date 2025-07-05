@@ -227,7 +227,7 @@ export default function Home() {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '24px',
+          gap: '12px',
           marginBottom: '8px'
         }}>
           <div style={{
@@ -243,7 +243,7 @@ export default function Home() {
             src="/dev-icon.png"
             alt="Dev Icon"
             style={{
-              height: '24px',
+              height: '32px',
               width: 'auto',
               objectFit: 'contain'
             }}
