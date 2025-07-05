@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'wouter';
 // import welcomeImage from "@assets/heavans logo_1751733380888.PNG";
 
 const planets = [
@@ -11,7 +12,7 @@ const planets = [
     cta: "View Projects",
     link: "/projects",
     color: "#4fc3f7",
-    svgColor: "#add8e6"
+    svgColor: "#4fc3f7"
   },
   {
     id: 2,
@@ -22,7 +23,7 @@ const planets = [
     cta: "Read & Listen",
     link: "/poetry",
     color: "#ab47bc",
-    svgColor: "#ffffff"
+    svgColor: "#ab47bc"
   },
   {
     id: 3,
@@ -33,7 +34,7 @@ const planets = [
     cta: "See Designs",
     link: "/design", 
     color: "#66bb6a",
-    svgColor: "#ffa500"
+    svgColor: "#66bb6a"
   },
   {
     id: 4,
@@ -44,7 +45,7 @@ const planets = [
     cta: "Explore Code",
     link: "/code",
     color: "#ef5350",
-    svgColor: "#ffff00"
+    svgColor: "#ef5350"
   },
   {
     id: 5,
@@ -55,7 +56,7 @@ const planets = [
     cta: "Watch Motion",
     link: "/motion",
     color: "#ff9800",
-    svgColor: "#ff4500"
+    svgColor: "#ff9800"
   },
   {
     id: 6,
@@ -66,7 +67,7 @@ const planets = [
     cta: "Let's Connect",
     link: "/collaborate",
     color: "#9c27b0",
-    svgColor: "#9932cc"
+    svgColor: "#9c27b0"
   }
 ];
 
@@ -144,23 +145,25 @@ export default function About() {
       />
       
       {/* HeaVans Logo - Clickable Image Logo */}
-      <div style={{
-        position: 'absolute',
-        top: '16px',
-        left: '16px',
-        zIndex: 20,
-        cursor: 'pointer'
-      }} onClick={() => window.location.href = '/'}>
-        <img
-          src="/logo.png"
-          alt="HeaVans Logo"
-          style={{
-            width: '120px',
-            height: '36px',
-            objectFit: 'contain'
-          }}
-          className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
-      </div>
+      <Link href="/">
+        <div style={{
+          position: 'absolute',
+          top: '16px',
+          left: '16px',
+          zIndex: 20,
+          cursor: 'pointer'
+        }}>
+          <img
+            src="/logo.png"
+            alt="HeaVans Logo"
+            style={{
+              width: '120px',
+              height: '36px',
+              objectFit: 'contain'
+            }}
+            className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
+        </div>
+      </Link>
       
       {/* Menu Icon */}
       <svg 
@@ -184,15 +187,18 @@ export default function About() {
       
       {/* Navigation Menu */}
       <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '0px',
-          top: '0px'
-        }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.location.href = '/'}>Home</div>
+        <Link href="/">
+          <div style={{
+            color: 'rgba(255, 255, 255, 0.65)',
+            fontFamily: 'DM Sans',
+            fontSize: '18px',
+            fontWeight: '400',
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            cursor: 'pointer'
+          }} className="animate-slideInDown delay-100 menu-button">Home</div>
+        </Link>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
