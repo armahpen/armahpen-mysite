@@ -155,25 +155,7 @@ export default function About() {
         </div>
       </Link>
       
-      {/* Menu Icon */}
-      <svg 
-        style={{
-          display: 'flex',
-          width: '28px',
-          flexDirection: 'column',
-          alignItems: 'flex-end',
-          gap: '10px',
-          position: 'absolute',
-          left: '51px',
-          top: '120px',
-          height: '20px'
-        }} 
-        width="29" height="23" viewBox="0 0 29 23" fill="none"
-      >
-        <path d="M28.5 1.5H0.500001" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
-        <path d="M28.5 11.5H10.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
-        <path d="M28.5 21.5H18.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
-      </svg>
+
       
       {/* Navigation Menu */}
       <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
@@ -496,7 +478,7 @@ export default function About() {
         {/* Clickable Planet Names */}
         <div style={{
           position: 'absolute',
-          bottom: '20px',
+          bottom: '-280px',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
