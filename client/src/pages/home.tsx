@@ -16,21 +16,13 @@ export default function Home() {
         }}
       />
       {/* Logo HeaVans */}
-      <div 
-        style={{
-          position: 'absolute',
-          left: '217px',
-          top: '156px',
-          width: '238px',
-          height: '29px'
-        }}
-      >
+      <div className="absolute top-4 left-4">
         <img 
           src="/heavans-logo.png" 
           alt="HeaVans Logo" 
           style={{
-            width: '238px',
-            height: '29px',
+            width: '250px',
+            height: '50px',
             objectFit: 'contain'
           }}
         />
@@ -135,7 +127,7 @@ export default function Home() {
       {/* Center Portrait */}
       <div style={{
         position: 'absolute',
-        left: '400px',
+        left: '544px',
         top: '60px',
         width: '750px',
         height: '1100px',
