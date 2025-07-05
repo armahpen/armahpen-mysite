@@ -286,18 +286,18 @@ export default function About() {
             Evans (Heavans)
           </text>
           
-          {/* Animated Planets - 1 inch diameter (48px radius) */}
+          {/* Animated Planets - 0.5 inch diameter (24px radius) */}
           {planets.slice(0, 6).map((planet, index) => (
             <circle 
               key={planet.id}
               className={`planet p${index + 1}`}
               cx={planetPositions[index]?.x || (500 + index * 50)}
               cy={planetPositions[index]?.y || (250 - index * 25)}
-              r="48" 
+              r="24" 
               fill={planet.svgColor}
               style={{
                 cursor: 'pointer',
-                filter: hoveredPlanet === index ? `drop-shadow(0 0 20px ${planet.svgColor})` : 'none',
+                filter: hoveredPlanet === index ? `drop-shadow(0 0 15px ${planet.svgColor})` : 'none',
                 transition: 'all 0.3s ease'
               }}
               onMouseEnter={() => setHoveredPlanet(index)}
