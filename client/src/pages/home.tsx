@@ -175,22 +175,32 @@ export default function Home() {
           <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '28px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
         </div>
       </div>
-      {/* Center Portrait - Updated with latest Figma image code */}
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d46a89e51c005e2dd05bd543b2887ec919485b0b?width=2546"
-        alt="ChatGPT Image"
-        style={{
-          width: '1273px',
-          height: '857px',
-          flexShrink: 0,
-          aspectRatio: '1273/857',
-          borderRadius: '62px',
-          mixBlendMode: 'luminosity',
-          position: 'absolute',
-          left: '286px',
-          top: '218px'
-        }}
-      />
+      {/* Frame 7 - Updated with latest Figma specifications */}
+      <div style={{
+        display: 'flex',
+        width: '1434px',
+        height: '989px',
+        padding: '10px',
+        alignItems: 'center',
+        gap: '10px',
+        position: 'absolute',
+        left: '0px',
+        top: '318px'
+      }}>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
+          alt="ChatGPT Image"
+          style={{
+            width: '1195px',
+            height: '957px',
+            flexShrink: 0,
+            aspectRatio: '1195/957',
+            borderRadius: '62px',
+            mixBlendMode: 'luminosity',
+            position: 'relative'
+          }}
+        />
+      </div>
       
       {/* Semi-transparent overlay covering from shoulders - Rectangle 8 */}
       <svg style={{
