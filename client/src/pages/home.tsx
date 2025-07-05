@@ -23,29 +23,7 @@ export default function Home() {
         zIndex: 20,
         cursor: 'pointer'
       }} onClick={() => window.location.href = '/'}>
-        <div style={{
-          width: '100px',
-          height: '30px',
-          background: '#2a2a2a',
-          borderRadius: '4px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontFamily: 'Arial, sans-serif',
-          fontSize: '11px',
-          fontWeight: '400',
-          padding: '2px 6px',
-          boxSizing: 'border-box'
-        }}>
-          <span style={{
-            color: '#7a8996',
-            marginRight: '1px'
-          }}>Hea</span>
-          <span style={{
-            color: '#ffffff',
-            fontWeight: '500'
-          }}>Vans.</span>
-        </div>
+
       </div>
       {/* Vector 4 - Decorative line */}
       <svg style={{
