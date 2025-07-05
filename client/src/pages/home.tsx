@@ -15,26 +15,23 @@ export default function Home() {
           top: '26px'
         }}
       />
-      {/* Logo HeaVans - Updated positioning from Figma, maintaining existing colors */}
+      {/* HeaVans Logo - Clickable Image Logo */}
       <div style={{
-        width: '300px',
-        height: '41px',
-        color: '#FFF',
-        fontFamily: 'Poppins',
-        fontSize: '50px',
-        fontStyle: 'normal',
-        fontWeight: '400',
-        lineHeight: 'normal',
         position: 'absolute',
-        left: '47px',
-        top: '75px',
-        zIndex: 20
-      }}>
-        <span style={{fontFamily: 'Porter Sans Block, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '50px', color: 'rgba(99,118,124,1)'}}>H</span>
-        <span style={{fontFamily: 'Poppins, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '50px', color: 'rgba(99,118,124,1)'}}>ea</span>
-        <span style={{fontFamily: 'Porter Sans Block, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '50px', color: 'rgba(243,252,255,1)'}}>V</span>
-        <span style={{fontFamily: 'Poppins, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '50px', color: 'rgba(243,252,255,1)'}}>ans</span>
-        <span style={{fontFamily: 'Poppins, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '50px', color: 'rgba(255,255,255,1)'}}>.</span>
+        top: '16px',
+        left: '16px',
+        zIndex: 20,
+        cursor: 'pointer'
+      }} onClick={() => window.location.href = '/'}>
+        <img 
+          src="/attached_assets/heavans logo_1751732647807.PNG" 
+          alt="HeaVans Logo" 
+          style={{
+            width: '100px',
+            height: '30px',
+            objectFit: 'contain'
+          }}
+        />
       </div>
       {/* Vector 4 - Decorative line */}
       <svg style={{
