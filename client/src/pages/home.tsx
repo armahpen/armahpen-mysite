@@ -132,63 +132,29 @@ export default function Home() {
           <img style={{width:'71px',height:'76px',transform:'rotate(131.367deg)',position:'absolute',left:'77px',top:'0px'}} src="https://cdn.builder.io/api/v1/image/assets/TEMP/bdae1da462e182cde4834fff2e3bde1f5bbefa26?width=142" alt="" />
         </div>
       </div>
-      {/* 3D Wireframe Portrait */}
+      {/* Center Portrait */}
       <div style={{
         position: 'absolute',
         left: '600px',
         top: '150px',
         width: '400px',
-        height: '500px'
+        height: '600px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
       }}>
-        <svg 
-          width="400" 
-          height="500" 
-          viewBox="0 0 400 500" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Head outline */}
-          <path 
-            d="M200 80 C240 80, 270 110, 270 160 L270 260 C270 310, 240 340, 200 360 C160 340, 130 310, 130 260 L130 160 C130 110, 160 80, 200 80 Z" 
-            stroke="rgba(255,255,255,0.6)" 
-            strokeWidth="2" 
-            fill="none"
-          />
-          
-          {/* Grid pattern across face */}
-          <g stroke="rgba(255,255,255,0.3)" strokeWidth="1">
-            {Array.from({length: 15}).map((_, i) => (
-              <line key={`h-${i}`} x1="130" y1={100 + i * 16} x2="270" y2={100 + i * 16} />
-            ))}
-            {Array.from({length: 10}).map((_, i) => (
-              <line key={`v-${i}`} x1={145 + i * 14} y1="100" x2={145 + i * 14} y2="340" />
-            ))}
-          </g>
-          
-          {/* Eyes */}
-          <ellipse cx="170" cy="180" rx="12" ry="8" stroke="rgba(255,255,255,0.7)" strokeWidth="2" fill="none" />
-          <ellipse cx="230" cy="180" rx="12" ry="8" stroke="rgba(255,255,255,0.7)" strokeWidth="2" fill="none" />
-          <circle cx="170" cy="180" r="4" stroke="rgba(255,255,255,0.5)" strokeWidth="1" fill="none" />
-          <circle cx="230" cy="180" r="4" stroke="rgba(255,255,255,0.5)" strokeWidth="1" fill="none" />
-          
-          {/* Nose */}
-          <path d="M200 190 L190 220 L200 230 L210 220 Z" stroke="rgba(255,255,255,0.6)" strokeWidth="2" fill="none" />
-          
-          {/* Mouth */}
-          <path d="M180 250 Q200 270 220 250" stroke="rgba(255,255,255,0.6)" strokeWidth="2" fill="none" />
-          
-          {/* Neck and shoulders */}
-          <path 
-            d="M200 360 L200 420 M160 400 L200 420 L240 400" 
-            stroke="rgba(255,255,255,0.6)" 
-            strokeWidth="2"
-          />
-          
-          {/* Additional wireframe circles */}
-          <circle cx="200" cy="250" r="120" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
-          <circle cx="200" cy="250" r="160" stroke="rgba(255,255,255,0.1)" strokeWidth="1" fill="none" />
-          <circle cx="200" cy="250" r="200" stroke="rgba(255,255,255,0.05)" strokeWidth="1" fill="none" />
-        </svg>
+        <img 
+          src="/center-portrait.png" 
+          alt="Center Portrait" 
+          style={{
+            width: '400px',
+            height: '600px',
+            aspectRatio: '607/911',
+            borderRadius: '42px',
+            mixBlendMode: 'luminosity',
+            objectFit: 'cover'
+          }}
+        />
       </div>
       {/* Hero Section */}
       <div style={{
