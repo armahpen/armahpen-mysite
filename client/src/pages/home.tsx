@@ -135,18 +135,18 @@ export default function Home() {
       {/* Center Portrait */}
       <div style={{
         position: 'absolute',
-        left: '451px',
-        top: '80px',
-        width: '627px',
-        height: '931px',
+        left: '400px',
+        top: '60px',
+        width: '750px',
+        height: '1100px',
         display: 'inline-flex',
         padding: '10px',
         alignItems: 'center'
       }}>
         <div style={{
           position: 'relative',
-          width: '607px',
-          height: '911px',
+          width: '730px',
+          height: '1080px',
           borderRadius: '62px',
           overflow: 'hidden'
         }}>
@@ -154,21 +154,21 @@ export default function Home() {
             src="/center-portrait.png"
             alt="Center Portrait"
             style={{
-              width: '607px',
-              height: '911px',
+              width: '730px',
+              height: '1080px',
               aspectRatio: '607/911',
               mixBlendMode: 'luminosity',
               objectFit: 'cover',
               position: 'relative'
             }}
-            className="ml-[76px] mr-[76px] pl-[-60px] pr-[-60px] mt-[-81px] mb-[-81px]" />
+          />
           <div style={{
             position: 'absolute',
             top: '0',
             left: '0',
-            width: '150px',
+            width: '180px',
             height: '100%',
-            background: 'linear-gradient(to right, #1E1E1E 0%, rgba(30, 30, 30, 0.8) 30%, rgba(30, 30, 30, 0.3) 70%, transparent 100%)',
+            background: 'linear-gradient(to right, #1E1E1E 0%, rgba(30, 30, 30, 0.9) 20%, rgba(30, 30, 30, 0.6) 50%, rgba(30, 30, 30, 0.2) 80%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 1
           }} />
@@ -176,9 +176,9 @@ export default function Home() {
             position: 'absolute',
             top: '0',
             right: '0',
-            width: '150px',
+            width: '180px',
             height: '100%',
-            background: 'linear-gradient(to left, #1E1E1E 0%, rgba(30, 30, 30, 0.8) 30%, rgba(30, 30, 30, 0.3) 70%, transparent 100%)',
+            background: 'linear-gradient(to left, #1E1E1E 0%, rgba(30, 30, 30, 0.9) 20%, rgba(30, 30, 30, 0.6) 50%, rgba(30, 30, 30, 0.2) 80%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 1
           }} />
