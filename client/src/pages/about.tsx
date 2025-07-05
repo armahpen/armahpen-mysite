@@ -109,6 +109,63 @@ export default function About() {
       {/* Floating Stars Background */}
       <div className="stars-field"></div>
 
+      {/* Welcome Banner */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '60px 40px 40px',
+        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+      }}>
+        <div style={{
+          textAlign: 'center',
+          animation: 'fadeIn 1s ease-out'
+        }}>
+          <div style={{
+            fontSize: '48px',
+            fontWeight: '300',
+            letterSpacing: '8px',
+            marginBottom: '8px',
+            background: 'linear-gradient(135deg, #87CEEB 0%, #4682B4 50%, #5F9EA0 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            textShadow: '0 0 30px rgba(135, 206, 250, 0.5)',
+            fontFamily: 'Inter, system-ui, sans-serif'
+          }}>
+            WELCOME
+          </div>
+          <div style={{
+            fontSize: '24px',
+            fontWeight: '400',
+            letterSpacing: '4px',
+            color: 'rgba(255, 255, 255, 0.8)',
+            marginBottom: '8px'
+          }}>
+            TO
+          </div>
+          <div style={{
+            fontSize: '56px',
+            fontWeight: '600',
+            letterSpacing: '6px',
+            background: 'linear-gradient(135deg, #87CEEB 0%, #4682B4 50%, #5F9EA0 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            textShadow: '0 0 40px rgba(135, 206, 250, 0.6)',
+            position: 'relative'
+          }}>
+            Hea<span style={{
+              background: 'linear-gradient(135deg, #FFF 0%, #87CEEB 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>V</span>ans.
+          </div>
+        </div>
+      </div>
+
       {/* Orbital System Container */}
       <div style={{
         position: 'relative',
@@ -370,7 +427,6 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-              )}
               )}
             </div>
           </div>
