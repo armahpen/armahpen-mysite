@@ -126,50 +126,119 @@ export default function About() {
   }, [hoveredPlanet, clickedPlanet]);
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#1E1E1E',
-      color: 'white',
-      fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
-      position: 'relative',
-      overflow: 'hidden'
-    }}>
+    <div 
+      className="relative w-full" 
+      style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
+    >
       {/* Header with Navigation */}
-      <header style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '20px 40px',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        position: 'sticky',
-        top: 0,
-        background: 'rgba(30, 30, 30, 0.9)',
-        backdropFilter: 'blur(10px)',
-        zIndex: 1000
-      }}>
-        <div style={{
-          fontSize: '24px',
-          fontWeight: '700',
-          color: 'white'
-        }}>Evans (Heavans)</div>
-        
-        <nav style={{
+      {/* Left Border */}
+      <div 
+        style={{
+          width: '130px',
+          height: '1117px',
+          borderRight: '1px solid rgba(255, 255, 255, 0.12)',
+          position: 'absolute',
+          left: '0px',
+          top: '26px'
+        }}
+      />
+      
+      {/* HeaVans Logo - Clickable Image Logo */}
+      <div style={{
+        position: 'absolute',
+        top: '16px',
+        left: '16px',
+        zIndex: 20,
+        cursor: 'pointer'
+      }} onClick={() => window.location.href = '/'}>
+        <img
+          src="/logo.png"
+          alt="HeaVans Logo"
+          style={{
+            width: '120px',
+            height: '36px',
+            objectFit: 'contain'
+          }}
+          className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
+      </div>
+      
+      {/* Menu Icon */}
+      <svg 
+        style={{
           display: 'flex',
-          gap: '40px'
-        }}>
-          <div className="menu-button animate-fadeInUp delay-100"
-               style={{ cursor: 'pointer' }}
-               onClick={() => window.location.href = '/'}>Home</div>
-          <div className="menu-button animate-fadeInUp delay-200"
-               style={{ cursor: 'pointer' }}>About</div>
-          <div className="menu-button animate-fadeInUp delay-300"
-               style={{ cursor: 'pointer' }}
-               onClick={() => alert('Work section coming soon!')}>Work</div>
-          <div className="menu-button animate-fadeInUp delay-400"
-               style={{ cursor: 'pointer' }}
-               onClick={() => alert('Contact section coming soon!')}>Contact</div>
-        </nav>
-      </header>
+          width: '28px',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          gap: '10px',
+          position: 'absolute',
+          left: '51px',
+          top: '120px',
+          height: '20px'
+        }} 
+        width="29" height="23" viewBox="0 0 29 23" fill="none"
+      >
+        <path d="M28.5 1.5H0.500001" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
+        <path d="M28.5 11.5H10.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
+        <path d="M28.5 21.5H18.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
+      </svg>
+      
+      {/* Navigation Menu */}
+      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
+          left: '0px',
+          top: '0px'
+        }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.location.href = '/'}>Home</div>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.80)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '500',
+          position: 'absolute',
+          left: '96px',
+          top: '0px'
+        }} className="animate-slideInDown delay-200 menu-button">About</div>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
+          left: '194px',
+          top: '0px'
+        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
+          left: '317px',
+          top: '0px'
+        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
+          left: '388px',
+          top: '0px'
+        }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
+          left: '456px',
+          top: '0px'
+        }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
+      </div>
 
       {/* Floating Stars Background */}
       <div className="stars-field"></div>
