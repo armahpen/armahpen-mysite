@@ -169,9 +169,9 @@ export default function Home() {
             position: 'absolute',
             top: '0',
             right: '0',
-            width: '450px',
+            width: '180px',
             height: '100%',
-            background: 'linear-gradient(to left, #1E1E1E 0%, #1E1E1E 20%, rgba(30, 30, 30, 0.98) 30%, rgba(30, 30, 30, 0.9) 50%, rgba(30, 30, 30, 0.7) 70%, rgba(30, 30, 30, 0.4) 85%, transparent 100%)',
+            background: 'linear-gradient(to left, #1E1E1E 0%, rgba(30, 30, 30, 0.9) 20%, rgba(30, 30, 30, 0.6) 50%, rgba(30, 30, 30, 0.2) 80%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 1
           }} />
@@ -188,7 +188,7 @@ export default function Home() {
         top: '456px',
         width: '210px',
         height: '13px',
-        zIndex: 25
+        zIndex: 10
       }}>Explore 3D Art Creations</div>
       {/* Human Icon */}
       <svg style={{
