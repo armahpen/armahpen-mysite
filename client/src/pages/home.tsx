@@ -19,10 +19,6 @@ export default function Home() {
       {/* Logo HeaVans */}
       <div 
         style={{
-          color: '#FFF',
-          fontFamily: 'Poppins',
-          fontSize: '42px',
-          fontWeight: '400',
           position: 'absolute',
           left: '217px',
           top: '76px',
@@ -30,11 +26,15 @@ export default function Home() {
           height: '29px'
         }}
       >
-        <span style={{fontFamily: 'Porter Sans Block, -apple-system, Roboto, Helvetica, sans-serif', color: 'rgba(99,118,124,1)'}}>H</span>
-        <span style={{fontFamily: 'Poppins', color: 'rgba(99,118,124,1)'}}>ea</span>
-        <span style={{fontFamily: 'Porter Sans Block, -apple-system, Roboto, Helvetica, sans-serif', color: 'rgba(243,252,255,1)'}}>V</span>
-        <span style={{fontFamily: 'Poppins', color: 'rgba(243,252,255,1)'}}>ans</span>
-        <span style={{fontFamily: 'Poppins', color: 'rgba(255,255,255,1)'}}>.</span>
+        <img 
+          src="/attached_assets/heavans logo_1751725283678.PNG" 
+          alt="HeaVans Logo" 
+          style={{
+            width: '120px',
+            height: 'auto',
+            objectFit: 'contain'
+          }}
+        />
       </div>
 
       {/* Menu Icon */}
