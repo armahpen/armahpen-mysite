@@ -73,51 +73,74 @@ export default function Home() {
               {/* 3D Wireframe Portrait */}
               <div className="flex justify-center lg:justify-end">
                 <div className="w-80 h-96 lg:w-96 lg:h-[500px] relative">
-                  {/* Create SVG wireframe portrait */}
+                  {/* Create more detailed SVG wireframe portrait */}
                   <svg 
                     className="w-full h-full" 
-                    viewBox="0 0 300 400" 
+                    viewBox="0 0 320 450" 
                     fill="none" 
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    {/* Head outline */}
+                    {/* Head outline - more realistic proportions */}
                     <path 
-                      d="M150 50 C180 50, 200 80, 200 120 L200 200 C200 240, 180 260, 150 260 C120 260, 100 240, 100 200 L100 120 C100 80, 120 50, 150 50 Z" 
-                      stroke="rgba(255,255,255,0.3)" 
-                      strokeWidth="1" 
+                      d="M160 60 C190 60, 215 85, 215 125 L215 200 C215 240, 200 265, 180 275 L140 275 C120 265, 105 240, 105 200 L105 125 C105 85, 130 60, 160 60 Z" 
+                      stroke="rgba(255,255,255,0.4)" 
+                      strokeWidth="1.5" 
                       fill="none"
                     />
                     
-                    {/* Grid lines across face */}
-                    <g stroke="rgba(255,255,255,0.2)" strokeWidth="0.5">
-                      {Array.from({length: 8}).map((_, i) => (
-                        <line key={i} x1="100" y1={80 + i * 20} x2="200" y2={80 + i * 20} />
+                    {/* More detailed grid pattern */}
+                    <g stroke="rgba(255,255,255,0.2)" strokeWidth="0.8">
+                      {/* Horizontal grid lines */}
+                      {Array.from({length: 12}).map((_, i) => (
+                        <line key={`h-${i}`} x1="105" y1={80 + i * 16} x2="215" y2={80 + i * 16} />
                       ))}
-                      {Array.from({length: 6}).map((_, i) => (
-                        <line key={i} x1={110 + i * 15} y1="80" x2={110 + i * 15} y2="220" />
+                      {/* Vertical grid lines */}
+                      {Array.from({length: 8}).map((_, i) => (
+                        <line key={`v-${i}`} x1={115 + i * 13} y1="80" x2={115 + i * 13} y2="260" />
                       ))}
                     </g>
                     
-                    {/* Eyes */}
-                    <circle cx="130" cy="120" r="5" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
-                    <circle cx="170" cy="120" r="5" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
+                    {/* More detailed facial features */}
+                    {/* Eyes with more detail */}
+                    <ellipse cx="140" cy="135" rx="8" ry="6" stroke="rgba(255,255,255,0.5)" strokeWidth="1" fill="none" />
+                    <ellipse cx="180" cy="135" rx="8" ry="6" stroke="rgba(255,255,255,0.5)" strokeWidth="1" fill="none" />
+                    <circle cx="140" cy="135" r="3" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5" fill="none" />
+                    <circle cx="180" cy="135" r="3" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5" fill="none" />
                     
-                    {/* Nose */}
-                    <path d="M150 130 L145 150 L150 155 L155 150 Z" stroke="rgba(255,255,255,0.3)" strokeWidth="1" fill="none" />
+                    {/* Eyebrows */}
+                    <path d="M130 125 Q140 120 150 125" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
+                    <path d="M170 125 Q180 120 190 125" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
                     
-                    {/* Mouth */}
-                    <path d="M140 170 Q150 180 160 170" stroke="rgba(255,255,255,0.3)" strokeWidth="1" fill="none" />
+                    {/* Nose with more structure */}
+                    <path d="M160 145 L155 165 L160 170 L165 165 Z" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
+                    <path d="M155 168 Q160 170 165 168" stroke="rgba(255,255,255,0.3)" strokeWidth="0.8" fill="none" />
                     
-                    {/* Neck and shoulders */}
+                    {/* Mouth with more detail */}
+                    <path d="M145 185 Q160 195 175 185" stroke="rgba(255,255,255,0.4)" strokeWidth="1" fill="none" />
+                    <path d="M150 190 Q160 192 170 190" stroke="rgba(255,255,255,0.3)" strokeWidth="0.8" fill="none" />
+                    
+                    {/* Jawline */}
+                    <path d="M120 220 Q160 240 200 220" stroke="rgba(255,255,255,0.3)" strokeWidth="1" fill="none" />
+                    
+                    {/* Neck and shoulders with more structure */}
                     <path 
-                      d="M150 260 L150 320 M120 300 L150 320 L180 300" 
-                      stroke="rgba(255,255,255,0.3)" 
-                      strokeWidth="1"
+                      d="M160 275 L160 340 M130 320 L160 340 L190 320 M120 340 Q160 350 200 340" 
+                      stroke="rgba(255,255,255,0.4)" 
+                      strokeWidth="1.2"
                     />
                     
-                    {/* Additional wireframe details */}
-                    <circle cx="150" cy="200" r="80" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" fill="none" />
-                    <circle cx="150" cy="200" r="120" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" fill="none" />
+                    {/* Additional 3D wireframe elements */}
+                    <circle cx="160" cy="200" r="90" stroke="rgba(255,255,255,0.1)" strokeWidth="0.5" fill="none" />
+                    <circle cx="160" cy="200" r="130" stroke="rgba(255,255,255,0.05)" strokeWidth="0.5" fill="none" />
+                    <circle cx="160" cy="200" r="170" stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" fill="none" />
+                    
+                    {/* 3D depth lines */}
+                    <g stroke="rgba(255,255,255,0.15)" strokeWidth="0.5">
+                      <line x1="140" y1="135" x2="145" y2="140" />
+                      <line x1="180" y1="135" x2="175" y2="140" />
+                      <line x1="160" y1="145" x2="162" y2="150" />
+                      <line x1="160" y1="185" x2="162" y2="190" />
+                    </g>
                   </svg>
                 </div>
               </div>
