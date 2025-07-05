@@ -17,15 +17,15 @@ export default function Home() {
       />
       {/* Logo HeaVans */}
       <div className="absolute top-4 left-4">
-        <img 
-          src="/heavans-logo.png" 
-          alt="HeaVans Logo" 
+        <img
+          src="/heavans-logo.png"
+          alt="HeaVans Logo"
           style={{
             width: '250px',
             height: '50px',
             objectFit: 'contain'
           }}
-        />
+          className="ml-[152px] mr-[152px] mt-[74px] mb-[74px]" />
       </div>
       {/* Menu Icon */}
       <svg 
