@@ -4,7 +4,7 @@ import { Search, Menu, ArrowRight, ExternalLink } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen text-white" style={{backgroundColor: '#1E1E1E'}}>
       {/* Navigation Header */}
       <header className="w-full px-6 py-4">
         <div className="flex items-center justify-between">
