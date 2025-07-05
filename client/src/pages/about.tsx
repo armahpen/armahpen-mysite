@@ -4,54 +4,70 @@ const planets = [
   {
     id: 1,
     title: "Creative Builder",
-    description: "I've founded projects like Student Help (education support) and DEMS (AI-powered data services).",
+    description: "I've founded Student Help and DEMS, bringing real ideas to life.",
     link: "/projects",
-    color: "#00d4ff"
+    color: "#4fc3f7",
+    orbitRadius: 180,
+    size: 22
   },
   {
     id: 2,
-    title: "Poet & Sound Explorer",
-    description: "I write poetry and explore music as an emotional outlet that inspires my digital creations.",
+    title: "Poet & Sound Explorer", 
+    description: "I write poetry and explore music as creative outlets.",
     link: "/poetry",
-    color: "#ff6b9d"
+    color: "#ab47bc",
+    orbitRadius: 220,
+    size: 20
   },
   {
     id: 3,
     title: "Design Thinker",
-    description: "I create engaging interfaces and visuals that are both beautiful and intuitive.",
-    link: "/design",
-    color: "#39ff14"
+    description: "I craft intuitive UI/UX and graphics that connect.",
+    link: "/design", 
+    color: "#66bb6a",
+    orbitRadius: 260,
+    size: 24
   },
   {
     id: 4,
     title: "Full-Stack Developer",
-    description: "I build modern, scalable web apps using clean code and real-world logic.",
+    description: "I build functional, clean, and scalable digital tools.",
     link: "/code",
-    color: "#ff4757"
+    color: "#ef5350",
+    orbitRadius: 300,
+    size: 21
   },
   {
     id: 5,
     title: "Motion Creator",
-    description: "I use animation to bring static designs to life—making stories and products more memorable.",
+    description: "I use animation to give visuals life and meaning.",
     link: "/motion",
-    color: "#7bed9f"
+    color: "#ff9800",
+    orbitRadius: 340,
+    size: 19
   },
   {
     id: 6,
     title: "Creative Collaborator",
-    description: "I love working with other passionate minds to build meaningful, creative things.",
+    description: "I love working with others to make ideas real.",
     link: "/contact",
-    color: "#ffa502"
+    color: "#26c6da",
+    orbitRadius: 380,
+    size: 18
   }
 ];
 
 export default function About() {
+  const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
+
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'radial-gradient(ellipse at center, #1a1a2e 0%, #0f0f1e 50%, #0a0a15 100%)',
+      background: '#3B3B3B',
       color: 'white',
-      fontFamily: 'Inter, system-ui, -apple-system, sans-serif'
+      fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
       {/* Header with Navigation */}
       <header style={{
@@ -62,7 +78,7 @@ export default function About() {
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         position: 'sticky',
         top: 0,
-        background: 'rgba(26, 26, 46, 0.8)',
+        background: 'rgba(59, 59, 59, 0.9)',
         backdropFilter: 'blur(10px)',
         zIndex: 1000
       }}>
@@ -90,122 +106,210 @@ export default function About() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <div style={{
-        textAlign: 'center',
-        padding: '80px 40px 60px',
-        maxWidth: '900px',
-        margin: '0 auto'
-      }}>
-        <h1 className="animate-fadeInUp delay-200" style={{
-          fontSize: '48px',
-          fontWeight: '700',
-          marginBottom: '20px',
-          color: 'white',
-          lineHeight: '1.2'
-        }}>
-          Hi, I'm Evans (Heavans)
-        </h1>
-        <p className="animate-fadeInUp delay-300" style={{
-          fontSize: '20px',
-          color: 'rgba(255, 255, 255, 0.8)',
-          lineHeight: '1.6',
-          maxWidth: '700px',
-          margin: '0 auto'
-        }}>
-          A multidisciplinary creative at the center of code, design, and storytelling
-        </p>
-      </div>
+      {/* Floating Stars Background */}
+      <div className="stars-field"></div>
 
-      {/* Planet Cards Grid */}
+      {/* Orbital System Container */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '24px',
-        padding: '0 40px 80px',
-        maxWidth: '1200px',
-        margin: '0 auto'
+        position: 'relative',
+        width: '100vw',
+        height: 'calc(100vh - 80px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden'
       }}>
+        
+        {/* Orbital Paths */}
         {planets.map((planet) => (
           <div
-            key={planet.id}
-            className="planet-card"
+            key={`orbit-${planet.id}`}
+            className="orbit-path"
             style={{
-              position: 'relative',
-              padding: '32px',
-              background: 'rgba(255, 255, 255, 0.05)',
-              borderRadius: '16px',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
-              border: `1px solid ${planet.color}22`,
-              transition: 'all 0.4s ease',
-              cursor: 'pointer'
+              position: 'absolute',
+              width: `${planet.orbitRadius * 2}px`,
+              height: `${planet.orbitRadius * 2}px`,
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '50%',
+              animation: 'orbitGlow 6s ease-in-out infinite alternate'
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-              e.currentTarget.style.border = `1px solid ${planet.color}44`;
-              e.currentTarget.style.boxShadow = `0 16px 48px rgba(0, 0, 0, 0.4), 0 0 20px ${planet.color}33`;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateY(0) scale(1)';
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-              e.currentTarget.style.border = `1px solid ${planet.color}22`;
-              e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+          />
+        ))}
+
+        {/* Central Glowing Orb */}
+        <div style={{
+          position: 'absolute',
+          width: '140px',
+          height: '140px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(135, 206, 250, 0.8) 30%, rgba(100, 149, 237, 0.6) 60%, rgba(72, 61, 139, 0.4) 100%)',
+          boxShadow: '0 0 60px rgba(135, 206, 250, 0.8), 0 0 120px rgba(135, 206, 250, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.3)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+          animation: 'centralGlow 4s ease-in-out infinite alternate',
+          cursor: 'pointer'
+        }}>
+          {/* Inner Core */}
+          <div style={{
+            position: 'absolute',
+            width: '80px',
+            height: '80px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%)',
+            animation: 'coreRotate 8s linear infinite'
+          }} />
+          
+          <div style={{
+            position: 'absolute',
+            bottom: '-60px',
+            textAlign: 'center',
+            maxWidth: '300px',
+            zIndex: 15
+          }}>
+            <div style={{
+              fontSize: '18px',
+              fontWeight: '700',
+              color: 'white',
+              marginBottom: '8px',
+              textShadow: '0 0 15px rgba(135, 206, 250, 0.8)'
+            }}>
+              Evans (Heavans)
+            </div>
+            <div style={{
+              fontSize: '14px',
+              color: 'rgba(255, 255, 255, 0.9)',
+              lineHeight: '1.4',
+              textAlign: 'center'
+            }}>
+              A multidisciplinary creative at the center of code, design, and storytelling
+            </div>
+          </div>
+        </div>
+
+        {/* Orbiting Planets */}
+        {planets.map((planet, index) => (
+          <div
+            key={planet.id}
+            className="planet-orbit"
+            style={{
+              position: 'absolute',
+              width: `${planet.orbitRadius * 2}px`,
+              height: `${planet.orbitRadius * 2}px`,
+              animation: `orbitRotate ${20 + index * 5}s linear infinite`,
+              animationDelay: `${index * -2}s`
             }}
           >
-            {/* Color Accent */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '4px',
-              height: '100%',
-              background: `linear-gradient(180deg, ${planet.color}, ${planet.color}66)`,
-              borderRadius: '2px 0 0 2px'
-            }} />
-            
-            <h3 style={{
-              fontSize: '24px',
-              fontWeight: '700',
-              color: planet.color,
-              marginBottom: '12px',
-              textShadow: `0 0 10px ${planet.color}44`
-            }}>
-              {planet.title}
-            </h3>
-            
-            <p style={{
-              fontSize: '16px',
-              color: 'rgba(255, 255, 255, 0.85)',
-              lineHeight: '1.6',
-              marginBottom: '20px'
-            }}>
-              {planet.description}
-            </p>
-            
-            <a
-              href={planet.link}
+            <div
+              className="planet"
               style={{
-                color: planet.color,
-                fontSize: '14px',
-                fontWeight: '600',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                transition: 'all 0.3s ease'
+                position: 'absolute',
+                top: '0',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                cursor: 'pointer',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                zIndex: hoveredPlanet === planet.id ? 20 : 5
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateX(4px)';
-                e.currentTarget.style.textShadow = `0 0 8px ${planet.color}66`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.textShadow = 'none';
-              }}
+              onMouseEnter={() => setHoveredPlanet(planet.id)}
+              onMouseLeave={() => setHoveredPlanet(null)}
             >
-              Explore →
-            </a>
+              {/* Planet Visual */}
+              <div style={{
+                width: `${planet.size}px`,
+                height: `${planet.size}px`,
+                borderRadius: '50%',
+                background: `radial-gradient(circle at 30% 30%, ${planet.color}, ${planet.color}CC, ${planet.color}88)`,
+                boxShadow: `0 0 15px ${planet.color}AA, inset -5px -5px 10px rgba(0,0,0,0.3)`,
+                transform: hoveredPlanet === planet.id ? 'scale(2)' : 'scale(1)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                border: `1px solid ${planet.color}DD`
+              }}>
+                {/* Planet Glow Ring */}
+                <div style={{
+                  position: 'absolute',
+                  top: '-8px',
+                  left: '-8px',
+                  right: '-8px',
+                  bottom: '-8px',
+                  borderRadius: '50%',
+                  border: `1px solid ${planet.color}44`,
+                  opacity: hoveredPlanet === planet.id ? 1 : 0,
+                  transform: hoveredPlanet === planet.id ? 'scale(1.2)' : 'scale(1)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                }} />
+              </div>
+
+              {/* Planet Info Card */}
+              {hoveredPlanet === planet.id && (
+                <div style={{
+                  position: 'absolute',
+                  top: `${planet.size + 20}px`,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'rgba(0, 0, 0, 0.9)',
+                  border: `2px solid ${planet.color}66`,
+                  borderRadius: '12px',
+                  padding: '20px',
+                  minWidth: '280px',
+                  maxWidth: '320px',
+                  animation: 'cardFadeIn 0.3s ease-out',
+                  boxShadow: `0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px ${planet.color}33`,
+                  backdropFilter: 'blur(10px)'
+                }}>
+                  <h3 style={{
+                    fontSize: '18px',
+                    fontWeight: '700',
+                    color: planet.color,
+                    marginBottom: '8px',
+                    textShadow: `0 0 8px ${planet.color}88`
+                  }}>
+                    {planet.title}
+                  </h3>
+                  
+                  <p style={{
+                    fontSize: '14px',
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    lineHeight: '1.5',
+                    marginBottom: '16px'
+                  }}>
+                    {planet.description}
+                  </p>
+                  
+                  <a
+                    href={planet.link}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: planet.color,
+                      fontSize: '14px',
+                      fontWeight: '600',
+                      textDecoration: 'none',
+                      padding: '8px 16px',
+                      border: `1px solid ${planet.color}44`,
+                      borderRadius: '6px',
+                      transition: 'all 0.3s ease',
+                      background: `${planet.color}11`
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = `${planet.color}22`;
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.boxShadow = `0 4px 15px ${planet.color}33`;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = `${planet.color}11`;
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    Explore →
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
