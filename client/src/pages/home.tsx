@@ -19,18 +19,18 @@ export default function Home() {
       <div 
         style={{
           position: 'absolute',
-          left: '361px',
+          left: '217px',
           top: '156px',
-          width: '250px',
-          height: '50px'
+          width: '238px',
+          height: '29px'
         }}
       >
         <img 
           src="/heavans-logo.png" 
           alt="HeaVans Logo" 
           style={{
-            width: '250px',
-            height: '50px',
+            width: '238px',
+            height: '29px',
             objectFit: 'contain'
           }}
         />
@@ -135,7 +135,7 @@ export default function Home() {
       {/* Center Portrait */}
       <div style={{
         position: 'absolute',
-        left: '544px',
+        left: '400px',
         top: '60px',
         width: '750px',
         height: '1100px',
