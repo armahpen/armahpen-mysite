@@ -175,32 +175,22 @@ export default function Home() {
           <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '28px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
         </div>
       </div>
-      {/* Center Portrait - Resized and repositioned */}
-      <div style={{
-        display: 'inline-flex',
-        height: '666px',
-        padding: '10px',
-        alignItems: 'center',
-        gap: '10px',
-        position: 'absolute',
-        left: '286px',
-        top: '218px',
-        width: '961px'
-      }}>
-        <img
-          src="/center-portrait.png"
-          alt="Center Portrait"
-          style={{
-            width: '941px',
-            height: '1086px',
-            aspectRatio: '941/1086',
-            borderRadius: '62px',
-            mixBlendMode: 'luminosity',
-            position: 'relative',
-            objectFit: 'cover'
-          }}
-        />
-      </div>
+      {/* Center Portrait - Applied exact Figma image code */}
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff5a6e453d722f063aaeb97088c4f8edf7acc885?width=2434"
+        alt="ChatGPT Image"
+        style={{
+          width: '1217px',
+          height: '1065px',
+          flexShrink: 0,
+          aspectRatio: '1217/1065',
+          borderRadius: '62px',
+          mixBlendMode: 'luminosity',
+          position: 'absolute',
+          left: '286px',
+          top: '218px'
+        }}
+      />
       {/* Hero Section - Repositioned to match Figma */}
       <div style={{
         width: '357px',
