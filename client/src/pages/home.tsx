@@ -68,8 +68,8 @@ export default function Home() {
         <path d="M28.5 11.5H10.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
         <path d="M28.5 21.5H18.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
       </svg>
-      {/* Navigation Menu */}
-      <div style={{position: 'absolute', left: '1121px', top: '83px', width: '548px', height: '18px', zIndex: 20}}>
+      {/* Navigation Menu - Adjusted positioning to prevent overlap */}
+      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
@@ -295,12 +295,11 @@ export default function Home() {
           <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,0.800000011920929)'}}>Start work</span>
         </div>
       </div>
-      {/* Bottom Section - Repositioned to match Figma */}
+      {/* Bottom Section - Made transparent as intended */}
       <div style={{
         width: '1400px',
         height: '222px',
-        background: 'rgba(0, 0, 0, 0.12)',
-        backdropFilter: 'blur(6px)',
+        background: 'transparent',
         position: 'absolute',
         left: '99px',
         top: '838px'
