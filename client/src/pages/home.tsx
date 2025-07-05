@@ -214,33 +214,93 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Work Collection - Developer Section */}
+      {/* DevHea Work Collection - Developer Section */}
       <div style={{
         position: 'absolute',
         left: '186px',
         top: '538px',
-        zIndex: 20
+        zIndex: 20,
+        width: '320px',
+        height: '140px'
       }}>
-        <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'0px',width:'100px',height:'14px'}}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>{'< DevHea>'}</span>
+        {/* Header with < DevHea> and < Dev> */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          marginBottom: '8px'
+        }}>
+          <div style={{
+            color: '#FFF',
+            fontFamily: 'Public Sans',
+            fontSize: '18px',
+            fontWeight: '400',
+            lineHeight: 'normal'
+          }}>
+            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,1)'}}>{'< DevHea>'}</span>
+          </div>
+          <div style={{
+            color: '#FFF',
+            fontFamily: 'Rubik Doodle Triangles',
+            fontSize: '24px',
+            fontWeight: '400',
+            lineHeight: 'normal'
+          }}>
+            <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '24px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
+          </div>
         </div>
-        <svg style={{width:'259px',height:'4px',position:'absolute',left:'0px',top:'27px'}} width="259" height="4" viewBox="0 0 259 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 2H258.583" stroke="#63767C" strokeWidth="3"/>
-        </svg>
-        <svg style={{width:'70px',height:'4px',position:'absolute',left:'189px',top:'27px'}} width="71" height="4" viewBox="0 0 71 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.5 2L70.5833 2.00001" stroke="black" strokeOpacity="0.34" strokeWidth="3"/>
-        </svg>
-        <div style={{width:'150px',color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'600',lineHeight:'normal',position:'absolute',left:'0px',top:'46px',height:'14px'}}>
+        
+        {/* Divider Lines */}
+        <div style={{
+          width: '100%',
+          height: '4px',
+          marginBottom: '12px',
+          position: 'relative'
+        }}>
+          <svg style={{width:'259px',height:'4px',position:'absolute',left:'0px',top:'0px'}} width="259" height="4" viewBox="0 0 259 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 2H258.583" stroke="#63767C" strokeWidth="3"/>
+          </svg>
+          <svg style={{width:'70px',height:'4px',position:'absolute',left:'189px',top:'0px'}} width="71" height="4" viewBox="0 0 71 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.5 2L70.5833 2.00001" stroke="black" strokeOpacity="0.34" strokeWidth="3"/>
+          </svg>
+        </div>
+        
+        {/* Work Collection Title */}
+        <div style={{
+          color: '#FFF',
+          fontFamily: 'Public Sans',
+          fontSize: '20px',
+          fontWeight: '600',
+          lineHeight: '1.2',
+          marginBottom: '8px'
+        }}>
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>Work Collection</span>
         </div>
-        <div style={{width:'271px',color:'#FFF',fontFamily:'Public Sans',fontSize:'14px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'73px',height:'26px'}}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}}>Full-stack developer blending sleek design with solid back-end architecture</span>
+        
+        {/* Description */}
+        <div style={{
+          color: '#FFF',
+          fontFamily: 'Public Sans',
+          fontSize: '14px',
+          fontWeight: '400',
+          lineHeight: '1.4',
+          marginBottom: '12px',
+          width: '280px'
+        }}>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}}>Full-stack developer blending sleek design with solid back-end architectures</span>
         </div>
-        <div style={{width:'150px',color:'rgba(255, 255, 255, 0.45)',fontFamily:'Public Sans',fontSize:'14px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'2px',top:'118px',height:'10px'}}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.44999998807907104)'}}>see collections</span>
-        </div>
-        <div style={{width:'142px',color:'#FFF',fontFamily:'Rubik Doodle Triangles',fontSize:'28px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'109px',top:'-3px',height:'20px'}}>
-          <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '28px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
+        
+        {/* Call to Action */}
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.45)',
+          fontFamily: 'Public Sans',
+          fontSize: '14px',
+          fontWeight: '400',
+          lineHeight: '1.2',
+          cursor: 'pointer'
+        }}>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.45)'}}>see collections</span>
         </div>
       </div>
       {/* Frame 7 - Updated with latest Figma specifications */}
