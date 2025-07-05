@@ -23,15 +23,15 @@ export default function Home() {
         zIndex: 20,
         cursor: 'pointer'
       }} onClick={() => window.location.href = '/'}>
-        <img 
+        <img
           src="/logo.png"
-          alt="HeaVans Logo" 
+          alt="HeaVans Logo"
           style={{
             width: '120px',
             height: '36px',
             objectFit: 'contain'
           }}
-        />
+          className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
       {/* Vector 4 - Decorative line */}
       <svg style={{
@@ -213,7 +213,6 @@ export default function Home() {
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.45)'}}>see collections →</span>
         </div>
       </div>
-
       {/* DevHea Work Collection - Developer Section */}
       <div style={{
         position: 'absolute',
@@ -328,7 +327,6 @@ export default function Home() {
           }}
         />
       </div>
-      
       {/* Semi-transparent overlay covering from shoulders - Rectangle 8 */}
       <svg style={{
         width: '1613px',
@@ -605,10 +603,6 @@ export default function Home() {
       <svg style={{width: '3px', height: '3px', position: 'absolute', left: '187px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
         <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
       </svg>
-
-      
-      
-      
       {/* Artist of the Month */}
       <div style={{
         color: 'rgba(255, 255, 255, 0.85)',
@@ -625,7 +619,6 @@ export default function Home() {
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.8500000238418579)'}}>Meet Artist of the Month: @Alex Chen</span>
       </div>
-      
       {/* Artist Description */}
       <div style={{
         width: '462px',
@@ -642,7 +635,6 @@ export default function Home() {
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}}>Discover Alex's stunning 3D worlds created with Artoo. Read More for an exclusive interview.</span>
       </div>
-      
       {/* Read More Link */}
       <div style={{
         color: 'rgba(255, 255, 255, 0.75)',
@@ -659,8 +651,6 @@ export default function Home() {
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.75)'}}>Read More...</span>
       </div>
-
-      
       {/* Final Line Separator */}
       <div style={{
         width: '1600px',
