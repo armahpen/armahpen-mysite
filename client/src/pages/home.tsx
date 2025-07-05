@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <div 
-      className="relative w-full min-h-screen overflow-x-auto" 
-      style={{backgroundColor: '#1E1E1E', minWidth: '1728px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
+      className="relative w-full min-h-screen overflow-hidden" 
+      style={{backgroundColor: '#1E1E1E', width: '1600px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
     >
       {/* Left Border */}
       <div 
@@ -180,8 +180,8 @@ export default function Home() {
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff5a6e453d722f063aaeb97088c4f8edf7acc885?width=2434"
         alt="ChatGPT Image"
         style={{
-          width: '1217px',
-          height: '1065px',
+          width: '1050px',
+          height: '920px',
           flexShrink: 0,
           aspectRatio: '1217/1065',
           borderRadius: '62px',
@@ -284,7 +284,7 @@ export default function Home() {
       </div>
       {/* Bottom Section - Repositioned to match Figma */}
       <div style={{
-        width: '1598px',
+        width: '1400px',
         height: '222px',
         background: 'rgba(0, 0, 0, 0.12)',
         backdropFilter: 'blur(6px)',
@@ -414,7 +414,7 @@ export default function Home() {
       
       {/* Final Line Separator */}
       <div style={{
-        width: '1708px',
+        width: '1600px',
         height: '0px',
         background: '#FFF',
         position: 'absolute',
