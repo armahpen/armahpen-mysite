@@ -27,7 +27,7 @@ export default function Home() {
         }}
       >
         <img 
-          src="/attached_assets/heavans logo_1751725283678.PNG" 
+          src="/heavans-logo.png" 
           alt="HeaVans Logo" 
           style={{
             width: '120px',
@@ -115,7 +115,7 @@ export default function Home() {
         height: 'auto'
       }}>
         <img 
-          src="/attached_assets/jfkfff_1751725480650.PNG" 
+          src="/work-collection.png" 
           alt="Work Collection" 
           style={{
             width: '100%',
