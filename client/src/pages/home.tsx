@@ -37,38 +37,7 @@ export default function Home() {
             
             {/* Left Side - 3D Portrait */}
             <div className="relative">
-              {/* Work Collection Section */}
-              <div className="absolute top-0 left-0 z-10">
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-lg p-4 mb-4">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="text-white text-sm font-medium">Fifa Designer</div>
-                    <div className="w-4 h-4 bg-teal-400 rounded-sm flex items-center justify-center">
-                      <ExternalLink className="w-2 h-2 text-gray-900" />
-                    </div>
-                  </div>
-                  <div className="text-xs text-gray-400">Work Collection</div>
-                  <div className="text-xs text-gray-500 mt-1">
-                    Multidisciplinary designer in UX/UI.<br />
-                    Brand design and creative products<br />
-                    for 2 years.
-                  </div>
-                </div>
-                
-                <div className="bg-gray-900/80 backdrop-blur-sm rounded-lg p-4">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <div className="text-white text-sm font-medium">&lt; DevHan /&gt;</div>
-                    <div className="w-4 h-4 bg-teal-400 rounded-sm flex items-center justify-center">
-                      <ExternalLink className="w-2 h-2 text-gray-900" />
-                    </div>
-                  </div>
-                  <div className="text-xs text-gray-400">Work Collection</div>
-                  <div className="text-xs text-gray-500 mt-1">
-                    Full stack developer blending ideas<br />
-                    design with front and backend<br />
-                    for 3 years.
-                  </div>
-                </div>
-              </div>
+
 
               {/* 3D Wireframe Portrait */}
               <div className="flex justify-center lg:justify-end">
