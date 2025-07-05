@@ -25,7 +25,7 @@ export default function Home() {
             height: '50px',
             objectFit: 'contain'
           }}
-          className="ml-[152px] mr-[152px] mt-[74px] mb-[74px]" />
+          className="ml-[152px] mr-[152px] mt-[63px] mb-[63px]" />
       </div>
       {/* Menu Icon */}
       <svg 
