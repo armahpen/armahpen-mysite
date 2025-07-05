@@ -132,17 +132,7 @@ export default function About() {
       style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
     >
       {/* Header with Navigation */}
-      {/* Left Border */}
-      <div 
-        style={{
-          width: '130px',
-          height: '1117px',
-          borderRight: '1px solid rgba(255, 255, 255, 0.12)',
-          position: 'absolute',
-          left: '0px',
-          top: '26px'
-        }}
-      />
+      
       
       {/* HeaVans Logo - Clickable Image Logo */}
       <Link href="/">
