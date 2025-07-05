@@ -16,7 +16,7 @@ export default function Home() {
         }}
       />
       {/* Logo HeaVans */}
-      <div className="absolute top-4 left-4">
+      <div className="absolute top-4 left-4" style={{ zIndex: 20 }}>
         <img
           src="/heavans-logo.png"
           alt="HeaVans Logo"
@@ -25,7 +25,7 @@ export default function Home() {
             height: '50px',
             objectFit: 'contain'
           }}
-          className="ml-[152px] mr-[152px] mt-[63px] mb-[63px]" />
+        />
       </div>
       {/* Menu Icon */}
       <svg 
@@ -47,7 +47,7 @@ export default function Home() {
         <path d="M28.5 21.5H18.5" stroke="white" strokeOpacity="0.7" strokeWidth="2"/>
       </svg>
       {/* Navigation Menu */}
-      <div style={{position: 'absolute', left: '1121px', top: '83px', width: '548px', height: '18px'}}>
+      <div style={{position: 'absolute', left: '1121px', top: '83px', width: '548px', height: '18px', zIndex: 20}}>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
@@ -100,7 +100,8 @@ export default function Home() {
         left: '158px',
         top: '350px',
         width: '320px',
-        height: '178px'
+        height: '178px',
+        zIndex: 20
       }}>
         <div style={{width:'320px',height:'178px',position:'absolute',left:'0px',top:'0px'}}>
           <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'50px',width:'102px',height:'14px'}}>
@@ -158,9 +159,9 @@ export default function Home() {
             position: 'absolute',
             top: '0',
             left: '0',
-            width: '180px',
+            width: '280px',
             height: '100%',
-            background: 'linear-gradient(to right, #1E1E1E 0%, rgba(30, 30, 30, 0.9) 20%, rgba(30, 30, 30, 0.6) 50%, rgba(30, 30, 30, 0.2) 80%, transparent 100%)',
+            background: 'linear-gradient(to right, #1E1E1E 0%, rgba(30, 30, 30, 0.95) 15%, rgba(30, 30, 30, 0.8) 35%, rgba(30, 30, 30, 0.5) 60%, rgba(30, 30, 30, 0.2) 80%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 1
           }} />
