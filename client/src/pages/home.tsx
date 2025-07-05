@@ -26,18 +26,25 @@ export default function Home() {
         <div style={{
           width: '100px',
           height: '30px',
-          background: 'linear-gradient(135deg, #4a90e2 0%, #67b8f5 50%, #8cc8f7 100%)',
+          background: '#2a2a2a',
           borderRadius: '4px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'Poppins, sans-serif',
-          fontSize: '14px',
-          fontWeight: '600',
-          color: '#fff',
-          textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+          fontFamily: 'Arial, sans-serif',
+          fontSize: '11px',
+          fontWeight: '400',
+          padding: '2px 6px',
+          boxSizing: 'border-box'
         }}>
-          HeaVans
+          <span style={{
+            color: '#7a8996',
+            marginRight: '1px'
+          }}>Hea</span>
+          <span style={{
+            color: '#ffffff',
+            fontWeight: '500'
+          }}>Vans.</span>
         </div>
       </div>
       {/* Vector 4 - Decorative line */}
