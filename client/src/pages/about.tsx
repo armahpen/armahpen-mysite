@@ -452,7 +452,8 @@ export default function About() {
                 color: planet.color,
                 lineHeight: '1.6',
                 marginBottom: '20px',
-                textAlign: 'center'
+                textAlign: 'center',
+                fontWeight: '400'
               }}>
                 {planet.description}
               </p>
