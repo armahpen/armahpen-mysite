@@ -135,24 +135,25 @@ export default function Home() {
       {/* Center Portrait */}
       <div style={{
         position: 'absolute',
-        left: '600px',
-        top: '150px',
-        width: '400px',
-        height: '600px',
-        display: 'flex',
-        justifyContent: 'center',
+        left: '451px',
+        top: '80px',
+        width: '627px',
+        height: '931px',
+        display: 'inline-flex',
+        padding: '10px',
         alignItems: 'center'
       }}>
         <img 
           src="/center-portrait.png" 
           alt="Center Portrait" 
           style={{
-            width: '400px',
-            height: '600px',
+            width: '607px',
+            height: '911px',
             aspectRatio: '607/911',
-            borderRadius: '42px',
+            borderRadius: '62px',
             mixBlendMode: 'luminosity',
-            objectFit: 'cover'
+            objectFit: 'cover',
+            position: 'relative'
           }}
         />
       </div>
@@ -163,16 +164,18 @@ export default function Home() {
         fontSize: '18px',
         fontWeight: '500',
         position: 'absolute',
-        left: '1341px',
-        top: '376px'
+        left: '1254px',
+        top: '456px',
+        width: '210px',
+        height: '13px'
       }}>Explore 3D Art Creations</div>
       {/* Human Icon */}
       <svg style={{
         width: '24px',
         height: '24px',
         position: 'absolute',
-        left: '1307px',
-        top: '370px'
+        left: '1220px',
+        top: '450px'
       }} viewBox="0 0 24 24" fill="none">
         <path d="M10.9 15L9.27498 22.2C9.22498 22.4333 9.10414 22.625 8.91248 22.775C8.72081 22.925 8.49998 23 8.24998 23C7.91664 23 7.64998 22.875 7.44998 22.625C7.24998 22.375 7.18331 22.0917 7.24998 21.775L10.075 7.45C10.175 6.96667 10.4 6.60417 10.75 6.3625C11.1 6.12083 11.4666 6 11.85 6C12.2333 6 12.5875 6.08333 12.9125 6.25C13.2375 6.41667 13.5 6.66667 13.7 7L14.7 8.6C15 9.08333 15.3875 9.52083 15.8625 9.9125C16.3375 10.3042 16.8833 10.5917 17.5 10.775V9.75C17.5 9.53333 17.5708 9.35417 17.7125 9.2125C17.8541 9.07083 18.0333 9 18.25 9C18.4666 9 18.6458 9.07083 18.7875 9.2125C18.9291 9.35417 19 9.53333 19 9.75V22.25C19 22.4667 18.9291 22.6458 18.7875 22.7875C18.6458 22.9292 18.4666 23 18.25 23C18.0333 23 17.8541 22.9292 17.7125 22.7875C17.5708 22.6458 17.5 22.4667 17.5 22.25V12.85C16.7 12.6667 15.9583 12.375 15.275 11.975C14.5916 11.575 14 11.0833 13.5 10.5L12.9 13.5L14.7 15.2C14.8 15.3 14.875 15.4125 14.925 15.5375C14.975 15.6625 15 15.7917 15 15.925V22C15 22.2833 14.9041 22.5208 14.7125 22.7125C14.5208 22.9042 14.2833 23 14 23C13.7166 23 13.4791 22.9042 13.2875 22.7125C13.0958 22.5208 13 22.2833 13 22V17L10.9 15ZM6.44998 12.95L5.29998 12.725C5.03331 12.675 4.82498 12.5375 4.67498 12.3125C4.52498 12.0875 4.47498 11.8333 4.52498 11.55L5.27498 7.625C5.37498 7.05833 5.67498 6.62917 6.17498 6.3375C6.67498 6.04583 7.21664 5.95833 7.79998 6.075C8.08331 6.125 8.29581 6.2625 8.43748 6.4875C8.57914 6.7125 8.62498 6.96667 8.57498 7.25L7.62498 12.15C7.57498 12.4333 7.43748 12.65 7.21248 12.8C6.98748 12.95 6.73331 13 6.44998 12.95ZM13.5 5.5C12.95 5.5 12.4791 5.30417 12.0875 4.9125C11.6958 4.52083 11.5 4.05 11.5 3.5C11.5 2.95 11.6958 2.47917 12.0875 2.0875C12.4791 1.69583 12.95 1.5 13.5 1.5C14.05 1.5 14.5208 1.69583 14.9125 2.0875C15.3041 2.47917 15.5 2.95 15.5 3.5C15.5 4.05 15.3041 4.52083 14.9125 4.9125C14.5208 5.30417 14.05 5.5 13.5 5.5Z" fill="#E3E3E3"/>
       </svg>
@@ -184,8 +187,9 @@ export default function Home() {
         fontWeight: '600',
         lineHeight: '42px',
         position: 'absolute',
-        left: '1295px',
-        top: '434px'
+        left: '1208px',
+        top: '514px',
+        height: '72px'
       }}>Shape the Future with Heavan</div>
       <div style={{
         width: '345px',
@@ -195,8 +199,9 @@ export default function Home() {
         fontWeight: '400',
         lineHeight: '24px',
         position: 'absolute',
-        left: '1295px',
-        top: '534px'
+        left: '1208px',
+        top: '614px',
+        height: '59px'
       }}>Evans (Heavans) is a creative web developer blending design, code, and motion to build modern, impactful digital experiences.</div>
       {/* Start Work Button */}
       <div style={{
