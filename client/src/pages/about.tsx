@@ -174,53 +174,7 @@ export default function About() {
       {/* Floating Stars Background */}
       <div className="stars-field"></div>
 
-      {/* Welcome Banner */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '40px 20px 20px',
-        animation: 'fadeIn 1s ease-out'
-      }}>
-        <div style={{
-          textAlign: 'center',
-          padding: '20px',
-          background: 'rgba(255, 255, 255, 0.05)',
-          borderRadius: '12px',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          backdropFilter: 'blur(10px)'
-        }}>
-          <div style={{
-            fontSize: '32px',
-            fontWeight: '300',
-            color: '#4fc3f7',
-            letterSpacing: '2px',
-            marginBottom: '8px',
-            fontFamily: 'Arial, sans-serif'
-          }}>
-            WELCOME
-          </div>
-          <div style={{
-            fontSize: '32px',
-            fontWeight: '300',
-            color: '#4fc3f7',
-            letterSpacing: '2px',
-            marginBottom: '8px',
-            fontFamily: 'Arial, sans-serif'
-          }}>
-            TO
-          </div>
-          <div style={{
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: 'white',
-            letterSpacing: '1px',
-            fontFamily: 'Arial, sans-serif'
-          }}>
-            Hea<span style={{color: '#4fc3f7'}}>V</span>ans.
-          </div>
-        </div>
-      </div>
+      
 
       {/* Skills Solar System */}
       <div style={{
