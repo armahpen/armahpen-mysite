@@ -169,9 +169,9 @@ export default function Home() {
             position: 'absolute',
             top: '0',
             right: '0',
-            width: '180px',
+            width: '350px',
             height: '100%',
-            background: 'linear-gradient(to left, #1E1E1E 0%, rgba(30, 30, 30, 0.9) 20%, rgba(30, 30, 30, 0.6) 50%, rgba(30, 30, 30, 0.2) 80%, transparent 100%)',
+            background: 'linear-gradient(to left, #1E1E1E 0%, rgba(30, 30, 30, 0.95) 10%, rgba(30, 30, 30, 0.85) 25%, rgba(30, 30, 30, 0.6) 50%, rgba(30, 30, 30, 0.3) 75%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 1
           }} />
