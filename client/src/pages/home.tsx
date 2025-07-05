@@ -302,32 +302,7 @@ export default function Home() {
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.45)'}}>see collections</span>
         </div>
       </div>
-      {/* Frame 7 - Updated with latest Figma specifications */}
-      <div style={{
-        display: 'flex',
-        width: '1434px',
-        height: '989px',
-        padding: '10px',
-        alignItems: 'center',
-        gap: '10px',
-        position: 'absolute',
-        left: '0px',
-        top: '318px'
-      }}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
-          alt="ChatGPT Image"
-          style={{
-            width: '1195px',
-            height: '957px',
-            flexShrink: 0,
-            aspectRatio: '1195/957',
-            borderRadius: '62px',
-            mixBlendMode: 'luminosity',
-            position: 'relative'
-          }}
-        />
-      </div>
+
       
       {/* Semi-transparent overlay covering from shoulders - Rectangle 8 */}
       <svg style={{
