@@ -108,7 +108,7 @@ export default function Home() {
         left: '186px',
         top: '225px',
         zIndex: 20
-      }}>
+      }} className="animate-slideLeftToRight delay-100">
         {/* Decorative Icon */}
         <img style={{
           width: '71px',
@@ -131,7 +131,7 @@ export default function Home() {
           top: '50px',
           width: '120px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-fadeInRight delay-200 hover-grow">HeaDesign</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-200 hover-grow">HeaDesign</span>
         </div>
         
         {/* Divider Lines */}
@@ -166,7 +166,7 @@ export default function Home() {
           top: '96px',
           width: '180px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-fadeInUp delay-300 hover-grow">Work Collection</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-300 hover-grow">Work Collection</span>
         </div>
         
         {/* Description Text */}
@@ -181,7 +181,7 @@ export default function Home() {
           top: '125px',
           width: '280px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-fadeInLeft delay-400 hover-grow">Multidisciplinary designer in UX/UI, graphic design and motion graphics</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-400 hover-grow">Multidisciplinary designer in UX/UI, graphic design and motion graphics</span>
         </div>
         
         {/* Call to Action Link */}
@@ -208,7 +208,7 @@ export default function Home() {
         zIndex: 20,
         width: '320px',
         height: '140px'
-      }}>
+      }} className="animate-slideRightToLeft delay-200">
         {/* Header with < DevHea> and Dev Icon */}
         <div style={{
           display: 'flex',
@@ -223,7 +223,7 @@ export default function Home() {
             fontWeight: '400',
             lineHeight: 'normal'
           }}>
-            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,1)'}}>{'< DevHea>'}</span>
+            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,1)'}} className="animate-slideRightToLeft delay-300 hover-grow">{'< DevHea>'}</span>
           </div>
           <img 
             src="/dev-icon.png"
@@ -260,7 +260,7 @@ export default function Home() {
           lineHeight: '1.2',
           marginBottom: '8px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}}>Work Collection</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-slideRightToLeft delay-400 hover-grow">Work Collection</span>
         </div>
         
         {/* Description */}
@@ -273,7 +273,7 @@ export default function Home() {
           marginBottom: '12px',
           width: '280px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}}>Full-stack developer blending sleek design with solid back-end architectures</span>
+          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-slideRightToLeft delay-500 hover-grow">Full-stack developer blending sleek design with solid back-end architectures</span>
         </div>
         
         {/* Call to Action */}
