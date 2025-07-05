@@ -358,7 +358,7 @@ export default function Home() {
         }}>
           <span
             style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '38px', color: 'rgba(255,255,255,1)'}}
-            className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px] animate-fadeInUp delay-200 animate-textGlow hover-grow">Shape the Future with Heavan</span>
+            className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px] animate-fadeInUp delay-200 animate-textGlow hover-grow">Shape the Future with Heavans</span>
         </div>
         
         {/* Description */}
@@ -373,7 +373,6 @@ export default function Home() {
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}} className="animate-fadeInLeft delay-300 hover-grow">I create standout web experiences—where design meets purpose and code brings it to life.</span>
         </div>
       </div>
-      
       {/* Professional Footer */}
       <footer style={{
         width: '1600px',
@@ -547,7 +546,6 @@ export default function Home() {
       <svg style={{width: '3px', height: '3px', position: 'absolute', left: '187px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
         <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
       </svg>
-
       {/* Artist Description */}
       <div style={{
         width: '462px',
@@ -564,7 +562,6 @@ export default function Home() {
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}} className="animate-fadeInUp delay-300 animate-pulse-subtle hover-grow">Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
       </div>
-      
       {/* Final Line Separator */}
       <div style={{
         width: '1600px',
