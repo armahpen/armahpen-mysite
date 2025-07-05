@@ -4,7 +4,7 @@ export default function Evans() {
   return (
     <div 
       className="relative w-full min-h-screen" 
-      style={{backgroundColor: 'white'}}
+      style={{backgroundColor: '#1E1E1E'}}
     >
       {/* Left Border */}
       <div 
@@ -43,7 +43,7 @@ export default function Evans() {
       <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
         <Link href="/">
           <div style={{
-            color: 'rgba(0, 0, 0, 0.65)',
+            color: 'rgba(255, 255, 255, 0.65)',
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
@@ -55,7 +55,7 @@ export default function Evans() {
         </Link>
         <Link href="/about">
           <div style={{
-            color: 'rgba(0, 0, 0, 0.65)',
+            color: 'rgba(255, 255, 255, 0.65)',
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
@@ -66,7 +66,7 @@ export default function Evans() {
           }} className="animate-slideInDown delay-200 menu-button">About</div>
         </Link>
         <div style={{
-          color: 'rgba(0, 0, 0, 0.65)',
+          color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
@@ -75,7 +75,7 @@ export default function Evans() {
           top: '0px'
         }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
         <div style={{
-          color: 'rgba(0, 0, 0, 0.65)',
+          color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
@@ -84,7 +84,7 @@ export default function Evans() {
           top: '0px'
         }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
         <div style={{
-          color: 'rgba(0, 0, 0, 0.65)',
+          color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
@@ -93,7 +93,7 @@ export default function Evans() {
           top: '0px'
         }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
         <div style={{
-          color: 'rgba(0, 0, 0, 0.65)',
+          color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
@@ -126,7 +126,7 @@ export default function Evans() {
           
           <p style={{
             fontSize: '1.4rem',
-            color: 'rgba(0, 0, 0, 0.9)',
+            color: 'rgba(255, 255, 255, 0.9)',
             lineHeight: '1.6',
             marginBottom: '40px',
             fontFamily: 'Georgia, serif',
@@ -248,7 +248,7 @@ export default function Evans() {
               margin: '0',
               fontSize: '1.1rem',
               lineHeight: '2',
-              color: 'rgba(0, 0, 0, 0.8)',
+              color: 'rgba(255, 255, 255, 0.8)',
               fontFamily: 'Georgia, serif'
             }}>
               <li>• Product development</li>
@@ -277,7 +277,7 @@ export default function Evans() {
               margin: '0',
               fontSize: '1.1rem',
               lineHeight: '2',
-              color: 'rgba(0, 0, 0, 0.8)',
+              color: 'rgba(255, 255, 255, 0.8)',
               fontFamily: 'Georgia, serif'
             }}>
               <li>• UI/UX design</li>
@@ -332,7 +332,7 @@ export default function Evans() {
             margin: '0',
             fontSize: '1.1rem',
             lineHeight: '1.8',
-            color: 'rgba(0, 0, 0, 0.8)',
+            color: 'rgba(255, 255, 255, 0.8)',
             fontFamily: 'Georgia, serif',
             columns: '2',
             columnGap: '60px'
@@ -382,7 +382,7 @@ export default function Evans() {
               }}>
                 <div style={{
                   fontSize: '1.1rem',
-                  color: 'rgba(0, 0, 0, 0.8)',
+                  color: 'rgba(255, 255, 255, 0.8)',
                   fontFamily: 'Georgia, serif',
                   minWidth: '180px'
                 }}>
@@ -434,7 +434,7 @@ export default function Evans() {
           
           <p style={{
             fontSize: '1.1rem',
-            color: 'rgba(0, 0, 0, 0.8)',
+            color: 'rgba(255, 255, 255, 0.8)',
             lineHeight: '1.6',
             marginBottom: '40px',
             fontFamily: 'Georgia, serif'
@@ -490,7 +490,7 @@ export default function Evans() {
           
           <p style={{
             fontSize: '1.1rem',
-            color: 'rgba(0, 0, 0, 0.8)',
+            color: 'rgba(255, 255, 255, 0.8)',
             lineHeight: '1.6',
             marginBottom: '40px',
             fontFamily: 'Georgia, serif'
@@ -546,7 +546,7 @@ export default function Evans() {
           
           <p style={{
             fontSize: '1.1rem',
-            color: 'rgba(0, 0, 0, 0.8)',
+            color: 'rgba(255, 255, 255, 0.8)',
             lineHeight: '1.6',
             marginBottom: '40px',
             fontFamily: 'Georgia, serif'
@@ -614,7 +614,7 @@ export default function Evans() {
             <p style={{
               fontFamily: 'Public Sans',
               fontSize: '14px',
-              color: 'rgba(0, 0, 0, 0.8)',
+              color: 'rgba(255, 255, 255, 0.8)',
               lineHeight: '1.5',
               margin: '0',
               maxWidth: '280px'
@@ -642,7 +642,7 @@ export default function Evans() {
                 <Link href="/" style={{
                   fontFamily: 'DM Sans',
                   fontSize: '14px',
-                  color: 'rgba(0, 0, 0, 0.7)',
+                  color: 'rgba(255, 255, 255, 0.7)',
                   textDecoration: 'none'
                 }}>Home</Link>
               </li>
@@ -650,7 +650,7 @@ export default function Evans() {
                 <Link href="/about" style={{
                   fontFamily: 'DM Sans',
                   fontSize: '14px',
-                  color: 'rgba(0, 0, 0, 0.7)',
+                  color: 'rgba(255, 255, 255, 0.7)',
                   textDecoration: 'none'
                 }}>About</Link>
               </li>
@@ -658,7 +658,7 @@ export default function Evans() {
                 <Link href="/evans" style={{
                   fontFamily: 'DM Sans',
                   fontSize: '14px',
-                  color: 'rgba(0, 0, 0, 0.7)',
+                  color: 'rgba(255, 255, 255, 0.7)',
                   textDecoration: 'none'
                 }}>Evans</Link>
               </li>
@@ -678,7 +678,7 @@ export default function Evans() {
             <div style={{
               fontFamily: 'DM Sans',
               fontSize: '14px',
-              color: 'rgba(0, 0, 0, 0.7)',
+              color: 'rgba(255, 255, 255, 0.7)',
               lineHeight: '1.6'
             }}>
               <p style={{margin: '0 0 8px 0'}}>evans@heavans.com</p>
@@ -698,21 +698,21 @@ export default function Evans() {
             }}>Follow Me</h4>
             <div style={{display: 'flex', gap: '12px'}}>
               <a href="#" style={{
-                color: 'rgba(0, 0, 0, 0.7)',
+                color: 'rgba(255, 255, 255, 0.7)',
                 fontFamily: 'Public Sans',
                 fontSize: '14px',
                 textDecoration: 'none',
                 fontWeight: '600'
               }}>Tw</a>
               <a href="#" style={{
-                color: 'rgba(0, 0, 0, 0.7)',
+                color: 'rgba(255, 255, 255, 0.7)',
                 fontFamily: 'Public Sans',
                 fontSize: '14px',
                 textDecoration: 'none',
                 fontWeight: '600'
               }}>In</a>
               <a href="#" style={{
-                color: 'rgba(0, 0, 0, 0.7)',
+                color: 'rgba(255, 255, 255, 0.7)',
                 fontFamily: 'Public Sans',
                 fontSize: '14px',
                 textDecoration: 'none',
@@ -732,7 +732,7 @@ export default function Evans() {
           <p style={{
             fontFamily: 'DM Sans',
             fontSize: '12px',
-            color: 'rgba(0, 0, 0, 0.6)',
+            color: 'rgba(255, 255, 255, 0.6)',
             margin: '0'
           }}>
             © 2025 HeaVans. All rights reserved. | Designed & Developed by Evans
