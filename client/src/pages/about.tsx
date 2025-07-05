@@ -182,18 +182,16 @@ export default function About() {
         padding: '40px 20px 20px',
         animation: 'fadeIn 1s ease-out'
       }}>
-        <div style={{
-          background: 'linear-gradient(45deg, #ffd700, #ff4500)',
-          padding: '20px 40px',
-          borderRadius: '12px',
-          fontSize: '28px',
-          fontWeight: 'bold',
-          color: 'white',
-          textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-          boxShadow: '0 8px 32px rgba(255, 215, 0, 0.3)'
-        }}>
-          Welcome to HeaVans Universe
-        </div>
+        <img 
+          src="attached_assets/cnbcncnc_1751752565142.PNG" 
+          alt="Welcome to HeaVans"
+          style={{
+            maxWidth: '400px',
+            height: 'auto',
+            filter: 'drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4))',
+            borderRadius: '8px'
+          }}
+        />
       </div>
 
       {/* Skills Solar System */}
