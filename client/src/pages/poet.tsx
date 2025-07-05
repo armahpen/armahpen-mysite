@@ -1,6 +1,6 @@
 import { Link } from 'wouter';
 
-export default function Evans() {
+export default function Poet() {
   return (
     <div 
       className="relative w-full min-h-screen" 
@@ -65,42 +65,18 @@ export default function Evans() {
             cursor: 'pointer'
           }} className="animate-slideInDown delay-200 menu-button">About</div>
         </Link>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '194px',
-          top: '0px'
-        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '317px',
-          top: '0px'
-        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '388px',
-          top: '0px'
-        }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '456px',
-          top: '0px'
-        }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
+        <Link href="/evans">
+          <div style={{
+            color: 'rgba(255, 255, 255, 0.65)',
+            fontFamily: 'DM Sans',
+            fontSize: '18px',
+            fontWeight: '400',
+            position: 'absolute',
+            left: '194px',
+            top: '0px',
+            cursor: 'pointer'
+          }} className="animate-slideInDown delay-300 menu-button">Evans</div>
+        </Link>
       </div>
 
       {/* Main Content */}
@@ -109,19 +85,19 @@ export default function Evans() {
         padding: '120px 60px 60px 60px',
         maxWidth: '1000px'
       }}>
-        {/* Hero Section - Simplified */}
+        {/* Hero Section */}
         <div style={{
           marginBottom: '80px'
         }}>
           <h1 style={{
             fontSize: '3.5rem',
             fontWeight: '300',
-            color: '#ffd700',
+            color: '#ab47bc',
             marginBottom: '30px',
             fontFamily: 'Georgia, serif',
             lineHeight: '1.2'
           }}>
-            Evans (Heavans)
+            Poet & Sound Explorer
           </h1>
           
           <p style={{
@@ -132,7 +108,7 @@ export default function Evans() {
             fontFamily: 'Georgia, serif',
             maxWidth: '600px'
           }}>
-            I'm a creative planet builder based in the digital universe. Since starting my journey, I've enjoyed turning complex problems into simple, beautiful and intuitive solutions. When I'm not building digital experiences, you'll find me writing poetry, exploring music, or collaborating with other creatives.
+            I feel deeply. I write freely. I write poems and explore music to express emotion and recharge creatively. Words and sounds are my refuge, my playground, and my way of connecting with the deeper currents of human experience.
           </p>
         </div>
 
@@ -141,57 +117,52 @@ export default function Evans() {
           textAlign: 'center',
           marginBottom: '60px'
         }}>
-          <img
-            src="/attached_assets/WhatsApp Image 2025-07-05 at 3.50.37 PM (1)_1751756232826.jpeg"
-            alt="Evans (Heavans) - Creative Planet Builder"
-            style={{
-              width: '300px',
-              height: '300px',
-              objectFit: 'cover',
-              borderRadius: '12px',
-              border: '2px solid rgba(255, 215, 0, 0.3)',
-              boxShadow: '0 0 20px rgba(255, 215, 0, 0.2)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 215, 0, 0.2)';
-            }}
-          />
+          <div style={{
+            width: '300px',
+            height: '300px',
+            background: 'rgba(171, 71, 188, 0.1)',
+            border: '2px solid rgba(171, 71, 188, 0.3)',
+            borderRadius: '12px',
+            margin: '0 auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.2rem',
+            color: '#ab47bc',
+            fontFamily: 'DM Sans'
+          }}>
+            Poetry & Music Image
+          </div>
         </div>
 
-        {/* Image Grid - 6 lifestyle/workspace images */}
+        {/* Image Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: '15px',
           marginBottom: '80px'
         }}>
-          {['Workspace', 'Creative Process', 'Projects', 'Collaboration', 'Inspiration', 'Daily Life'].map((item, index) => (
+          {['Writing Space', 'Inspiration', 'Music Setup', 'Poetry Books', 'Creative Moments', 'Sound Equipment'].map((item, index) => (
             <div key={index} style={{
               aspectRatio: '1',
-              background: 'rgba(255, 215, 0, 0.1)',
-              border: '1px solid rgba(255, 215, 0, 0.2)',
+              background: 'rgba(171, 71, 188, 0.1)',
+              border: '1px solid rgba(171, 71, 188, 0.2)',
               borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '0.9rem',
-              color: '#ffd700',
+              color: '#ab47bc',
               fontFamily: 'DM Sans',
               cursor: 'pointer',
               transition: 'all 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.2)';
+              e.currentTarget.style.background = 'rgba(171, 71, 188, 0.2)';
               e.currentTarget.style.transform = 'scale(1.02)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.1)';
+              e.currentTarget.style.background = 'rgba(171, 71, 188, 0.1)';
               e.currentTarget.style.transform = 'scale(1)';
             }}
             >
@@ -200,23 +171,22 @@ export default function Evans() {
           ))}
         </div>
 
-        {/* Two Column Section - Part Builder, Part Creator */}
+        {/* Two Column Section */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: '60px',
           marginBottom: '80px'
         }}>
-          {/* Left Column */}
           <div>
             <h2 style={{
               fontSize: '2rem',
-              color: '#ffd700',
+              color: '#ab47bc',
               marginBottom: '30px',
               fontFamily: 'Georgia, serif',
               fontWeight: '400'
             }}>
-              Part builder
+              Part poet
             </h2>
             
             <ul style={{
@@ -228,24 +198,23 @@ export default function Evans() {
               color: 'rgba(255, 255, 255, 0.8)',
               fontFamily: 'Georgia, serif'
             }}>
-              <li>• Product development</li>
-              <li>• Full-stack coding</li>
-              <li>• System architecture</li>
-              <li>• Problem solving</li>
-              <li>• "Making it work"</li>
+              <li>• Emotional expression</li>
+              <li>• Narrative storytelling</li>
+              <li>• Metaphor crafting</li>
+              <li>• Deep introspection</li>
+              <li>• "Finding the words"</li>
             </ul>
           </div>
 
-          {/* Right Column */}
           <div>
             <h2 style={{
               fontSize: '2rem',
-              color: '#ffd700',
+              color: '#ab47bc',
               marginBottom: '30px',
               fontFamily: 'Georgia, serif',
               fontWeight: '400'
             }}>
-              Part creator
+              Part sound explorer
             </h2>
             
             <ul style={{
@@ -257,35 +226,12 @@ export default function Evans() {
               color: 'rgba(255, 255, 255, 0.8)',
               fontFamily: 'Georgia, serif'
             }}>
-              <li>• UI/UX design</li>
-              <li>• Visual storytelling</li>
-              <li>• Poetry & writing</li>
-              <li>• Motion graphics</li>
-              <li>• Creative collaboration</li>
+              <li>• Musical composition</li>
+              <li>• Audio experimentation</li>
+              <li>• Rhythm exploration</li>
+              <li>• Sound design</li>
+              <li>• "Hearing the unheard"</li>
             </ul>
-          </div>
-        </div>
-
-        {/* Chart Placeholder */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '80px'
-        }}>
-          <div style={{
-            width: '300px',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '50%',
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans'
-          }}>
-            Part Builder, Part Creator Chart
           </div>
         </div>
 
@@ -295,7 +241,7 @@ export default function Evans() {
         }}>
           <h2 style={{
             fontSize: '2rem',
-            color: '#ffd700',
+            color: '#ab47bc',
             marginBottom: '30px',
             fontFamily: 'Georgia, serif',
             fontWeight: '400'
@@ -314,15 +260,14 @@ export default function Evans() {
             columns: '2',
             columnGap: '60px'
           }}>
-            <li style={{marginBottom: '10px'}}>• I love building things that solve real problems</li>
-            <li style={{marginBottom: '10px'}}>• Poetry is my creative recharge time</li>
-            <li style={{marginBottom: '10px'}}>• I want to revolutionize digital experiences</li>
-            <li style={{marginBottom: '10px'}}>• I'm passionate about clean code</li>
-            <li style={{marginBottom: '10px'}}>• I thrive in collaborative environments</li>
-            <li style={{marginBottom: '10px'}}>• I'm into motion design</li>
-            <li style={{marginBottom: '10px'}}>• I enjoy creating meaningful connections</li>
-            <li style={{marginBottom: '10px'}}>• Music inspires my creative process</li>
-            <li style={{marginBottom: '10px'}}>• I believe in design with purpose</li>
+            <li style={{marginBottom: '10px'}}>• I write best in the early morning hours</li>
+            <li style={{marginBottom: '10px'}}>• Music helps me find my creative flow</li>
+            <li style={{marginBottom: '10px'}}>• I collect vintage poetry books</li>
+            <li style={{marginBottom: '10px'}}>• Nature is my biggest inspiration</li>
+            <li style={{marginBottom: '10px'}}>• I experiment with spoken word performance</li>
+            <li style={{marginBottom: '10px'}}>• Silence is as important as sound to me</li>
+            <li style={{marginBottom: '10px'}}>• I love collaborative creative sessions</li>
+            <li style={{marginBottom: '10px'}}>• Words and melodies often come to me in dreams</li>
           </ul>
         </div>
 
@@ -332,7 +277,7 @@ export default function Evans() {
         }}>
           <h2 style={{
             fontSize: '2rem',
-            color: '#ffd700',
+            color: '#ab47bc',
             marginBottom: '30px',
             fontFamily: 'Georgia, serif',
             fontWeight: '400'
@@ -345,12 +290,12 @@ export default function Evans() {
             gap: '20px'
           }}>
             {[
-              { skill: 'Creative Vision', level: 95 },
-              { skill: 'Full-Stack Development', level: 90 },
-              { skill: 'UI/UX Design', level: 85 },
-              { skill: 'Poetry & Writing', level: 80 },
-              { skill: 'Motion Graphics', level: 75 },
-              { skill: 'Collaboration', level: 90 }
+              { skill: 'Poetry Writing', level: 90 },
+              { skill: 'Emotional Expression', level: 95 },
+              { skill: 'Music Composition', level: 75 },
+              { skill: 'Storytelling', level: 85 },
+              { skill: 'Sound Design', level: 70 },
+              { skill: 'Creative Inspiration', level: 95 }
             ].map((item, index) => (
               <div key={index} style={{
                 display: 'flex',
@@ -368,7 +313,7 @@ export default function Evans() {
                 <div style={{
                   flex: '1',
                   height: '6px',
-                  background: 'rgba(255, 215, 0, 0.2)',
+                  background: 'rgba(171, 71, 188, 0.2)',
                   borderRadius: '3px',
                   position: 'relative',
                   overflow: 'hidden'
@@ -376,14 +321,14 @@ export default function Evans() {
                   <div style={{
                     width: `${item.level}%`,
                     height: '100%',
-                    background: 'linear-gradient(90deg, #ffd700, #ffcc00)',
+                    background: 'linear-gradient(90deg, #ab47bc, #9c27b0)',
                     borderRadius: '3px',
                     transition: 'width 2s ease-out'
                   }} />
                 </div>
                 <div style={{
                   fontSize: '1rem',
-                  color: '#ffd700',
+                  color: '#ab47bc',
                   fontFamily: 'DM Sans',
                   fontWeight: '600',
                   minWidth: '40px'
@@ -401,12 +346,12 @@ export default function Evans() {
         }}>
           <h2 style={{
             fontSize: '2rem',
-            color: '#ffd700',
+            color: '#ab47bc',
             marginBottom: '20px',
             fontFamily: 'Georgia, serif',
             fontWeight: '400'
           }}>
-            Featured here & there
+            Featured poetry & music
           </h2>
           
           <p style={{
@@ -416,12 +361,12 @@ export default function Evans() {
             marginBottom: '40px',
             fontFamily: 'Georgia, serif'
           }}>
-            I've been lucky enough to have my work featured in various digital platforms and design communities. I've also spoken at creative events and enjoy sharing my passion for building meaningful digital experiences.
+            A collection of my poems, musical compositions, and sound explorations. Each piece is a window into different emotional landscapes and creative experiments.
           </p>
           
           <Link href="/about">
             <div style={{
-              color: '#ffd700',
+              color: '#ab47bc',
               fontSize: '1.1rem',
               fontFamily: 'Georgia, serif',
               textDecoration: 'underline',
@@ -429,137 +374,25 @@ export default function Evans() {
               marginBottom: '30px',
               display: 'inline-block'
             }}>
-              View featured work
+              Read & listen
             </div>
           </Link>
           
           <div style={{
             width: '100%',
             height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
+            background: 'rgba(171, 71, 188, 0.1)',
+            border: '1px solid rgba(171, 71, 188, 0.2)',
             borderRadius: '8px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '1.1rem',
-            color: '#ffd700',
+            color: '#ab47bc',
             fontFamily: 'DM Sans',
             cursor: 'pointer'
           }}>
-            Featured Work Image
-          </div>
-        </div>
-
-        {/* My Galaxy */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '20px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            My creative galaxy
-          </h2>
-          
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            fontFamily: 'Georgia, serif'
-          }}>
-            Explore the planets in my creative solar system. Each one represents a different skill and passion that orbits around my core mission of building meaningful digital experiences.
-          </p>
-          
-          <Link href="/about">
-            <div style={{
-              color: '#ffd700',
-              fontSize: '1.1rem',
-              fontFamily: 'Georgia, serif',
-              textDecoration: 'underline',
-              cursor: 'pointer',
-              marginBottom: '30px',
-              display: 'inline-block'
-            }}>
-              Explore my galaxy
-            </div>
-          </Link>
-          
-          <div style={{
-            width: '100%',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans',
-            cursor: 'pointer'
-          }}>
-            Galaxy System Image
-          </div>
-        </div>
-
-        {/* My Story */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '20px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            My story
-          </h2>
-          
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            fontFamily: 'Georgia, serif'
-          }}>
-            Learn a little bit more about me, how I got into creative development, and how I built my career spanning design, code, and creative collaboration. I've included key insights I've learned, inspirations, and even some behind-the-scenes glimpses of my creative process.
-          </p>
-          
-          <Link href="/about">
-            <div style={{
-              color: '#ffd700',
-              fontSize: '1.1rem',
-              fontFamily: 'Georgia, serif',
-              textDecoration: 'underline',
-              cursor: 'pointer',
-              marginBottom: '30px',
-              display: 'inline-block'
-            }}>
-              Read my story
-            </div>
-          </Link>
-          
-          <div style={{
-            width: '100%',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans',
-            cursor: 'pointer'
-          }}>
-            Story/Workspace Image
+            Poetry & Music Collection Image
           </div>
         </div>
       </div>
@@ -579,7 +412,6 @@ export default function Evans() {
           maxWidth: '1440px',
           margin: '0 auto'
         }}>
-          {/* Logo and Description */}
           <div style={{flex: '1', marginRight: '60px'}}>
             <div style={{
               fontFamily: 'Poppins',
@@ -600,7 +432,6 @@ export default function Evans() {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div style={{flex: '0 0 auto', marginRight: '60px'}}>
             <h4 style={{
               fontFamily: 'DM Sans',
@@ -610,11 +441,7 @@ export default function Evans() {
               marginBottom: '16px',
               margin: '0 0 16px 0'
             }}>Quick Links</h4>
-            <ul style={{
-              listStyle: 'none',
-              padding: '0',
-              margin: '0'
-            }}>
+            <ul style={{listStyle: 'none', padding: '0', margin: '0'}}>
               <li style={{marginBottom: '8px'}}>
                 <Link href="/" style={{
                   fontFamily: 'DM Sans',
@@ -631,18 +458,9 @@ export default function Evans() {
                   textDecoration: 'none'
                 }}>About</Link>
               </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link href="/evans" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>Evans</Link>
-              </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div style={{flex: '0 0 auto', marginRight: '60px'}}>
             <h4 style={{
               fontFamily: 'DM Sans',
@@ -663,7 +481,6 @@ export default function Evans() {
             </div>
           </div>
 
-          {/* Social Links */}
           <div style={{flex: '0 0 auto'}}>
             <h4 style={{
               fontFamily: 'DM Sans',
@@ -699,7 +516,6 @@ export default function Evans() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div style={{
           borderTop: '1px solid rgba(255, 255, 255, 0.2)',
           marginTop: '32px',

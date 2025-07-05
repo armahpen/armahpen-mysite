@@ -20,7 +20,7 @@ const planets = [
     tooltip: "I feel deeply. I write freely.",
     description: "I write poems and explore music to express emotion and recharge creatively.",
     cta: "Read & Listen",
-    link: "/poetry",
+    link: "/poet",
     color: "#ab47bc",
     svgColor: "#ab47bc"
   },
@@ -31,7 +31,7 @@ const planets = [
     tooltip: "I design with clarity and feeling.",
     description: "My UI/UX and graphics connect people to experiences in a meaningful way.",
     cta: "See Designs",
-    link: "/design", 
+    link: "/design-thinker", 
     color: "#66bb6a",
     svgColor: "#66bb6a"
   },
@@ -42,7 +42,7 @@ const planets = [
     tooltip: "Code is my language of structure.",
     description: "I build scalable, responsive, and modern web applications for real-world impact.",
     cta: "Explore Code",
-    link: "/code",
+    link: "/developer",
     color: "#ef5350",
     svgColor: "#ef5350"
   },
@@ -53,7 +53,7 @@ const planets = [
     tooltip: "I move visuals with intention.",
     description: "I use motion design to breathe life into ideas, visuals, and interfaces.",
     cta: "Watch Motion",
-    link: "/motion",
+    link: "/motion-creator",
     color: "#ff9800",
     svgColor: "#ff9800"
   },
@@ -64,7 +64,7 @@ const planets = [
     tooltip: "Great things are built together.",
     description: "I thrive in collaboration—sharing ideas, feedback, and energy with other creatives.",
     cta: "Let's Connect",
-    link: "/collaborate",
+    link: "/collaborator",
     color: "#9c27b0",
     svgColor: "#9c27b0"
   }
