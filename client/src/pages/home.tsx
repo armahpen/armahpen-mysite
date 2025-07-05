@@ -607,16 +607,7 @@ export default function Home() {
       </svg>
 
       
-      {/* News Image */}
-      <img style={{
-        width: '280px',
-        height: '140px',
-        aspectRatio: '2/1',
-        position: 'absolute',
-        left: '848px',
-        top: '897px',
-        zIndex: 10
-      }} src="https://cdn.builder.io/api/v1/image/assets/TEMP/273588439d530460f2dff5d525da04780e3288e8?width=560" alt="" />
+      
       
       {/* Artist of the Month */}
       <div style={{
