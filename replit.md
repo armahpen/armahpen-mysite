@@ -113,6 +113,16 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
+- July 05, 2025: Successfully resized images and repositioned layout elements based on Figma HTML/CSS code
+  - Updated HeaVans logo with exact Figma styling including multi-colored text spans
+  - Resized center portrait image from 730x1080px to 941x1086px and repositioned
+  - Repositioned Work Collection sections to match Figma coordinates
+  - Updated Hero section positioning and grouped elements properly
+  - Adjusted Start Work button and news content positioning
+  - Added news image and improved content layout
+  - Applied scale factor adjustment from 0.8 to 0.9 for better viewing
+  - Portfolio layout now precisely matches Figma design specifications
+
 - July 05, 2025: Successfully replaced Work Collection image with exact Figma HTML/CSS code
   - Extracted and implemented precise text elements, SVG dividers, and positioning
   - Improved text readability and moved section positioning per user request
