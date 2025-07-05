@@ -223,91 +223,154 @@ export default function About() {
                 borderRadius: '50%',
                 background: `radial-gradient(circle at 30% 30%, ${planet.color}, ${planet.color}CC, ${planet.color}88)`,
                 boxShadow: `0 0 15px ${planet.color}AA, inset -5px -5px 10px rgba(0,0,0,0.3)`,
-                transform: hoveredPlanet === planet.id ? 'scale(2)' : 'scale(1)',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                border: `1px solid ${planet.color}DD`
+                border: `1px solid ${planet.color}DD`,
+                position: 'relative',
+                color: planet.color
               }}>
-                {/* Planet Glow Ring */}
+                {/* Planet Surface Details */}
                 <div style={{
                   position: 'absolute',
-                  top: '-8px',
-                  left: '-8px',
-                  right: '-8px',
-                  bottom: '-8px',
+                  top: '20%',
+                  left: '25%',
+                  width: '8px',
+                  height: '4px',
                   borderRadius: '50%',
-                  border: `1px solid ${planet.color}44`,
-                  opacity: hoveredPlanet === planet.id ? 1 : 0,
-                  transform: hoveredPlanet === planet.id ? 'scale(1.2)' : 'scale(1)',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                  background: 'rgba(255, 255, 255, 0.4)',
+                  boxShadow: `0 0 4px rgba(255, 255, 255, 0.6)`
+                }} />
+                <div style={{
+                  position: 'absolute',
+                  bottom: '30%',
+                  right: '20%',
+                  width: '6px',
+                  height: '6px',
+                  borderRadius: '50%',
+                  background: 'rgba(255, 255, 255, 0.3)',
+                  boxShadow: `0 0 3px rgba(255, 255, 255, 0.5)`
+                }} />
+                
+                {/* Planet Glow Ring */}
+                <div 
+                  className="planet-glow-ring"
+                  style={{
+                    position: 'absolute',
+                    top: '-8px',
+                    left: '-8px',
+                    right: '-8px',
+                    bottom: '-8px',
+                    borderRadius: '50%',
+                    border: `2px solid ${planet.color}66`,
+                    opacity: hoveredPlanet === planet.id ? 1 : 0,
+                    color: planet.color
+                  }} 
+                />
+                
+                {/* Atmosphere Glow */}
+                <div style={{
+                  position: 'absolute',
+                  top: '-4px',
+                  left: '-4px',
+                  right: '-4px',
+                  bottom: '-4px',
+                  borderRadius: '50%',
+                  background: `radial-gradient(circle, transparent 60%, ${planet.color}33 80%, transparent 100%)`,
+                  opacity: hoveredPlanet === planet.id ? 0.8 : 0,
+                  transition: 'opacity 0.6s ease'
                 }} />
               </div>
 
               {/* Planet Info Card */}
               {hoveredPlanet === planet.id && (
-                <div style={{
-                  position: 'absolute',
-                  top: `${planet.size + 20}px`,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: 'rgba(0, 0, 0, 0.9)',
-                  border: `2px solid ${planet.color}66`,
-                  borderRadius: '12px',
-                  padding: '20px',
-                  minWidth: '280px',
-                  maxWidth: '320px',
-                  animation: 'cardFadeIn 0.3s ease-out',
-                  boxShadow: `0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px ${planet.color}33`,
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <h3 style={{
-                    fontSize: '18px',
-                    fontWeight: '700',
-                    color: planet.color,
-                    marginBottom: '8px',
-                    textShadow: `0 0 8px ${planet.color}88`
+                <div 
+                  className="planet-info-card"
+                  style={{
+                    position: 'absolute',
+                    top: `${planet.size + 30}px`,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    color: planet.color
+                  }}
+                >
+                  <div style={{
+                    background: 'rgba(0, 0, 0, 0.95)',
+                    border: `2px solid ${planet.color}66`,
+                    borderRadius: '16px',
+                    padding: '24px',
+                    minWidth: '300px',
+                    maxWidth: '340px',
+                    animation: 'cardFadeIn 0.4s ease-out',
+                    backdropFilter: 'blur(15px)',
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
-                    {planet.title}
-                  </h3>
-                  
-                  <p style={{
-                    fontSize: '14px',
-                    color: 'rgba(255, 255, 255, 0.9)',
-                    lineHeight: '1.5',
-                    marginBottom: '16px'
-                  }}>
-                    {planet.description}
-                  </p>
-                  
-                  <a
-                    href={planet.link}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      color: planet.color,
-                      fontSize: '14px',
-                      fontWeight: '600',
-                      textDecoration: 'none',
-                      padding: '8px 16px',
-                      border: `1px solid ${planet.color}44`,
-                      borderRadius: '6px',
-                      transition: 'all 0.3s ease',
-                      background: `${planet.color}11`
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = `${planet.color}22`;
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = `0 4px 15px ${planet.color}33`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = `${planet.color}11`;
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
-                    Explore →
-                  </a>
+                    {/* Card Glow Background */}
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: `radial-gradient(circle at center, ${planet.color}11 0%, transparent 70%)`,
+                      pointerEvents: 'none'
+                    }} />
+                    
+                    {/* Card Content */}
+                    <div style={{ position: 'relative', zIndex: 2 }}>
+                      <h3 style={{
+                        fontSize: '20px',
+                        fontWeight: '700',
+                        color: planet.color,
+                        marginBottom: '12px',
+                        textShadow: `0 0 12px ${planet.color}88`
+                      }}>
+                        {planet.title}
+                      </h3>
+                      
+                      <p style={{
+                        fontSize: '15px',
+                        color: 'rgba(255, 255, 255, 0.95)',
+                        lineHeight: '1.6',
+                        marginBottom: '20px'
+                      }}>
+                        {planet.description}
+                      </p>
+                      
+                      <a
+                        href={planet.link}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          color: planet.color,
+                          fontSize: '14px',
+                          fontWeight: '600',
+                          textDecoration: 'none',
+                          padding: '10px 20px',
+                          border: `2px solid ${planet.color}55`,
+                          borderRadius: '8px',
+                          transition: 'all 0.3s ease',
+                          background: `${planet.color}15`,
+                          textShadow: `0 0 6px ${planet.color}66`
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = `${planet.color}25`;
+                          e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
+                          e.currentTarget.style.boxShadow = `0 6px 20px ${planet.color}44`;
+                          e.currentTarget.style.borderColor = `${planet.color}88`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = `${planet.color}15`;
+                          e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                          e.currentTarget.style.boxShadow = 'none';
+                          e.currentTarget.style.borderColor = `${planet.color}55`;
+                        }}
+                      >
+                        Explore →
+                      </a>
+                    </div>
+                  </div>
                 </div>
+              )}
               )}
             </div>
           </div>
