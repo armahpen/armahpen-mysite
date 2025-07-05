@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+// import welcomeImage from "@assets/heavans logo_1751733380888.PNG";
 
 const planets = [
   {
     id: 1,
+    name: "Creative Builder",
     title: "Creative Builder",
     tooltip: "I bring real ideas to life.",
     description: "I've founded Student Help and DEMS, creating tools that solve real problems.",
@@ -13,6 +15,7 @@ const planets = [
   },
   {
     id: 2,
+    name: "Poet & Sound Explorer",
     title: "Poet & Sound Explorer", 
     tooltip: "I feel deeply. I write freely.",
     description: "I write poems and explore music to express emotion and recharge creatively.",
@@ -23,6 +26,7 @@ const planets = [
   },
   {
     id: 3,
+    name: "Design Thinker",
     title: "Design Thinker",
     tooltip: "I design with clarity and feeling.",
     description: "My UI/UX and graphics connect people to experiences in a meaningful way.",
@@ -33,6 +37,7 @@ const planets = [
   },
   {
     id: 4,
+    name: "Full-Stack Developer",
     title: "Full-Stack Developer",
     tooltip: "Code is my language of structure.",
     description: "I build scalable, responsive, and modern web applications for real-world impact.",
@@ -43,6 +48,7 @@ const planets = [
   },
   {
     id: 5,
+    name: "Motion Creator",
     title: "Motion Creator",
     tooltip: "I move visuals with intention.",
     description: "I use motion design to breathe life into ideas, visuals, and interfaces.",
@@ -53,6 +59,7 @@ const planets = [
   },
   {
     id: 6,
+    name: "Creative Collaborator",
     title: "Creative Collaborator",
     tooltip: "Great things are built together.",
     description: "I thrive in collaboration—sharing ideas, feedback, and energy with other creatives.",
@@ -121,7 +128,7 @@ export default function About() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#3B3B3B',
+      background: '#1E1E1E',
       color: 'white',
       fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
       position: 'relative',
@@ -136,7 +143,7 @@ export default function About() {
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         position: 'sticky',
         top: 0,
-        background: 'rgba(59, 59, 59, 0.9)',
+        background: 'rgba(30, 30, 30, 0.9)',
         backdropFilter: 'blur(10px)',
         zIndex: 1000
       }}>
@@ -176,7 +183,7 @@ export default function About() {
         animation: 'fadeIn 1s ease-out'
       }}>
         <img 
-          src="/attached_assets/cnbcncnc_1751743422698.PNG" 
+          src="/attached_assets/heavans logo_1751733380888.PNG" 
           alt="Welcome to HeaVans"
           style={{
             maxWidth: '100%',
