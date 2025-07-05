@@ -183,13 +183,36 @@ export default function About() {
         animation: 'fadeIn 1s ease-out'
       }}>
         <img 
-          src="/attached_assets/heavans logo_1751733380888.PNG" 
+          src="attached_assets/heavans logo_1751733380888.PNG" 
           alt="Welcome to HeaVans"
           style={{
-            maxWidth: '100%',
+            maxWidth: '300px',
             height: 'auto',
             filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5))',
             borderRadius: '8px'
+          }}
+          onError={(e) => {
+            // Try alternative encodings for spaces in filename
+            const alternatives = [
+              'attached_assets/heavans%20logo_1751733380888.PNG',
+              'attached_assets/heavans_logo_1751733380888.PNG',
+              'attached_assets/cnbcncnc_1751743422698.PNG',
+              'attached_assets/gfggggg_1751739902426.PNG'
+            ];
+            
+            let currentTry = 0;
+            const tryNext = () => {
+              if (currentTry < alternatives.length) {
+                e.currentTarget.src = alternatives[currentTry];
+                currentTry++;
+              } else {
+                console.log('All image paths failed to load');
+                e.currentTarget.style.display = 'none';
+              }
+            };
+            
+            e.currentTarget.onerror = tryNext;
+            tryNext();
           }}
         />
       </div>
