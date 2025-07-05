@@ -118,11 +118,11 @@ export default function Home() {
       </div>
       {/* Work Collection - Designer Section */}
       <div style={{
-        width: '259px',
-        height: '178px',
+        width: '200px',
+        height: '120px',
         position: 'absolute',
-        left: '197px',
-        top: '282px',
+        left: '75px',
+        top: '130px',
         zIndex: 20
       }}>
         <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'50px',width:'102px',height:'14px'}}>
@@ -149,8 +149,8 @@ export default function Home() {
       {/* Work Collection - Developer Section */}
       <div style={{
         position: 'absolute',
-        left: '197px',
-        top: '595px',
+        left: '75px',
+        top: '420px',
         zIndex: 20
       }}>
         <div style={{color:'#FFF',fontFamily:'Public Sans',fontSize:'20px',fontStyle:'normal',fontWeight:'400',lineHeight:'normal',position:'absolute',left:'0px',top:'0px',width:'100px',height:'14px'}}>
@@ -175,32 +175,21 @@ export default function Home() {
           <span style={{fontFamily: 'Rubik Doodle Triangles, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '28px', color: 'rgba(255,255,255,1)'}}>{'< Dev>'}</span>
         </div>
       </div>
-      {/* Frame 7 with Image - Updated with Figma positioning */}
-      <div style={{
-        display: 'flex',
-        width: '529px',
-        height: '645px',
-        padding: '10px',
-        alignItems: 'center',
-        gap: '10px',
-        position: 'absolute',
-        left: '197px',
-        top: '318px'
-      }}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
-          alt="ChatGPT Image"
-          style={{
-            width: '1195px',
-            height: '957px',
-            flexShrink: 0,
-            aspectRatio: '1195/957',
-            borderRadius: '62px',
-            mixBlendMode: 'luminosity',
-            position: 'relative'
-          }}
-        />
-      </div>
+      {/* Center Portrait Image */}
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
+        alt="ChatGPT Image"
+        style={{
+          width: '450px',
+          height: '550px',
+          borderRadius: '62px',
+          mixBlendMode: 'luminosity',
+          position: 'absolute',
+          left: '150px',
+          top: '80px',
+          zIndex: 5
+        }}
+      />
       
       {/* Semi-transparent overlay covering from shoulders - Rectangle 8 */}
       <svg style={{
@@ -214,13 +203,13 @@ export default function Home() {
       }} width="1613" height="159" viewBox="0 0 1613 159" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0H806.5H1613V159H0V0Z" fill="#1E1E1E"/>
       </svg>
-      {/* Hero Section - Updated with Figma positioning */}
+      {/* Hero Section - Shape the Future */}
       <div style={{
-        width: '357px',
-        height: '227px',
+        width: '400px',
+        height: '250px',
         position: 'absolute',
-        left: '1014px',
-        top: '233px',
+        left: '650px',
+        top: '80px',
         zIndex: 10
       }}>
         {/* Human Icon */}
@@ -279,7 +268,7 @@ export default function Home() {
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}}>Evans (Heavans) is a creative web developer blending design, code, and motion to build modern, impactful digital experiences.</span>
         </div>
       </div>
-      {/* Start Work Button - Updated with latest Figma positioning */}
+      {/* Start Work Button - Frame 6 */}
       <div style={{
         display: 'flex',
         width: '152px',
@@ -290,8 +279,8 @@ export default function Home() {
         gap: '10px',
         background: 'rgba(255, 255, 255, 0.12)',
         position: 'absolute',
-        left: '1142px',
-        top: '545px',
+        left: '650px',
+        top: '380px',
         zIndex: 10
       }}>
         <div style={{
