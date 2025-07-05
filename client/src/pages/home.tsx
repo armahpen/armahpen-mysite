@@ -117,25 +117,7 @@ export default function Home() {
         top: '404px'
       }}>Work Collection</div>
 
-      <div style={{
-        color: '#FFF',
-        fontFamily: 'Public Sans',
-        fontSize: '20px',
-        fontWeight: '400',
-        position: 'absolute',
-        left: '217px',
-        top: '358px'
-      }}>HeaDesign</div>
 
-      <svg style={{
-        width: '259px',
-        height: '3px',
-        position: 'absolute',
-        left: '217px',
-        top: '385px'
-      }} viewBox="0 0 259 4" fill="none">
-        <path d="M0 2H258.583" stroke="#63767C" strokeWidth="3"/>
-      </svg>
 
       <div style={{
         width: '243px',
