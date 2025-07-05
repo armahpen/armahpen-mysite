@@ -33,19 +33,7 @@ export default function Home() {
           }}
           className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
-      {/* Vector 4 - Decorative line */}
-      <svg style={{
-        width: '48px',
-        height: '4px',
-        strokeWidth: '3px',
-        stroke: '#63767C',
-        position: 'absolute',
-        left: '617px',
-        top: '91px',
-        zIndex: 20
-      }} width="48" height="4" viewBox="0 0 48 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 2H48" stroke="#63767C" strokeWidth="3"/>
-      </svg>
+
       {/* Menu Icon */}
       <svg 
         style={{
