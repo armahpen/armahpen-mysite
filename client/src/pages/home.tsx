@@ -71,7 +71,7 @@ export default function Home() {
           position: 'absolute',
           left: '96px',
           top: '0px'
-        }} className="animate-slideInDown delay-200 menu-button" onClick={() => alert('About section coming soon!')}>About</div>
+        }} className="animate-slideInDown delay-200 menu-button" onClick={() => window.location.href = '/about'}>About</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
