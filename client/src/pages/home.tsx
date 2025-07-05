@@ -27,8 +27,8 @@ export default function Home() {
           src="/logo.png"
           alt="HeaVans Logo" 
           style={{
-            width: '100px',
-            height: '30px',
+            width: '120px',
+            height: '36px',
             objectFit: 'contain'
           }}
         />
