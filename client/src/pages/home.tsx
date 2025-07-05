@@ -373,32 +373,7 @@ export default function Home() {
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}}>I create standout web experiences—where design meets purpose and code brings it to life.</span>
         </div>
       </div>
-      {/* Start Work Button - Updated with latest Figma positioning */}
-      <div style={{
-        display: 'flex',
-        width: '152px',
-        height: '64px',
-        padding: '25px 32px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '10px',
-        background: 'rgba(255, 255, 255, 0.12)',
-        position: 'absolute',
-        left: '1142px',
-        top: '545px',
-        zIndex: 10
-      }}>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.80)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '500',
-          lineHeight: 'normal',
-          position: 'relative'
-        }}>
-          <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,0.800000011920929)'}}>Start work</span>
-        </div>
-      </div>
+      
       {/* Professional Footer */}
       <footer style={{
         width: '1600px',
