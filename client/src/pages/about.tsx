@@ -92,8 +92,8 @@ export default function About() {
       const speeds = [0.004, 0.003, 0.0025, 0.002, 0.0015, 0.001];
       
       const newPositions = orbits.map((orbit, index) => {
-        // Only increment angle if this specific planet is not hovered
-        if (hoveredPlanet !== index) {
+        // Stop ALL planets when ANY planet is hovered, but only increment angles when no planet is hovered
+        if (hoveredPlanet === null) {
           anglesRef.current[index] += speeds[index];
         }
         
@@ -348,15 +348,14 @@ export default function About() {
             <div 
               key={`tooltip-${planet.id}`}
               style={{
-                position: 'fixed',
-                top: `${planetPositions[index]?.y ? planetPositions[index].y - 100 : 200}px`,
-                left: `${planetPositions[index]?.x ? planetPositions[index].x + 50 : 400 + index * 50}px`,
-                transform: 'translateY(-50%)',
+                position: 'absolute',
+                top: '20%',
+                right: '5%',
                 background: 'rgba(0, 0, 0, 0.95)',
                 border: `2px solid ${planet.color}`,
                 borderRadius: '16px',
                 padding: '20px',
-                width: '300px',
+                width: '320px',
                 animation: 'fadeIn 0.4s ease-out',
                 backdropFilter: 'blur(15px)',
                 zIndex: 20,
