@@ -269,7 +269,7 @@ export default function Home() {
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}}>Evans (Heavans) is a creative web developer blending design, code, and motion to build modern, impactful digital experiences.</span>
         </div>
       </div>
-      {/* Start Work Button - Repositioned to match Figma */}
+      {/* Start Work Button - Updated with exact Figma positioning */}
       <div style={{
         display: 'flex',
         width: '152px',
@@ -280,8 +280,8 @@ export default function Home() {
         gap: '10px',
         background: 'rgba(255, 255, 255, 0.12)',
         position: 'absolute',
-        left: '1256px',
-        top: '634px',
+        left: '1328px',
+        top: '545px',
         zIndex: 10
       }}>
         <div style={{
