@@ -172,6 +172,16 @@ export default function Home() {
             pointerEvents: 'none',
             zIndex: 1
           }} />
+          <div style={{
+            position: 'absolute',
+            top: '0',
+            right: '0',
+            width: '150px',
+            height: '100%',
+            background: 'linear-gradient(to left, #1E1E1E 0%, rgba(30, 30, 30, 0.8) 30%, rgba(30, 30, 30, 0.3) 70%, transparent 100%)',
+            pointerEvents: 'none',
+            zIndex: 1
+          }} />
         </div>
       </div>
       {/* Hero Section */}
