@@ -331,7 +331,7 @@ export default function Home() {
         width: '357px',
         height: '227px',
         position: 'absolute',
-        left: '1181px',
+        left: '1133px',
         top: '289px',
         zIndex: 10
       }}>
