@@ -295,14 +295,14 @@ export default function Home() {
           <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,0.800000011920929)'}}>Start work</span>
         </div>
       </div>
-      {/* Bottom Section - Made transparent as intended */}
+      {/* Rectangle 1 Footer - Applied exact Figma design */}
       <div style={{
-        width: '1400px',
-        height: '222px',
-        background: 'transparent',
+        width: '1587px',
+        height: '135px',
+        background: '#63767C',
         position: 'absolute',
-        left: '99px',
-        top: '838px'
+        left: '0px',
+        top: '925px'
       }} />
       {/* Latest Work Dots */}
       <svg style={{width: '4px', height: '4px', position: 'absolute', left: '170px', top: '1098px'}} viewBox="0 0 4 4" fill="none">
@@ -314,22 +314,7 @@ export default function Home() {
       <svg style={{width: '3px', height: '3px', position: 'absolute', left: '187px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
         <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
       </svg>
-      {/* Latest Work Section */}
-      <div style={{
-        width: '249px',
-        color: 'rgba(255, 255, 255, 0.85)',
-        fontFamily: 'DM Sans',
-        fontSize: '16px',
-        fontWeight: '500',
-        lineHeight: '0px',
-        position: 'absolute',
-        left: '875px',
-        top: '862px',
-        height: '11px',
-        zIndex: 10
-      }}>
-        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.8500000238418579)'}}>Some of my latest work&gt;&gt;&gt;&gt;</span>
-      </div>
+
       
       {/* News Image */}
       <img style={{
