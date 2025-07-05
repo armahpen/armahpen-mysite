@@ -475,18 +475,20 @@ export default function About() {
           )
         ))}
 
-        {/* Clickable Planet Names */}
-        <div style={{
-          position: 'absolute',
-          bottom: '-280px',
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '15px',
-          flexWrap: 'wrap',
-          padding: '0 20px',
-          zIndex: 10
-        }}>
+      </div>
+
+      {/* Clickable Planet Names - Moved outside solar system container */}
+      <div style={{
+        position: 'absolute',
+        top: '970px',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '15px',
+        flexWrap: 'wrap',
+        padding: '0 20px',
+        zIndex: 10
+      }}>
           {/* Sun */}
           <div 
             style={{
