@@ -4,7 +4,7 @@ export default function Poet() {
   return (
     <div 
       className="relative w-full min-h-screen" 
-      style={{backgroundColor: '#1E1E1E'}}
+      style={{backgroundColor: 'white'}}
     >
       {/* Left Border */}
       <div 
@@ -195,7 +195,7 @@ export default function Poet() {
               margin: '0',
               fontSize: '1.1rem',
               lineHeight: '2',
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Georgia, serif'
             }}>
               <li>• Emotional expression</li>
@@ -223,7 +223,7 @@ export default function Poet() {
               margin: '0',
               fontSize: '1.1rem',
               lineHeight: '2',
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Georgia, serif'
             }}>
               <li>• Musical composition</li>
@@ -255,7 +255,7 @@ export default function Poet() {
             margin: '0',
             fontSize: '1.1rem',
             lineHeight: '1.8',
-            color: 'rgba(255, 255, 255, 0.8)',
+            color: 'rgba(0, 0, 0, 0.8)',
             fontFamily: 'Georgia, serif',
             columns: '2',
             columnGap: '60px'
@@ -304,7 +304,7 @@ export default function Poet() {
               }}>
                 <div style={{
                   fontSize: '1.1rem',
-                  color: 'rgba(255, 255, 255, 0.8)',
+                  color: 'rgba(0, 0, 0, 0.8)',
                   fontFamily: 'Georgia, serif',
                   minWidth: '180px'
                 }}>
@@ -356,7 +356,7 @@ export default function Poet() {
           
           <p style={{
             fontSize: '1.1rem',
-            color: 'rgba(255, 255, 255, 0.8)',
+            color: 'rgba(0, 0, 0, 0.8)',
             lineHeight: '1.6',
             marginBottom: '40px',
             fontFamily: 'Georgia, serif'
@@ -423,7 +423,7 @@ export default function Poet() {
             <p style={{
               fontFamily: 'Public Sans',
               fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.8)',
+              color: 'rgba(0, 0, 0, 0.8)',
               lineHeight: '1.5',
               margin: '0',
               maxWidth: '280px'

@@ -112,7 +112,7 @@ export default function About() {
   return (
     <div 
       className="relative w-full" 
-      style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
+      style={{backgroundColor: 'white', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
     >
       {/* Left Border */}
       <div 
