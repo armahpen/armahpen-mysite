@@ -356,7 +356,6 @@ export default function Home() {
           lineHeight: '1.3',
           marginBottom: '12px'
         }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.8)'}}>Explore 3D Art Creations</span>
         </div>
         
         {/* Main Headline */}
