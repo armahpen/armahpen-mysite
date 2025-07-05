@@ -81,19 +81,22 @@ export default function About() {
     ];
 
     const animate = () => {
-      const newPositions = orbits.map((orbit, index) => ({
-        x: centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2),
-        y: centerY + orbit.ry * Math.sin(angle + index * Math.PI / 2)
-      }));
-      
-      setPlanetPositions(newPositions);
-      angle += 0.02;
+      // Only animate if no planet or sun is being hovered
+      if (hoveredPlanet === null) {
+        const newPositions = orbits.map((orbit, index) => ({
+          x: centerX + orbit.rx * Math.cos(angle + index * Math.PI / 2),
+          y: centerY + orbit.ry * Math.sin(angle + index * Math.PI / 2)
+        }));
+        
+        setPlanetPositions(newPositions);
+        angle += 0.005; // Slower animation (was 0.02)
+      }
       requestAnimationFrame(animate);
     };
 
     const animationId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationId);
-  }, []);
+  }, [hoveredPlanet]);
 
   return (
     <div style={{
