@@ -15,7 +15,7 @@ export default function Home() {
           top: '26px'
         }}
       />
-      {/* Logo HeaVans with exact Figma styling */}
+      {/* Logo HeaVans - Updated positioning from Figma, maintaining existing colors */}
       <div style={{
         width: '300px',
         height: '41px',
@@ -26,8 +26,8 @@ export default function Home() {
         fontWeight: '400',
         lineHeight: 'normal',
         position: 'absolute',
-        left: '158px',
-        top: '50px',
+        left: '47px',
+        top: '75px',
         zIndex: 20
       }}>
         <span style={{fontFamily: 'Porter Sans Block, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '50px', color: 'rgba(99,118,124,1)'}}>H</span>
