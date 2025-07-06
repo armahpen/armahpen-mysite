@@ -162,7 +162,7 @@ export default function Home() {
         {/* Call to Action Link */}
         <Link href="/collections">
           <div style={{
-            color: 'rgba(255, 255, 255, 0.45)',
+            color: 'rgba(255, 255, 255, 0.65)',
             fontFamily: 'Public Sans',
             fontSize: '14px',
             fontWeight: '400',
@@ -172,9 +172,16 @@ export default function Home() {
             top: '175px',
             width: '150px',
             cursor: 'pointer',
-            textDecoration: 'none'
-          }} className="hover:text-white transition-colors duration-300">
-            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.45)'}}>see collections →</span>
+            textDecoration: 'none',
+            transition: 'color 0.3s ease'
+          }}>
+            <span style={{
+              fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', 
+              fontWeight: '400', 
+              fontSize: '14px', 
+              color: 'rgba(255,255,255,0.65)',
+              textDecoration: 'underline'
+            }}>see collections →</span>
           </div>
         </Link>
       </div>
