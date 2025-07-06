@@ -35,7 +35,7 @@ export default function Home() {
       </div>
 
       {/* Navigation Menu - Adjusted positioning to prevent overlap */}
-      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
+      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
@@ -296,18 +296,7 @@ export default function Home() {
           }}
         />
       </div>
-      {/* Semi-transparent overlay covering from shoulders - Rectangle 8 */}
-      <svg style={{
-        width: '1613px',
-        height: '159px',
-        fill: '#1E1E1E',
-        position: 'absolute',
-        left: '0px',
-        top: '0px',
-        zIndex: 15
-      }} width="1613" height="159" viewBox="0 0 1613 159" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0H806.5H1613V159H0V0Z" fill="#1E1E1E"/>
-      </svg>
+
       {/* Hero Section - Repositioned to match Figma */}
       <div style={{
         width: '357px',
