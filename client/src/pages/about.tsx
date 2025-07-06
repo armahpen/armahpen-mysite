@@ -185,7 +185,7 @@ export default function About() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '317px',
+          left: '290px',
           top: '0px'
         }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
         <div style={{
@@ -194,7 +194,7 @@ export default function About() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '388px',
+          left: '340px',
           top: '0px'
         }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
         <div style={{
@@ -203,7 +203,7 @@ export default function About() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '400px',
+          left: '390px',
           top: '0px'
         }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>

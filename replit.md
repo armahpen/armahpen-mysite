@@ -113,12 +113,14 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
-- July 06, 2025: Created Evans (Heavans) dedicated page and optimized spacing
+- July 06, 2025: Created Evans (Heavans) dedicated page and optimized layout
   - Built professional Evans profile page with golden gradient styling matching sun theme
   - Added proper routing from About page button to new Evans page (/evans)
   - Removed excess spacing under footers on all pages (reduced container heights from 1400px to 1230px)
   - Implemented quick navigation grid to all 6 skill planet pages from Evans page
   - Optimized footer positioning to be the final visible element without extra scrolling space
+  - Fixed navigation menu spacing to prevent Contact/Skills button overlap across all pages
+  - Removed problematic SVG overlay that was creating dark bar on right side of home page
 
 - July 05, 2025: Implemented orbital galaxy-style About page with interactive planet system
   - Created immersive space-themed background with animated star field

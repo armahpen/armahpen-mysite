@@ -69,7 +69,7 @@ export default function Home() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '317px',
+          left: '290px',
           top: '0px'
         }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
         <div style={{
@@ -78,7 +78,7 @@ export default function Home() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '344px',
+          left: '340px',
           top: '0px'
         }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
