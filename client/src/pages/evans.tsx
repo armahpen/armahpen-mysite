@@ -4,7 +4,7 @@ export default function Evans() {
   return (
     <div 
       className="relative w-full" 
-      style={{backgroundColor: '#1E1E1E', minHeight: '100vh'}}
+      style={{backgroundColor: '#1E1E1E'}}
     >
       {/* Left Border */}
       <div 
@@ -370,7 +370,7 @@ export default function Evans() {
         background: '#63767C',
         padding: '40px 80px',
         boxSizing: 'border-box',
-        marginTop: '40px'
+        marginTop: '20px'
       }}>
         <div style={{
           display: 'flex',
