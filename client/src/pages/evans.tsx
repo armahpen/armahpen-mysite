@@ -89,7 +89,7 @@ export default function Evans() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '388px',
+          left: '344px',
           top: '0px'
         }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
         <div style={{
@@ -98,7 +98,7 @@ export default function Evans() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '456px',
+          left: '400px',
           top: '0px'
         }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>

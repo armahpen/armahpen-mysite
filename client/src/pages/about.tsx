@@ -203,7 +203,7 @@ export default function About() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '456px',
+          left: '400px',
           top: '0px'
         }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
