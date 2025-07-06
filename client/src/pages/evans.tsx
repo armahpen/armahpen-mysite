@@ -3,8 +3,8 @@ import { Link } from 'wouter';
 export default function Evans() {
   return (
     <div 
-      className="relative w-full min-h-screen" 
-      style={{backgroundColor: '#1E1E1E'}}
+      className="relative w-full" 
+      style={{backgroundColor: '#1E1E1E', minHeight: '100vh'}}
     >
       {/* Left Border */}
       <div 
@@ -370,7 +370,7 @@ export default function Evans() {
         background: '#63767C',
         padding: '40px 80px',
         boxSizing: 'border-box',
-        marginTop: '80px'
+        marginTop: '40px'
       }}>
         <div style={{
           display: 'flex',
