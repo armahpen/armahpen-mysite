@@ -9,7 +9,7 @@ const planets = [
     tooltip: "I bring real ideas to life.",
     description: "I've founded Student Help and DEMS, creating tools that solve real problems.",
     cta: "View Projects",
-    link: "/creative-builder",
+    link: "/projects",
     color: "#4fc3f7",
     svgColor: "#4fc3f7"
   },
@@ -20,7 +20,7 @@ const planets = [
     tooltip: "I feel deeply. I write freely.",
     description: "I write poems and explore music to express emotion and recharge creatively.",
     cta: "Read & Listen",
-    link: "/poet",
+    link: "/poetry",
     color: "#ab47bc",
     svgColor: "#ab47bc"
   },
@@ -31,7 +31,7 @@ const planets = [
     tooltip: "I design with clarity and feeling.",
     description: "My UI/UX and graphics connect people to experiences in a meaningful way.",
     cta: "See Designs",
-    link: "/design-thinker", 
+    link: "/design", 
     color: "#66bb6a",
     svgColor: "#66bb6a"
   },
@@ -42,7 +42,7 @@ const planets = [
     tooltip: "Code is my language of structure.",
     description: "I build scalable, responsive, and modern web applications for real-world impact.",
     cta: "Explore Code",
-    link: "/developer",
+    link: "/code",
     color: "#ef5350",
     svgColor: "#ef5350"
   },
@@ -53,7 +53,7 @@ const planets = [
     tooltip: "I move visuals with intention.",
     description: "I use motion design to breathe life into ideas, visuals, and interfaces.",
     cta: "Watch Motion",
-    link: "/motion-creator",
+    link: "/motion",
     color: "#ff9800",
     svgColor: "#ff9800"
   },
@@ -64,7 +64,7 @@ const planets = [
     tooltip: "Great things are built together.",
     description: "I thrive in collaboration—sharing ideas, feedback, and energy with other creatives.",
     cta: "Let's Connect",
-    link: "/collaborator",
+    link: "/collaborate",
     color: "#9c27b0",
     svgColor: "#9c27b0"
   }
@@ -80,17 +80,16 @@ export default function About() {
 
   useEffect(() => {
     const updatePlanetPositions = () => {
-      const centerX = window.innerWidth >= 768 ? window.innerWidth * 0.5 : window.innerWidth * 0.5;
-      const centerY = window.innerHeight >= 768 ? window.innerHeight * 0.5 : window.innerHeight * 0.45;
+      const centerX = 700;
+      const centerY = 400;
       
-      const scale = window.innerWidth >= 768 ? 1 : 0.6;
       const orbitalData = [
-        { rx: 120 * scale, ry: 60 * scale, speed: 0.004 },
-        { rx: 180 * scale, ry: 90 * scale, speed: 0.003 },
-        { rx: 240 * scale, ry: 120 * scale, speed: 0.002 },
-        { rx: 300 * scale, ry: 150 * scale, speed: 0.0015 },
-        { rx: 360 * scale, ry: 180 * scale, speed: 0.0012 },
-        { rx: 420 * scale, ry: 210 * scale, speed: 0.001 }
+        { rx: 120, ry: 60, speed: 0.004 },
+        { rx: 180, ry: 90, speed: 0.003 },
+        { rx: 240, ry: 120, speed: 0.002 },
+        { rx: 300, ry: 150, speed: 0.0015 },
+        { rx: 360, ry: 180, speed: 0.0012 },
+        { rx: 420, ry: 210, speed: 0.001 }
       ];
 
       const newPositions = orbitalData.map((orbit, index) => {
@@ -112,30 +111,39 @@ export default function About() {
 
   return (
     <div 
-      className="relative w-full min-h-screen overflow-hidden" 
-      style={{backgroundColor: '#1E1E1E', cursor: 'grab'}}
+      className="relative w-full" 
+      style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
     >
-      {/* Left Border - Hidden on mobile */}
+      {/* Left Border */}
       <div 
-        className="hidden md:block"
         style={{
           width: '130px',
-          height: '100vh',
+          height: '1117px',
           borderRight: '1px solid rgba(255, 255, 255, 0.12)',
           position: 'absolute',
           left: '0px',
-          top: '0px'
+          top: '26px'
         }}
       />
       
-      {/* HeaVans Logo - Responsive */}
+      {/* HeaVans Logo - Clickable Image Logo */}
       <Link href="/">
-        <div className="absolute top-4 left-4 md:left-16 z-20 cursor-pointer">
+        <div style={{
+          position: 'absolute',
+          top: '16px',
+          left: '16px',
+          zIndex: 20,
+          cursor: 'pointer'
+        }}>
           <img
             src="/logo.png"
             alt="HeaVans Logo"
-            className="w-24 h-8 md:w-32 md:h-10 object-contain mt-8 md:mt-12"
-          />
+            style={{
+              width: '120px',
+              height: '36px',
+              objectFit: 'contain'
+            }}
+            className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
         </div>
       </Link>
       
@@ -454,8 +462,18 @@ export default function About() {
         ))}
       </div>
 
-      {/* Clickable Planet Names - Responsive */}
-      <div className="fixed bottom-20 md:bottom-24 left-0 right-0 flex justify-center gap-3 md:gap-4 flex-wrap px-4 z-10">
+      {/* Clickable Planet Names - Positioned above footer */}
+      <div style={{
+        position: 'absolute',
+        top: '970px',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '15px',
+        flexWrap: 'wrap',
+        padding: '0 20px',
+        zIndex: 10
+      }}>
         {/* Sun */}
         <Link href="/evans">
           <div 
@@ -488,34 +506,32 @@ export default function About() {
 
         {/* Planet Names */}
         {planets.slice(0, 6).map((planet, index) => (
-          <Link key={planet.id} href={planet.link}>
-            <div 
-              style={{
-                background: `${planet.color}15`,
-                color: planet.color,
-                border: `2px solid ${planet.color}`,
-                padding: '10px 18px',
-                borderRadius: '8px',
-                fontFamily: 'Arial, sans-serif',
-                fontSize: '13px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                textDecoration: 'none',
-                display: 'inline-block'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = `${planet.color}30`;
-                e.currentTarget.style.transform = 'scale(1.05)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = `${planet.color}15`;
-                e.currentTarget.style.transform = 'scale(1)';
-              }}
-            >
-              {planet.name}
-            </div>
-          </Link>
+          <div 
+            key={planet.id}
+            style={{
+              background: clickedPlanet === index ? `${planet.color}40` : `${planet.color}15`,
+              color: planet.color,
+              border: `2px solid ${planet.color}`,
+              padding: '10px 18px',
+              borderRadius: '8px',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '13px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onClick={() => setClickedPlanet(clickedPlanet === index ? null : index)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = `${planet.color}30`;
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = clickedPlanet === index ? `${planet.color}40` : `${planet.color}15`;
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          >
+            {planet.name}
+          </div>
         ))}
       </div>
 
