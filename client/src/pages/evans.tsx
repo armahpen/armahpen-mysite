@@ -6,8 +6,9 @@ export default function Evans() {
       className="relative w-full min-h-screen" 
       style={{backgroundColor: '#1E1E1E'}}
     >
-      {/* Left Border */}
+      {/* Left Border - Hidden on mobile */}
       <div 
+        className="hidden md:block"
         style={{
           width: '130px',
           height: '100vh',
@@ -18,727 +19,201 @@ export default function Evans() {
         }}
       />
       
-      {/* HeaVans Logo - Clickable */}
+      {/* HeaVans Logo - Responsive */}
       <Link href="/">
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 20,
-          cursor: 'pointer'
-        }}>
+        <div className="absolute top-4 left-4 md:left-16 z-20 cursor-pointer">
           <img
             src="/logo.png"
             alt="HeaVans Logo"
-            style={{
-              width: '120px',
-              height: '36px',
-              objectFit: 'contain'
-            }}
-            className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
+            className="w-24 h-8 md:w-32 md:h-10 object-contain mt-8 md:mt-12"
+          />
         </div>
       </Link>
       
-      {/* Navigation Menu */}
-      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
-        <Link href="/">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            position: 'absolute',
-            left: '0px',
-            top: '0px',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-100 menu-button">Home</div>
-        </Link>
-        <Link href="/about">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            position: 'absolute',
-            left: '96px',
-            top: '0px',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-200 menu-button">About</div>
-        </Link>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '194px',
-          top: '0px'
-        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '317px',
-          top: '0px'
-        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '388px',
-          top: '0px'
-        }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '456px',
-          top: '0px'
-        }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
-      </div>
-
-      {/* Main Content */}
-      <div style={{
-        marginLeft: '150px',
-        padding: '120px 60px 60px 60px',
-        maxWidth: '1000px'
-      }}>
-        {/* Hero Section - Simplified */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h1 style={{
-            fontSize: '3.5rem',
-            fontWeight: '300',
-            color: '#ffd700',
-            marginBottom: '30px',
-            fontFamily: 'Georgia, serif',
-            lineHeight: '1.2'
-          }}>
-            Evans (Heavans)
-          </h1>
-          
-          <p style={{
-            fontSize: '1.4rem',
-            color: 'rgba(255, 255, 255, 0.9)',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            fontFamily: 'Georgia, serif',
-            maxWidth: '600px'
-          }}>
-            I'm a creative planet builder based in the digital universe. Since starting my journey, I've enjoyed turning complex problems into simple, beautiful and intuitive solutions. When I'm not building digital experiences, you'll find me writing poetry, exploring music, or collaborating with other creatives.
-          </p>
-        </div>
-
-        {/* Main Profile Image */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '60px'
-        }}>
-          <img
-            src="/attached_assets/WhatsApp Image 2025-07-05 at 3.54.30 PM_1751757017392.jpeg"
-            alt="Evans (Heavans) - Creative Planet Builder"
-            style={{
-              width: '300px',
-              height: '300px',
-              objectFit: 'cover',
-              borderRadius: '12px',
-              border: '2px solid rgba(255, 215, 0, 0.3)',
-              boxShadow: '0 0 20px rgba(255, 215, 0, 0.2)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 0 30px rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 215, 0, 0.2)';
-            }}
-          />
-        </div>
-
-        {/* Image Grid - 6 lifestyle/workspace images */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '15px',
-          marginBottom: '80px'
-        }}>
-          {/* Workspace Image */}
-          <img
-            src="/attached_assets/WhatsApp Image 2025-07-05 at 3.50.33 PM_1751756326013.jpeg"
-            alt="Evans Workspace"
-            style={{
-              aspectRatio: '1',
-              objectFit: 'cover',
-              borderRadius: '8px',
-              border: '1px solid rgba(255, 215, 0, 0.2)',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.border = '1px solid rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.border = '1px solid rgba(255, 215, 0, 0.2)';
-            }}
-          />
-          
-          {/* Remaining placeholders */}
-          {['Creative Process', 'Projects', 'Collaboration', 'Inspiration', 'Daily Life'].map((item, index) => (
-            <div key={index} style={{
-              aspectRatio: '1',
-              background: 'rgba(255, 215, 0, 0.1)',
-              border: '1px solid rgba(255, 215, 0, 0.2)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '0.9rem',
-              color: '#ffd700',
-              fontFamily: 'DM Sans',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.2)';
-              e.currentTarget.style.transform = 'scale(1.02)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 215, 0, 0.1)';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-            >
-              {item}
+      {/* Navigation Menu - Responsive */}
+      <nav className="absolute top-16 right-4 md:right-16 z-20">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-6 text-right md:text-left">
+          <Link href="/">
+            <div className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors">
+              Home
             </div>
-          ))}
+          </Link>
+          <Link href="/about">
+            <div className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors">
+              About
+            </div>
+          </Link>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Experience section coming soon!')}
+          >
+            Experience
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Skills section coming soon!')}
+          >
+            Skills
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Work section coming soon!')}
+          >
+            Work
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Contact section coming soon!')}
+          >
+            Contact
+          </div>
         </div>
+      </nav>
 
-        {/* Two Column Section - Part Builder, Part Creator */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '60px',
-          marginBottom: '80px'
-        }}>
-          {/* Left Column */}
-          <div>
-            <h2 style={{
-              fontSize: '2rem',
-              color: '#ffd700',
-              marginBottom: '30px',
-              fontFamily: 'Georgia, serif',
-              fontWeight: '400'
-            }}>
-              Part builder
-            </h2>
+      {/* Main Content - Responsive */}
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 pt-32 md:pt-40 md:ml-16 lg:ml-32">
+        <div className="max-w-4xl">
+          {/* Hero Section - Responsive */}
+          <div className="mb-16 md:mb-20">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-yellow-400 mb-6 md:mb-8 leading-tight">
+              Evans (Heavans)
+            </h1>
             
-            <ul style={{
-              listStyle: 'none',
-              padding: '0',
-              margin: '0',
-              fontSize: '1.1rem',
-              lineHeight: '2',
-              color: 'rgba(255, 255, 255, 0.8)',
-              fontFamily: 'Georgia, serif'
-            }}>
-              <li>• Product development</li>
-              <li>• Full-stack coding</li>
-              <li>• System architecture</li>
-              <li>• Problem solving</li>
-              <li>• "Making it work"</li>
-            </ul>
-          </div>
-
-          {/* Right Column */}
-          <div>
-            <h2 style={{
-              fontSize: '2rem',
-              color: '#ffd700',
-              marginBottom: '30px',
-              fontFamily: 'Georgia, serif',
-              fontWeight: '400'
-            }}>
-              Part creator
-            </h2>
-            
-            <ul style={{
-              listStyle: 'none',
-              padding: '0',
-              margin: '0',
-              fontSize: '1.1rem',
-              lineHeight: '2',
-              color: 'rgba(255, 255, 255, 0.8)',
-              fontFamily: 'Georgia, serif'
-            }}>
-              <li>• UI/UX design</li>
-              <li>• Visual storytelling</li>
-              <li>• Poetry & writing</li>
-              <li>• Motion graphics</li>
-              <li>• Creative collaboration</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Chart Placeholder */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '80px'
-        }}>
-          <div style={{
-            width: '300px',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '50%',
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans'
-          }}>
-            Part Builder, Part Creator Chart
-          </div>
-        </div>
-
-        {/* Random Facts */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '30px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            Random facts
-          </h2>
-          
-          <ul style={{
-            listStyle: 'none',
-            padding: '0',
-            margin: '0',
-            fontSize: '1.1rem',
-            lineHeight: '1.8',
-            color: 'rgba(255, 255, 255, 0.8)',
-            fontFamily: 'Georgia, serif',
-            columns: '2',
-            columnGap: '60px'
-          }}>
-            <li style={{marginBottom: '10px'}}>• I love building things that solve real problems</li>
-            <li style={{marginBottom: '10px'}}>• Poetry is my creative recharge time</li>
-            <li style={{marginBottom: '10px'}}>• I want to revolutionize digital experiences</li>
-            <li style={{marginBottom: '10px'}}>• I'm passionate about clean code</li>
-            <li style={{marginBottom: '10px'}}>• I thrive in collaborative environments</li>
-            <li style={{marginBottom: '10px'}}>• I'm into motion design</li>
-            <li style={{marginBottom: '10px'}}>• I enjoy creating meaningful connections</li>
-            <li style={{marginBottom: '10px'}}>• Music inspires my creative process</li>
-            <li style={{marginBottom: '10px'}}>• I believe in design with purpose</li>
-          </ul>
-        </div>
-
-        {/* My Skills */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '30px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            My skills
-          </h2>
-          
-          <div style={{
-            display: 'grid',
-            gap: '20px'
-          }}>
-            {[
-              { skill: 'Creative Vision', level: 95 },
-              { skill: 'Full-Stack Development', level: 90 },
-              { skill: 'UI/UX Design', level: 85 },
-              { skill: 'Poetry & Writing', level: 80 },
-              { skill: 'Motion Graphics', level: 75 },
-              { skill: 'Collaboration', level: 90 }
-            ].map((item, index) => (
-              <div key={index} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '20px'
-              }}>
-                <div style={{
-                  fontSize: '1.1rem',
-                  color: 'rgba(255, 255, 255, 0.8)',
-                  fontFamily: 'Georgia, serif',
-                  minWidth: '180px'
-                }}>
-                  {item.skill}
-                </div>
-                <div style={{
-                  flex: '1',
-                  height: '6px',
-                  background: 'rgba(255, 215, 0, 0.2)',
-                  borderRadius: '3px',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  <div style={{
-                    width: `${item.level}%`,
-                    height: '100%',
-                    background: 'linear-gradient(90deg, #ffd700, #ffcc00)',
-                    borderRadius: '3px',
-                    transition: 'width 2s ease-out'
-                  }} />
-                </div>
-                <div style={{
-                  fontSize: '1rem',
-                  color: '#ffd700',
-                  fontFamily: 'DM Sans',
-                  fontWeight: '600',
-                  minWidth: '40px'
-                }}>
-                  {item.level}%
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Featured Work */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '20px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            Featured here & there
-          </h2>
-          
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            fontFamily: 'Georgia, serif'
-          }}>
-            I've been lucky enough to have my work featured in various digital platforms and design communities. I've also spoken at creative events and enjoy sharing my passion for building meaningful digital experiences.
-          </p>
-          
-          <Link href="/about">
-            <div style={{
-              color: '#ffd700',
-              fontSize: '1.1rem',
-              fontFamily: 'Georgia, serif',
-              textDecoration: 'underline',
-              cursor: 'pointer',
-              marginBottom: '30px',
-              display: 'inline-block'
-            }}>
-              View featured work
-            </div>
-          </Link>
-          
-          <div style={{
-            width: '100%',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans',
-            cursor: 'pointer'
-          }}>
-            Featured Work Image
-          </div>
-        </div>
-
-        {/* My Galaxy */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '20px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            My creative galaxy
-          </h2>
-          
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            fontFamily: 'Georgia, serif'
-          }}>
-            Explore the planets in my creative solar system. Each one represents a different skill and passion that orbits around my core mission of building meaningful digital experiences.
-          </p>
-          
-          <Link href="/about">
-            <div style={{
-              color: '#ffd700',
-              fontSize: '1.1rem',
-              fontFamily: 'Georgia, serif',
-              textDecoration: 'underline',
-              cursor: 'pointer',
-              marginBottom: '30px',
-              display: 'inline-block'
-            }}>
-              Explore my galaxy
-            </div>
-          </Link>
-          
-          <div style={{
-            width: '100%',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans',
-            cursor: 'pointer'
-          }}>
-            Galaxy System Image
-          </div>
-        </div>
-
-        {/* My Story */}
-        <div style={{
-          marginBottom: '80px'
-        }}>
-          <h2 style={{
-            fontSize: '2rem',
-            color: '#ffd700',
-            marginBottom: '20px',
-            fontFamily: 'Georgia, serif',
-            fontWeight: '400'
-          }}>
-            My story
-          </h2>
-          
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'rgba(255, 255, 255, 0.8)',
-            lineHeight: '1.6',
-            marginBottom: '40px',
-            fontFamily: 'Georgia, serif'
-          }}>
-            Learn a little bit more about me, how I got into creative development, and how I built my career spanning design, code, and creative collaboration. I've included key insights I've learned, inspirations, and even some behind-the-scenes glimpses of my creative process.
-          </p>
-          
-          <Link href="/about">
-            <div style={{
-              color: '#ffd700',
-              fontSize: '1.1rem',
-              fontFamily: 'Georgia, serif',
-              textDecoration: 'underline',
-              cursor: 'pointer',
-              marginBottom: '30px',
-              display: 'inline-block'
-            }}>
-              Read my story
-            </div>
-          </Link>
-          
-          <div style={{
-            width: '100%',
-            height: '300px',
-            background: 'rgba(255, 215, 0, 0.1)',
-            border: '1px solid rgba(255, 215, 0, 0.2)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.1rem',
-            color: '#ffd700',
-            fontFamily: 'DM Sans',
-            cursor: 'pointer'
-          }}>
-            Story/Workspace Image
-          </div>
-        </div>
-      </div>
-
-      {/* Professional Footer */}
-      <footer style={{
-        width: '100%',
-        background: '#63767C',
-        padding: '40px 80px',
-        boxSizing: 'border-box',
-        marginTop: '80px'
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          maxWidth: '1440px',
-          margin: '0 auto'
-        }}>
-          {/* Logo and Description */}
-          <div style={{flex: '1', marginRight: '60px'}}>
-            <div style={{
-              fontFamily: 'Poppins',
-              fontSize: '24px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '12px'
-            }}>HeaVans.</div>
-            <p style={{
-              fontFamily: 'Public Sans',
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.8)',
-              lineHeight: '1.5',
-              margin: '0',
-              maxWidth: '280px'
-            }}>
-              Creative web developer blending design, code, and motion to build modern, impactful digital experiences.
+            <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-8 md:mb-10 max-w-2xl">
+              I'm a creative planet builder based in the digital universe. Since starting my journey, I've enjoyed turning complex problems into simple, beautiful and intuitive solutions. When I'm not building digital experiences, you'll find me writing poetry, exploring music, or collaborating with other creatives.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div style={{flex: '0 0 auto', marginRight: '60px'}}>
-            <h4 style={{
-              fontFamily: 'DM Sans',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '16px',
-              margin: '0 0 16px 0'
-            }}>Quick Links</h4>
-            <ul style={{
-              listStyle: 'none',
-              padding: '0',
-              margin: '0'
-            }}>
-              <li style={{marginBottom: '8px'}}>
-                <Link href="/" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>Home</Link>
-              </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link href="/about" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>About</Link>
-              </li>
-              <li style={{marginBottom: '8px'}}>
-                <Link href="/evans" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>Evans</Link>
-              </li>
-            </ul>
+          {/* Main Profile Image - Responsive */}
+          <div className="text-center mb-12 md:mb-16">
+            <img
+              src="/attached_assets/WhatsApp Image 2025-07-05 at 3.54.30 PM_1751757017392.jpeg"
+              alt="Evans (Heavans) - Creative Planet Builder"
+              className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-xl border-2 border-yellow-400/30 shadow-2xl mx-auto hover:scale-105 transition-all duration-300"
+              style={{
+                boxShadow: '0 0 20px rgba(255, 215, 0, 0.2)'
+              }}
+            />
           </div>
 
-          {/* Contact Info */}
-          <div style={{flex: '0 0 auto', marginRight: '60px'}}>
-            <h4 style={{
-              fontFamily: 'DM Sans',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '16px',
-              margin: '0 0 16px 0'
-            }}>Get In Touch</h4>
-            <div style={{
-              fontFamily: 'DM Sans',
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.7)',
-              lineHeight: '1.6'
-            }}>
-              <p style={{margin: '0 0 8px 0'}}>evans@heavans.com</p>
-              <p style={{margin: '0 0 8px 0'}}>Available for freelance work</p>
+          {/* Image Grid - Responsive */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
+            {/* Workspace Image */}
+            <img
+              src="/attached_assets/WhatsApp Image 2025-07-05 at 3.50.33 PM_1751756326013.jpeg"
+              alt="Evans Workspace"
+              className="aspect-square object-cover rounded-lg border border-yellow-400/20 cursor-pointer transition-all duration-300 hover:scale-105 hover:border-yellow-400/40"
+            />
+            
+            {/* Remaining placeholders */}
+            {['Creative Process', 'Projects', 'Collaboration', 'Inspiration', 'Daily Life'].map((item, index) => (
+              <div 
+                key={index} 
+                className="aspect-square bg-yellow-400/10 border border-yellow-400/20 rounded-lg flex items-center justify-center text-sm md:text-base text-yellow-400 cursor-pointer transition-all duration-300 hover:bg-yellow-400/20 hover:border-yellow-400/40"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+
+          {/* Skills Section */}
+          <div className="mb-16 md:mb-20">
+            <h2 className="text-2xl md:text-3xl font-light text-white mb-8 md:mb-12">Core Skills</h2>
+            
+            <div className="space-y-6 md:space-y-8">
+              {[
+                { skill: 'Creative Design', level: 95 },
+                { skill: 'Full-Stack Development', level: 90 },
+                { skill: 'UI/UX Design', level: 88 },
+                { skill: 'Poetry & Writing', level: 85 },
+                { skill: 'Project Management', level: 82 },
+                { skill: 'Team Collaboration', level: 90 }
+              ].map((item, index) => (
+                <div key={index}>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-white/80 text-sm md:text-base">{item.skill}</span>
+                    <span className="text-yellow-400 text-sm md:text-base">{item.level}%</span>
+                  </div>
+                  <div className="w-full bg-white/10 rounded-full h-2">
+                    <div 
+                      className="bg-gradient-to-r from-yellow-400 to-yellow-500 h-2 rounded-full transition-all duration-1000"
+                      style={{ width: `${item.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Social Links */}
-          <div style={{flex: '0 0 auto'}}>
-            <h4 style={{
-              fontFamily: 'DM Sans',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '16px',
-              margin: '0 0 16px 0'
-            }}>Follow Me</h4>
-            <div style={{display: 'flex', gap: '12px'}}>
-              <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontFamily: 'Public Sans',
-                fontSize: '14px',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}>Tw</a>
-              <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontFamily: 'Public Sans',
-                fontSize: '14px',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}>In</a>
-              <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontFamily: 'Public Sans',
-                fontSize: '14px',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}>Fb</a>
+          {/* Featured Work */}
+          <div className="mb-16 md:mb-20">
+            <h2 className="text-2xl md:text-3xl font-light text-white mb-8 md:mb-12">Featured Work</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-colors">
+                <div className="w-full h-48 bg-yellow-400/10 rounded-lg mb-4 flex items-center justify-center">
+                  <span className="text-yellow-400">Project Preview</span>
+                </div>
+                <h3 className="text-white text-lg font-medium mb-2">Student Help Platform</h3>
+                <p className="text-white/70 mb-4">A comprehensive educational platform connecting students with resources and mentorship.</p>
+                <div className="flex gap-2">
+                  <span className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded">React</span>
+                  <span className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded">Node.js</span>
+                  <span className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded">PostgreSQL</span>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-colors">
+                <div className="w-full h-48 bg-yellow-400/10 rounded-lg mb-4 flex items-center justify-center">
+                  <span className="text-yellow-400">Project Preview</span>
+                </div>
+                <h3 className="text-white text-lg font-medium mb-2">DEMS System</h3>
+                <p className="text-white/70 mb-4">Digital Event Management System for organizing and tracking events efficiently.</p>
+                <div className="flex gap-2">
+                  <span className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded">Vue.js</span>
+                  <span className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded">Express</span>
+                  <span className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded">MongoDB</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Copyright */}
-        <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-          marginTop: '32px',
-          paddingTop: '20px',
-          textAlign: 'center'
-        }}>
-          <p style={{
-            fontFamily: 'DM Sans',
-            fontSize: '12px',
-            color: 'rgba(255, 255, 255, 0.6)',
-            margin: '0'
-          }}>
-            © 2025 HeaVans. All rights reserved. | Designed & Developed by Evans
-          </p>
+          {/* Planet Navigation */}
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-light text-white mb-8">Explore My Planets</h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              {[
+                { name: 'Creative Builder', link: '/creative-builder', color: '#4fc3f7' },
+                { name: 'Poet & Sound', link: '/poet', color: '#ab47bc' },
+                { name: 'Design Thinker', link: '/design-thinker', color: '#66bb6a' },
+                { name: 'Developer', link: '/developer', color: '#ef5350' },
+                { name: 'Motion Creator', link: '/motion-creator', color: '#ff9800' },
+                { name: 'Collaborator', link: '/collaborator', color: '#42a5f5' }
+              ].map((planet, index) => (
+                <Link key={index} href={planet.link}>
+                  <div 
+                    className="p-4 rounded-lg border-2 cursor-pointer transition-all duration-300 hover:scale-105"
+                    style={{ 
+                      borderColor: planet.color + '40',
+                      backgroundColor: planet.color + '20'
+                    }}
+                  >
+                    <div 
+                      className="w-8 h-8 rounded-full mx-auto mb-2"
+                      style={{ backgroundColor: planet.color }}
+                    ></div>
+                    <span className="text-white/80 text-sm">{planet.name}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Footer Space */}
+          <div className="h-24"></div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

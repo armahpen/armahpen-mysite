@@ -80,16 +80,17 @@ export default function About() {
 
   useEffect(() => {
     const updatePlanetPositions = () => {
-      const centerX = 700;
-      const centerY = 400;
+      const centerX = window.innerWidth >= 768 ? window.innerWidth * 0.5 : window.innerWidth * 0.5;
+      const centerY = window.innerHeight >= 768 ? window.innerHeight * 0.5 : window.innerHeight * 0.45;
       
+      const scale = window.innerWidth >= 768 ? 1 : 0.6;
       const orbitalData = [
-        { rx: 120, ry: 60, speed: 0.004 },
-        { rx: 180, ry: 90, speed: 0.003 },
-        { rx: 240, ry: 120, speed: 0.002 },
-        { rx: 300, ry: 150, speed: 0.0015 },
-        { rx: 360, ry: 180, speed: 0.0012 },
-        { rx: 420, ry: 210, speed: 0.001 }
+        { rx: 120 * scale, ry: 60 * scale, speed: 0.004 },
+        { rx: 180 * scale, ry: 90 * scale, speed: 0.003 },
+        { rx: 240 * scale, ry: 120 * scale, speed: 0.002 },
+        { rx: 300 * scale, ry: 150 * scale, speed: 0.0015 },
+        { rx: 360 * scale, ry: 180 * scale, speed: 0.0012 },
+        { rx: 420 * scale, ry: 210 * scale, speed: 0.001 }
       ];
 
       const newPositions = orbitalData.map((orbit, index) => {
@@ -111,39 +112,30 @@ export default function About() {
 
   return (
     <div 
-      className="relative w-full" 
-      style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1400px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
+      className="relative w-full min-h-screen overflow-hidden" 
+      style={{backgroundColor: '#1E1E1E', cursor: 'grab'}}
     >
-      {/* Left Border */}
+      {/* Left Border - Hidden on mobile */}
       <div 
+        className="hidden md:block"
         style={{
           width: '130px',
-          height: '1117px',
+          height: '100vh',
           borderRight: '1px solid rgba(255, 255, 255, 0.12)',
           position: 'absolute',
           left: '0px',
-          top: '26px'
+          top: '0px'
         }}
       />
       
-      {/* HeaVans Logo - Clickable Image Logo */}
+      {/* HeaVans Logo - Responsive */}
       <Link href="/">
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 20,
-          cursor: 'pointer'
-        }}>
+        <div className="absolute top-4 left-4 md:left-16 z-20 cursor-pointer">
           <img
             src="/logo.png"
             alt="HeaVans Logo"
-            style={{
-              width: '120px',
-              height: '36px',
-              objectFit: 'contain'
-            }}
-            className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
+            className="w-24 h-8 md:w-32 md:h-10 object-contain mt-8 md:mt-12"
+          />
         </div>
       </Link>
       
@@ -462,18 +454,8 @@ export default function About() {
         ))}
       </div>
 
-      {/* Clickable Planet Names - Positioned above footer */}
-      <div style={{
-        position: 'absolute',
-        top: '970px',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '15px',
-        flexWrap: 'wrap',
-        padding: '0 20px',
-        zIndex: 10
-      }}>
+      {/* Clickable Planet Names - Responsive */}
+      <div className="fixed bottom-20 md:bottom-24 left-0 right-0 flex justify-center gap-3 md:gap-4 flex-wrap px-4 z-10">
         {/* Sun */}
         <Link href="/evans">
           <div 

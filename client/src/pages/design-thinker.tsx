@@ -6,8 +6,9 @@ export default function DesignThinker() {
       className="relative w-full min-h-screen" 
       style={{backgroundColor: '#1E1E1E'}}
     >
-      {/* Left Border */}
+      {/* Left Border - Hidden on mobile */}
       <div 
+        className="hidden md:block"
         style={{
           width: '130px',
           height: '100vh',
@@ -18,24 +19,14 @@ export default function DesignThinker() {
         }}
       />
       
-      {/* HeaVans Logo - Clickable */}
+      {/* HeaVans Logo - Responsive */}
       <Link href="/">
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 20,
-          cursor: 'pointer'
-        }}>
+        <div className="absolute top-4 left-4 md:left-16 z-20 cursor-pointer">
           <img
             src="/logo.png"
             alt="HeaVans Logo"
-            style={{
-              width: '120px',
-              height: '36px',
-              objectFit: 'contain'
-            }}
-            className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
+            className="w-24 h-8 md:w-32 md:h-10 object-contain mt-8 md:mt-12"
+          />
         </div>
       </Link>
       
