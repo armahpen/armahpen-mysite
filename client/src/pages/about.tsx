@@ -139,66 +139,43 @@ export default function About() {
         </div>
       </Link>
       
-      {/* Navigation Menu */}
-      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
-        <Link href="/">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            position: 'absolute',
-            left: '0px',
-            top: '0px',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-100 menu-button">Home</div>
-        </Link>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.80)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '500',
-          position: 'absolute',
-          left: '96px',
-          top: '0px'
-        }} className="animate-slideInDown delay-200 menu-button">About</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '194px',
-          top: '0px'
-        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '317px',
-          top: '0px'
-        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Skills section coming soon!')}>Skills</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '388px',
-          top: '0px'
-        }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          position: 'absolute',
-          left: '456px',
-          top: '0px'
-        }} className="animate-slideInDown delay-600 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
-      </div>
+      {/* Navigation Menu - Responsive */}
+      <nav className="absolute top-20 md:top-16 right-4 md:right-16 z-20">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-6 text-right md:text-left">
+          <Link href="/">
+            <div className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors">
+              Home
+            </div>
+          </Link>
+          <div className="text-white/80 text-sm md:text-lg font-medium cursor-pointer">
+            About
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Experience section coming soon!')}
+          >
+            Experience
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Skills section coming soon!')}
+          >
+            Skills
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Work section coming soon!')}
+          >
+            Work
+          </div>
+          <div 
+            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            onClick={() => alert('Contact section coming soon!')}
+          >
+            Contact
+          </div>
+        </div>
+      </nav>
 
       {/* Floating Stars Background */}
       <div className="stars-field"></div>
