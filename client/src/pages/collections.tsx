@@ -116,27 +116,24 @@ export default function Collections() {
             cursor: 'pointer'
           }} className="animate-slideInDown delay-100 menu-button">Home</div>
         </Link>
-        <Link href="/about">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            position: 'absolute',
-            left: '80px',
-            top: '0px',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-200 menu-button">About</div>
-        </Link>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '500',
           position: 'absolute',
+          left: '80px',
+          top: '0px'
+        }} className="animate-slideInDown delay-200 menu-button">Collections</div>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
           left: '145px',
           top: '0px'
-        }} className="animate-slideInDown delay-300 menu-button">Collections</div>
+        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
@@ -155,36 +152,6 @@ export default function Collections() {
           left: '320px',
           top: '0px'
         }} className="animate-slideInDown delay-500 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
-      </div>
-
-      {/* Main Title - Collections */}
-      <div style={{
-        position: 'absolute',
-        left: '50%',
-        top: '180px',
-        transform: 'translateX(-50%)',
-        textAlign: 'center',
-        zIndex: 10
-      }}>
-        <h1 style={{
-          color: 'white',
-          fontFamily: 'DM Sans',
-          fontSize: '48px',
-          fontWeight: '700',
-          margin: '0 0 20px 0',
-          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text'
-        }}>HeaDesign Collections</h1>
-        <p style={{
-          color: 'rgba(255, 255, 255, 0.8)',
-          fontFamily: 'DM Sans',
-          fontSize: '20px',
-          fontWeight: '400',
-          margin: '0',
-          maxWidth: '600px'
-        }}>Explore the creative universe of design projects and artistic endeavors</p>
       </div>
 
       {/* Solar System Container */}
