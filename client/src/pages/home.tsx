@@ -27,34 +27,34 @@ export default function Home() {
       </div>
 
       {/* Navigation Menu - Responsive */}
-      <nav className="absolute top-20 md:top-16 right-4 md:right-16 z-20">
-        <div className="flex flex-col md:flex-row gap-2 md:gap-6 text-right md:text-left">
+      <nav className="absolute top-16 right-4 md:right-16 z-20">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-right md:text-left">
           <div 
-            className="text-white/80 text-sm md:text-lg font-medium cursor-pointer hover:text-white transition-colors"
+            className="text-white/80 text-base md:text-lg font-medium cursor-pointer hover:text-white transition-colors"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             Home
           </div>
           <div 
-            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            className="text-white/65 text-base md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
             onClick={() => window.location.href = '/about'}
           >
             About
           </div>
           <div 
-            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            className="text-white/65 text-base md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
             onClick={() => alert('Experience section coming soon!')}
           >
             Experience
           </div>
           <div 
-            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            className="text-white/65 text-base md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
             onClick={() => alert('Skills section coming soon!')}
           >
             Skills
           </div>
           <div 
-            className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
+            className="text-white/65 text-base md:text-lg font-normal cursor-pointer hover:text-white transition-colors"
             onClick={() => alert('Contact section coming soon!')}
           >
             Contact

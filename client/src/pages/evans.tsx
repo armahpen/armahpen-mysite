@@ -31,8 +31,8 @@ export default function Evans() {
       </Link>
       
       {/* Navigation Menu - Responsive */}
-      <nav className="absolute top-20 md:top-16 right-4 md:right-16 z-20">
-        <div className="flex flex-col md:flex-row gap-2 md:gap-6 text-right md:text-left">
+      <nav className="absolute top-16 right-4 md:right-16 z-20">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-6 text-right md:text-left">
           <Link href="/">
             <div className="text-white/65 text-sm md:text-lg font-normal cursor-pointer hover:text-white transition-colors">
               Home
