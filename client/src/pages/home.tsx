@@ -51,7 +51,7 @@ export default function Home() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '100px',
+          left: '90px',
           top: '0px'
         }} className="animate-slideInDown delay-200 menu-button" onClick={() => window.location.href = '/about'}>About</div>
         <div style={{
@@ -60,7 +60,7 @@ export default function Home() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '200px',
+          left: '165px',
           top: '0px'
         }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
         <div style={{
@@ -69,7 +69,7 @@ export default function Home() {
           fontSize: '18px',
           fontWeight: '400',
           position: 'absolute',
-          left: '300px',
+          left: '285px',
           top: '0px'
         }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
