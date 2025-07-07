@@ -113,6 +113,11 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
+- July 07, 2025: Updated Experience page navigation and standardized footer format
+  - Replaced Collections button with Contact button in Experience page navigation menu
+  - Standardized all footer text to "@2020 HeaVans. All rights reserved. | Designed & Developed by Evans"
+  - Updated footer format across all pages for consistency
+
 - July 06, 2025: Created Evans (Heavans) dedicated page and optimized layout
   - Built professional Evans profile page with golden gradient styling matching sun theme
   - Added proper routing from About page button to new Evans page (/evans)

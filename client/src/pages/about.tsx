@@ -213,7 +213,7 @@ export default function About() {
           fontSize: '12px',
           margin: '0',
           textAlign: 'center'
-        }}>Designed and coded by HeaVans @2020</p>
+        }}>@2020 HeaVans. All rights reserved. | Designed & Developed by Evans</p>
       </div>
 
       <style>{`

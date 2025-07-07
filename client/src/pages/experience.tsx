@@ -70,13 +70,13 @@ export default function Experience() {
                 cursor: 'pointer'
               }}>Experience</span>
             </Link>
-            <Link href="/collections" style={{ textDecoration: 'none' }}>
+            <Link href="/contact" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{
                 color: 'rgba(255, 255, 255, 0.7)',
                 fontSize: '16px',
                 fontWeight: '400',
                 cursor: 'pointer'
-              }}>Collections</span>
+              }}>Contact</span>
             </Link>
           </div>
         </div>
@@ -807,7 +807,7 @@ export default function Experience() {
           fontSize: '14px',
           color: 'rgba(255, 255, 255, 0.6)',
           textAlign: 'center'
-        }}>Designed and coded by HeaVans @2020</p>
+        }}>@2020 HeaVans. All rights reserved. | Designed & Developed by Evans</p>
       </div>
 
       <style>{`

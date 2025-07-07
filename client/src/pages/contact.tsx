@@ -255,7 +255,7 @@ export default function Contact() {
           fontSize: '14px',
           color: 'rgba(255, 255, 255, 0.6)',
           textAlign: 'center'
-        }}>Designed and coded by HeaVans @2020</p>
+        }}>@2020 HeaVans. All rights reserved. | Designed & Developed by Evans</p>
       </div>
 
       <style>{`

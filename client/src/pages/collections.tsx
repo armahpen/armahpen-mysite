@@ -446,7 +446,7 @@ export default function Collections() {
           fontFamily: 'DM Sans',
           fontSize: '14px',
           margin: '0'
-        }}>@2020 HeaVans - Creative Collections & Design Portfolio</p>
+        }}>@2020 HeaVans. All rights reserved. | Designed & Developed by Evans</p>
       </div>
 
       <style>{`
