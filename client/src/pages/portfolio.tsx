@@ -302,14 +302,15 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Right Sidebar - Project Categories */}
+        {/* Right Sidebar - 3D Project Categories */}
         <div style={{
           width: '300px',
           padding: '80px 40px',
           borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
           position: 'sticky',
           top: '80px',
-          height: 'fit-content'
+          height: 'fit-content',
+          perspective: '1000px'
         }}>
           <h3 style={{
             fontSize: '16px',
@@ -324,28 +325,68 @@ export default function Portfolio() {
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px'
+            gap: '20px',
+            transformStyle: 'preserve-3d'
           }}>
             {categories.map((category, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedCategory(category)}
                 style={{
-                  background: 'none',
-                  border: 'none',
-                  color: selectedCategory === category ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.5)',
-                  fontSize: '16px',
-                  fontWeight: selectedCategory === category ? '500' : '300',
+                  background: selectedCategory === category 
+                    ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)' 
+                    : 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                  border: selectedCategory === category 
+                    ? '1px solid rgba(255, 255, 255, 0.2)' 
+                    : '1px solid rgba(255, 255, 255, 0.05)',
+                  borderRadius: '12px',
+                  color: selectedCategory === category ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.7)',
+                  fontSize: '14px',
+                  fontWeight: selectedCategory === category ? '500' : '400',
                   textAlign: 'left',
                   cursor: 'pointer',
-                  padding: '8px 0',
-                  transition: 'all 0.3s ease',
-                  borderBottom: selectedCategory === category ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid transparent',
-                  fontFamily: 'inherit'
+                  padding: '16px 20px',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  fontFamily: 'inherit',
+                  backdropFilter: 'blur(10px)',
+                  transform: selectedCategory === category 
+                    ? 'translateZ(20px) rotateX(5deg) rotateY(-5deg)' 
+                    : 'translateZ(0px) rotateX(0deg) rotateY(0deg)',
+                  boxShadow: selectedCategory === category 
+                    ? '0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.1)' 
+                    : '0 8px 16px rgba(0, 0, 0, 0.2)',
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
-                className="category-button"
+                className="category-button-3d"
+                onMouseEnter={(e) => {
+                  if (selectedCategory !== category) {
+                    e.currentTarget.style.transform = 'translateZ(8px) rotateX(2deg) rotateY(-2deg)';
+                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.25), 0 0 20px rgba(255, 255, 255, 0.05)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (selectedCategory !== category) {
+                    e.currentTarget.style.transform = 'translateZ(0px) rotateX(0deg) rotateY(0deg)';
+                    e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                  }
+                }}
               >
-                {category}
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: selectedCategory === category 
+                    ? 'linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.05) 100%)'
+                    : 'transparent',
+                  opacity: 0.5,
+                  pointerEvents: 'none'
+                }} />
+                <span style={{ position: 'relative', zIndex: 1 }}>
+                  {category}
+                </span>
               </button>
             ))}
           </div>
