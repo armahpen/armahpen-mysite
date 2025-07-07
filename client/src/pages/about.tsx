@@ -10,87 +10,63 @@ export default function About() {
       overflow: 'hidden'
     }}>
 
-      {/* Logo */}
-      <Link href="/">
-        <div style={{
-          position: 'absolute',
-          left: '96px',
-          top: '50px',
-          width: '120px',
-          height: '40px',
-          zIndex: 30,
-          cursor: 'pointer'
-        }}>
-          <img 
-            src="/attached_assets/heavans logo_1751917271448.PNG" 
-            alt="HeaVans Logo" 
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain'
-            }}
-            onError={(e) => {
-              console.log('Logo failed to load, trying different approaches...');
-              // Try different file path formats
-              const img = e.target as HTMLImageElement;
-              if (img.src.includes('heavans%20logo')) {
-                img.src = '/attached_assets/heavans logo_1751917271448.PNG';
-              } else if (img.src.includes('heavans logo')) {
-                img.src = '/attached_assets/heavans%2520logo_1751917271448.PNG';
-              }
-            }}
-          />
-        </div>
-      </Link>
-      
-      {/* Navigation Menu */}
+      {/* HeaVans Logo - Exact from Home Page */}
       <div style={{
-        position: 'absolute', 
-        right: '96px', 
-        top: '57px', 
-        display: 'flex',
-        gap: '32px',
-        alignItems: 'center',
-        zIndex: 20
-      }}>
-        <Link href="/">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            cursor: 'pointer'
-          }} className="menu-button">Home</div>
-        </Link>
+        position: 'absolute',
+        top: '16px',
+        left: '16px',
+        zIndex: 20,
+        cursor: 'pointer'
+      }} onClick={() => window.location.href = '/'}>
+        <img
+          src="/logo.png"
+          alt="HeaVans Logo"
+          style={{
+            width: '120px',
+            height: '36px',
+            objectFit: 'contain'
+          }}
+          className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
+      </div>
+      
+      {/* Navigation Menu - Exact from Home Page */}
+      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
+        <div style={{
+          color: 'rgba(255, 255, 255, 0.65)',
+          fontFamily: 'DM Sans',
+          fontSize: '18px',
+          fontWeight: '400',
+          position: 'absolute',
+          left: '0px',
+          top: '0px'
+        }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.location.href = '/'}>Home</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
-          fontWeight: '500'
-        }} className="menu-button">About</div>
-        <Link href="/collections">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            cursor: 'pointer'
-          }} className="menu-button">Collections</div>
-        </Link>
+          fontWeight: '500',
+          position: 'absolute',
+          left: '90px',
+          top: '0px'
+        }} className="animate-slideInDown delay-200 menu-button">About</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          cursor: 'pointer'
-        }} className="menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
+          position: 'absolute',
+          left: '165px',
+          top: '0px'
+        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          cursor: 'pointer'
-        }} className="menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
+          position: 'absolute',
+          left: '285px',
+          top: '0px'
+        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
 
       {/* Main Content Split Layout */}
