@@ -170,7 +170,7 @@ export default function Portfolio() {
               marginBottom: '24px',
               letterSpacing: '-0.02em'
             }}>
-              Selected Work
+              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : 'Selected Work'}
             </h1>
             <p style={{
               fontSize: '18px',
