@@ -1,0 +1,66 @@
+LeadGen CRM
+My LeadGen CRM
+LeadGen is a custom CRM and lead generation platform I built for B2B service providers such as insurance companies. Designed to streamline lead tracking and improve sales conversion, the platform includes contact status flows, exportable lead data, and integrated analytics—helping businesses make smarter outreach decisions.
+
+LeadGen CRM
+B2B lead generation platform with contact status tracking, analytics, and export tools to help businesses convert leads more efficiently.
+
+Tech Stack
+React / Tailwind CSS
+Node.js / Express
+MongoDB
+Chart.js / REST API
+
+DEMS CRM Systems
+My DEMS CRM
+DEMS is a data-first CRM solution I developed under my business brand to serve small-to-medium businesses with unique CRM needs. It focuses on clean data management, AI prompt tools, and manually curated insights instead of automated scraping—putting control back in the hands of the business.
+
+DEMS CRM
+Custom CRM systems for data entry, analysis, and AI-enhanced decision-making, tailored for SMEs and handled by real human operators.
+
+Tech Stack
+HTML / CSS / JavaScript
+PHP / MySQL
+Prompt Engineering Modules
+Firebase (for authentication)
+
+Church CRM System
+My Church CRM
+This CRM was created to help churches communicate more effectively with their members. Co-designed with feedback from local pastors, it supports bulk SMS/WhatsApp messaging, auto birthday wishes, attendance tracking, and weekly service alerts—keeping the community engaged and informed.
+
+Church CRM
+A communication and engagement platform for churches with bulk messaging, attendance analytics, and AI-powered reminder features.
+
+Tech Stack
+Vue.js / Tailwind
+Firebase / Cloud Firestore
+Twilio SMS API / WhatsApp Cloud API
+Python (FastAPI) for backend automation
+
+School CRM System
+My School CRM
+I built this CRM to simplify communication between schools and parents. It automates reminders for school fees, birthdays, and event announcements, while integrating AI to help schools plan smarter parent engagement campaigns.
+
+School CRM
+CRM system for schools with automated school fee reminders, birthday messages, bulk updates, and AI-driven campaign planning.
+
+Tech Stack
+React / Tailwind CSS
+Node.js / Firebase Functions
+MongoDB
+OpenAI API (for campaign suggestions)
+
+Student Help CRM
+My Student Help System
+Built to power the Student Help platform, this smart CRM handles tutor recruitment, student assessments, and parent-teacher matchmaking. It includes online testing with anti-cheating features and uses AI to match students with certified teachers nearby—creating better learning experiences.
+
+Student Help CRM
+An intelligent recruitment and learning system that connects students, parents, and teachers—with online testing, AI teacher matching, and performance tracking.
+
+Tech Stack
+Next.js / Tailwind CSS
+Python (FastAPI)
+Firebase (Auth + Firestore)
+AI Matching via Vector Search + Location Data
+AI-based Test Monitoring (Planned with Webcam + ML Detection)
+

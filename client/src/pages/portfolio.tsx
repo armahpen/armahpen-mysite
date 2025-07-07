@@ -13,11 +13,39 @@ export default function Portfolio() {
       technologies: ['AI', 'React / HTML + Tailwind CSS', 'Python (FastAPI)']
     },
     {
-      title: 'Enterprise CRM Dashboard',
-      description: 'Comprehensive customer relationship management platform with advanced analytics and automation.',
+      title: 'LeadGen CRM',
+      description: 'B2B lead generation platform with contact status tracking, analytics, and export tools to help businesses convert leads more efficiently.',
       category: 'CRMs',
       image: '/project-crm.jpg',
-      technologies: ['React', 'TypeScript', 'PostgreSQL', 'Express']
+      technologies: ['React / Tailwind CSS', 'Node.js / Express', 'MongoDB', 'Chart.js / REST API']
+    },
+    {
+      title: 'DEMS CRM Systems',
+      description: 'Custom CRM systems for data entry, analysis, and AI-enhanced decision-making, tailored for SMEs and handled by real human operators.',
+      category: 'CRMs',
+      image: '/project-crm.jpg',
+      technologies: ['HTML / CSS / JavaScript', 'PHP / MySQL', 'Prompt Engineering Modules', 'Firebase']
+    },
+    {
+      title: 'Church CRM System',
+      description: 'A communication and engagement platform for churches with bulk messaging, attendance analytics, and AI-powered reminder features.',
+      category: 'CRMs',
+      image: '/project-crm.jpg',
+      technologies: ['Vue.js / Tailwind', 'Firebase / Cloud Firestore', 'Twilio SMS API / WhatsApp Cloud API', 'Python (FastAPI)']
+    },
+    {
+      title: 'School CRM System',
+      description: 'CRM system for schools with automated school fee reminders, birthday messages, bulk updates, and AI-driven campaign planning.',
+      category: 'CRMs',
+      image: '/project-crm.jpg',
+      technologies: ['React / Tailwind CSS', 'Node.js / Firebase Functions', 'MongoDB', 'AI API']
+    },
+    {
+      title: 'Student Help CRM',
+      description: 'An intelligent recruitment and learning system that connects students, parents, and teachers—with online testing, AI teacher matching, and performance tracking.',
+      category: 'CRMs',
+      image: '/project-crm.jpg',
+      technologies: ['Next.js / Tailwind CSS', 'Python (FastAPI)', 'Firebase', 'AI Matching / Vector Search']
     },
     {
       title: 'SaaS Landing Platform',
@@ -179,14 +207,22 @@ export default function Portfolio() {
               maxWidth: '600px',
               fontWeight: '300'
             }}>
-              Rabbai is an AI-powered platform I co-created with my brother, inspired by his idea to make scripture more personal and relatable. Motivated by our shared passion for faith and technology, we built Rabbai to read the Bible in the voice of your favorite man of God—making daily devotion more engaging, comforting, and spiritually enriching.
+              {selectedCategory === 'My Rabbai' 
+                ? 'Rabbai is an AI-powered platform I co-created with my brother, inspired by his idea to make scripture more personal and relatable. Motivated by our shared passion for faith and technology, we built Rabbai to read the Bible in the voice of your favorite man of God—making daily devotion more engaging, comforting, and spiritually enriching.'
+                : selectedCategory === 'CRMs'
+                ? 'I\'ve built comprehensive CRM solutions for diverse industries—from lead generation platforms for B2B companies to specialized systems for churches, schools, and educational services. Each system is tailored to unique business needs with AI integration, automated communication, and smart analytics.'
+                : 'A collection of my work across different domains, showcasing innovative solutions and creative approaches to modern design and development challenges.'
+              }
             </p>
           </div>
 
           {/* Project Grid */}
           <div style={{
             display: 'grid',
-            gap: '40px'
+            gap: selectedCategory === 'CRMs' ? '32px' : '40px',
+            gridTemplateColumns: selectedCategory === 'CRMs' && filteredProjects.length > 2 
+              ? 'repeat(auto-fit, minmax(320px, 1fr))' 
+              : '1fr'
           }}>
             {filteredProjects.map((project, index) => (
               <div 
