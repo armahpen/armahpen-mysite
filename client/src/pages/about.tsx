@@ -121,8 +121,11 @@ export default function About() {
             </p>
 
             {/* Resume Download Link */}
-            <Link href="#" onClick={(e) => { e.preventDefault(); alert('Resume download coming soon!'); }}>
-              <div style={{
+            <a 
+              href="/Evans_Armah_CV.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 color: 'rgba(255, 255, 255, 0.8)',
@@ -132,10 +135,11 @@ export default function About() {
                 textDecoration: 'none',
                 cursor: 'pointer',
                 transition: 'color 0.3s ease'
-              }} className="resume-link">
-                ↓ resume
-              </div>
-            </Link>
+              }} 
+              className="resume-link"
+            >
+              ↓ resume
+            </a>
           </div>
         </div>
 
