@@ -2,13 +2,13 @@ import { Link } from 'wouter';
 import { useState } from 'react';
 
 export default function Portfolio() {
-  const [selectedCategory, setSelectedCategory] = useState('AI Bible (My Rabbi)');
+  const [selectedCategory, setSelectedCategory] = useState('My Rabbai');
 
   const projects = [
     {
-      title: 'AI Bible (My Rabbi)',
-      description: 'Intelligent biblical guidance system powered by AI to provide personalized spiritual insights and teachings.',
-      category: 'AI Bible (My Rabbi)',
+      title: 'My Rabbai',
+      description: 'AI-powered platform that reads the Bible in the voice of your favorite man of God, making daily devotion more engaging and spiritually enriching.',
+      category: 'My Rabbai',
       image: '/project-ai-bible.jpg',
       technologies: ['React', 'OpenAI', 'Node.js', 'MongoDB']
     },
@@ -57,7 +57,7 @@ export default function Portfolio() {
   ];
 
   const categories = [
-    'AI Bible (My Rabbi)',
+    'My Rabbai',
     'CRMs',
     'Landing Pages',
     'UI/UX',
@@ -176,11 +176,10 @@ export default function Portfolio() {
               fontSize: '18px',
               lineHeight: '1.6',
               color: 'rgba(255, 255, 255, 0.7)',
-              maxWidth: '500px',
+              maxWidth: '600px',
               fontWeight: '300'
             }}>
-              Specializing in refined digital experiences with a focus on innovative solutions, 
-              responsive design, and meaningful user interactions.
+              Rabbai is an AI-powered platform I co-created with my brother, inspired by his idea to make scripture more personal and relatable. Motivated by our shared passion for faith and technology, we built Rabbai to read the Bible in the voice of your favorite man of God—making daily devotion more engaging, comforting, and spiritually enriching.
             </p>
           </div>
 
