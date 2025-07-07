@@ -29,48 +29,97 @@ export default function About() {
           className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
       
-      {/* Navigation Menu - Desktop */}
-      <div className="hidden md:flex" style={{
-        position: 'absolute', 
-        right: '96px', 
-        top: '57px', 
-        display: 'flex',
-        gap: '32px',
-        alignItems: 'center',
-        zIndex: 20
+      {/* Navigation */}
+      <nav style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        backgroundColor: 'rgba(30, 30, 30, 0.95)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
       }}>
         <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          cursor: 'pointer'
-        }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.location.href = '/'}>Home</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.80)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '500',
-          cursor: 'pointer'
-        }} className="animate-slideInDown delay-200 menu-button">About</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          cursor: 'pointer'
-        }} className="animate-slideInDown delay-300 menu-button" onClick={() => window.location.href = '/experience'}>Experience</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '18px',
-          fontWeight: '400',
-          cursor: 'pointer'
-        }} className="animate-slideInDown delay-400 menu-button" onClick={() => window.location.href = '/contact'}>Contact</div>
-      </div>
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '16px 40px',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          {/* Logo */}
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <img 
+              src="/logo.png" 
+              alt="HeaVans Logo" 
+              style={{
+                height: '30px',
+                width: 'auto',
+                cursor: 'pointer'
+              }}
+            />
+          </Link>
+
+          {/* Navigation Menu - Desktop */}
+          <div className="hidden md:flex" style={{
+            display: 'flex',
+            gap: '32px',
+            alignItems: 'center'
+          }}>
+            <Link href="/" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Home</span>
+            </Link>
+            <Link href="/about" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '500',
+                cursor: 'pointer'
+              }}>About</span>
+            </Link>
+            <Link href="/experience" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Experience</span>
+            </Link>
+            <Link href="/contact" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Contact</span>
+            </Link>
+          </div>
+          
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'white',
+              fontSize: '20px',
+              cursor: 'pointer'
+            }}>☰</button>
+          </div>
+        </div>
+      </nav>
 
       {/* Main Content Split Layout */}
-      <div style={{
+      <div className="hidden md:flex" style={{
         position: 'absolute',
         left: '96px',
         top: '50%',
@@ -197,6 +246,73 @@ export default function About() {
             />
           </div>
         </div>
+      </div>
+
+      {/* Mobile Content */}
+      <div className="md:hidden" style={{
+        padding: '100px 20px 40px 20px',
+        textAlign: 'center'
+      }}>
+        <h1 style={{
+          color: 'white',
+          fontFamily: 'DM Sans',
+          fontSize: '32px',
+          fontWeight: '700',
+          marginBottom: '20px'
+        }}>About</h1>
+        
+        <div style={{
+          width: '100%',
+          height: '2px',
+          background: 'white',
+          marginBottom: '24px'
+        }} />
+        
+        <div style={{
+          marginBottom: '32px'
+        }}>
+          <img 
+            src="/evans-photo.jpg" 
+            alt="Evans Profile" 
+            style={{
+              width: '200px',
+              height: '200px',
+              borderRadius: '16px',
+              border: '2px solid rgba(255, 255, 255, 0.1)',
+              objectFit: 'cover',
+              marginBottom: '24px'
+            }}
+          />
+        </div>
+        
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.9)',
+          fontFamily: 'DM Sans',
+          fontSize: '14px',
+          fontWeight: '400',
+          lineHeight: '1.6',
+          margin: '0 0 24px 0'
+        }}>
+          I'm a versatile Web Developer and Data Analyst with a background in research and a strong eye for user experience. My skills blend technical web development (CMS platforms, cloud systems, responsive design) with data-driven thinking. I enjoy building platforms that solve real problems—especially those that align with social good, innovation, and user-centered impact. I'm collaborative, adaptable, and constantly learning.
+        </p>
+
+        <a 
+          href="/Evans_Armah_CV.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            color: 'rgba(255, 255, 255, 0.8)',
+            fontFamily: 'DM Sans',
+            fontSize: '14px',
+            fontWeight: '400',
+            textDecoration: 'none',
+            cursor: 'pointer'
+          }}
+        >
+          ↓ resume
+        </a>
       </div>
 
       {/* Footer */}

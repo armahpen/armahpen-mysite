@@ -74,51 +74,22 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Mobile Navigation Menu */}
-      <div className="md:hidden mobile-nav" style={{
+      {/* Mobile Menu Button */}
+      <div className="md:hidden" style={{
         position: 'fixed',
         top: '16px',
         right: '16px',
-        background: 'rgba(0, 0, 0, 0.9)',
-        borderRadius: '8px',
-        padding: '16px',
-        zIndex: 1000,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px'
+        zIndex: 1000
       }}>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.80)',
-          fontFamily: 'DM Sans',
-          fontSize: '16px',
-          fontWeight: '500',
-          cursor: 'pointer',
-          textAlign: 'center'
-        }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '16px',
-          fontWeight: '400',
-          cursor: 'pointer',
-          textAlign: 'center'
-        }} onClick={() => window.location.href = '/about'}>About</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '16px',
-          fontWeight: '400',
-          cursor: 'pointer',
-          textAlign: 'center'
-        }} onClick={() => window.location.href = '/experience'}>Experience</div>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.65)',
-          fontFamily: 'DM Sans',
-          fontSize: '16px',
-          fontWeight: '400',
-          cursor: 'pointer',
-          textAlign: 'center'
-        }} onClick={() => window.location.href = '/contact'}>Contact</div>
+        <button style={{
+          background: 'rgba(0, 0, 0, 0.8)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: '8px',
+          padding: '12px',
+          color: 'white',
+          fontSize: '18px',
+          cursor: 'pointer'
+        }}>☰</button>
       </div>
       {/* HeaDesign Work Collection Section - Properly Organized */}
       <div style={{

@@ -40,8 +40,8 @@ export default function Experience() {
             />
           </Link>
 
-          {/* Navigation Menu */}
-          <div style={{
+          {/* Navigation Menu - Desktop */}
+          <div className="hidden md:flex" style={{
             display: 'flex',
             gap: '32px',
             alignItems: 'center'
@@ -78,6 +78,17 @@ export default function Experience() {
                 cursor: 'pointer'
               }}>Contact</span>
             </Link>
+          </div>
+          
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'white',
+              fontSize: '20px',
+              cursor: 'pointer'
+            }}>☰</button>
           </div>
         </div>
       </nav>
