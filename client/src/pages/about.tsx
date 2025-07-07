@@ -29,43 +29,43 @@ export default function About() {
           className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
       
-      {/* Navigation Menu - Exact from Home Page */}
-      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
+      {/* Navigation Menu - Flexbox Layout for Better Visibility */}
+      <div style={{
+        position: 'absolute', 
+        right: '96px', 
+        top: '57px', 
+        display: 'flex',
+        gap: '32px',
+        alignItems: 'center',
+        zIndex: 20
+      }}>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '0px',
-          top: '0px'
+          cursor: 'pointer'
         }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.location.href = '/'}>Home</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '500',
-          position: 'absolute',
-          left: '90px',
-          top: '0px'
+          cursor: 'pointer'
         }} className="animate-slideInDown delay-200 menu-button">About</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '165px',
-          top: '0px'
+          cursor: 'pointer'
         }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '285px',
-          top: '0px'
+          cursor: 'pointer'
         }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
 
