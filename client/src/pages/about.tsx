@@ -158,25 +158,24 @@ export default function About() {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <div style={{
-              width: '100%',
-              height: '100%',
-              backgroundImage: 'url("/attached_assets/WhatsApp Image 2025-07-05 at 3.50.33 PM_1751917889152.jpeg")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              borderRadius: '18px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <div style={{
-                color: 'rgba(255, 255, 255, 0.5)',
-                fontSize: '120px',
-                fontWeight: '300',
-                textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
-              }}>👤</div>
-            </div>
+            <img 
+              src="/profile-image.jpeg"
+              alt="Evans Profile"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '18px'
+              }}
+              onError={(e) => {
+                console.log('Profile image failed to load');
+                const img = e.target as HTMLImageElement;
+                img.style.display = 'none';
+                if (img.parentElement) {
+                  img.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 120px; color: rgba(255,255,255,0.5);">👤</div>';
+                }
+              }}
+            />
           </div>
         </div>
       </div>
