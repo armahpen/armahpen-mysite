@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       {/* Navigation Menu - Adjusted positioning to prevent overlap */}
-      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
+      <div style={{position: 'absolute', right: '5%', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
@@ -465,16 +465,16 @@ export default function Home() {
         fontWeight: '500',
         lineHeight: '20px',
         position: 'absolute',
-        left: '1063px',
+        right: '5%',
         top: '679px',
-        height: '31px',
+        height: 'auto',
         zIndex: 10
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}} className="animate-fadeInUp delay-300 animate-pulse-subtle hover-grow">Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
       </div>
       {/* Final Line Separator */}
       <div style={{
-        width: '1600px',
+        width: '100%',
         height: '0px',
         background: '#FFF',
         position: 'absolute',
