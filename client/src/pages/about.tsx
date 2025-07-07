@@ -87,115 +87,148 @@ export default function About() {
         }} className="menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
       </div>
 
-      {/* Main Content Container */}
+      {/* Circular Music Widget - Top Right */}
       <div style={{
         position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '800px',
-        textAlign: 'center',
-        zIndex: 10
+        top: '120px',
+        right: '120px',
+        width: '120px',
+        height: '120px',
+        zIndex: 15
       }}>
-
-        {/* Profile Image */}
         <div style={{
-          width: '200px',
-          height: '200px',
+          width: '100%',
+          height: '100%',
           borderRadius: '50%',
-          margin: '0 auto 40px auto',
-          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+          background: 'rgba(255, 255, 255, 0.1)',
+          border: '2px solid rgba(255, 255, 255, 0.2)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '48px',
-          boxShadow: '0 0 40px rgba(255, 215, 0, 0.3)'
-        }}>
-          👤
-        </div>
-
-        {/* Music Widget Placeholder */}
-        <div style={{
-          width: '300px',
-          height: '80px',
-          margin: '0 auto 60px auto',
-          background: 'rgba(255, 255, 255, 0.1)',
-          borderRadius: '12px',
-          display: 'flex',
-          alignItems: 'center',
-          padding: '16px',
-          border: '1px solid rgba(255, 255, 255, 0.2)'
+          position: 'relative'
         }}>
           <div style={{
-            width: '48px',
-            height: '48px',
-            borderRadius: '8px',
+            width: '60px',
+            height: '60px',
+            borderRadius: '50%',
             background: 'linear-gradient(135deg, #FF6B6B, #FF8E53)',
-            marginRight: '16px'
-          }} />
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '20px'
+          }}>🎵</div>
           <div style={{
-            textAlign: 'left',
-            flex: 1
+            position: 'absolute',
+            bottom: '-30px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            fontSize: '10px',
+            color: 'rgba(255, 255, 255, 0.6)',
+            fontFamily: 'DM Sans',
+            textAlign: 'center',
+            whiteSpace: 'nowrap'
+          }}>now playing</div>
+        </div>
+      </div>
+
+      {/* Main Content Split Layout */}
+      <div style={{
+        position: 'absolute',
+        left: '96px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        width: 'calc(100vw - 192px)',
+        height: '400px',
+        display: 'flex',
+        zIndex: 10
+      }}>
+        
+        {/* Left Side - About Content */}
+        <div style={{
+          flex: '1',
+          paddingRight: '60px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center'
+        }}>
+          {/* About Title with Underline */}
+          <div style={{
+            marginBottom: '40px'
           }}>
-            <div style={{
+            <h1 style={{
               color: 'white',
               fontFamily: 'DM Sans',
-              fontSize: '14px',
-              fontWeight: '600',
-              marginBottom: '4px'
-            }}>Now Playing</div>
+              fontSize: '48px',
+              fontWeight: '700',
+              margin: '0 0 16px 0',
+              letterSpacing: '2px'
+            }}>ABOUT</h1>
             <div style={{
-              color: 'rgba(255, 255, 255, 0.7)',
+              width: '100%',
+              height: '2px',
+              background: 'white',
+              marginBottom: '32px'
+            }} />
+            
+            <p style={{
+              color: 'rgba(255, 255, 255, 0.9)',
               fontFamily: 'DM Sans',
-              fontSize: '12px'
-            }}>Current Track</div>
+              fontSize: '16px',
+              fontWeight: '400',
+              lineHeight: '1.6',
+              margin: '0 0 32px 0',
+              maxWidth: '500px'
+            }}>
+              Hey, my name is Evans Bruyerre and I use HeaVans as my nickname across social medias. I'm a graphic designer, UX/UI designer & front-end web developer from France. I'm also passionate about creative expression and make portraits and universes around what I listen to and I'm always curious to learn more when it comes to new technologies and creative coding.
+            </p>
+
+            {/* Resume Download Link */}
+            <Link href="#" onClick={(e) => { e.preventDefault(); alert('Resume download coming soon!'); }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                color: 'rgba(255, 255, 255, 0.8)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                transition: 'color 0.3s ease'
+              }} className="resume-link">
+                ↓ resume
+              </div>
+            </Link>
           </div>
         </div>
 
-        {/* About Section */}
+        {/* Right Side - Profile Image */}
         <div style={{
-          marginBottom: '40px'
+          flex: '1',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative'
         }}>
-          <h2 style={{
-            color: 'white',
-            fontFamily: 'DM Sans',
-            fontSize: '32px',
-            fontWeight: '700',
-            marginBottom: '24px',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-            paddingBottom: '16px'
-          }}>About</h2>
-          
-          <p style={{
-            color: 'rgba(255, 255, 255, 0.8)',
-            fontFamily: 'DM Sans',
-            fontSize: '16px',
-            fontWeight: '400',
-            lineHeight: '1.6',
-            maxWidth: '600px',
-            margin: '0 auto',
-            textAlign: 'left'
-          }}>
-            Hey, my name is Evans and I use HeaVans as my creative identity across platforms. I'm a graphic designer, UX/UI designer & front-end web developer. I'm also passionate about creative expression and make portraits and universes around what inspires me. I'm always curious to learn more when it comes to new technologies and creative coding.
-          </p>
-        </div>
-
-        {/* Resume Download Link */}
-        <Link href="#" onClick={(e) => { e.preventDefault(); alert('Resume download coming soon!'); }}>
           <div style={{
-            display: 'inline-flex',
+            width: '400px',
+            height: '400px',
+            borderRadius: '20px',
+            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 160, 0, 0.2))',
+            display: 'flex',
             alignItems: 'center',
-            color: 'rgba(255, 255, 255, 0.7)',
-            fontFamily: 'DM Sans',
-            fontSize: '16px',
-            fontWeight: '400',
-            textDecoration: 'none',
-            cursor: 'pointer',
-            transition: 'color 0.3s ease'
-          }} className="resume-link">
-            ↓ Resume
+            justifyContent: 'center',
+            fontSize: '120px',
+            border: '2px solid rgba(255, 255, 255, 0.1)',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              width: '100%',
+              height: '100%',
+              background: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJncmFkaWVudCg0NWRlZywgIzMzMywgIzU1NSkiLz4KPGJ0ZXh0IHg9IjIwMCIgeT0iMjIwIiBmb250LWZhbWlseT0iRE0gU2Fucywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMjAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5GKPC90ZXh0Pgo8L3N2Zz4K") center/cover',
+              borderRadius: '18px'
+            }}></div>
           </div>
-        </Link>
+        </div>
       </div>
 
       {/* Footer */}
