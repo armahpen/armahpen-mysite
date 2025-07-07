@@ -9,6 +9,7 @@ import Evans from "@/pages/evans";
 import Experience from "@/pages/experience";
 import Contact from "@/pages/contact";
 import Collections from "@/pages/collections";
+import Portfolio from "@/pages/portfolio";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/experience" component={Experience} />
       <Route path="/contact" component={Contact} />
       <Route path="/collections" component={Collections} />
+      <Route path="/portfolio" component={Portfolio} />
       <Route component={NotFound} />
     </Switch>
   );

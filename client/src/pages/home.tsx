@@ -251,7 +251,7 @@ export default function Home() {
           </div>
           
           {/* CTA Button */}
-          <Link href="/about" style={{
+          <Link href="/portfolio" style={{
             display: 'inline-block',
             padding: '16px 32px',
             background: 'rgba(255, 255, 255, 0.1)',

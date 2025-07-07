@@ -404,6 +404,17 @@ h1:hover {
   transition: text-shadow 0.3s ease;
 }
 
+/* Portfolio page styles */
+.project-item:hover {
+  transform: translateX(8px);
+  opacity: 0.8;
+}
+
+.category-button:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transform: translateX(4px);
+}
+
 /* Galaxy Orbital System Animations */
 @keyframes rotate {
   from {
