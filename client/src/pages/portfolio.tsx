@@ -10,7 +10,7 @@ export default function Portfolio() {
       description: 'AI-powered platform that reads the Bible in the voice of your favorite man of God, making daily devotion more engaging and spiritually enriching.',
       category: 'My Rabbai',
       image: '/project-ai-bible.jpg',
-      technologies: ['React', 'OpenAI', 'Node.js', 'MongoDB']
+      technologies: ['AI', 'React / HTML + Tailwind CSS', 'Python (FastAPI)']
     },
     {
       title: 'Enterprise CRM Dashboard',
