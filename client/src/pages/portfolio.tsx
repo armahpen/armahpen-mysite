@@ -1,6 +1,5 @@
 import { Link } from 'wouter';
 import { useState } from 'react';
-// Import handled via public assets
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('My Rabbai');
@@ -263,7 +262,7 @@ export default function Portfolio() {
                     {project.title === 'My Rabbai' ? (
                       <>
                         <img 
-                          src="/attached_assets/dfhdfjgfd_1751930728448.PNG"
+                          src="/rabbai-preview.png"
                           alt="My Rabbai Preview"
                           style={{
                             width: '100%',
