@@ -242,7 +242,8 @@ export default function Home() {
       {/* Frame 7 - Updated with latest Figma specifications */}
       <div style={{
         display: 'flex',
-        width: '1434px',
+        width: '80%',
+        maxWidth: '1434px',
         height: '989px',
         padding: '10px',
         alignItems: 'center',
@@ -255,8 +256,10 @@ export default function Home() {
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
           alt="ChatGPT Image"
           style={{
-            width: '1195px',
-            height: '957px',
+            width: '100%',
+            maxWidth: '1195px',
+            height: 'auto',
+            maxHeight: '957px',
             flexShrink: 0,
             aspectRatio: '1195/957',
             borderRadius: '62px',
@@ -271,7 +274,7 @@ export default function Home() {
         width: '357px',
         height: '227px',
         position: 'absolute',
-        left: '1133px',
+        right: '5%',
         top: '289px',
         zIndex: 10
       }}>
@@ -315,7 +318,7 @@ export default function Home() {
       </div>
       {/* Professional Footer */}
       <footer style={{
-        width: '1600px',
+        width: '100%',
         background: '#63767C',
         position: 'absolute',
         left: '0px',
