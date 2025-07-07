@@ -94,12 +94,11 @@ export default function Contact() {
       </nav>
 
       {/* Main Content */}
-      <div style={{
+      <div className="mobile-container" style={{
         paddingTop: '120px',
         paddingBottom: '80px',
         maxWidth: '800px',
-        margin: '0 auto',
-        padding: '120px 40px 80px'
+        margin: '0 auto'
       }}>
         {/* Header Section */}
         <div style={{

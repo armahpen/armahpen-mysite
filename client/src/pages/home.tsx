@@ -3,11 +3,12 @@ import { Link } from 'wouter';
 export default function Home() {
   return (
     <div 
-      className="relative w-full" 
-      style={{backgroundColor: '#1E1E1E', width: '100vw', minHeight: '100vh', overflow: 'hidden'}}
+      className="relative w-full min-h-screen" 
+      style={{backgroundColor: '#1E1E1E', width: '100vw', minHeight: '100vh'}}
     >
-      {/* Left Border */}
+      {/* Left Border - Desktop Only */}
       <div 
+        className="hidden md:block"
         style={{
           width: '130px',
           height: '1117px',
@@ -285,29 +286,7 @@ export default function Home() {
         />
       </div>
       
-      {/* Mobile Hero Image */}
-      <div className="md:hidden mobile-container" style={{
-        position: 'relative',
-        top: '100px',
-        padding: '16px',
-        textAlign: 'center'
-      }}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
-          alt="ChatGPT Image"
-          style={{
-            width: '100%',
-            maxWidth: '1195px',
-            height: 'auto',
-            maxHeight: '957px',
-            flexShrink: 0,
-            aspectRatio: '1195/957',
-            borderRadius: '62px',
-            mixBlendMode: 'luminosity',
-            position: 'relative'
-          }}
-        />
-      </div>
+
 
       {/* Hero Section - Desktop */}
       <div className="hidden md:block" style={{
@@ -354,18 +333,38 @@ export default function Home() {
       </div>
       
       {/* Mobile Hero Section */}
-      <div className="md:hidden mobile-hero" style={{
+      <div className="md:hidden" style={{
         position: 'relative',
-        top: '400px',
+        top: '80px',
         padding: '32px 16px',
         textAlign: 'center',
-        zIndex: 10
+        zIndex: 10,
+        minHeight: 'calc(100vh - 80px)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
       }}>
+        {/* Mobile Hero Image */}
+        <div style={{
+          marginBottom: '32px'
+        }}>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
+            alt="Portfolio Image"
+            style={{
+              width: '100%',
+              maxWidth: '300px',
+              height: 'auto',
+              borderRadius: '16px',
+              marginBottom: '24px'
+            }}
+          />
+        </div>
 
         <h1 style={{
           color: '#FFF',
           fontFamily: 'Public Sans',
-          fontSize: '24px',
+          fontSize: '28px',
           fontWeight: '700',
           lineHeight: '1.2',
           marginBottom: '16px'
@@ -374,11 +373,20 @@ export default function Home() {
         <p style={{
           color: 'rgba(255, 255, 255, 0.75)',
           fontFamily: 'Public Sans',
+          fontSize: '16px',
+          fontWeight: '400',
+          lineHeight: '1.5',
+          marginBottom: '24px'
+        }}>I create standout web experiences—where design meets purpose and code brings it to life.</p>
+        
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.5)',
+          fontFamily: 'DM Sans',
           fontSize: '14px',
           fontWeight: '400',
           lineHeight: '1.5',
           margin: '0'
-        }}>I create standout web experiences—where design meets purpose and code brings it to life.</p>
+        }}>Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</p>
       </div>
       {/* Professional Footer */}
       <footer style={{
@@ -537,23 +545,7 @@ export default function Home() {
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}} className="animate-fadeInUp delay-300 animate-pulse-subtle hover-grow">Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
       </div>
       
-      {/* Artist Description - Mobile */}
-      <div className="md:hidden mobile-text" style={{
-        position: 'relative',
-        top: '450px',
-        padding: '16px',
-        textAlign: 'center',
-        zIndex: 10
-      }}>
-        <p style={{
-          color: 'rgba(255, 255, 255, 0.5)',
-          fontFamily: 'DM Sans',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '1.5',
-          margin: '0'
-        }}>Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</p>
-      </div>
+
       {/* Final Line Separator */}
       <div style={{
         width: '100%',

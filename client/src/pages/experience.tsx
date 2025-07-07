@@ -94,26 +94,25 @@ export default function Experience() {
       </nav>
 
       {/* Main Content */}
-      <div style={{
+      <div className="mobile-container" style={{
         paddingTop: '100px',
         paddingBottom: '80px',
         maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '100px 40px 80px'
+        margin: '0 auto'
       }}>
         {/* Header Section */}
         <div style={{
           textAlign: 'center',
           marginBottom: '80px'
         }}>
-          <h1 style={{
+          <h1 className="mobile-optimize animate-fadeInUp delay-200" style={{
             fontSize: '48px',
             fontWeight: '700',
             margin: '0 0 24px 0',
             letterSpacing: '2px',
             textShadow: '0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.3), 0 0 35px rgba(255, 255, 255, 0.2)',
             animation: 'textGlow 3s ease-in-out infinite'
-          }} className="animate-fadeInUp delay-200">
+          }}>
             PROFESSIONAL EXPERIENCE
           </h1>
           
