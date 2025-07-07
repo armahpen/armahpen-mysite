@@ -198,7 +198,7 @@ export default function Portfolio() {
               marginBottom: '24px',
               letterSpacing: '-0.02em'
             }}>
-              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : 'Selected Work'}
+              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : selectedCategory === 'CRMs' ? 'Custom Platforms & CRM Systems I\'ve Built' : 'Selected Work'}
             </h1>
             <p style={{
               fontSize: '18px',
