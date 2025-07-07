@@ -59,7 +59,7 @@ export default function About() {
           fontSize: '18px',
           fontWeight: '400',
           cursor: 'pointer'
-        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
+        }} className="animate-slideInDown delay-300 menu-button" onClick={() => window.location.href = '/experience'}>Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
