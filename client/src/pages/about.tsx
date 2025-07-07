@@ -100,13 +100,26 @@ export default function About() {
               fontWeight: '700',
               margin: '0 0 16px 0',
               letterSpacing: '2px'
-            }}>ABOUT</h1>
+            }} className="animate-fadeInUp delay-200">ABOUT</h1>
+            
+            {/* Glowing Subtitle */}
+            <div style={{
+              color: 'white',
+              fontFamily: 'DM Sans',
+              fontSize: '24px',
+              fontWeight: '600',
+              margin: '0 0 24px 0',
+              textShadow: '0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1)',
+              animation: 'textGlow 3s ease-in-out infinite'
+            }} className="animate-fadeInUp delay-400">
+              Shape the Future with HeaVans
+            </div>
             <div style={{
               width: '100%',
               height: '2px',
               background: 'white',
               marginBottom: '32px'
-            }} />
+            }} className="animate-fadeInLeft delay-600" />
             
             <p style={{
               color: 'rgba(255, 255, 255, 0.9)',
@@ -116,7 +129,7 @@ export default function About() {
               lineHeight: '1.6',
               margin: '0 0 32px 0',
               maxWidth: '500px'
-            }}>
+            }} className="animate-fadeInUp delay-800">
               I'm a versatile Web Developer and Data Analyst with a background in research and a strong eye for user experience. My skills blend technical web development (CMS platforms, cloud systems, responsive design) with data-driven thinking. I enjoy building platforms that solve real problems—especially those that align with social good, innovation, and user-centered impact. I'm collaborative, adaptable, and constantly learning.
             </p>
 
@@ -136,7 +149,7 @@ export default function About() {
                 cursor: 'pointer',
                 transition: 'color 0.3s ease'
               }} 
-              className="resume-link"
+              className="resume-link animate-fadeInUp delay-1000"
             >
               ↓ resume
             </a>
@@ -150,7 +163,7 @@ export default function About() {
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative'
-        }}>
+        }} className="animate-fadeInRight delay-600">
           <div style={{
             width: '400px',
             height: '400px',
@@ -210,6 +223,12 @@ export default function About() {
         .resume-link:hover {
           color: rgba(255, 255, 255, 1) !important;
         }
+
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-800 { animation-delay: 0.8s; }
+        .delay-1000 { animation-delay: 1.0s; }
       `}</style>
     </div>
   );
