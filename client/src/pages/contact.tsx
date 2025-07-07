@@ -153,11 +153,36 @@ export default function Contact() {
                 fontWeight: '400',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '8px'
+                gap: '8px',
+                marginBottom: '16px'
               }}
               className="contact-link"
             >
               ↗ evansarmah30@gmail.com
+            </a>
+            
+            <h3 style={{
+              fontSize: '16px',
+              fontWeight: '600',
+              margin: '24px 0 16px 0',
+              color: 'rgba(255, 255, 255, 0.6)',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>Call / WhatsApp</h3>
+            <a 
+              href="tel:+233200751811"
+              style={{
+                color: 'rgba(255, 255, 255, 0.9)',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontWeight: '400',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+              className="contact-link"
+            >
+              ↗ 0200751811
             </a>
           </div>
 
