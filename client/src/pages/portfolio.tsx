@@ -328,6 +328,17 @@ export default function Portfolio() {
                           Visit Site
                         </div>
                       </>
+                    ) : project.title === 'DEMS CRM Systems' ? (
+                      <img 
+                        src="/dems-crm-preview.png"
+                        alt="DEMS CRM Preview"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          transition: 'transform 0.3s ease'
+                        }}
+                      />
                     ) : (
                       <div style={{
                         width: '100%',
