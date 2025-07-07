@@ -221,7 +221,8 @@ export default function Home() {
             color: 'rgba(255, 255, 255, 0.95)',
             lineHeight: '1.1',
             marginBottom: '24px',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em',
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1)'
           }}>Evans</h1>
           
           <p style={{
@@ -242,12 +243,11 @@ export default function Home() {
             fontWeight: '400',
             color: 'rgba(255, 255, 255, 0.6)',
             lineHeight: '1.8',
-            maxWidth: '600px',
+            maxWidth: '700px',
             margin: '0 auto 64px auto',
             letterSpacing: '0.3px'
           }}>
-            Creating digital experiences that inspire and engage.<br />
-            Specializing in UI/UX design, front-end development, and creative direction.
+            I'm Evans but you can call me Heavans, I'm a versatile Web Developer, web designer & Data Analyst with a strong foundation in UI/UX, research, and data-driven development. I build responsive, user-focused platforms that solve real problems and support meaningful impact.
           </div>
           
           {/* CTA Button */}
