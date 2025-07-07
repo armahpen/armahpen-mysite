@@ -99,7 +99,9 @@ export default function About() {
               fontSize: '48px',
               fontWeight: '700',
               margin: '0 0 16px 0',
-              letterSpacing: '2px'
+              letterSpacing: '2px',
+              textShadow: '0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.3), 0 0 35px rgba(255, 255, 255, 0.2)',
+              animation: 'textGlow 3s ease-in-out infinite'
             }} className="animate-fadeInUp delay-200">ABOUT</h1>
             
             {/* Glowing Subtitle */}
