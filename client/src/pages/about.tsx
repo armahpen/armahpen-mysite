@@ -1,5 +1,4 @@
 import { Link } from 'wouter';
-import logoImg from '@assets/ChatGPT_Image_Jul_5__2025__05_30_15_AM-removebg-preview_1751726559922.png';
 
 export default function About() {
   return (
@@ -23,7 +22,7 @@ export default function About() {
           cursor: 'pointer'
         }}>
           <img 
-            src={logoImg} 
+            src="/attached_assets/heavans%20logo_1751910907224.PNG" 
             alt="HeaVans Logo" 
             style={{
               width: '100%',
