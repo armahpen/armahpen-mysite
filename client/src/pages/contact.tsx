@@ -125,191 +125,115 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Information */}
+        {/* Contact Information - Minimalist Style like itssharl.ee */}
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '32px',
-          marginBottom: '60px'
-        }} className="animate-fadeInUp delay-800">
-          {/* Email */}
+          maxWidth: '600px',
+          margin: '0 auto'
+        }}>
+          {/* Mail Section */}
           <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
-            padding: '32px 24px',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{
-              fontSize: '48px',
-              marginBottom: '16px'
-            }}>📧</div>
+            marginBottom: '60px',
+            paddingBottom: '40px',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+          }} className="animate-fadeInUp delay-800">
             <h3 style={{
-              fontSize: '18px',
+              fontSize: '16px',
               fontWeight: '600',
-              margin: '0 0 12px 0',
-              color: '#fff'
-            }}>Email</h3>
+              margin: '0 0 16px 0',
+              color: 'rgba(255, 255, 255, 0.6)',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>Mail</h3>
             <a 
               href="mailto:evansarmah30@gmail.com"
               style={{
-                color: 'rgba(255, 255, 255, 0.8)',
+                color: 'rgba(255, 255, 255, 0.9)',
                 textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: '400'
+                fontSize: '18px',
+                fontWeight: '400',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px'
               }}
               className="contact-link"
             >
-              evansarmah30@gmail.com
+              ↗ evansarmah30@gmail.com
             </a>
           </div>
 
-          {/* Phone */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
-            padding: '32px 24px',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{
-              fontSize: '48px',
-              marginBottom: '16px'
-            }}>📱</div>
+          {/* Social Medias Section */}
+          <div className="animate-fadeInUp delay-1000">
             <h3 style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              margin: '0 0 12px 0',
-              color: '#fff'
-            }}>Phone</h3>
-            <a 
-              href="tel:+233200751811"
-              style={{
-                color: 'rgba(255, 255, 255, 0.8)',
-                textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: '400'
-              }}
-              className="contact-link"
-            >
-              (+233) 200 751 811
-            </a>
-          </div>
-
-          {/* Location */}
-          <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            borderRadius: '12px',
-            padding: '32px 24px',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            textAlign: 'center'
-          }}>
-            <div style={{
-              fontSize: '48px',
-              marginBottom: '16px'
-            }}>📍</div>
-            <h3 style={{
-              fontSize: '18px',
-              fontWeight: '600',
-              margin: '0 0 12px 0',
-              color: '#fff'
-            }}>Location</h3>
-            <p style={{
-              color: 'rgba(255, 255, 255, 0.8)',
-              margin: 0,
               fontSize: '16px',
-              fontWeight: '400'
+              fontWeight: '600',
+              margin: '0 0 24px 0',
+              color: 'rgba(255, 255, 255, 0.6)',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>Social medias</h3>
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
             }}>
-              Achimota, Accra<br />Ghana
-            </p>
-          </div>
-        </div>
-
-        {/* Social Links */}
-        <div style={{
-          textAlign: 'center'
-        }} className="animate-fadeInUp delay-1000">
-          <h3 style={{
-            fontSize: '24px',
-            fontWeight: '600',
-            margin: '0 0 32px 0',
-            color: '#fff'
-          }}>Let's Connect</h3>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '24px',
-            flexWrap: 'wrap'
-          }}>
-            <a
-              href="https://linkedin.com/in/evans-armah"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '16px 24px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                borderRadius: '8px',
-                color: 'rgba(255, 255, 255, 0.8)',
-                textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: '500',
-                transition: 'all 0.3s ease'
-              }}
-              className="social-link"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/evansarmah"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '16px 24px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                borderRadius: '8px',
-                color: 'rgba(255, 255, 255, 0.8)',
-                textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: '500',
-                transition: 'all 0.3s ease'
-              }}
-              className="social-link"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://twitter.com/evansarmah"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '16px 24px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                borderRadius: '8px',
-                color: 'rgba(255, 255, 255, 0.8)',
-                textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: '500',
-                transition: 'all 0.3s ease'
-              }}
-              className="social-link"
-            >
-              Twitter
-            </a>
+              <a
+                href="https://www.instagram.com/heavanxx?igsh=cm14N29rYWlpdW5p"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  textDecoration: 'none',
+                  fontSize: '18px',
+                  fontWeight: '400',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '8px 0',
+                  transition: 'color 0.3s ease'
+                }}
+                className="social-link"
+              >
+                ↗ Instagram
+              </a>
+              <a
+                href="https://x.com/EvansArmah14?t=Vzk3-qhc-u3XsbkLBThwmA&s=09"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  textDecoration: 'none',
+                  fontSize: '18px',
+                  fontWeight: '400',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '8px 0',
+                  transition: 'color 0.3s ease'
+                }}
+                className="social-link"
+              >
+                ↗ X (Twitter)
+              </a>
+              <a
+                href="https://linkedin.com/in/evans-armah"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  textDecoration: 'none',
+                  fontSize: '18px',
+                  fontWeight: '400',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '8px 0',
+                  transition: 'color 0.3s ease'
+                }}
+                className="social-link"
+              >
+                ↗ LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -339,9 +263,7 @@ export default function Contact() {
         }
 
         .social-link:hover {
-          background: rgba(255, 255, 255, 0.1) !important;
-          border-color: rgba(255, 255, 255, 0.3) !important;
-          transform: translateY(-2px);
+          color: rgba(255, 255, 255, 1) !important;
         }
 
         .delay-200 { animation-delay: 0.2s; }
