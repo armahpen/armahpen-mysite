@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Evans from "@/pages/evans";
 import Experience from "@/pages/experience";
+import Contact from "@/pages/contact";
 import Collections from "@/pages/collections";
 import NotFound from "@/pages/not-found";
 
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/evans" component={Evans} />
       <Route path="/experience" component={Experience} />
+      <Route path="/contact" component={Contact} />
       <Route path="/collections" component={Collections} />
       <Route component={NotFound} />
     </Switch>

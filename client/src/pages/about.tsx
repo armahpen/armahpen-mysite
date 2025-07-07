@@ -66,7 +66,7 @@ export default function About() {
           fontSize: '18px',
           fontWeight: '400',
           cursor: 'pointer'
-        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
+        }} className="animate-slideInDown delay-400 menu-button" onClick={() => window.location.href = '/contact'}>Contact</div>
       </div>
 
       {/* Main Content Split Layout */}
