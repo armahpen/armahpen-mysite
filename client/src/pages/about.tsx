@@ -151,20 +151,19 @@ export default function About() {
             width: '400px',
             height: '400px',
             borderRadius: '20px',
-            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 160, 0, 0.2))',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '120px',
             border: '2px solid rgba(255, 255, 255, 0.1)',
             overflow: 'hidden'
           }}>
-            <div style={{
-              width: '100%',
-              height: '100%',
-              background: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJncmFkaWVudCg0NWRlZywgIzMzMywgIzU1NSkiLz4KPGJ0ZXh0IHg9IjIwMCIgeT0iMjIwIiBmb250LWZhbWlseT0iRE0gU2Fucywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMjAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5GKPC90ZXh0Pgo8L3N2Zz4K") center/cover',
-              borderRadius: '18px'
-            }}></div>
+            <img 
+              src="/attached_assets/WhatsApp%20Image%202025-07-05%20at%203.50.33%20PM_1751917889152.jpeg"
+              alt="Evans Profile"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '18px'
+              }}
+            />
           </div>
         </div>
       </div>
