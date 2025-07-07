@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
 import { useState } from 'react';
+// Import handled via public assets
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('My Rabbai');
@@ -242,18 +243,68 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  <div style={{
-                    width: '120px',
-                    height: '80px',
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    color: 'rgba(255, 255, 255, 0.4)'
-                  }}>
-                    Preview
+                  <div 
+                    style={{
+                      width: '120px',
+                      height: '80px',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      position: 'relative',
+                      transition: 'all 0.3s ease'
+                    }}
+                    className="preview-card"
+                    onClick={() => {
+                      if (project.title === 'My Rabbai') {
+                        window.open('https://myrabbai.pages.dev/rabbai', '_blank');
+                      }
+                    }}
+                  >
+                    {project.title === 'My Rabbai' ? (
+                      <>
+                        <img 
+                          src="/attached_assets/dfhdfjgfd_1751930728448.PNG"
+                          alt="My Rabbai Preview"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.3s ease'
+                          }}
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: 'rgba(0, 0, 0, 0.7)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          color: 'white',
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                          fontWeight: '500'
+                        }} className="preview-overlay">
+                          Visit Site
+                        </div>
+                      </>
+                    ) : (
+                      <div style={{
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '12px',
+                        color: 'rgba(255, 255, 255, 0.4)'
+                      }}>
+                        Preview
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

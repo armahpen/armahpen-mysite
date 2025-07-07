@@ -437,6 +437,19 @@ h1:hover {
   transform: translateZ(4px) rotateX(1deg) rotateY(-1deg) !important;
 }
 
+/* Preview Card Styles */
+.preview-card:hover img {
+  transform: scale(1.05);
+}
+
+.preview-card:hover .preview-overlay {
+  opacity: 1 !important;
+}
+
+.preview-card:active {
+  transform: scale(0.98);
+}
+
 /* Galaxy Orbital System Animations */
 @keyframes rotate {
   from {
