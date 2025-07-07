@@ -15,34 +15,40 @@ export default function About() {
         <div style={{
           position: 'absolute',
           left: '96px',
-          top: '59px',
-          width: '100px',
-          height: '30px',
+          top: '50px',
+          width: '120px',
+          height: '40px',
           zIndex: 30,
           cursor: 'pointer'
         }}>
-          <div style={{
-            color: 'white',
-            fontFamily: 'DM Sans',
-            fontSize: '24px',
-            fontWeight: '700',
-            lineHeight: '30px',
-            letterSpacing: '1.2px'
-          }}>HeaVans</div>
+          <img 
+            src="/attached_assets/ChatGPT_Image_Jul_5__2025__05_30_15_AM-removebg-preview_1751726559922.png" 
+            alt="HeaVans Logo" 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain'
+            }}
+          />
         </div>
       </Link>
       
       {/* Navigation Menu */}
-      <div style={{position: 'absolute', left: '1101px', top: '57px', width: '548px', height: '18px', zIndex: 20}}>
+      <div style={{
+        position: 'absolute', 
+        right: '96px', 
+        top: '57px', 
+        display: 'flex',
+        gap: '32px',
+        alignItems: 'center',
+        zIndex: 20
+      }}>
         <Link href="/">
           <div style={{
             color: 'rgba(255, 255, 255, 0.65)',
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
-            position: 'absolute',
-            left: '0px',
-            top: '0px',
             cursor: 'pointer'
           }} className="menu-button">Home</div>
         </Link>
@@ -50,10 +56,7 @@ export default function About() {
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
-          fontWeight: '500',
-          position: 'absolute',
-          left: '80px',
-          top: '0px'
+          fontWeight: '500'
         }} className="menu-button">About</div>
         <Link href="/collections">
           <div style={{
@@ -61,9 +64,6 @@ export default function About() {
             fontFamily: 'DM Sans',
             fontSize: '18px',
             fontWeight: '400',
-            position: 'absolute',
-            left: '145px',
-            top: '0px',
             cursor: 'pointer'
           }} className="menu-button">Collections</div>
         </Link>
@@ -72,63 +72,15 @@ export default function About() {
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '265px',
-          top: '0px'
+          cursor: 'pointer'
         }} className="menu-button" onClick={() => alert('Work section coming soon!')}>Work</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
           fontSize: '18px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '320px',
-          top: '0px'
+          cursor: 'pointer'
         }} className="menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
-      </div>
-
-      {/* Circular Music Widget - Top Right */}
-      <div style={{
-        position: 'absolute',
-        top: '120px',
-        right: '120px',
-        width: '120px',
-        height: '120px',
-        zIndex: 15
-      }}>
-        <div style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: '50%',
-          background: 'rgba(255, 255, 255, 0.1)',
-          border: '2px solid rgba(255, 255, 255, 0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative'
-        }}>
-          <div style={{
-            width: '60px',
-            height: '60px',
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #FF6B6B, #FF8E53)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '20px'
-          }}>🎵</div>
-          <div style={{
-            position: 'absolute',
-            bottom: '-30px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            fontSize: '10px',
-            color: 'rgba(255, 255, 255, 0.6)',
-            fontFamily: 'DM Sans',
-            textAlign: 'center',
-            whiteSpace: 'nowrap'
-          }}>now playing</div>
-        </div>
       </div>
 
       {/* Main Content Split Layout */}
