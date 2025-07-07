@@ -415,6 +415,21 @@ export default function Experience() {
                       left: '0',
                       color: 'rgba(255, 255, 255, 0.5)'
                     }}>•</span>
+                    Built a custom CRM system for employee management and tracking
+                  </li>
+                  <li style={{
+                    fontSize: '15px',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    lineHeight: '1.6',
+                    marginBottom: '8px',
+                    paddingLeft: '20px',
+                    position: 'relative'
+                  }}>
+                    <span style={{
+                      position: 'absolute',
+                      left: '0',
+                      color: 'rgba(255, 255, 255, 0.5)'
+                    }}>•</span>
                     Conducted data analysis to track user engagement and improve site performance
                   </li>
                   <li style={{
