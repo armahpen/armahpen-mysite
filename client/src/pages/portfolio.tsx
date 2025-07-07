@@ -192,7 +192,9 @@ export default function Portfolio() {
           {/* Header */}
           <div style={{ marginBottom: '60px' }}>
             <h1 style={{
-              fontSize: 'clamp(40px, 5vw, 64px)',
+              fontSize: selectedCategory === 'CRMs' 
+                ? 'clamp(32px, 4vw, 48px)' 
+                : 'clamp(40px, 5vw, 64px)',
               fontWeight: '300',
               lineHeight: '1.1',
               marginBottom: '24px',
