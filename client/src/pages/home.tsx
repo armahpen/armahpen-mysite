@@ -472,7 +472,7 @@ export default function Home() {
             color: 'rgba(255, 255, 255, 0.6)',
             margin: '0'
           }}>
-            © 2025 HeaVans. All rights reserved. | Designed & Developed by Evans
+            @2020 HeaVans. All rights reserved. | Designed & Developed by Evans
           </p>
         </div>
       </footer>
