@@ -152,18 +152,31 @@ export default function About() {
             height: '400px',
             borderRadius: '20px',
             border: '2px solid rgba(255, 255, 255, 0.1)',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 160, 0, 0.1))',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
           }}>
-            <img 
-              src="/attached_assets/WhatsApp%20Image%202025-07-05%20at%203.50.33%20PM_1751917889152.jpeg"
-              alt="Evans Profile"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '18px'
-              }}
-            />
+            <div style={{
+              width: '100%',
+              height: '100%',
+              backgroundImage: 'url("/attached_assets/WhatsApp Image 2025-07-05 at 3.50.33 PM_1751917889152.jpeg")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              borderRadius: '18px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <div style={{
+                color: 'rgba(255, 255, 255, 0.5)',
+                fontSize: '120px',
+                fontWeight: '300',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+              }}>👤</div>
+            </div>
           </div>
         </div>
       </div>
