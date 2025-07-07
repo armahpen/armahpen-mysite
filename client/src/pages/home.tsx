@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div 
       className="relative w-full" 
-      style={{backgroundColor: '#1E1E1E', width: '1600px', height: '1230px', transform: 'scale(0.9)', transformOrigin: 'top left'}}
+      style={{backgroundColor: '#1E1E1E', width: '100vw', height: '1230px', overflow: 'hidden'}}
     >
       {/* Left Border */}
       <div 
