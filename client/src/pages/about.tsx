@@ -10,25 +10,6 @@ export default function About() {
       overflow: 'hidden'
     }}>
 
-      {/* HeaVans Logo - Exact from Home Page */}
-      <div style={{
-        position: 'absolute',
-        top: '16px',
-        left: '16px',
-        zIndex: 20,
-        cursor: 'pointer'
-      }} onClick={() => window.location.href = '/'}>
-        <img
-          src="/logo.png"
-          alt="HeaVans Logo"
-          style={{
-            width: '120px',
-            height: '36px',
-            objectFit: 'contain'
-          }}
-          className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
-      </div>
-      
       {/* Navigation */}
       <nav style={{
         position: 'fixed',

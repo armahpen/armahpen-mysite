@@ -265,7 +265,7 @@
   transform: translateY(-2px);
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive and Text Overlap Prevention */
 @media (max-width: 768px) {
   .about-card {
     margin: 0 20px;
@@ -278,6 +278,42 @@
   
   .about-card p {
     font-size: 15px;
+  }
+  
+  /* Prevent text overlapping and duplication */
+  .md\\:block {
+    display: none !important;
+  }
+  
+  .md\\:flex {
+    display: none !important;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Mobile optimizations */
+  .mobile-container {
+    padding: 16px !important;
+  }
+  
+  .mobile-optimize {
+    font-size: 24px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .md\\:hidden {
+    display: none !important;
+  }
+  
+  .md\\:block {
+    display: block !important;
+  }
+  
+  .md\\:flex {
+    display: flex !important;
   }
 }
 

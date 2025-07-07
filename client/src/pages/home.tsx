@@ -18,89 +18,113 @@ export default function Home() {
           top: '26px'
         }}
       />
-      {/* HeaVans Logo - Clickable Image Logo */}
-      <div style={{
-        position: 'absolute',
-        top: '16px',
-        left: '16px',
-        zIndex: 20,
-        cursor: 'pointer'
-      }} onClick={() => window.location.href = '/'}>
-        <img
-          src="/logo.png"
-          alt="HeaVans Logo"
-          style={{
-            width: '120px',
-            height: '36px',
-            objectFit: 'contain'
-          }}
-          className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
-      </div>
-
-      {/* Navigation Menu - Mobile Responsive */}
-      <div className="hidden md:block" style={{position: 'absolute', right: '5%', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
+      {/* Navigation */}
+      <nav style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        backgroundColor: 'rgba(30, 30, 30, 0.95)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+      }}>
         <div style={{
           display: 'flex',
-          gap: '32px',
-          alignItems: 'center'
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '16px 40px',
+          maxWidth: '1200px',
+          margin: '0 auto'
         }}>
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.80)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '500',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</div>
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-200 menu-button" onClick={() => window.location.href = '/about'}>About</div>
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-300 menu-button" onClick={() => window.location.href = '/experience'}>Experience</div>
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'DM Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            cursor: 'pointer'
-          }} className="animate-slideInDown delay-400 menu-button" onClick={() => window.location.href = '/contact'}>Contact</div>
+          {/* Logo */}
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <img 
+              src="/logo.png" 
+              alt="HeaVans Logo" 
+              style={{
+                height: '30px',
+                width: 'auto',
+                cursor: 'pointer'
+              }}
+            />
+          </Link>
+
+          {/* Navigation Menu - Desktop */}
+          <div className="hidden md:flex" style={{
+            display: 'flex',
+            gap: '32px',
+            alignItems: 'center'
+          }}>
+            <Link href="/" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '500',
+                cursor: 'pointer'
+              }}>Home</span>
+            </Link>
+            <Link href="/collections" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Collections</span>
+            </Link>
+            <Link href="/about" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>About</span>
+            </Link>
+            <Link href="/experience" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Experience</span>
+            </Link>
+            <Link href="/contact" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                fontFamily: 'DM Sans',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Contact</span>
+            </Link>
+          </div>
+          
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'white',
+              fontSize: '20px',
+              cursor: 'pointer'
+            }}>☰</button>
+          </div>
         </div>
-      </div>
-      
-      {/* Mobile Menu Button */}
-      <div className="md:hidden" style={{
-        position: 'fixed',
-        top: '16px',
-        right: '16px',
-        zIndex: 1000
-      }}>
-        <button style={{
-          background: 'rgba(0, 0, 0, 0.8)',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          borderRadius: '8px',
-          padding: '12px',
-          color: 'white',
-          fontSize: '18px',
-          cursor: 'pointer'
-        }}>☰</button>
-      </div>
-      {/* HeaDesign Work Collection Section - Properly Organized */}
-      <div style={{
+      </nav>
+
+      {/* HeaDesign Work Collection Section - Desktop Only */}
+      <div className="hidden md:block animate-slideLeftToRight delay-100" style={{
         width: '300px',
         height: '200px',
         position: 'absolute',
         left: '186px',
-        top: '225px',
+        top: '305px',
         zIndex: 20
-      }} className="animate-slideLeftToRight delay-100">
+      }}>
         {/* Decorative Icon */}
         <img style={{
           width: '71px',
@@ -177,15 +201,15 @@ export default function Home() {
         </div>
 
       </div>
-      {/* DevHea Work Collection - Developer Section */}
-      <div style={{
+      {/* DevHea Work Collection - Desktop Only */}
+      <div className="hidden md:block animate-slideRightToLeft delay-200" style={{
         position: 'absolute',
         left: '186px',
-        top: '538px',
+        top: '618px',
         zIndex: 20,
         width: '320px',
         height: '140px'
-      }} className="animate-slideRightToLeft delay-200">
+      }}>
         {/* Header with < DevHea> and Dev Icon */}
         <div style={{
           display: 'flex',
@@ -294,7 +318,7 @@ export default function Home() {
         height: '227px',
         position: 'absolute',
         right: '5%',
-        top: '289px',
+        top: '369px',
         zIndex: 10
       }}>
         <div style={{
