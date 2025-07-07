@@ -466,7 +466,7 @@ export default function Home() {
         lineHeight: '20px',
         position: 'absolute',
         right: '5%',
-        top: '679px',
+        top: '906px',
         height: 'auto',
         zIndex: 10
       }}>
