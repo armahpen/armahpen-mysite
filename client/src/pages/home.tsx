@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div 
       className="relative w-full" 
-      style={{backgroundColor: '#1E1E1E', width: '100vw', height: '1230px', overflow: 'hidden'}}
+      style={{backgroundColor: '#1E1E1E', width: '100vw', minHeight: '100vh', overflow: 'hidden'}}
     >
       {/* Left Border */}
       <div 
@@ -36,44 +36,89 @@ export default function Home() {
           className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
 
-      {/* Navigation Menu - Adjusted positioning to prevent overlap */}
-      <div style={{position: 'absolute', right: '5%', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
+      {/* Navigation Menu - Mobile Responsive */}
+      <div className="hidden md:block" style={{position: 'absolute', right: '5%', top: '57px', width: '400px', height: '18px', zIndex: 20}}>
+        <div style={{
+          display: 'flex',
+          gap: '32px',
+          alignItems: 'center'
+        }}>
+          <div style={{
+            color: 'rgba(255, 255, 255, 0.80)',
+            fontFamily: 'DM Sans',
+            fontSize: '18px',
+            fontWeight: '500',
+            cursor: 'pointer'
+          }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</div>
+          <div style={{
+            color: 'rgba(255, 255, 255, 0.65)',
+            fontFamily: 'DM Sans',
+            fontSize: '18px',
+            fontWeight: '400',
+            cursor: 'pointer'
+          }} className="animate-slideInDown delay-200 menu-button" onClick={() => window.location.href = '/about'}>About</div>
+          <div style={{
+            color: 'rgba(255, 255, 255, 0.65)',
+            fontFamily: 'DM Sans',
+            fontSize: '18px',
+            fontWeight: '400',
+            cursor: 'pointer'
+          }} className="animate-slideInDown delay-300 menu-button" onClick={() => window.location.href = '/experience'}>Experience</div>
+          <div style={{
+            color: 'rgba(255, 255, 255, 0.65)',
+            fontFamily: 'DM Sans',
+            fontSize: '18px',
+            fontWeight: '400',
+            cursor: 'pointer'
+          }} className="animate-slideInDown delay-400 menu-button" onClick={() => window.location.href = '/contact'}>Contact</div>
+        </div>
+      </div>
+      
+      {/* Mobile Navigation Menu */}
+      <div className="md:hidden mobile-nav" style={{
+        position: 'fixed',
+        top: '16px',
+        right: '16px',
+        background: 'rgba(0, 0, 0, 0.9)',
+        borderRadius: '8px',
+        padding: '16px',
+        zIndex: 1000,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+      }}>
         <div style={{
           color: 'rgba(255, 255, 255, 0.80)',
           fontFamily: 'DM Sans',
-          fontSize: '18px',
+          fontSize: '16px',
           fontWeight: '500',
-          position: 'absolute',
-          left: '0px',
-          top: '0px'
-        }} className="animate-slideInDown delay-100 menu-button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</div>
+          cursor: 'pointer',
+          textAlign: 'center'
+        }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
-          fontSize: '18px',
+          fontSize: '16px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '90px',
-          top: '0px'
-        }} className="animate-slideInDown delay-200 menu-button" onClick={() => window.location.href = '/about'}>About</div>
+          cursor: 'pointer',
+          textAlign: 'center'
+        }} onClick={() => window.location.href = '/about'}>About</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
-          fontSize: '18px',
+          fontSize: '16px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '165px',
-          top: '0px'
-        }} className="animate-slideInDown delay-300 menu-button" onClick={() => alert('Experience section coming soon!')}>Experience</div>
+          cursor: 'pointer',
+          textAlign: 'center'
+        }} onClick={() => window.location.href = '/experience'}>Experience</div>
         <div style={{
           color: 'rgba(255, 255, 255, 0.65)',
           fontFamily: 'DM Sans',
-          fontSize: '18px',
+          fontSize: '16px',
           fontWeight: '400',
-          position: 'absolute',
-          left: '285px',
-          top: '0px'
-        }} className="animate-slideInDown delay-400 menu-button" onClick={() => alert('Contact section coming soon!')}>Contact</div>
+          cursor: 'pointer',
+          textAlign: 'center'
+        }} onClick={() => window.location.href = '/contact'}>Contact</div>
       </div>
       {/* HeaDesign Work Collection Section - Properly Organized */}
       <div style={{
@@ -239,8 +284,8 @@ export default function Home() {
         {/* Call to Action */}
 
       </div>
-      {/* Frame 7 - Updated with latest Figma specifications */}
-      <div style={{
+      {/* Frame 7 - Mobile Responsive */}
+      <div className="hidden md:block" style={{
         display: 'flex',
         width: '80%',
         maxWidth: '1434px',
@@ -268,9 +313,33 @@ export default function Home() {
           }}
         />
       </div>
+      
+      {/* Mobile Hero Image */}
+      <div className="md:hidden mobile-container" style={{
+        position: 'relative',
+        top: '100px',
+        padding: '16px',
+        textAlign: 'center'
+      }}>
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
+          alt="ChatGPT Image"
+          style={{
+            width: '100%',
+            maxWidth: '1195px',
+            height: 'auto',
+            maxHeight: '957px',
+            flexShrink: 0,
+            aspectRatio: '1195/957',
+            borderRadius: '62px',
+            mixBlendMode: 'luminosity',
+            position: 'relative'
+          }}
+        />
+      </div>
 
-      {/* Hero Section - Repositioned to match Figma */}
-      <div style={{
+      {/* Hero Section - Desktop */}
+      <div className="hidden md:block" style={{
         width: '357px',
         height: '227px',
         position: 'absolute',
@@ -278,8 +347,6 @@ export default function Home() {
         top: '289px',
         zIndex: 10
       }}>
-
-        {/* Subtitle */}
         <div style={{
           color: 'rgba(255, 255, 255, 0.8)',
           fontFamily: 'Public Sans',
@@ -290,7 +357,6 @@ export default function Home() {
         }}>
         </div>
         
-        {/* Main Headline */}
         <div style={{
           color: '#FFF',
           fontFamily: 'Public Sans',
@@ -304,7 +370,6 @@ export default function Home() {
             className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px] animate-fadeInUp delay-200 animate-textGlow hover-grow">Shape the Future with Heavans</span>
         </div>
         
-        {/* Description */}
         <div style={{
           color: 'rgba(255, 255, 255, 0.75)',
           fontFamily: 'Public Sans',
@@ -315,6 +380,34 @@ export default function Home() {
         }}>
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}} className="animate-fadeInLeft delay-300 hover-grow">I create standout web experiences—where design meets purpose and code brings it to life.</span>
         </div>
+      </div>
+      
+      {/* Mobile Hero Section */}
+      <div className="md:hidden mobile-hero" style={{
+        position: 'relative',
+        top: '400px',
+        padding: '32px 16px',
+        textAlign: 'center',
+        zIndex: 10
+      }}>
+
+        <h1 style={{
+          color: '#FFF',
+          fontFamily: 'Public Sans',
+          fontSize: '24px',
+          fontWeight: '700',
+          lineHeight: '1.2',
+          marginBottom: '16px'
+        }}>Shape the Future with Heavans</h1>
+        
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.75)',
+          fontFamily: 'Public Sans',
+          fontSize: '14px',
+          fontWeight: '400',
+          lineHeight: '1.5',
+          margin: '0'
+        }}>I create standout web experiences—where design meets purpose and code brings it to life.</p>
       </div>
       {/* Professional Footer */}
       <footer style={{
@@ -456,8 +549,8 @@ export default function Home() {
       <svg style={{width: '3px', height: '3px', position: 'absolute', left: '187px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
         <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
       </svg>
-      {/* Artist Description */}
-      <div style={{
+      {/* Artist Description - Desktop */}
+      <div className="hidden md:block" style={{
         width: '462px',
         color: 'rgba(255, 255, 255, 0.50)',
         fontFamily: 'DM Sans',
@@ -471,6 +564,24 @@ export default function Home() {
         zIndex: 10
       }}>
         <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}} className="animate-fadeInUp delay-300 animate-pulse-subtle hover-grow">Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
+      </div>
+      
+      {/* Artist Description - Mobile */}
+      <div className="md:hidden mobile-text" style={{
+        position: 'relative',
+        top: '450px',
+        padding: '16px',
+        textAlign: 'center',
+        zIndex: 10
+      }}>
+        <p style={{
+          color: 'rgba(255, 255, 255, 0.5)',
+          fontFamily: 'DM Sans',
+          fontSize: '14px',
+          fontWeight: '400',
+          lineHeight: '1.5',
+          margin: '0'
+        }}>Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</p>
       </div>
       {/* Final Line Separator */}
       <div style={{

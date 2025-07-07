@@ -7,7 +7,7 @@ export default function Contact() {
       background: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)',
       color: 'white',
       fontFamily: 'DM Sans, sans-serif'
-    }}>
+    }} className="mobile-container">
       {/* Navigation */}
       <nav style={{
         position: 'fixed',

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div style={{
       width: '100vw',
-      height: '1230px',
+      minHeight: '100vh',
       position: 'relative',
       background: '#1E1E1E',
       overflow: 'hidden'
@@ -29,8 +29,8 @@ export default function About() {
           className="ml-[89px] mr-[89px] pl-[-3px] pr-[-3px] mt-[43px] mb-[43px]" />
       </div>
       
-      {/* Navigation Menu - Flexbox Layout for Better Visibility */}
-      <div style={{
+      {/* Navigation Menu - Desktop */}
+      <div className="hidden md:flex" style={{
         position: 'absolute', 
         right: '96px', 
         top: '57px', 
