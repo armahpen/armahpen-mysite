@@ -317,6 +317,87 @@
   }
 }
 
+/* P5aholic-inspired Background Animations */
+@keyframes grainMove {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, -5px); }
+  50% { transform: translate(-10px, 5px); }
+  75% { transform: translate(5px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes backgroundShift {
+  0% { 
+    filter: hue-rotate(0deg) brightness(1);
+    opacity: 1;
+  }
+  33% { 
+    filter: hue-rotate(30deg) brightness(1.05);
+    opacity: 0.95;
+  }
+  66% { 
+    filter: hue-rotate(-30deg) brightness(0.95);
+    opacity: 1.05;
+  }
+  100% { 
+    filter: hue-rotate(0deg) brightness(1);
+    opacity: 1;
+  }
+}
+
+@keyframes floatingParticles {
+  0% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-40px) translateX(-5px); }
+  75% { transform: translateY(-20px) translateX(-15px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Smooth page transitions */
+.page-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced blur effects */
+.backdrop-blur-enhanced {
+  backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* P5aholic-inspired Navigation */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px);
+}
+
+/* CTA Button Styling */
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+
 /* Galaxy Orbital System Animations */
 @keyframes rotate {
   from {

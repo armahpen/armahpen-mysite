@@ -113,6 +113,15 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
+- July 07, 2025: Redesigned landing page with p5aholic.me-inspired background and minimalist aesthetic
+  - Removed previous background image and implemented animated WebGL-style background using grain and blur textures
+  - Created interactive mouse-following gradient effects and subtle animated overlays
+  - Simplified navigation with clean Inter font styling and subtle hover effects
+  - Implemented minimalist hero section with large typography and single CTA button
+  - Added floating particle elements for depth and visual interest
+  - Maintained mobile responsiveness while achieving modern, professional aesthetic
+  - Background features multiple animated layers: grain texture, blur gradients, noise patterns, and mouse-responsive elements
+
 - July 07, 2025: Updated Experience page navigation and standardized footer format
   - Replaced Collections button with Contact button in Experience page navigation menu
   - Standardized all footer text to "@2020 HeaVans. All rights reserved. | Designed & Developed by Evans"

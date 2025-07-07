@@ -1,23 +1,116 @@
 import { Link } from 'wouter';
+import { useEffect, useState } from 'react';
+import grainTexture from '@assets/grain_1751928350011.webp';
+import blurTexture from '@assets/blur_1751928350012.webp';
 
 export default function Home() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({
+        x: e.clientX / window.innerWidth,
+        y: e.clientY / window.innerHeight
+      });
+    };
+
+    const animateTime = () => {
+      setTime(prev => prev + 0.01);
+      requestAnimationFrame(animateTime);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    animateTime();
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <div 
-      className="relative w-full min-h-screen" 
-      style={{backgroundColor: '#1E1E1E', width: '100vw', minHeight: '100vh'}}
+      className="relative w-full min-h-screen overflow-hidden" 
+      style={{width: '100vw', minHeight: '100vh'}}
     >
-      {/* Left Border - Desktop Only */}
+      {/* Animated Background Canvas */}
       <div 
-        className="hidden md:block"
+        className="fixed inset-0 z-0"
         style={{
-          width: '130px',
-          height: '1117px',
-          borderRight: '1px solid rgba(255, 255, 255, 0.12)',
-          position: 'absolute',
-          left: '0px',
-          top: '26px'
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%)',
+          mixBlendMode: 'normal'
         }}
-      />
+      >
+        {/* Grain Layer */}
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            backgroundImage: `url(${grainTexture})`,
+            backgroundSize: '512px 512px',
+            backgroundRepeat: 'repeat',
+            animation: 'grainMove 20s linear infinite',
+            mixBlendMode: 'overlay'
+          }}
+        />
+        
+        {/* Blur Gradient Layer */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url(${blurTexture})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translate(${mousePos.x * 20 - 10}px, ${mousePos.y * 20 - 10}px) scale(1.1)`,
+            transition: 'transform 0.3s ease-out',
+            mixBlendMode: 'screen'
+          }}
+        />
+        
+        {/* Animated Gradient Overlay */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(
+                circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, 
+                rgba(255, 255, 255, 0.03) 0%, 
+                transparent 50%
+              ),
+              linear-gradient(
+                ${time * 10}deg, 
+                rgba(255, 255, 255, 0.01) 0%, 
+                rgba(255, 255, 255, 0.02) 50%, 
+                rgba(255, 255, 255, 0.01) 100%
+              )
+            `,
+            animation: 'backgroundShift 30s ease-in-out infinite'
+          }}
+        />
+        
+        {/* Noise Pattern */}
+        <div 
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.005) 2px,
+                rgba(255, 255, 255, 0.005) 4px
+              ),
+              repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.005) 2px,
+                rgba(255, 255, 255, 0.005) 4px
+              )
+            `
+          }}
+        />
+      </div>
+
       {/* Navigation */}
       <nav style={{
         position: 'fixed',
@@ -25,16 +118,16 @@ export default function Home() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        backgroundColor: 'rgba(30, 30, 30, 0.95)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
       }}>
         <div style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '16px 40px',
-          maxWidth: '1200px',
+          padding: '20px 40px',
+          maxWidth: '1400px',
           margin: '0 auto'
         }}>
           {/* Logo */}
@@ -56,51 +149,51 @@ export default function Home() {
             gap: '32px',
             alignItems: 'center'
           }}>
-            <Link href="/" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '500',
-                cursor: 'pointer'
-              }}>Home</span>
-            </Link>
-            <Link href="/collections" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Collections</span>
-            </Link>
-            <Link href="/about" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>About</span>
-            </Link>
-            <Link href="/experience" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Experience</span>
-            </Link>
-            <Link href="/contact" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Contact</span>
-            </Link>
+            <Link href="/" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.9)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>Home</Link>
+            <Link href="/about" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: '400',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>About</Link>
+            <Link href="/experience" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: '400',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>Experience</Link>
+            <Link href="/collections" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: '400',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>Collections</Link>
+            <Link href="/contact" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '14px',
+              fontWeight: '400',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>Contact</Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -116,469 +209,90 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HeaDesign Work Collection Section - Desktop Only */}
-      <div className="hidden md:block animate-slideLeftToRight delay-100" style={{
-        width: '300px',
-        height: '200px',
-        position: 'absolute',
-        left: '186px',
-        top: '305px',
-        zIndex: 20
-      }}>
-        {/* Decorative Icon */}
-        <img style={{
-          width: '71px',
-          height: '76px',
-          transform: 'rotate(131.367deg)',
-          position: 'absolute',
-          left: '77px',
-          top: '0px'
-        }} src="https://cdn.builder.io/api/v1/image/assets/TEMP/bdae1da462e182cde4834fff2e3bde1f5bbefa26?width=142" alt="" />
+      {/* Main Content Container */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8">
         
-        {/* Section Title */}
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '20px',
-          fontWeight: '400',
-          lineHeight: '1.2',
-          position: 'absolute',
-          left: '0px',
-          top: '50px',
-          width: '120px'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-200 hover-grow">HeaDesign</span>
-        </div>
-        
-        {/* Divider Lines */}
-        <svg style={{
-          width: '259px',
-          height: '4px',
-          position: 'absolute',
-          left: '0px',
-          top: '77px'
-        }} width="259" height="4" viewBox="0 0 259 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 2H258.583" stroke="#63767C" strokeWidth="3"/>
-        </svg>
-        <svg style={{
-          width: '70px',
-          height: '4px',
-          position: 'absolute',
-          left: '189px',
-          top: '77px'
-        }} width="71" height="4" viewBox="0 0 71 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.5 2L70.5833 2.00001" stroke="black" strokeOpacity="0.34" strokeWidth="3"/>
-        </svg>
-        
-        {/* Main Title */}
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '20px',
-          fontWeight: '600',
-          lineHeight: '1.2',
-          position: 'absolute',
-          left: '0px',
-          top: '96px',
-          width: '180px'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-300 hover-grow">Work Collection</span>
-        </div>
-        
-        {/* Description Text */}
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '1.4',
-          position: 'absolute',
-          left: '0px',
-          top: '125px',
-          width: '280px'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-400 hover-grow">Multidisciplinary designer in UX/UI, graphic design and motion graphics</span>
-        </div>
-
-      </div>
-      {/* DevHea Work Collection - Desktop Only */}
-      <div className="hidden md:block animate-slideRightToLeft delay-200" style={{
-        position: 'absolute',
-        left: '186px',
-        top: '618px',
-        zIndex: 20,
-        width: '320px',
-        height: '140px'
-      }}>
-        {/* Header with < DevHea> and Dev Icon */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          marginBottom: '8px'
-        }}>
-          <div style={{
-            color: '#FFF',
-            fontFamily: 'Public Sans',
-            fontSize: '18px',
-            fontWeight: '400',
-            lineHeight: 'normal'
-          }}>
-            <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '18px', color: 'rgba(255,255,255,1)'}} className="animate-slideRightToLeft delay-300 hover-grow">{'< DevHea>'}</span>
-          </div>
-          <img 
-            src="/dev-icon.png"
-            alt="Dev Icon"
-            style={{
-              height: '32px',
-              width: 'auto',
-              objectFit: 'contain'
-            }}
-          />
-        </div>
-        
-        {/* Divider Lines */}
-        <div style={{
-          width: '100%',
-          height: '4px',
-          marginBottom: '12px',
-          position: 'relative'
-        }}>
-          <svg style={{width:'259px',height:'4px',position:'absolute',left:'0px',top:'0px'}} width="259" height="4" viewBox="0 0 259 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 2H258.583" stroke="#63767C" strokeWidth="3"/>
-          </svg>
-          <svg style={{width:'70px',height:'4px',position:'absolute',left:'189px',top:'0px'}} width="71" height="4" viewBox="0 0 71 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.5 2L70.5833 2.00001" stroke="black" strokeOpacity="0.34" strokeWidth="3"/>
-          </svg>
-        </div>
-        
-        {/* Work Collection Title */}
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '20px',
-          fontWeight: '600',
-          lineHeight: '1.2',
-          marginBottom: '8px'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '20px', color: 'rgba(255,255,255,1)'}} className="animate-slideRightToLeft delay-400 hover-grow">Work Collection</span>
-        </div>
-        
-        {/* Description */}
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '1.4',
-          marginBottom: '12px',
-          width: '280px'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-slideRightToLeft delay-500 hover-grow">Full-stack developer blending sleek design with solid back-end architectures</span>
-        </div>
-        
-        {/* Call to Action */}
-
-      </div>
-      {/* Frame 7 - Mobile Responsive */}
-      <div className="hidden md:block" style={{
-        display: 'flex',
-        width: '80%',
-        maxWidth: '1434px',
-        height: '989px',
-        padding: '10px',
-        alignItems: 'center',
-        gap: '10px',
-        position: 'absolute',
-        left: '72px',
-        top: '318px'
-      }}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
-          alt="ChatGPT Image"
-          style={{
-            width: '100%',
-            maxWidth: '1195px',
-            height: 'auto',
-            maxHeight: '957px',
-            flexShrink: 0,
-            aspectRatio: '1195/957',
-            borderRadius: '62px',
-            mixBlendMode: 'luminosity',
-            position: 'relative'
-          }}
-        />
-      </div>
-      
-
-
-      {/* Hero Section - Desktop */}
-      <div className="hidden md:block" style={{
-        width: '357px',
-        height: '227px',
-        position: 'absolute',
-        right: '5%',
-        top: '369px',
-        zIndex: 10
-      }}>
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.8)',
-          fontFamily: 'Public Sans',
-          fontSize: '16px',
-          fontWeight: '400',
-          lineHeight: '1.3',
-          marginBottom: '12px'
-        }}>
-        </div>
-        
-        <div style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '38px',
-          fontWeight: '700',
-          lineHeight: '1.1',
-          marginBottom: '20px'
-        }}>
-          <span
-            style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '700', fontSize: '38px', color: 'rgba(255,255,255,1)'}}
-            className="mt-[25px] mb-[25px] ml-[-2px] mr-[-2px] animate-fadeInUp delay-200 animate-textGlow hover-grow">Shape the Future with Heavans</span>
-        </div>
-        
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.75)',
-          fontFamily: 'Public Sans',
-          fontSize: '15px',
-          fontWeight: '400',
-          lineHeight: '1.6',
-          maxWidth: '350px'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '15px', color: 'rgba(255,255,255,0.75)'}} className="animate-fadeInLeft delay-300 hover-grow">I create standout web experiences—where design meets purpose and code brings it to life.</span>
-        </div>
-      </div>
-      
-      {/* Mobile Hero Section */}
-      <div className="md:hidden" style={{
-        position: 'relative',
-        top: '80px',
-        padding: '32px 16px',
-        textAlign: 'center',
-        zIndex: 10,
-        minHeight: 'calc(100vh - 80px)',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center'
-      }}>
-        {/* Mobile Hero Image */}
-        <div style={{
-          marginBottom: '32px'
-        }}>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/386488a8fb187ecc516355c1418624730a7a47b9?width=2390"
-            alt="Portfolio Image"
-            style={{
-              width: '100%',
-              maxWidth: '300px',
-              height: 'auto',
-              borderRadius: '16px',
-              marginBottom: '24px'
-            }}
-          />
-        </div>
-
-        <h1 style={{
-          color: '#FFF',
-          fontFamily: 'Public Sans',
-          fontSize: '28px',
-          fontWeight: '700',
-          lineHeight: '1.2',
-          marginBottom: '16px'
-        }}>Shape the Future with Heavans</h1>
-        
-        <p style={{
-          color: 'rgba(255, 255, 255, 0.75)',
-          fontFamily: 'Public Sans',
-          fontSize: '16px',
-          fontWeight: '400',
-          lineHeight: '1.5',
-          marginBottom: '24px'
-        }}>I create standout web experiences—where design meets purpose and code brings it to life.</p>
-        
-        <p style={{
-          color: 'rgba(255, 255, 255, 0.5)',
-          fontFamily: 'DM Sans',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '1.5',
-          margin: '0'
-        }}>Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</p>
-      </div>
-      {/* Professional Footer */}
-      <footer style={{
-        width: '100%',
-        background: '#63767C',
-        position: 'absolute',
-        left: '0px',
-        top: '1050px',
-        padding: '40px 80px',
-        boxSizing: 'border-box',
-        zIndex: 20
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          maxWidth: '1440px',
-          margin: '0 auto'
-        }}>
-          {/* Logo and Description */}
-          <div style={{flex: '1', marginRight: '60px'}}>
-            <div style={{
-              fontFamily: 'Poppins',
-              fontSize: '24px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '12px'
-            }} className="animate-fadeInLeft delay-100 hover-grow">HeaVans.</div>
-            <p style={{
-              fontFamily: 'Public Sans',
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.8)',
-              lineHeight: '1.5',
-              margin: '0',
-              maxWidth: '280px'
-            }}>
-              Creative web developer blending design, code, and motion to build modern, impactful digital experiences.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div style={{flex: '0 0 auto', marginRight: '60px'}}>
-            <h4 style={{
-              fontFamily: 'DM Sans',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '16px',
-              margin: '0 0 16px 0'
-            }}>Quick Links</h4>
-            <ul style={{
-              listStyle: 'none',
-              padding: '0',
-              margin: '0'
-            }}>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#home" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>Home</a>
-              </li>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#about" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>About</a>
-              </li>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#experience" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>Experience</a>
-              </li>
-              <li style={{marginBottom: '8px'}}>
-                <a href="#contact" style={{
-                  fontFamily: 'DM Sans',
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  textDecoration: 'none'
-                }}>Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div style={{flex: '0 0 auto', marginRight: '60px'}}>
-            <h4 style={{
-              fontFamily: 'DM Sans',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '16px',
-              margin: '0 0 16px 0'
-            }}>Get In Touch</h4>
-            <div style={{
-              fontFamily: 'DM Sans',
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.7)',
-              lineHeight: '1.6'
-            }}>
-              <p style={{margin: '0 0 8px 0'}}>evansarmah30@gmail.com</p>
-              <p style={{margin: '0 0 8px 0'}}>Available for freelance work</p>
-            </div>
-          </div>
-
-
-        </div>
-
-        {/* Copyright */}
-        <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-          marginTop: '32px',
-          paddingTop: '20px',
-          textAlign: 'center'
-        }}>
+        {/* Hero Section */}
+        <div className="text-center max-w-4xl mx-auto mt-20">
+          <h1 style={{
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+            fontSize: 'clamp(48px, 8vw, 120px)',
+            fontWeight: '700',
+            color: 'rgba(255, 255, 255, 0.95)',
+            lineHeight: '1.1',
+            marginBottom: '24px',
+            letterSpacing: '-0.02em'
+          }}>Evans</h1>
+          
           <p style={{
-            fontFamily: 'DM Sans',
-            fontSize: '12px',
-            color: 'rgba(255, 255, 255, 0.6)',
-            margin: '0'
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+            fontSize: 'clamp(18px, 3vw, 24px)',
+            fontWeight: '400',
+            color: 'rgba(255, 255, 255, 0.7)',
+            lineHeight: '1.6',
+            marginBottom: '48px',
+            letterSpacing: '0.5px'
           }}>
-            @2020 HeaVans. All rights reserved. | Designed & Developed by Evans
+            Designer & Developer
           </p>
+          
+          <div style={{
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+            fontSize: '16px',
+            fontWeight: '400',
+            color: 'rgba(255, 255, 255, 0.6)',
+            lineHeight: '1.8',
+            maxWidth: '600px',
+            margin: '0 auto 64px auto',
+            letterSpacing: '0.3px'
+          }}>
+            Creating digital experiences that inspire and engage.<br />
+            Specializing in UI/UX design, front-end development, and creative direction.
+          </div>
+          
+          {/* CTA Button */}
+          <Link href="/about" style={{
+            display: 'inline-block',
+            padding: '16px 32px',
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: '8px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            textDecoration: 'none',
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+            fontSize: '14px',
+            fontWeight: '500',
+            letterSpacing: '0.5px',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(10px)'
+          }} 
+          className="cta-button"
+          >
+            View My Work
+          </Link>
         </div>
-      </footer>
-      {/* Latest Work Dots */}
-      <svg style={{width: '4px', height: '4px', position: 'absolute', left: '170px', top: '1098px'}} viewBox="0 0 4 4" fill="none">
-        <circle cx="2" cy="2" r="2" fill="white"/>
-      </svg>
-      <svg style={{width: '3px', height: '3px', position: 'absolute', left: '179px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
-        <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
-      </svg>
-      <svg style={{width: '3px', height: '3px', position: 'absolute', left: '187px', top: '1099px'}} viewBox="0 0 3 4" fill="none">
-        <circle cx="1.5" cy="2" r="1.5" fill="white" fillOpacity="0.65"/>
-      </svg>
-      {/* Artist Description - Desktop */}
-      <div className="hidden md:block" style={{
-        width: '462px',
-        color: 'rgba(255, 255, 255, 0.50)',
-        fontFamily: 'DM Sans',
-        fontSize: '16px',
-        fontWeight: '500',
-        lineHeight: '20px',
-        position: 'absolute',
-        right: '5%',
-        top: '906px',
-        height: 'auto',
-        zIndex: 10
-      }}>
-        <span style={{fontFamily: 'DM Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '16px', color: 'rgba(255,255,255,0.5)'}} className="animate-fadeInUp delay-300 animate-pulse-subtle hover-grow">Evans (Heavans) is your creative plug—designing slick interfaces, coding clean systems, and adding motion magic where it matters. Whether it's a brand, app, or full-blown idea, he makes it bold, fast, and unforgettable.</span>
+        
       </div>
       
-
-      {/* Final Line Separator */}
-      <div style={{
-        width: '100%',
-        height: '0px',
-        background: '#FFF',
-        position: 'absolute',
-        left: '0px',
-        top: '1060px'
-      }}></div>
+      {/* Floating Elements */}
+      <div className="hidden md:block absolute top-1/2 left-10 transform -translate-y-1/2 z-10">
+        <div style={{
+          width: '2px',
+          height: '100px',
+          background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3), transparent)',
+          animation: 'floatingParticles 6s ease-in-out infinite'
+        }} />
+      </div>
+      
+      <div className="hidden md:block absolute top-1/3 right-16 z-10">
+        <div style={{
+          width: '4px',
+          height: '4px',
+          background: 'rgba(255, 255, 255, 0.5)',
+          borderRadius: '50%',
+          animation: 'floatingParticles 8s ease-in-out infinite 2s'
+        }} />
+      </div>
     </div>
   );
 }
