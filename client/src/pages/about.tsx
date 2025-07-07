@@ -22,12 +22,22 @@ export default function About() {
           cursor: 'pointer'
         }}>
           <img 
-            src="/attached_assets/heavans%20logo_1751917271448.PNG" 
+            src="/attached_assets/heavans logo_1751917271448.PNG" 
             alt="HeaVans Logo" 
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'contain'
+            }}
+            onError={(e) => {
+              console.log('Logo failed to load, trying different approaches...');
+              // Try different file path formats
+              const img = e.target as HTMLImageElement;
+              if (img.src.includes('heavans%20logo')) {
+                img.src = '/attached_assets/heavans logo_1751917271448.PNG';
+              } else if (img.src.includes('heavans logo')) {
+                img.src = '/attached_assets/heavans%2520logo_1751917271448.PNG';
+              }
             }}
           />
         </div>
@@ -131,7 +141,7 @@ export default function About() {
               margin: '0 0 32px 0',
               maxWidth: '500px'
             }}>
-              Hey, my name is Evans Bruyerre and I use HeaVans as my nickname across social medias. I'm a graphic designer, UX/UI designer & front-end web developer from France. I'm also passionate about creative expression and make portraits and universes around what I listen to and I'm always curious to learn more when it comes to new technologies and creative coding.
+              I'm a versatile Web Developer and Data Analyst with a background in research and a strong eye for user experience. My skills blend technical web development (CMS platforms, cloud systems, responsive design) with data-driven thinking. I enjoy building platforms that solve real problems—especially those that align with social good, innovation, and user-centered impact. I'm collaborative, adaptable, and constantly learning.
             </p>
 
             {/* Resume Download Link */}
