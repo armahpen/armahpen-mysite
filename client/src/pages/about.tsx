@@ -21,34 +21,15 @@ export default function About() {
           zIndex: 30,
           cursor: 'pointer'
         }}>
-          <div style={{
-            color: 'white',
-            fontFamily: 'DM Sans, sans-serif',
-            fontSize: '24px',
-            fontWeight: '700',
-            lineHeight: '40px',
-            letterSpacing: '1.2px',
-            display: 'flex',
-            alignItems: 'center'
-          }}>
-            <span style={{
-              background: 'linear-gradient(135deg, #4A90E2, #357ABD)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginRight: '2px'
-            }}>Hea</span>
-            <span style={{
-              background: 'linear-gradient(135deg, #FFD700, #FFA500)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>Vans</span>
-            <span style={{
-              color: 'rgba(255, 255, 255, 0.8)',
-              marginLeft: '2px'
-            }}>.</span>
-          </div>
+          <img 
+            src="/attached_assets/heavans%20logo_1751917271448.PNG" 
+            alt="HeaVans Logo" 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain'
+            }}
+          />
         </div>
       </Link>
       
