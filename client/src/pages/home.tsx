@@ -158,32 +158,7 @@ export default function Home() {
         }}>
           <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,1)'}} className="animate-slideLeftToRight delay-400 hover-grow">Multidisciplinary designer in UX/UI, graphic design and motion graphics</span>
         </div>
-        
-        {/* Call to Action Link */}
-        <Link href="/collections">
-          <div style={{
-            color: 'rgba(255, 255, 255, 0.65)',
-            fontFamily: 'Public Sans',
-            fontSize: '14px',
-            fontWeight: '400',
-            lineHeight: '1.2',
-            position: 'absolute',
-            left: '0px',
-            top: '175px',
-            width: '150px',
-            cursor: 'pointer',
-            textDecoration: 'none',
-            transition: 'color 0.3s ease'
-          }}>
-            <span style={{
-              fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', 
-              fontWeight: '400', 
-              fontSize: '14px', 
-              color: 'rgba(255,255,255,0.65)',
-              textDecoration: 'underline'
-            }}>see collections →</span>
-          </div>
-        </Link>
+
       </div>
       {/* DevHea Work Collection - Developer Section */}
       <div style={{
@@ -262,16 +237,7 @@ export default function Home() {
         </div>
         
         {/* Call to Action */}
-        <div style={{
-          color: 'rgba(255, 255, 255, 0.45)',
-          fontFamily: 'Public Sans',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '1.2',
-          cursor: 'pointer'
-        }}>
-          <span style={{fontFamily: 'Public Sans, -apple-system, Roboto, Helvetica, sans-serif', fontWeight: '400', fontSize: '14px', color: 'rgba(255,255,255,0.45)'}}>see collections</span>
-        </div>
+
       </div>
       {/* Frame 7 - Updated with latest Figma specifications */}
       <div style={{
