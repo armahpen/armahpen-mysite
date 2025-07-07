@@ -214,25 +214,6 @@ export default function Contact() {
               >
                 ↗ X (Twitter)
               </a>
-              <a
-                href="https://linkedin.com/in/evans-armah"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: 'rgba(255, 255, 255, 0.9)',
-                  textDecoration: 'none',
-                  fontSize: '18px',
-                  fontWeight: '400',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '8px 0',
-                  transition: 'color 0.3s ease'
-                }}
-                className="social-link"
-              >
-                ↗ LinkedIn
-              </a>
             </div>
           </div>
         </div>
