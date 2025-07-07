@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experience Page Test</title>
+</head>
+<body>
+    <h1>Testing Experience Page Access</h1>
+    <p>If you can see this, try navigating to: <a href="/experience">Experience Page</a></p>
+    <script>
+        // Test if we can access the experience route
+        fetch('/experience')
+            .then(response => response.text())
+            .then(html => {
+                console.log('Experience route accessible:', html.includes('PROFESSIONAL EXPERIENCE'));
+            })
+            .catch(error => {
+                console.error('Error accessing experience route:', error);
+            });
+    </script>
+</body>
+</html>
