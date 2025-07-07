@@ -418,45 +418,12 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               lineHeight: '1.6'
             }}>
-              <p style={{margin: '0 0 8px 0'}}>evans@heavans.com</p>
+              <p style={{margin: '0 0 8px 0'}}>evansarmah30@gmail.com</p>
               <p style={{margin: '0 0 8px 0'}}>Available for freelance work</p>
             </div>
           </div>
 
-          {/* Social Links */}
-          <div style={{flex: '0 0 auto'}}>
-            <h4 style={{
-              fontFamily: 'DM Sans',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#FFF',
-              marginBottom: '16px',
-              margin: '0 0 16px 0'
-            }}>Follow Me</h4>
-            <div style={{display: 'flex', gap: '12px'}}>
-              <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontFamily: 'Public Sans',
-                fontSize: '14px',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}>Tw</a>
-              <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontFamily: 'Public Sans',
-                fontSize: '14px',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}>In</a>
-              <a href="#" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontFamily: 'Public Sans',
-                fontSize: '14px',
-                textDecoration: 'none',
-                fontWeight: '600'
-              }}>Fb</a>
-            </div>
-          </div>
+
         </div>
 
         {/* Copyright */}
