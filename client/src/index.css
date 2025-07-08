@@ -44,15 +44,19 @@ img {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;
+  right: 0;
+  width: 80vw;
+  max-width: 300px;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 1000;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding-top: 4rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .mobile-nav-overlay.active {
@@ -66,8 +70,31 @@ img {
   background: none;
   border: none;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.mobile-nav-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile overlay backdrop */
+.mobile-nav-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobile-nav-backdrop.active {
+  display: block;
 }
 
 /* Enhanced Mobile responsive utilities */

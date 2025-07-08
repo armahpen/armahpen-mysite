@@ -237,21 +237,17 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* Mobile Navigation Backdrop */}
+      <div 
+        className={`mobile-nav-backdrop ${mobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
       {/* Mobile Navigation Overlay */}
       <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}>
         <button 
           className="mobile-nav-close"
           onClick={() => setMobileMenuOpen(false)}
-          style={{
-            position: 'absolute',
-            top: '1rem',
-            right: '1rem',
-            background: 'none',
-            border: 'none',
-            color: 'white',
-            fontSize: '2rem',
-            cursor: 'pointer'
-          }}
         >
           ×
         </button>
@@ -259,43 +255,49 @@ export default function Home() {
         <Link href="/" onClick={() => setMobileMenuOpen(false)} style={{
           color: 'white',
           textDecoration: 'none',
-          fontSize: '1.5rem',
-          fontWeight: '500'
+          fontSize: '1.2rem',
+          fontWeight: '500',
+          padding: '0.75rem 0'
         }}>Home</Link>
         
         <Link href="/about" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'white',
+          color: 'rgba(255, 255, 255, 0.9)',
           textDecoration: 'none',
-          fontSize: '1.5rem',
-          fontWeight: '400'
+          fontSize: '1.2rem',
+          fontWeight: '400',
+          padding: '0.75rem 0'
         }}>About</Link>
         
         <Link href="/experience" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'white',
+          color: 'rgba(255, 255, 255, 0.9)',
           textDecoration: 'none',
-          fontSize: '1.5rem',
-          fontWeight: '400'
+          fontSize: '1.2rem',
+          fontWeight: '400',
+          padding: '0.75rem 0'
         }}>Experience</Link>
         
         <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'white',
+          color: 'rgba(255, 255, 255, 0.9)',
           textDecoration: 'none',
-          fontSize: '1.5rem',
-          fontWeight: '400'
+          fontSize: '1.2rem',
+          fontWeight: '400',
+          padding: '0.75rem 0'
         }}>Portfolio</Link>
         
         <Link href="/poetry" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'white',
+          color: 'rgba(255, 255, 255, 0.9)',
           textDecoration: 'none',
-          fontSize: '1.5rem',
-          fontWeight: '400'
+          fontSize: '1.2rem',
+          fontWeight: '400',
+          padding: '0.75rem 0'
         }}>Poetry</Link>
         
         <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'white',
+          color: 'rgba(255, 255, 255, 0.9)',
           textDecoration: 'none',
-          fontSize: '1.5rem',
-          fontWeight: '400'
+          fontSize: '1.2rem',
+          fontWeight: '400',
+          padding: '0.75rem 0'
         }}>Contact</Link>
       </div>
 
