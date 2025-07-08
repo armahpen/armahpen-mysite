@@ -266,26 +266,27 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  <div 
-                    style={{
-                      width: '120px',
-                      height: '80px',
-                      borderRadius: '8px',
-                      overflow: 'hidden',
-                      cursor: 'pointer',
-                      position: 'relative',
-                      transition: 'all 0.3s ease'
-                    }}
-                    className="preview-card"
-                    onClick={() => {
-                      if (project.title === 'My Rabbai') {
-                        window.open('https://myrabbai.pages.dev/rabbai', '_blank');
-                      } else if (project.title === 'Student Help CRM') {
-                        window.open('https://studenthelp-teacher.netlify.app/', '_blank');
-                      }
-                    }}
-                  >
-                    {project.title === 'My Rabbai' ? (
+                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.category === 'UI/UX') && (
+                    <div 
+                      style={{
+                        width: '120px',
+                        height: '80px',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        position: 'relative',
+                        transition: 'all 0.3s ease'
+                      }}
+                      className="preview-card"
+                      onClick={() => {
+                        if (project.title === 'My Rabbai') {
+                          window.open('https://myrabbai.pages.dev/rabbai', '_blank');
+                        } else if (project.title === 'Student Help CRM') {
+                          window.open('https://studenthelp-teacher.netlify.app/', '_blank');
+                        }
+                      }}
+                    >
+                      {project.title === 'My Rabbai' ? (
                       <>
                         <img 
                           src="/rabbai-preview.png"
@@ -358,8 +359,22 @@ export default function Portfolio() {
                           transition: 'transform 0.3s ease'
                         }}
                       />
-                    ) : null}
-                  </div>
+                    ) : project.category === 'UI/UX' ? (
+                      <div style={{
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '12px',
+                        color: 'rgba(255, 255, 255, 0.4)'
+                      }}>
+                        Preview
+                      </div>
+                      ) : null}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
