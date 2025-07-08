@@ -13,11 +13,11 @@ export default function Portfolio() {
       technologies: ['AI', 'React / HTML + Tailwind CSS', 'Python (FastAPI)']
     },
     {
-      title: 'LeadGen CRM',
-      description: 'B2B lead generation platform with contact status tracking, analytics, and export tools to help businesses convert leads more efficiently.',
+      title: 'Student Help CRM',
+      description: 'An intelligent recruitment and learning system that connects students, parents, and teachers—with online testing, AI teacher matching, and performance tracking.',
       category: 'CRMs',
       image: '/project-crm.jpg',
-      technologies: ['React / Tailwind CSS', 'Node.js / Express', 'MongoDB', 'Chart.js / REST API']
+      technologies: ['Next.js / Tailwind CSS', 'Python (FastAPI)', 'Firebase', 'AI Matching / Vector Search']
     },
     {
       title: 'DEMS CRM Systems',
@@ -25,6 +25,13 @@ export default function Portfolio() {
       category: 'CRMs',
       image: '/project-crm.jpg',
       technologies: ['HTML / CSS / JavaScript', 'PHP / MySQL', 'Prompt Engineering Modules', 'Firebase']
+    },
+    {
+      title: 'LeadGen CRM',
+      description: 'B2B lead generation platform with contact status tracking, analytics, and export tools to help businesses convert leads more efficiently.',
+      category: 'CRMs',
+      image: '/project-crm.jpg',
+      technologies: ['React / Tailwind CSS', 'Node.js / Express', 'MongoDB', 'Chart.js / REST API']
     },
     {
       title: 'Church CRM System',
@@ -39,13 +46,6 @@ export default function Portfolio() {
       category: 'CRMs',
       image: '/project-crm.jpg',
       technologies: ['React / Tailwind CSS', 'Node.js / Firebase Functions', 'MongoDB', 'AI API']
-    },
-    {
-      title: 'Student Help CRM',
-      description: 'An intelligent recruitment and learning system that connects students, parents, and teachers—with online testing, AI teacher matching, and performance tracking.',
-      category: 'CRMs',
-      image: '/project-crm.jpg',
-      technologies: ['Next.js / Tailwind CSS', 'Python (FastAPI)', 'Firebase', 'AI Matching / Vector Search']
     },
     {
       title: 'SaaS Landing Platform',
