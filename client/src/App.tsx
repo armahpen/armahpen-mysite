@@ -8,7 +8,6 @@ import About from "@/pages/about";
 import Evans from "@/pages/evans";
 import Experience from "@/pages/experience";
 import Contact from "@/pages/contact";
-import Collections from "@/pages/collections";
 import Portfolio from "@/pages/portfolio";
 import Poetry from "@/pages/poetry";
 import NotFound from "@/pages/not-found";
@@ -21,7 +20,6 @@ function Router() {
       <Route path="/evans" component={Evans} />
       <Route path="/experience" component={Experience} />
       <Route path="/contact" component={Contact} />
-      <Route path="/collections" component={Collections} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/poetry" component={Poetry} />
       <Route component={NotFound} />

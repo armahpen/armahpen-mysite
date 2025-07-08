@@ -176,15 +176,6 @@ export default function Home() {
               letterSpacing: '0.5px',
               cursor: 'pointer'
             }}>Experience</Link>
-            <Link href="/collections" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '14px',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>Collections</Link>
             <Link href="/contact" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
