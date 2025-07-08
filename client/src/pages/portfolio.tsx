@@ -399,7 +399,7 @@ export default function Portfolio() {
                     ) : project.category === 'Graphic Design' ? (
                       <>
                         <img 
-                          src="/uiux-designs-preview.png"
+                          src="/graphic-design-preview.png"
                           alt="Graphic Design Preview"
                           style={{
                             width: '100%',
