@@ -270,7 +270,7 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.category === 'UI/UX' || project.category === 'Graphic Design') && (
+                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.title === 'School CRM System' || project.category === 'UI/UX' || project.category === 'Graphic Design') && (
                     <div 
                       style={{
                         width: '120px',
@@ -287,6 +287,8 @@ export default function Portfolio() {
                           window.open('https://myrabbai.pages.dev/rabbai', '_blank');
                         } else if (project.title === 'Student Help CRM') {
                           window.open('https://studenthelp-teacher.netlify.app/', '_blank');
+                        } else if (project.title === 'School CRM System') {
+                          window.open('https://www.behance.net/gallery/183081607/School-database-site', '_blank');
                         } else if (project.category === 'UI/UX' || project.category === 'Graphic Design') {
                           window.open('https://www.behance.net/evansarmah/projects', '_blank');
                         }
@@ -365,6 +367,42 @@ export default function Portfolio() {
                           transition: 'transform 0.3s ease'
                         }}
                       />
+                    ) : project.title === 'School CRM System' ? (
+                      <>
+                        <div style={{
+                          width: '100%',
+                          height: '100%',
+                          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '10px',
+                          color: 'white',
+                          fontWeight: '500',
+                          textAlign: 'center',
+                          padding: '8px'
+                        }}>
+                          School Database Site
+                        </div>
+                        <div style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: 'rgba(0, 0, 0, 0.7)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          color: 'white',
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                          fontWeight: '500'
+                        }} className="preview-overlay">
+                          View Design
+                        </div>
+                      </>
                     ) : project.category === 'UI/UX' ? (
                       <>
                         <img 
