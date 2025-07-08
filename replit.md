@@ -113,6 +113,15 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
+- July 08, 2025: Created immersive dedicated Poetry page with nature and space themes
+  - Built interactive poetry showcase with 8 curated poems including "Being You", "The Coder's Journey", "In the Air", "I Live Again"
+  - Implemented dynamic nature/space theme switching based on poem content with animated gradients
+  - Added floating particle animations, mouse-following gradients, and glassmorphism effects
+  - Created auto-advancing poem display with manual navigation controls and progress indicators
+  - Integrated responsive design with beautiful typography combinations (Inter + Georgia)
+  - Updated portfolio preview card to navigate to dedicated /poetry route instead of external Behance
+  - Enhanced brand identity with "Heavans Haven" as portfolio title replacement for "Selected Work"
+
 - July 07, 2025: Redesigned landing page with p5aholic.me-inspired background and minimalist aesthetic
   - Removed previous background image and implemented animated WebGL-style background using grain and blur textures
   - Created interactive mouse-following gradient effects and subtle animated overlays

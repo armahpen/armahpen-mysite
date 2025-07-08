@@ -298,7 +298,9 @@ export default function Portfolio() {
                           window.open('https://www.behance.net/gallery/183081607/School-database-site', '_blank');
                         } else if (project.title === 'Ceding - My Saving & CRM App') {
                           window.open('https://www.behance.net/gallery/183088961/Ceding-My-Saving-CRM-App', '_blank');
-                        } else if (project.category === 'UI/UX' || project.category === 'Graphic Design' || project.category === 'Poetry') {
+                        } else if (project.category === 'Poetry') {
+                          window.location.href = '/poetry';
+                        } else if (project.category === 'UI/UX' || project.category === 'Graphic Design') {
                           window.open('https://www.behance.net/evansarmah/projects', '_blank');
                         }
                       }}
