@@ -71,11 +71,11 @@ export default function Portfolio() {
       technologies: ['Adobe Creative Suite', 'Figma', 'Illustrator', 'InDesign', 'Brand Strategy', 'Typography']
     },
     {
-      title: 'Digital Poetry Collection',
-      description: 'Interactive digital poetry platform with typography animations and ambient soundscapes.',
+      title: 'Poetry',
+      description: 'My poetry goes beyond the page—it\'s shaped into visual art, spoken word, and digital expression. From intimate performances to design-integrated poems, I use poetry to tell stories, challenge ideas, and connect with others on a deeper level.',
       category: 'Poetry',
       image: '/project-poetry.jpg',
-      technologies: ['React', 'CSS Animations', 'Web Audio API', 'GSAP']
+      technologies: ['Spoken Word Performances', 'Poetry-Art Hybrids', 'Social Media Poems', 'Zines & Digital Chapbooks']
     }
   ];
 
