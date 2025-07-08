@@ -193,7 +193,7 @@ export default function Portfolio() {
               marginBottom: '24px',
               letterSpacing: '-0.02em'
             }}>
-              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : selectedCategory === 'CRMs' ? 'Custom Platforms & CRM Systems I\'ve Built' : selectedCategory === 'UI/UX' ? 'UI/UX Designs' : selectedCategory === 'Graphic Design' ? 'Graphic Design Projects' : 'Selected Work'}
+              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : selectedCategory === 'CRMs' ? 'Custom Platforms & CRM Systems I\'ve Built' : selectedCategory === 'UI/UX' ? 'UI/UX Designs' : selectedCategory === 'Graphic Design' ? 'Graphic Design Projects' : 'Heavans Haven'}
             </h1>
             <p style={{
               fontSize: '18px',
