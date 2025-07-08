@@ -41,11 +41,12 @@ export default function Experience() {
           </Link>
 
           {/* Navigation Menu */}
-          <div style={{
+          <div className="nav-menu" style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '0.75rem',
             alignItems: 'center',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            justifyContent: 'center'
           }}>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{

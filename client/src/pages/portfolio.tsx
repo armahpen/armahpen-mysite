@@ -127,11 +127,12 @@ export default function Portfolio() {
             />
           </Link>
           
-          <div style={{
+          <div className="nav-menu" style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '0.75rem',
             alignItems: 'center',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            justifyContent: 'center'
           }}>
             <Link href="/" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',

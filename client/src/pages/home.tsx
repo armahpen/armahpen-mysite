@@ -144,11 +144,12 @@ export default function Home() {
           </Link>
 
           {/* Navigation Menu - Mobile Responsive */}
-          <div style={{
+          <div className="nav-menu" style={{
             display: 'flex',
-            gap: '1rem',
+            gap: '0.75rem',
             alignItems: 'center',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            justifyContent: 'center'
           }}>
             <Link href="/" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.9)',
