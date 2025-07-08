@@ -372,20 +372,7 @@ export default function Portfolio() {
                           transition: 'transform 0.3s ease'
                         }}
                       />
-                    ) : (
-                      <div style={{
-                        width: '100%',
-                        height: '100%',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '12px',
-                        color: 'rgba(255, 255, 255, 0.4)'
-                      }}>
-                        Preview
-                      </div>
-                    )}
+                    ) : null}
                   </div>
                 </div>
               </div>
