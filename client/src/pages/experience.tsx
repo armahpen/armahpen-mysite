@@ -23,7 +23,7 @@ export default function Experience() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: 'clamp(1rem, 2.5vw, 1rem) clamp(1rem, 4vw, 2.5rem)',
+          padding: '1rem',
           maxWidth: '1200px',
           margin: '0 auto'
         }}>

@@ -126,7 +126,7 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: 'clamp(1rem, 2.5vw, 2.5rem) clamp(1rem, 4vw, 2.5rem)',
+          padding: '1rem',
           maxWidth: '1400px',
           margin: '0 auto'
         }}>
@@ -146,7 +146,7 @@ export default function Home() {
           {/* Navigation Menu - Mobile Responsive */}
           <div style={{
             display: 'flex',
-            gap: 'clamp(1rem, 3vw, 2rem)',
+            gap: '1rem',
             alignItems: 'center',
             flexWrap: 'wrap'
           }}>
@@ -154,7 +154,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.9)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
+              fontSize: '0.85rem',
               fontWeight: '500',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -163,7 +163,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
+              fontSize: '0.85rem',
               fontWeight: '400',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -172,7 +172,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
+              fontSize: '0.85rem',
               fontWeight: '400',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -181,7 +181,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
+              fontSize: '0.85rem',
               fontWeight: '400',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -203,12 +203,12 @@ export default function Home() {
 
       {/* Main Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen" style={{
-        padding: 'clamp(2rem, 5vh, 5rem) clamp(1rem, 5vw, 2rem)'
+        padding: '2rem 1rem'
       }}>
         
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto" style={{
-          marginTop: 'clamp(1rem, 5vh, 5rem)'
+          marginTop: '2rem'
         }}>
           <h1 style={{
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
@@ -235,7 +235,7 @@ export default function Home() {
           
           <div style={{
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-            fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
+            fontSize: '1rem',
             fontWeight: '400',
             color: 'rgba(255, 255, 255, 0.6)',
             lineHeight: '1.8',
@@ -249,7 +249,7 @@ export default function Home() {
           {/* CTA Button */}
           <Link href="/portfolio" style={{
             display: 'inline-block',
-            padding: 'clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem)',
+            padding: '1rem 2rem',
             background: 'rgba(255, 255, 255, 0.1)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
             borderRadius: '8px',

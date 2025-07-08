@@ -111,7 +111,7 @@ export default function Portfolio() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(1rem, 4vw, 2.5rem)',
+          padding: '1rem',
           maxWidth: '1400px',
           margin: '0 auto'
         }}>
@@ -179,8 +179,8 @@ export default function Portfolio() {
         {/* Left Content Area */}
         <div style={{
           flex: '1',
-          padding: '80px 60px',
-          maxWidth: '60%'
+          padding: '2rem 1rem',
+          maxWidth: '100%'
         }}>
           {/* Header */}
           <div style={{ marginBottom: '60px' }}>
@@ -210,7 +210,7 @@ export default function Portfolio() {
                 ? 'As a UI/UX designer, I focus on creating clean, intuitive, and user-centered interfaces. From research to wireframes to polished visuals, my work is grounded in solving real user problems while delivering a seamless digital experience. I\'ve designed for web apps, dashboards, mobile-first platforms, and AI tools—always balancing function with form.'
                 : selectedCategory === 'Graphic Design'
                 ? 'My graphic design work spans brand identity, marketing materials, and visual communications. I create cohesive visual systems that tell compelling stories and communicate brand values effectively. From logo design to complete brand guidelines, I focus on creating memorable and impactful visual experiences that resonate with target audiences.'
-                : 'A collection of my work across different domains, showcasing innovative solutions and creative approaches to modern design and development challenges.'
+                : ''
               }
             </p>
           </div>
