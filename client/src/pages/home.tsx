@@ -6,6 +6,7 @@ import blurTexture from '@assets/blur_1751928350012.webp';
 export default function Home() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [time, setTime] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -143,7 +144,23 @@ export default function Home() {
             />
           </Link>
 
-          {/* Navigation Menu - Mobile Responsive */}
+          {/* Mobile Menu Button */}
+          <button 
+            className="mobile-menu-button"
+            onClick={() => setMobileMenuOpen(true)}
+            style={{
+              display: 'none',
+              background: 'none',
+              border: 'none',
+              color: 'white',
+              fontSize: '1.5rem',
+              cursor: 'pointer'
+            }}
+          >
+            ☰
+          </button>
+
+          {/* Desktop Navigation Menu */}
           <div className="nav-menu" style={{
             display: 'flex',
             gap: '0.75rem',
@@ -219,6 +236,68 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Navigation Overlay */}
+      <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}>
+        <button 
+          className="mobile-nav-close"
+          onClick={() => setMobileMenuOpen(false)}
+          style={{
+            position: 'absolute',
+            top: '1rem',
+            right: '1rem',
+            background: 'none',
+            border: 'none',
+            color: 'white',
+            fontSize: '2rem',
+            cursor: 'pointer'
+          }}
+        >
+          ×
+        </button>
+        
+        <Link href="/" onClick={() => setMobileMenuOpen(false)} style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.5rem',
+          fontWeight: '500'
+        }}>Home</Link>
+        
+        <Link href="/about" onClick={() => setMobileMenuOpen(false)} style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.5rem',
+          fontWeight: '400'
+        }}>About</Link>
+        
+        <Link href="/experience" onClick={() => setMobileMenuOpen(false)} style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.5rem',
+          fontWeight: '400'
+        }}>Experience</Link>
+        
+        <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.5rem',
+          fontWeight: '400'
+        }}>Portfolio</Link>
+        
+        <Link href="/poetry" onClick={() => setMobileMenuOpen(false)} style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.5rem',
+          fontWeight: '400'
+        }}>Poetry</Link>
+        
+        <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{
+          color: 'white',
+          textDecoration: 'none',
+          fontSize: '1.5rem',
+          fontWeight: '400'
+        }}>Contact</Link>
+      </div>
 
       {/* Main Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen" style={{

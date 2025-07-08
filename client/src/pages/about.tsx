@@ -1,6 +1,8 @@
 import { Link } from 'wouter';
+import { useState } from 'react';
 
 export default function About() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div style={{
       width: '100vw',
@@ -42,7 +44,15 @@ export default function About() {
             />
           </Link>
 
-          {/* Navigation Menu */}
+          {/* Mobile Menu Button */}
+          <button 
+            className="mobile-menu-button"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            ☰
+          </button>
+
+          {/* Desktop Navigation Menu */}
           <div className="nav-menu" style={{
             display: 'flex',
             gap: '0.75rem',
@@ -118,6 +128,17 @@ export default function About() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Navigation Overlay */}
+      <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}>
+        <button className="mobile-nav-close" onClick={() => setMobileMenuOpen(false)}>×</button>
+        <Link href="/" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.5rem'}}>Home</Link>
+        <Link href="/about" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.5rem', fontWeight: '500'}}>About</Link>
+        <Link href="/experience" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.5rem'}}>Experience</Link>
+        <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.5rem'}}>Portfolio</Link>
+        <Link href="/poetry" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.5rem'}}>Poetry</Link>
+        <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.5rem'}}>Contact</Link>
+      </div>
 
       {/* Main Content Split Layout */}
       <div className="hidden md:flex" style={{

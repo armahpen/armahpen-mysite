@@ -29,6 +29,47 @@ img {
   height: auto;
 }
 
+/* Mobile Navigation Hamburger */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-nav-overlay.active {
+  display: flex;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 /* Enhanced Mobile responsive utilities */
 @media (max-width: 768px) {
   .container {
@@ -36,8 +77,13 @@ img {
     padding-right: 1rem !important;
   }
   
-  .nav-link {
-    font-size: 0.85rem !important;
+  /* Show mobile menu button, hide desktop nav */
+  .mobile-menu-button {
+    display: block !important;
+  }
+  
+  .nav-menu {
+    display: none !important;
   }
   
   .mobile-stack {
@@ -51,28 +97,6 @@ img {
   
   .mobile-text-center {
     text-align: center !important;
-  }
-  
-  /* Navigation responsive */
-  nav > div {
-    padding: 0.75rem !important;
-    flex-wrap: wrap !important;
-    gap: 0.75rem !important;
-    justify-content: center !important;
-  }
-  
-  /* Navigation links mobile */
-  nav a, nav span.menu-button {
-    font-size: 0.8rem !important;
-    padding: 0.5rem 0.75rem !important;
-    white-space: nowrap !important;
-    display: inline-block !important;
-  }
-  
-  /* Navigation container mobile */
-  nav {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
   }
   
   /* Content areas mobile */
@@ -111,23 +135,8 @@ img {
     margin: 0.5rem !important;
   }
   
-  /* Extra small mobile adjustments */
-  nav > div {
-    padding: 0.5rem !important;
-    gap: 0.5rem !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-  }
-  
   .hero-section {
     padding: 1.5rem 0.75rem !important;
-  }
-  
-  /* Navigation gap for small screens */
-  nav a, nav span.menu-button {
-    font-size: 0.75rem !important;
-    padding: 0.4rem 0.6rem !important;
-    margin: 0.1rem !important;
   }
 }
 
@@ -138,22 +147,8 @@ img {
     overflow-x: hidden !important;
   }
   
-  nav > div {
-    padding: 0.4rem !important;
-    gap: 0.3rem !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-  }
-  
   .hero-section {
     padding: 1rem 0.5rem !important;
-  }
-  
-  /* Very small mobile navigation */
-  nav a, nav span.menu-button {
-    font-size: 0.7rem !important;
-    padding: 0.3rem 0.5rem !important;
-    margin: 0.1rem !important;
   }
   
   h1 {
