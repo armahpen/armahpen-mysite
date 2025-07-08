@@ -55,13 +55,7 @@ export default function Portfolio() {
       image: '/project-banking.jpg',
       technologies: ['Figma', 'Principle', 'Sketch', 'InVision']
     },
-    {
-      title: '3D Product Showcase',
-      description: 'Interactive 3D product visualization with smooth animations and realistic lighting.',
-      category: '3D and Motion Design',
-      image: '/project-3d.jpg',
-      technologies: ['Three.js', 'Blender', 'WebGL', 'GSAP']
-    },
+
     {
       title: 'Brand Identity System',
       description: 'Complete visual identity design for modern tech startup including logo, typography, and guidelines.',
@@ -82,7 +76,6 @@ export default function Portfolio() {
     'My Rabbai',
     'CRMs',
     'UI/UX',
-    '3D and Motion Design',
     'Graphic Design',
     'Poetry'
   ];
