@@ -47,13 +47,7 @@ export default function Portfolio() {
       image: '/project-crm.jpg',
       technologies: ['React / Tailwind CSS', 'Node.js / Firebase Functions', 'MongoDB', 'AI API']
     },
-    {
-      title: 'SaaS Landing Platform',
-      description: 'High-converting landing page for B2B software solutions with interactive demonstrations.',
-      category: 'Landing Pages',
-      image: '/project-landing.jpg',
-      technologies: ['Next.js', 'Tailwind', 'Framer Motion', 'Vercel']
-    },
+
     {
       title: 'Mobile Banking Interface',
       description: 'Intuitive mobile banking app design focused on accessibility and user experience.',
@@ -87,7 +81,6 @@ export default function Portfolio() {
   const categories = [
     'My Rabbai',
     'CRMs',
-    'Landing Pages',
     'UI/UX',
     '3D and Motion Design',
     'Graphic Design',
