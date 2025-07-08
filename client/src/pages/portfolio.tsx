@@ -49,11 +49,11 @@ export default function Portfolio() {
     },
 
     {
-      title: 'Mobile Banking Interface',
-      description: 'Intuitive mobile banking app design focused on accessibility and user experience.',
+      title: 'UI/UX Design Portfolio',
+      description: 'A collection of purpose-driven, responsive, and user-friendly interfaces built to improve usability, enhance workflows, and drive engagement across platforms.',
       category: 'UI/UX',
       image: '/project-banking.jpg',
-      technologies: ['Figma', 'Principle', 'Sketch', 'InVision']
+      technologies: ['Figma / Adobe XD', 'HTML + Tailwind CSS', 'React / Next.js', 'Framer / Prototyping', 'User Research / Wireframing']
     },
 
     {
@@ -199,6 +199,8 @@ export default function Portfolio() {
                 ? 'Rabbai is an AI-powered platform I co-created with my brother, inspired by his idea to make scripture more personal and relatable. Motivated by our shared passion for faith and technology, we built Rabbai to read the Bible in the voice of your favorite man of God—making daily devotion more engaging, comforting, and spiritually enriching.'
                 : selectedCategory === 'CRMs'
                 ? 'I\'ve built comprehensive CRM solutions for diverse industries—from lead generation platforms for B2B companies to specialized systems for churches, schools, and educational services. Each system is tailored to unique business needs with AI integration, automated communication, and smart analytics.'
+                : selectedCategory === 'UI/UX'
+                ? 'As a UI/UX designer, I focus on creating clean, intuitive, and user-centered interfaces. From research to wireframes to polished visuals, my work is grounded in solving real user problems while delivering a seamless digital experience. I\'ve designed for web apps, dashboards, mobile-first platforms, and AI tools—always balancing function with form.'
                 : 'A collection of my work across different domains, showcasing innovative solutions and creative approaches to modern design and development challenges.'
               }
             </p>
