@@ -2,6 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile-first responsive design */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem !important;
+  }
+  
+  .mobile-stack {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-sm-padding {
+    padding: 0.5rem !important;
+  }
+  
+  .mobile-sm-margin {
+    margin: 0.5rem !important;
+  }
+}
+
 /* Text Animation Keyframes */
 @keyframes fadeInUp {
   from {

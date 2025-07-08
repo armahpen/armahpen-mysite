@@ -111,7 +111,7 @@ export default function Portfolio() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '20px 40px',
+          padding: 'clamp(1rem, 2.5vw, 1.25rem) clamp(1rem, 4vw, 2.5rem)',
           maxWidth: '1400px',
           margin: '0 auto'
         }}>

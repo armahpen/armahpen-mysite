@@ -126,7 +126,7 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '20px 40px',
+          padding: 'clamp(1rem, 2.5vw, 2.5rem) clamp(1rem, 4vw, 2.5rem)',
           maxWidth: '1400px',
           margin: '0 auto'
         }}>
@@ -143,17 +143,18 @@ export default function Home() {
             />
           </Link>
 
-          {/* Navigation Menu - Desktop */}
-          <div className="hidden md:flex" style={{
+          {/* Navigation Menu - Mobile Responsive */}
+          <div style={{
             display: 'flex',
-            gap: '32px',
-            alignItems: 'center'
+            gap: 'clamp(1rem, 3vw, 2rem)',
+            alignItems: 'center',
+            flexWrap: 'wrap'
           }}>
             <Link href="/" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.9)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '14px',
+              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
               fontWeight: '500',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -162,7 +163,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '14px',
+              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
               fontWeight: '400',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -171,7 +172,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '14px',
+              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
               fontWeight: '400',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -180,7 +181,7 @@ export default function Home() {
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '14px',
+              fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
               fontWeight: '400',
               letterSpacing: '0.5px',
               cursor: 'pointer'
@@ -201,10 +202,14 @@ export default function Home() {
       </nav>
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-8">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen" style={{
+        padding: 'clamp(2rem, 5vh, 5rem) clamp(1rem, 5vw, 2rem)'
+      }}>
         
         {/* Hero Section */}
-        <div className="text-center max-w-4xl mx-auto mt-20">
+        <div className="text-center max-w-4xl mx-auto" style={{
+          marginTop: 'clamp(1rem, 5vh, 5rem)'
+        }}>
           <h1 style={{
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
             fontSize: 'clamp(48px, 8vw, 120px)',
@@ -230,7 +235,7 @@ export default function Home() {
           
           <div style={{
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-            fontSize: '16px',
+            fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
             fontWeight: '400',
             color: 'rgba(255, 255, 255, 0.6)',
             lineHeight: '1.8',
@@ -244,7 +249,7 @@ export default function Home() {
           {/* CTA Button */}
           <Link href="/portfolio" style={{
             display: 'inline-block',
-            padding: '16px 32px',
+            padding: 'clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2rem)',
             background: 'rgba(255, 255, 255, 0.1)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
             borderRadius: '8px',

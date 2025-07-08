@@ -184,7 +184,7 @@ export default function Poetry() {
       }}>
         {/* Header */}
         <header style={{
-          padding: '2rem',
+          padding: '1rem 2rem',
           borderBottom: '1px solid #e5e5e5',
           background: 'white'
         }}>
@@ -193,7 +193,9 @@ export default function Poetry() {
             margin: '0 auto',
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'center'
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '1rem'
           }}>
             <button
               onClick={() => setSelectedPoem(null)}
@@ -238,14 +240,15 @@ export default function Poetry() {
         <main style={{
           maxWidth: '800px',
           margin: '0 auto',
-          padding: '4rem 2rem'
+          padding: '2rem 1rem'
         }}>
-          <div style={{ marginBottom: '3rem' }}>
+          <div style={{ marginBottom: '2rem' }}>
             <h1 style={{
-              fontSize: '2.5rem',
+              fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
               fontWeight: '300',
               margin: '0 0 0.5rem 0',
-              color: '#000'
+              color: '#000',
+              lineHeight: '1.2'
             }}>
               {selectedPoem.title}
             </h1>
@@ -259,7 +262,7 @@ export default function Poetry() {
           </div>
 
           <div style={{
-            fontSize: '1.1rem',
+            fontSize: 'clamp(1rem, 2.5vw, 1.1rem)',
             lineHeight: '1.8',
             color: '#333',
             fontFamily: 'Georgia, serif'
@@ -309,7 +312,7 @@ export default function Poetry() {
 
       {/* Header */}
       <header style={{
-        padding: '2rem',
+        padding: '1rem 2rem',
         background: 'white',
         borderBottom: '1px solid #e5e5e5'
       }}>
@@ -318,7 +321,9 @@ export default function Poetry() {
           margin: '0 auto',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1rem'
         }}>
           <Link href="/" style={{
             fontSize: '1rem',
@@ -331,7 +336,8 @@ export default function Poetry() {
           
           <nav style={{
             display: 'flex',
-            gap: '2rem'
+            gap: '1.5rem',
+            flexWrap: 'wrap'
           }}>
             <Link href="/portfolio" style={{
               color: '#666',
@@ -356,24 +362,27 @@ export default function Poetry() {
       <main style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: '4rem 2rem'
+        padding: '2rem 1rem'
       }}>
         {/* Footer Credit */}
         <div style={{
           textAlign: 'center',
           marginBottom: '3rem',
           fontSize: '0.85rem',
-          color: '#999'
+          color: '#999',
+          lineHeight: '1.4',
+          maxWidth: '600px',
+          margin: '0 auto 3rem auto'
         }}>
-          Designed and coded by HeaVans © 2025
+          All poems are the original work of Evans Armah (Heavans) © 2025. Reproduction or use without permission is prohibited.
         </div>
 
         {/* Poetry Section Header */}
         <div style={{
-          marginBottom: '3rem'
+          marginBottom: '2rem'
         }}>
           <h1 style={{
-            fontSize: '2rem',
+            fontSize: 'clamp(1.5rem, 4vw, 2rem)',
             fontWeight: '300',
             margin: '0 0 1rem 0',
             color: '#000'
@@ -381,9 +390,9 @@ export default function Poetry() {
             Poetry
           </h1>
           <div style={{
-            fontSize: '1.25rem',
+            fontSize: 'clamp(1rem, 3vw, 1.25rem)',
             color: '#666',
-            marginBottom: '2rem'
+            marginBottom: '1.5rem'
           }}>
             ##### {poems.length}
           </div>
@@ -391,7 +400,7 @@ export default function Poetry() {
             border: 'none',
             height: '1px',
             background: '#e5e5e5',
-            margin: '2rem 0'
+            margin: '1.5rem 0'
           }} />
         </div>
 
@@ -406,13 +415,13 @@ export default function Poetry() {
               key={poem.id}
               onClick={() => setSelectedPoem(poem)}
               style={{
-                padding: '1.5rem 0',
+                padding: '1rem 0',
                 borderBottom: '1px solid #f0f0f0',
                 cursor: 'pointer',
                 transition: 'background-color 0.2s ease',
                 display: 'flex',
                 alignItems: 'flex-start',
-                gap: '1rem'
+                gap: '0.75rem'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#f8f8f8';
@@ -431,7 +440,7 @@ export default function Poetry() {
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{
-                  fontSize: '1rem',
+                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                   fontWeight: '600',
                   color: '#000',
                   marginBottom: '0.25rem'
@@ -439,14 +448,14 @@ export default function Poetry() {
                   {poem.title}
                 </div>
                 <div style={{
-                  fontSize: '0.85rem',
+                  fontSize: 'clamp(0.8rem, 2vw, 0.85rem)',
                   color: '#666',
                   marginBottom: '0.5rem'
                 }}>
                   {poem.category}
                 </div>
                 <div style={{
-                  fontSize: '0.85rem',
+                  fontSize: 'clamp(0.8rem, 2vw, 0.85rem)',
                   color: '#999',
                   lineHeight: '1.4'
                 }}>

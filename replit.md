@@ -113,6 +113,15 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
+- July 08, 2025: Made entire site mobile-friendly with responsive design
+  - Updated poetry page copyright to "All poems are the original work of Evans Armah (Heavans) © 2025. Reproduction or use without permission is prohibited."
+  - Added back arrow icon (SVG chevron-left) to poetry detail pages for better navigation
+  - Implemented comprehensive mobile responsiveness across all pages using clamp() for fluid typography and spacing
+  - Added mobile-first CSS utilities in index.css for responsive containers, navigation, and layout
+  - Updated all navigation paddings and font sizes to scale smoothly from mobile to desktop
+  - Enhanced hero section, headers, and content areas with responsive padding and margin values
+  - All 10 poems updated with authentic original content by Evans Armah covering spirituality, technology, friendship, motivation
+
 - July 08, 2025: Updated Poetry page with itssharl.ee-inspired minimalist design
   - Replaced immersive space/nature theme with clean, minimal aesthetic matching itssharl.ee/work
   - Implemented "Materializing verses..." loading animation with fade effect
