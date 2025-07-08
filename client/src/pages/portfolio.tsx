@@ -47,6 +47,13 @@ export default function Portfolio() {
       image: '/project-crm.jpg',
       technologies: ['Vue.js / Tailwind', 'Firebase / Cloud Firestore', 'Twilio SMS API / WhatsApp Cloud API', 'Python (FastAPI)']
     },
+    {
+      title: 'Ceding - My Saving & CRM App',
+      description: 'A modern savings app with integrated CRM tools—designed to help users stay on track while giving admins powerful tools to support, manage, and scale saving communities.',
+      category: 'CRMs',
+      image: '/project-crm.jpg',
+      technologies: ['Figma (UI/UX Design)', 'React Native (Prototype)', 'Firebase / Firestore', 'CRM Dashboard / Goal Tracking']
+    },
 
     {
       title: 'UI/UX Design Portfolio',
