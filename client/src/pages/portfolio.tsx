@@ -57,11 +57,11 @@ export default function Portfolio() {
     },
 
     {
-      title: 'Brand Identity System',
-      description: 'Complete visual identity design for modern tech startup including logo, typography, and guidelines.',
+      title: 'Brand Identity & Visual Design',
+      description: 'Complete visual identity systems, marketing materials, and brand communications designed to create memorable and impactful brand experiences across all touchpoints.',
       category: 'Graphic Design',
       image: '/project-branding.jpg',
-      technologies: ['Adobe CC', 'Figma', 'Illustrator', 'InDesign']
+      technologies: ['Adobe Creative Suite', 'Figma', 'Illustrator', 'InDesign', 'Brand Strategy', 'Typography']
     },
     {
       title: 'Digital Poetry Collection',
@@ -186,7 +186,7 @@ export default function Portfolio() {
               marginBottom: '24px',
               letterSpacing: '-0.02em'
             }}>
-              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : selectedCategory === 'CRMs' ? 'Custom Platforms & CRM Systems I\'ve Built' : selectedCategory === 'UI/UX' ? 'UI/UX Designs' : 'Selected Work'}
+              {selectedCategory === 'My Rabbai' ? 'My Rabbai' : selectedCategory === 'CRMs' ? 'Custom Platforms & CRM Systems I\'ve Built' : selectedCategory === 'UI/UX' ? 'UI/UX Designs' : selectedCategory === 'Graphic Design' ? 'Graphic Design Projects' : 'Selected Work'}
             </h1>
             <p style={{
               fontSize: '18px',
@@ -201,6 +201,8 @@ export default function Portfolio() {
                 ? 'I\'ve built comprehensive CRM solutions for diverse industries—from lead generation platforms for B2B companies to specialized systems for churches, schools, and educational services. Each system is tailored to unique business needs with AI integration, automated communication, and smart analytics.'
                 : selectedCategory === 'UI/UX'
                 ? 'As a UI/UX designer, I focus on creating clean, intuitive, and user-centered interfaces. From research to wireframes to polished visuals, my work is grounded in solving real user problems while delivering a seamless digital experience. I\'ve designed for web apps, dashboards, mobile-first platforms, and AI tools—always balancing function with form.'
+                : selectedCategory === 'Graphic Design'
+                ? 'My graphic design work spans brand identity, marketing materials, and visual communications. I create cohesive visual systems that tell compelling stories and communicate brand values effectively. From logo design to complete brand guidelines, I focus on creating memorable and impactful visual experiences that resonate with target audiences.'
                 : 'A collection of my work across different domains, showcasing innovative solutions and creative approaches to modern design and development challenges.'
               }
             </p>
@@ -268,7 +270,7 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.category === 'UI/UX') && (
+                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.category === 'UI/UX' || project.category === 'Graphic Design') && (
                     <div 
                       style={{
                         width: '120px',
@@ -285,7 +287,7 @@ export default function Portfolio() {
                           window.open('https://myrabbai.pages.dev/rabbai', '_blank');
                         } else if (project.title === 'Student Help CRM') {
                           window.open('https://studenthelp-teacher.netlify.app/', '_blank');
-                        } else if (project.category === 'UI/UX') {
+                        } else if (project.category === 'UI/UX' || project.category === 'Graphic Design') {
                           window.open('https://www.behance.net/evansarmah/projects', '_blank');
                         }
                       }}
@@ -368,6 +370,37 @@ export default function Portfolio() {
                         <img 
                           src="/uiux-designs-preview.png"
                           alt="UI/UX Designs Preview"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.3s ease'
+                          }}
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: 'rgba(0, 0, 0, 0.7)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          color: 'white',
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                          fontWeight: '500'
+                        }} className="preview-overlay">
+                          View Portfolio
+                        </div>
+                      </>
+                    ) : project.category === 'Graphic Design' ? (
+                      <>
+                        <img 
+                          src="/uiux-designs-preview.png"
+                          alt="Graphic Design Preview"
                           style={{
                             width: '100%',
                             height: '100%',
