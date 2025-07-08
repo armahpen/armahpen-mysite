@@ -177,6 +177,24 @@ export default function Home() {
               letterSpacing: '0.5px',
               cursor: 'pointer'
             }}>Experience</Link>
+            <Link href="/portfolio" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '0.85rem',
+              fontWeight: '400',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>Portfolio</Link>
+            <Link href="/poetry" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+              fontSize: '0.85rem',
+              fontWeight: '400',
+              letterSpacing: '0.5px',
+              cursor: 'pointer'
+            }}>Poetry</Link>
             <Link href="/contact" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',

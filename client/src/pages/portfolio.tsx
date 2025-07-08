@@ -127,10 +127,11 @@ export default function Portfolio() {
             />
           </Link>
           
-          <div className="hidden md:flex" style={{
+          <div style={{
             display: 'flex',
-            gap: '32px',
-            alignItems: 'center'
+            gap: '1rem',
+            alignItems: 'center',
+            flexWrap: 'wrap'
           }}>
             <Link href="/" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',
@@ -160,6 +161,13 @@ export default function Portfolio() {
               fontWeight: '500',
               letterSpacing: '0.5px'
             }}>Portfolio</Link>
+            <Link href="/poetry" className="nav-link" style={{
+              color: 'rgba(255, 255, 255, 0.7)',
+              textDecoration: 'none',
+              fontSize: '14px',
+              fontWeight: '400',
+              letterSpacing: '0.5px'
+            }}>Poetry</Link>
             <Link href="/contact" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',

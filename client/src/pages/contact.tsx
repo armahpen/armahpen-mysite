@@ -40,11 +40,12 @@ export default function Contact() {
             />
           </Link>
 
-          {/* Navigation Menu - Desktop */}
-          <div className="hidden md:flex" style={{
+          {/* Navigation Menu */}
+          <div style={{
             display: 'flex',
-            gap: '32px',
-            alignItems: 'center'
+            gap: '1rem',
+            alignItems: 'center',
+            flexWrap: 'wrap'
           }}>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{
@@ -69,6 +70,22 @@ export default function Contact() {
                 fontWeight: '400',
                 cursor: 'pointer'
               }}>Experience</span>
+            </Link>
+            <Link href="/portfolio" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Portfolio</span>
+            </Link>
+            <Link href="/poetry" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Poetry</span>
             </Link>
             <Link href="/contact" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{
