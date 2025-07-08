@@ -295,7 +295,7 @@ export default function Portfolio() {
                       if (project.title === 'My Rabbai') {
                         window.open('https://myrabbai.pages.dev/rabbai', '_blank');
                       } else if (project.title === 'Student Help CRM') {
-                        window.open('https://teachers.studenthelp.cloud/', '_blank');
+                        window.open('https://studenthelp-teacher.netlify.app/', '_blank');
                       }
                     }}
                   >
