@@ -16,179 +16,151 @@ const poems: Poem[] = [
     excerpt: "Being you is different, No one is perfect, Simply you, no effects...",
     category: "Self-Reflection",
     content: [
-      "Being you is different,",
+      "Being you is different",
       "No one is perfect",
       "Simply you, no effects",
       "Show dem you reflect",
-      "",
-      "Shun the crowd,",
-      "Don't dim your light to shine theirs",
-      "Be loud,",
-      "Express yourself with no affairs",
-      "",
-      "Being you is the best gift you can give yourself",
-      "Don't change for anybody else",
-      "Because you are perfect just the way you are",
-      "And that's your superstar"
+      "Show dem respect but be no pet"
     ]
   },
   {
     id: 2,
     title: "The Coder's Journey",
-    excerpt: "Lines of code dance across the screen, Each function a story...",
+    excerpt: "Coding can be quite demanding, Errors here and there are commanding...",
     category: "Technology",
     content: [
-      "Lines of code dance across the screen,",
-      "Each function a story, each variable a dream",
-      "In the silence of midnight debugging,",
-      "We build tomorrow's digital scene",
-      "",
-      "Syntax errors teach us patience,",
-      "Stack overflow guides our way",
-      "From hello world to complex systems,",
-      "We code through night and day",
-      "",
-      "In every bug lies a lesson,",
-      "In every feature, growth",
-      "We are the architects of the future,",
-      "Bound by our creative oath"
+      "Coding can be quite demanding",
+      "Errors here and there are commanding",
+      "But once you debug and get it right",
+      "The feeling is truly out of sight",
+      "For coders, it's a constant delight"
     ]
   },
   {
     id: 3,
     title: "In the Air",
-    excerpt: "There's something in the air tonight, A whisper of change...",
-    category: "Inspiration",
+    excerpt: "In the air, a pulsating vibe, we ride, Harmonic waves, side by side...",
+    category: "Music & Connection",
     content: [
-      "There's something in the air tonight,",
-      "A whisper of change, a hint of light",
-      "The universe conspires in mysterious ways,",
-      "To bring magic to our ordinary days",
-      "",
-      "Feel the energy shifting around,",
-      "Listen to that distant sound",
-      "Of dreams taking flight,",
-      "Of everything turning out right",
-      "",
-      "Trust the process, embrace the unknown,",
-      "For in the air, new seeds are sown",
-      "And what we cannot yet see,",
-      "Will soon set our spirits free"
+      "In the air, a pulsating vibe, we ride,",
+      "Harmonic waves, side by side.",
+      "Through the rhythm, souls collide,",
+      "A dance of energy, amplified.",
+      "In this space, our hearts reside,",
+      "United by the beat, we're sanctified"
     ]
   },
   {
     id: 4,
     title: "I Live Again",
-    excerpt: "From ashes of yesterday's doubt, I rise with renewed spirit...",
-    category: "Resilience",
+    excerpt: "I live, I die, I live again, His loss became my gain...",
+    category: "Spiritual",
     content: [
-      "From ashes of yesterday's doubt,",
-      "I rise with renewed spirit",
-      "The phoenix in my soul,",
-      "Has learned to never limit",
+      "I live",
+      "I die",
+      "I live again",
+      "His loss became my gain",
+      "On the cross He endured my pain",
       "",
-      "Each sunrise brings new hope,",
-      "Each breath, a chance to grow",
-      "I've walked through valleys dark,",
-      "But now my light can show",
-      "",
-      "I live again with purpose,",
-      "I love again with truth",
-      "The journey that once broke me,",
-      "Has given me my proof",
-      "",
-      "That we are more resilient,",
-      "Than we dare to believe",
-      "And in our greatest falling,",
-      "We learn how to achieve"
+      "I live",
+      "I die", 
+      "I live again",
+      "'Cause death He overcame"
     ]
   },
   {
     id: 5,
     title: "The Bond",
-    excerpt: "In silence, we understand, What words could never say...",
-    category: "Connection",
+    excerpt: "Together we laugh, sometimes we stumble, A group of friends, a perfect jumble...",
+    category: "Friendship",
     content: [
-      "In silence, we understand,",
-      "What words could never say",
-      "A connection transcending language,",
-      "Growing stronger every day",
-      "",
-      "Through laughter and through tears,",
-      "We've weathered every storm",
-      "The bond between two souls,",
-      "Keeps our hearts forever warm",
-      "",
-      "Distance cannot break us,",
-      "Time cannot erase",
-      "The memories we've created,",
-      "The love that time can't chase"
+      "Together we laugh, sometimes we stumble,",
+      "A group of friends, a perfect jumble.",
+      "In silly moments, our words may fumble,",
+      "But in our hearts, love's never humble.",
+      "Through thick and thin, we stand as one,",
+      "A friendship forged, never undone."
     ]
   },
   {
     id: 6,
     title: "Spoken Drive",
-    excerpt: "Words have power to transform, To lift the fallen spirit high...",
-    category: "Communication",
+    excerpt: "dreams chase dare propel step, spirits swell together break chains quell...",
+    category: "Motivation",
     content: [
-      "Words have power to transform,",
-      "To lift the fallen spirit high",
-      "Each syllable carries intention,",
-      "Each phrase can make souls fly",
-      "",
-      "Speak your truth with courage,",
-      "Let your voice be heard",
-      "For in your authentic expression,",
-      "Lives the power of the word",
-      "",
-      "Drive forward with conviction,",
-      "Let passion fuel your speech",
-      "The world needs your unique message,",
-      "Your story they must reach"
+      "dreams chase dare propel step",
+      "spirits swell together break chains quell",
+      "rising above heroes dwell",
+      "empowerment fire excels",
+      "motivation inspire courage strength",
+      "unity freedom soar uplift",
+      "triumph passion determination success",
+      "elevate breakthrough liberate",
+      "thrive ascend conquer ignite flourish"
     ]
   },
   {
     id: 7,
-    title: "Muse Adore",
-    excerpt: "In quiet moments of reflection, Inspiration finds its way...",
-    category: "Creativity",
+    title: "Greeting Energy",
+    excerpt: "hey greeting notice standing smile, energy beyond compare awesome pair...",
+    category: "Word Storm",
     content: [
-      "In quiet moments of reflection,",
-      "Inspiration finds its way",
-      "Through cracks in ordinary thinking,",
-      "Creativity comes out to play",
-      "",
-      "The muse whispers softly,",
-      "In colors, sounds, and dreams",
-      "Transforming simple moments,",
-      "Into artistic streams",
-      "",
-      "Adore the creative process,",
-      "Embrace the unknown path",
-      "For in the dance of creation,",
-      "We discover our true craft"
+      "hey greeting notice standing smile",
+      "energy beyond compare awesome pair",
+      "vibrant flood positive energy",
+      "personality traits cascade",
+      "joy presence human warmth",
+      "expressive word collage flows",
+      "energy ideal performance",
+      "visual design creation"
     ]
   },
   {
     id: 8,
-    title: "Zion's Call",
-    excerpt: "From distant mountains calling, A voice both strong and clear...",
-    category: "Purpose",
+    title: "Muse Adore",
+    excerpt: "realms boundless imagination roam, colors dance words find home...",
+    category: "Creativity",
     content: [
-      "From distant mountains calling,",
-      "A voice both strong and clear",
-      "Beckoning us to journey,",
-      "Beyond our deepest fear",
-      "",
-      "Zion represents our promised land,",
-      "The place we're meant to be",
-      "Where purpose meets with passion,",
-      "And souls are truly free",
-      "",
-      "Answer the call with courage,",
-      "Step boldly toward your fate",
-      "For Zion waits for no one,",
-      "But never comes too late"
+      "realms boundless imagination roam",
+      "colors dance words find home",
+      "canvas page symphony embrace",
+      "creativity fire eternal grace",
+      "whispered dreams bold inventions",
+      "weave thoughts daring intentions",
+      "unleash ideas unchained free",
+      "essence story unfolds melody",
+      "composed masterpiece untold soar",
+      "muse adore"
+    ]
+  },
+  {
+    id: 9,
+    title: "Art is Everything",
+    excerpt: "art gallery museum painting artwork, canvas exhibition creativity imagination...",
+    category: "Visual Art",
+    content: [
+      "art gallery museum painting artwork",
+      "canvas exhibition creativity imagination",
+      "inspiration masterpiece brushstroke color hue",
+      "aesthetic passion artistic life",
+      "visual soul language",
+      "creativity expansive piece",
+      "explores aesthetics passion",
+      "artistic vocabulary stream"
+    ]
+  },
+  {
+    id: 10,
+    title: "Zion's Call", 
+    excerpt: "blood save redemption embrace love, outwit race Caesar Jesus free...",
+    category: "Spiritual",
+    content: [
+      "blood save redemption embrace love",
+      "outwit race Caesar Jesus free",
+      "betray Judas conquer lion light",
+      "Zion poetry spoken word faith",
+      "grace salvation hope mercy forgiveness",
+      "strength victory illumination inspiration spiritual"
     ]
   }
 ];
@@ -231,10 +203,25 @@ export default function Poetry() {
                 fontSize: '0.9rem',
                 color: '#666',
                 cursor: 'pointer',
-                fontFamily: 'inherit'
+                fontFamily: 'inherit',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem'
               }}
             >
-              ← Back to poetry
+              <svg 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="m15 18-6-6 6-6"/>
+              </svg>
+              Back to poetry
             </button>
             <Link href="/" style={{
               fontSize: '1rem',
