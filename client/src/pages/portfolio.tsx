@@ -277,7 +277,7 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.title === 'School CRM System' || project.title === 'Ceding - My Saving & CRM App' || project.category === 'UI/UX' || project.category === 'Graphic Design') && (
+                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.title === 'School CRM System' || project.title === 'Ceding - My Saving & CRM App' || project.category === 'UI/UX' || project.category === 'Graphic Design' || project.category === 'Poetry') && (
                     <div 
                       style={{
                         width: '120px',
@@ -298,7 +298,7 @@ export default function Portfolio() {
                           window.open('https://www.behance.net/gallery/183081607/School-database-site', '_blank');
                         } else if (project.title === 'Ceding - My Saving & CRM App') {
                           window.open('https://www.behance.net/gallery/183088961/Ceding-My-Saving-CRM-App', '_blank');
-                        } else if (project.category === 'UI/UX' || project.category === 'Graphic Design') {
+                        } else if (project.category === 'UI/UX' || project.category === 'Graphic Design' || project.category === 'Poetry') {
                           window.open('https://www.behance.net/evansarmah/projects', '_blank');
                         }
                       }}
@@ -508,6 +508,37 @@ export default function Portfolio() {
                           fontWeight: '500'
                         }} className="preview-overlay">
                           View Portfolio
+                        </div>
+                      </>
+                    ) : project.category === 'Poetry' ? (
+                      <>
+                        <img 
+                          src="/poetry-preview.png"
+                          alt="Poetry Preview"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.3s ease'
+                          }}
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: 'rgba(0, 0, 0, 0.7)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          color: 'white',
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                          fontWeight: '500'
+                        }} className="preview-overlay">
+                          View Poetry
                         </div>
                       </>
                       ) : null}
