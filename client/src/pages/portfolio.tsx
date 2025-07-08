@@ -294,6 +294,8 @@ export default function Portfolio() {
                     onClick={() => {
                       if (project.title === 'My Rabbai') {
                         window.open('https://myrabbai.pages.dev/rabbai', '_blank');
+                      } else if (project.title === 'Student Help CRM') {
+                        window.open('https://teachers.studenthelp.cloud/', '_blank');
                       }
                     }}
                   >
@@ -302,6 +304,37 @@ export default function Portfolio() {
                         <img 
                           src="/rabbai-preview.png"
                           alt="My Rabbai Preview"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform 0.3s ease'
+                          }}
+                        />
+                        <div style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background: 'rgba(0, 0, 0, 0.7)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          color: 'white',
+                          opacity: 0,
+                          transition: 'opacity 0.3s ease',
+                          fontWeight: '500'
+                        }} className="preview-overlay">
+                          Visit Site
+                        </div>
+                      </>
+                    ) : project.title === 'Student Help CRM' ? (
+                      <>
+                        <img 
+                          src="/student-help-crm-preview.png"
+                          alt="Student Help CRM Preview"
                           style={{
                             width: '100%',
                             height: '100%',
