@@ -113,7 +113,17 @@ This is a modern portfolio website built for Evans, showcasing their dual expert
 
 ## Recent Changes
 
-- July 08, 2025: Created immersive dedicated Poetry page with nature and space themes
+- July 08, 2025: Updated Poetry page with itssharl.ee-inspired minimalist design
+  - Replaced immersive space/nature theme with clean, minimal aesthetic matching itssharl.ee/work
+  - Implemented "Materializing verses..." loading animation with fade effect
+  - Created clean list-style poetry showcase with arrow indicators and hover effects
+  - Added individual poem detail view with elegant typography and back navigation
+  - Used light gray (#fafafa) background with white header section and subtle borders
+  - Organized poems with categories (Self-Reflection, Technology, Inspiration, etc.)
+  - Maintained responsive design with professional Inter + Georgia font pairing
+  - Added portfolio-style "Designed and coded by HeaVans © 2025" credit
+  
+- July 08, 2025: Previously created immersive dedicated Poetry page with nature and space themes
   - Built interactive poetry showcase with 8 curated poems including "Being You", "The Coder's Journey", "In the Air", "I Live Again"
   - Implemented dynamic nature/space theme switching based on poem content with animated gradients
   - Added floating particle animations, mouse-following gradients, and glassmorphism effects
