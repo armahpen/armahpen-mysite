@@ -1,6 +1,8 @@
 import { Link } from 'wouter';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div style={{
       minHeight: '100vh',
@@ -40,7 +42,15 @@ export default function Contact() {
             />
           </Link>
 
-          {/* Navigation Menu */}
+          {/* Mobile Menu Button */}
+          <button 
+            className="mobile-menu-button"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            ☰
+          </button>
+
+          {/* Desktop Navigation Menu */}
           <div className="nav-menu" style={{
             display: 'flex',
             gap: '0.75rem',
@@ -72,22 +82,7 @@ export default function Contact() {
                 cursor: 'pointer'
               }}>Experience</span>
             </Link>
-            <Link href="/portfolio" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Portfolio</span>
-            </Link>
-            <Link href="/poetry" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Poetry</span>
-            </Link>
+
             <Link href="/contact" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{
                 color: 'rgba(255, 255, 255, 1)',
@@ -110,6 +105,21 @@ export default function Contact() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Navigation Backdrop */}
+      <div 
+        className={`mobile-nav-backdrop ${mobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Navigation Overlay */}
+      <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}>
+        <button className="mobile-nav-close" onClick={() => setMobileMenuOpen(false)}>×</button>
+        <Link href="/" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Home</Link>
+        <Link href="/about" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>About</Link>
+        <Link href="/experience" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Experience</Link>
+        <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.2rem', fontWeight: '500', padding: '0.75rem 0'}}>Contact</Link>
+      </div>
 
       {/* Main Content */}
       <div className="mobile-container" style={{

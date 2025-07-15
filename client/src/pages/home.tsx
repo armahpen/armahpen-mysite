@@ -195,24 +195,7 @@ export default function Home() {
               letterSpacing: '0.5px',
               cursor: 'pointer'
             }}>Experience</Link>
-            <Link href="/portfolio" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>Portfolio</Link>
-            <Link href="/poetry" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>Poetry</Link>
+
             <Link href="/contact" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',
@@ -276,21 +259,7 @@ export default function Home() {
           padding: '0.75rem 0'
         }}>Experience</Link>
         
-        <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'rgba(255, 255, 255, 0.9)',
-          textDecoration: 'none',
-          fontSize: '1.2rem',
-          fontWeight: '400',
-          padding: '0.75rem 0'
-        }}>Portfolio</Link>
-        
-        <Link href="/poetry" onClick={() => setMobileMenuOpen(false)} style={{
-          color: 'rgba(255, 255, 255, 0.9)',
-          textDecoration: 'none',
-          fontSize: '1.2rem',
-          fontWeight: '400',
-          padding: '0.75rem 0'
-        }}>Poetry</Link>
+
         
         <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{
           color: 'rgba(255, 255, 255, 0.9)',

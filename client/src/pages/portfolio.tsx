@@ -162,13 +162,7 @@ export default function Portfolio() {
               fontWeight: '500',
               letterSpacing: '0.5px'
             }}>Portfolio</Link>
-            <Link href="/poetry" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontSize: '14px',
-              fontWeight: '400',
-              letterSpacing: '0.5px'
-            }}>Poetry</Link>
+
             <Link href="/contact" className="nav-link" style={{
               color: 'rgba(255, 255, 255, 0.7)',
               textDecoration: 'none',

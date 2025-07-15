@@ -87,24 +87,7 @@ export default function About() {
                 cursor: 'pointer'
               }}>Experience</span>
             </Link>
-            <Link href="/portfolio" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Portfolio</span>
-            </Link>
-            <Link href="/poetry" style={{ textDecoration: 'none' }}>
-              <span className="menu-button" style={{
-                color: 'rgba(255, 255, 255, 0.65)',
-                fontFamily: 'DM Sans',
-                fontSize: '16px',
-                fontWeight: '400',
-                cursor: 'pointer'
-              }}>Poetry</span>
-            </Link>
+
             <Link href="/contact" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{
                 color: 'rgba(255, 255, 255, 0.65)',
@@ -141,8 +124,7 @@ export default function About() {
         <Link href="/" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Home</Link>
         <Link href="/about" onClick={() => setMobileMenuOpen(false)} style={{color: 'white', textDecoration: 'none', fontSize: '1.2rem', fontWeight: '500', padding: '0.75rem 0'}}>About</Link>
         <Link href="/experience" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Experience</Link>
-        <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Portfolio</Link>
-        <Link href="/poetry" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Poetry</Link>
+
         <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Contact</Link>
       </div>
 
