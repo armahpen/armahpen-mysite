@@ -414,52 +414,65 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-                  {(project.title === 'My Rabbai' || project.title === 'Student Help CRM' || project.title === 'DEMS CRM Systems' || project.title === 'School CRM System' || project.title === 'Ceding - My Saving & CRM App' || project.category === 'UI/UX' || project.category === 'Graphic Design' || project.category === 'Poetry') && (
-                    <div 
-                      style={{
-                        width: '120px',
-                        height: '80px',
-                        borderRadius: '8px',
-                        cursor: 'pointer',
-                        position: 'relative',
-                        transition: 'all 0.3s ease',
-                        background: 'rgba(255, 255, 255, 0.1)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '12px',
-                        color: 'rgba(255, 255, 255, 0.8)',
-                        fontWeight: '500',
-                        textAlign: 'center',
-                        border: '1px solid rgba(255, 255, 255, 0.2)'
-                      }}
-                      className="preview-card"
-                      onClick={() => {
-                        if (project.title === 'My Rabbai') {
-                          window.open('https://myrabbai.pages.dev/rabbai', '_blank');
-                        } else if (project.title === 'Student Help CRM') {
-                          window.open('https://studenthelp-teacher.netlify.app/', '_blank');
-                        } else if (project.title === 'School CRM System') {
-                          window.open('https://www.behance.net/gallery/183081607/School-database-site', '_blank');
-                        } else if (project.title === 'Ceding - My Saving & CRM App') {
-                          window.open('https://www.behance.net/gallery/183088961/Ceding-My-Saving-CRM-App', '_blank');
-                        } else if (project.category === 'Poetry') {
-                          window.location.href = '/poetry';
-                        } else if (project.category === 'UI/UX' || project.category === 'Graphic Design') {
-                          window.open('https://www.behance.net/evansarmah/projects', '_blank');
-                        }
-                      }}
-                    >
-                      {project.title === 'My Rabbai' ? 'Visit Site' : 
-                       project.title === 'Student Help CRM' ? 'Visit Site' :
-                       project.title === 'DEMS CRM Systems' ? 'View CRM' :
-                       project.title === 'School CRM System' ? 'View Design' :
-                       project.title === 'Ceding - My Saving & CRM App' ? 'View App Design' :
-                       project.category === 'UI/UX' ? 'View Portfolio' :
-                       project.category === 'Graphic Design' ? 'View Portfolio' :
-                       project.category === 'Poetry' ? 'View Poetry' : 'View Project'}
-                    </div>
-                  )}
+                  <div 
+                    style={{
+                      width: '120px',
+                      height: '80px',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      position: 'relative',
+                      transition: 'all 0.3s ease',
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      overflow: 'hidden'
+                    }}
+                    className="preview-card"
+                    onClick={() => {
+                      if (project.title === 'My Rabbai') {
+                        window.open('https://myrabbai.pages.dev/rabbai', '_blank');
+                      } else if (project.title === 'Student Help CRM') {
+                        window.open('https://studenthelp-teacher.netlify.app/', '_blank');
+                      } else if (project.title === 'School CRM System') {
+                        window.open('https://www.behance.net/gallery/183081607/School-database-site', '_blank');
+                      } else if (project.title === 'Ceding - My Saving & CRM App') {
+                        window.open('https://www.behance.net/gallery/183088961/Ceding-My-Saving-CRM-App', '_blank');
+                      } else if (project.category === 'Poetry') {
+                        window.location.href = '/poetry';
+                      } else if (project.category === 'UI/UX' || project.category === 'Graphic Design') {
+                        window.open('https://www.behance.net/evansarmah/projects', '_blank');
+                      }
+                    }}
+                  >
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'rgba(0, 0, 0, 0.6)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '12px',
+                      color: 'white',
+                      fontWeight: '500',
+                      textAlign: 'center',
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease'
+                    }}
+                    className="preview-overlay"
+                  >
+                    {project.title === 'My Rabbai' ? 'Visit Site' : 
+                     project.title === 'Student Help CRM' ? 'Visit Site' :
+                     project.title === 'DEMS CRM Systems' ? 'View CRM' :
+                     project.title === 'School CRM System' ? 'View Design' :
+                     project.title === 'Ceding - My Saving & CRM App' ? 'View App Design' :
+                     project.category === 'UI/UX' ? 'View Portfolio' :
+                     project.category === 'Graphic Design' ? 'View Portfolio' :
+                     project.category === 'Poetry' ? 'View Poetry' : 'View Project'}
+                  </div>
+                  </div>
                 </div>
               </div>
             ))}

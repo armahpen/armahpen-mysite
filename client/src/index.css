@@ -1388,6 +1388,22 @@ h1:hover {
     margin: 0 auto !important;
   }
   
+  .portfolio-card .preview-card:hover .preview-overlay {
+    opacity: 1 !important;
+  }
+}
+
+/* Desktop hover effects */
+@media (min-width: 769px) {
+  .preview-card:hover .preview-overlay {
+    opacity: 1;
+  }
+  
+  .preview-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  
   .portfolio-project-layout {
     flex-direction: column !important;
     gap: 16px !important;
