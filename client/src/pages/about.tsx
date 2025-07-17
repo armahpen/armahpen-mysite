@@ -98,17 +98,6 @@ export default function About() {
               }}>Contact</span>
             </Link>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '20px',
-              cursor: 'pointer'
-            }}>☰</button>
-          </div>
         </div>
       </nav>
 
@@ -128,8 +117,101 @@ export default function About() {
         <Link href="/contact" onClick={() => setMobileMenuOpen(false)} style={{color: 'rgba(255, 255, 255, 0.9)', textDecoration: 'none', fontSize: '1.2rem', padding: '0.75rem 0'}}>Contact</Link>
       </div>
 
-      {/* Main Content Split Layout */}
-      <div className="hidden md:flex" style={{
+      {/* Mobile Content Layout */}
+      <div className="about-mobile-content" style={{
+        display: 'none',
+        paddingTop: '100px',
+        paddingBottom: '40px',
+        textAlign: 'center'
+      }}>
+        <div style={{
+          maxWidth: '600px',
+          margin: '0 auto',
+          padding: '0 20px'
+        }}>
+          <h1 style={{
+            color: 'white',
+            fontFamily: 'DM Sans',
+            fontSize: '2.5rem',
+            fontWeight: '700',
+            marginBottom: '20px',
+            textShadow: '0 0 15px rgba(255, 255, 255, 0.4)'
+          }}>ABOUT</h1>
+          
+          <div style={{
+            width: '100px',
+            height: '3px',
+            background: 'linear-gradient(90deg, transparent, #fff, transparent)',
+            margin: '0 auto 30px',
+            borderRadius: '2px'
+          }} />
+          
+          <img 
+            src="/profile-image.jpg" 
+            alt="Evans Profile" 
+            className="about-mobile-image"
+            style={{
+              width: '200px',
+              height: '200px',
+              borderRadius: '50%',
+              margin: '20px auto',
+              display: 'block',
+              objectFit: 'cover',
+              border: '3px solid rgba(255, 255, 255, 0.2)'
+            }}
+          />
+          
+          <p style={{
+            color: 'rgba(255, 255, 255, 0.8)',
+            fontSize: '1rem',
+            lineHeight: '1.6',
+            marginBottom: '20px'
+          }}>
+            I'm Evans Armah, a passionate web developer and data analyst who brings creativity and technical expertise to every project. With a love for clean code and user-centered design, I specialize in creating digital experiences that are both functional and visually stunning.
+          </p>
+          
+          <p style={{
+            color: 'rgba(255, 255, 255, 0.8)',
+            fontSize: '1rem',
+            lineHeight: '1.6',
+            marginBottom: '30px'
+          }}>
+            My journey spans from crafting responsive websites to analyzing complex data patterns, always driven by the goal of solving real-world problems through technology.
+          </p>
+          
+          <div style={{
+            display: 'flex',
+            gap: '20px',
+            justifyContent: 'center',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '10px 20px',
+              borderRadius: '25px',
+              fontSize: '14px',
+              color: 'white'
+            }}>React & Next.js</div>
+            <div style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '10px 20px',
+              borderRadius: '25px',
+              fontSize: '14px',
+              color: 'white'
+            }}>Python & Data Analysis</div>
+            <div style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '10px 20px',
+              borderRadius: '25px',
+              fontSize: '14px',
+              color: 'white'
+            }}>UI/UX Design</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Content Layout */}
+      <div className="about-desktop-only hidden md:flex" style={{
         position: 'absolute',
         left: '96px',
         top: '50%',

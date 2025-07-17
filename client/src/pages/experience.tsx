@@ -92,17 +92,6 @@ export default function Experience() {
               }}>Contact</span>
             </Link>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '20px',
-              cursor: 'pointer'
-            }}>☰</button>
-          </div>
         </div>
       </nav>
 
@@ -122,7 +111,7 @@ export default function Experience() {
       </div>
 
       {/* Main Content */}
-      <div className="mobile-container" style={{
+      <div className="mobile-container contact-container" style={{
         paddingTop: '100px',
         paddingBottom: '80px',
         maxWidth: '1200px',
@@ -164,7 +153,7 @@ export default function Experience() {
         </div>
 
         {/* Experience Timeline */}
-        <div style={{
+        <div className="experience-timeline" style={{
           position: 'relative',
           maxWidth: '900px',
           margin: '0 auto'

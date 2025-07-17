@@ -92,17 +92,6 @@ export default function Contact() {
               }}>Contact</span>
             </Link>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '20px',
-              cursor: 'pointer'
-            }}>☰</button>
-          </div>
         </div>
       </nav>
 
@@ -122,7 +111,7 @@ export default function Contact() {
       </div>
 
       {/* Main Content */}
-      <div className="mobile-container" style={{
+      <div className="mobile-container contact-container" style={{
         paddingTop: '120px',
         paddingBottom: '80px',
         maxWidth: '800px',

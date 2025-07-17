@@ -292,7 +292,7 @@ export default function Portfolio() {
           </div>
 
           {/* Project Grid */}
-          <div style={{
+          <div className="portfolio-grid" style={{
             display: 'grid',
             gap: selectedCategory === 'CRMs' ? '32px' : '40px',
             gridTemplateColumns: selectedCategory === 'CRMs' && filteredProjects.length > 2 
@@ -308,7 +308,7 @@ export default function Portfolio() {
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
-                className="project-item"
+                className="portfolio-card project-item"
               >
                 <div style={{
                   display: 'flex',
