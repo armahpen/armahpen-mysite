@@ -52,7 +52,7 @@ export default function Portfolio() {
       title: 'Church CRM System',
       description: 'A communication and engagement platform for churches with bulk messaging, attendance analytics, and AI-powered reminder features.',
       category: 'CRMs',
-      image: '/dems-crm-preview.png',
+      image: '/church-crm-preview.png',
       technologies: ['Vue.js / Tailwind', 'Firebase / Cloud Firestore', 'Twilio SMS API / WhatsApp Cloud API', 'Python (FastAPI)']
     },
 

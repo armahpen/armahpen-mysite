@@ -114,6 +114,12 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 17, 2025: **UPDATED CHURCH CRM SYSTEM IMAGE**: Added custom image for Church CRM System project
+  - **CUSTOM PROJECT IMAGE**: Replaced default image with user-provided Church CRM interface showing all-in-one platform and bulk SMS messaging
+  - **ENHANCED VISUAL REPRESENTATION**: Church CRM System now displays with authentic interface preview showing platform capabilities
+  - **IMPROVED PROJECT SHOWCASE**: Better visual representation of the actual church communication and engagement platform
+  - **GITHUB PAGES READY**: Updated build with correct asset paths for deployment
+
 - July 17, 2025: **UPDATED CEDING CRM APP IMAGE**: Added custom image for Ceding - My Saving & CRM App project
   - **CUSTOM PROJECT IMAGE**: Replaced default image with user-provided Ceding CRM dashboard interface
   - **ENHANCED VISUAL REPRESENTATION**: Ceding app now displays with authentic dashboard preview showing savings modules
