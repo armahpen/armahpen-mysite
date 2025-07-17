@@ -114,6 +114,18 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 17, 2025: **IMPLEMENTED MOBILE-ONLY HAMBURGER MENU FOR GITHUB PAGES**
+  - Added mobile-specific hamburger menu that only appears on devices with screen width ≤ 768px
+  - Implemented smooth slide-in mobile navigation overlay with backdrop blur effect
+  - Added media queries to ensure desktop navigation remains visible on larger screens
+  - Mobile menu includes all navigation links with proper highlighting for current page
+  - Updated CSS with mobile-first responsive design for hamburger menu functionality
+  - Fixed asset paths in build files to use relative paths for GitHub Pages compatibility
+  - Removed Replit banner from GitHub Pages version for clean deployment
+  - Mobile menu slides in from right side with smooth animations and close button
+  - Added proper z-index layering for mobile overlay (backdrop: 1998, overlay: 1999)
+  - All pages now have consistent mobile navigation behavior
+
 - July 17, 2025: **FIXED ALL IMAGE PATHS AND ROUTING FOR GITHUB PAGES**
   - Fixed "Did you forget to add the page to the router?" error by implementing proper routing structure
   - Created 404.html file for GitHub Pages SPA routing support to handle direct navigation
