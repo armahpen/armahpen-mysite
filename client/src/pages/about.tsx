@@ -278,7 +278,7 @@ export default function About() {
               fontSize: '16px',
               fontWeight: '400',
               lineHeight: '1.6',
-              margin: '0 0 128px 0',
+              margin: '0 0 224px 0',
               maxWidth: '500px'
             }} className="animate-fadeInUp delay-800">
               I'm a versatile Web Developer and Data Analyst with a background in research and a strong eye for user experience. My skills blend technical web development (CMS platforms, cloud systems, responsive design) with data-driven thinking. I enjoy building platforms that solve real problems—especially those that align with social good, innovation, and user-centered impact. I'm collaborative, adaptable, and constantly learning.
