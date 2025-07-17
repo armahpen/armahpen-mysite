@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://armahpen.github.io/sitemap.xml
+Sitemap: https://armahpen.github.io/armahpen-mysite/sitemap.xml
