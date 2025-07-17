@@ -168,43 +168,39 @@ export default function Home() {
             flexWrap: 'wrap',
             justifyContent: 'center'
           }}>
-            <Link href="/" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.9)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: '500',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>Home</Link>
-            <Link href="/about" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>About</Link>
-            <Link href="/experience" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>Experience</Link>
+            <Link href="/" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 1)',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Home</span>
+            </Link>
+            <Link href="/about" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>About</span>
+            </Link>
+            <Link href="/experience" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Experience</span>
+            </Link>
 
-            <Link href="/contact" className="nav-link" style={{
-              color: 'rgba(255, 255, 255, 0.7)',
-              textDecoration: 'none',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: '400',
-              letterSpacing: '0.5px',
-              cursor: 'pointer'
-            }}>Contact</Link>
+            <Link href="/contact" style={{ textDecoration: 'none' }}>
+              <span className="menu-button" style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                fontWeight: '400',
+                cursor: 'pointer'
+              }}>Contact</span>
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
