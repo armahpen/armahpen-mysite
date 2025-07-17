@@ -1,0 +1,25 @@
+plugins:
+  - jekyll-redirect-from
+
+# GitHub Pages configuration
+baseurl: ""
+url: "https://armahpen.github.io"
+
+# Build settings
+markdown: kramdown
+include:
+  - _redirects
+
+# Exclude unnecessary files
+exclude:
+  - node_modules/
+  - client/
+  - server/
+  - shared/
+  - dist/
+  - assets/
+  - package.json
+  - package-lock.json
+  - vite.config.ts
+  - tsconfig.json
+  - build-github-pages.js
