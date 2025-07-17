@@ -253,7 +253,7 @@ export default function Portfolio() {
         paddingTop: '80px'
       }}>
         {/* Left Content Area */}
-        <div style={{
+        <div className="portfolio-container" style={{
           flex: '1',
           padding: '2rem 1rem',
           maxWidth: '100%'

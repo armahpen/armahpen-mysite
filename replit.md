@@ -128,6 +128,9 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
   - **CLEAN DEPLOYMENT**: Removed Replit banner and added GitHub Pages SPA routing fix
   - **Z-INDEX LAYERING**: Proper overlay stacking (backdrop: 1998, overlay: 1999, nav: 1000)
   - **ALL PAGES FIXED**: Home, About, Experience, Contact, Portfolio now fully mobile responsive
+  - **FIXED TEXT DUPLICATION**: Removed duplicate About page content causing text duplication on mobile
+  - **FIXED PORTFOLIO CATEGORIES**: Portfolio categories now stack vertically on mobile with proper spacing
+  - **PROPER MOBILE PADDING**: Added consistent mobile padding and container classes across all pages
 
 - July 17, 2025: **FIXED ALL IMAGE PATHS AND ROUTING FOR GITHUB PAGES**
   - Fixed "Did you forget to add the page to the router?" error by implementing proper routing structure

@@ -340,72 +340,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Mobile Content */}
-      <div className="md:hidden" style={{
-        padding: '100px 20px 40px 20px',
-        textAlign: 'center'
-      }}>
-        <h1 style={{
-          color: 'white',
-          fontFamily: 'DM Sans',
-          fontSize: '32px',
-          fontWeight: '700',
-          marginBottom: '20px'
-        }}>About</h1>
-        
-        <div style={{
-          width: '100%',
-          height: '2px',
-          background: 'white',
-          marginBottom: '24px'
-        }} />
-        
-        <div style={{
-          marginBottom: '32px'
-        }}>
-          <img 
-            src="/evans-photo.jpg" 
-            alt="Evans Profile" 
-            style={{
-              width: '200px',
-              height: '200px',
-              borderRadius: '16px',
-              border: '2px solid rgba(255, 255, 255, 0.1)',
-              objectFit: 'cover',
-              marginBottom: '24px'
-            }}
-          />
-        </div>
-        
-        <p style={{
-          color: 'rgba(255, 255, 255, 0.9)',
-          fontFamily: 'DM Sans',
-          fontSize: '14px',
-          fontWeight: '400',
-          lineHeight: '1.6',
-          margin: '0 0 24px 0'
-        }}>
-          I'm a versatile Web Developer and Data Analyst with a background in research and a strong eye for user experience. My skills blend technical web development (CMS platforms, cloud systems, responsive design) with data-driven thinking. I enjoy building platforms that solve real problems—especially those that align with social good, innovation, and user-centered impact. I'm collaborative, adaptable, and constantly learning.
-        </p>
 
-        <a 
-          href="/Evans_Armah_CV.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            color: 'rgba(255, 255, 255, 0.8)',
-            fontFamily: 'DM Sans',
-            fontSize: '14px',
-            fontWeight: '400',
-            textDecoration: 'none',
-            cursor: 'pointer'
-          }}
-        >
-          ↓ resume
-        </a>
-      </div>
 
       {/* Footer */}
       <div style={{
