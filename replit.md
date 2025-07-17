@@ -114,13 +114,18 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 17, 2025: **UPDATED SCHOOL CRM SYSTEM IMAGE**: Used custom image for School CRM System project
+  - **CUSTOM PROJECT IMAGE**: Replaced default image with user-provided School CRM System dashboard screenshot
+  - **ENHANCED VISUAL REPRESENTATION**: School CRM System now displays with authentic interface preview
+  - **IMPROVED PROJECT SHOWCASE**: Better visual representation of the actual CRM system interface
+  - **GITHUB PAGES READY**: Updated build with correct asset paths for deployment
+
 - July 17, 2025: **RESTORED PORTFOLIO PROJECT IMAGES**: Brought back image previews for all portfolio projects
   - **IMAGE PREVIEW CARDS**: Restored image backgrounds for all project categories with hover overlay effects
   - **HOVER INTERACTIONS**: Added smooth hover effects with text overlay showing action buttons (Visit Site, View Portfolio, etc.)
   - **RESPONSIVE IMAGE DISPLAY**: Images scale properly on both desktop and mobile with proper aspect ratios
   - **ENHANCED VISUAL APPEAL**: Portfolio projects now display with their respective preview images for better visual engagement
   - **MAINTAINED FUNCTIONALITY**: All click actions and navigation links preserved with image restoration
-  - **GITHUB PAGES READY**: Updated build with correct asset paths for deployment
 
 - July 17, 2025: **MOBILE CATEGORIES MENU POSITIONING**: Moved Categories menu to top of Portfolio page
   - **MOBILE-ONLY VISIBILITY**: Categories menu now appears only on mobile devices (≤768px screen width)

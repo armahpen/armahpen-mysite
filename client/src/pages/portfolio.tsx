@@ -31,7 +31,7 @@ export default function Portfolio() {
       title: 'School CRM System',
       description: 'CRM system for schools with automated school fee reminders, birthday messages, bulk updates, and AI-driven campaign planning.',
       category: 'CRMs',
-      image: '/dems-crm-preview.png',
+      image: '/school-crm-preview.jpg',
       technologies: ['React / Tailwind CSS', 'Node.js / Firebase Functions', 'MongoDB', 'AI API']
     },
     {
