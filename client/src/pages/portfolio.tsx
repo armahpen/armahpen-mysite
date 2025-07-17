@@ -258,10 +258,10 @@ export default function Portfolio() {
           padding: '2rem 1rem',
           maxWidth: '100%'
         }}>
-          {/* Mobile Categories Menu - 5 inches under header */}
+          {/* Mobile Categories Menu - 1 inch under header */}
           <div className="mobile-categories-menu" style={{
             display: 'none',
-            marginTop: '360px',
+            marginTop: '96px',
             marginBottom: '40px',
             padding: '0 1rem'
           }}>

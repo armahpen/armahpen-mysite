@@ -116,7 +116,7 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 - July 17, 2025: **MOBILE CATEGORIES MENU POSITIONING**: Moved Categories menu to top of Portfolio page
   - **MOBILE-ONLY VISIBILITY**: Categories menu now appears only on mobile devices (≤768px screen width)
-  - **5-INCH POSITIONING**: Categories menu positioned 5 inches (360px) under header/logo/menu section for mobile
+  - **1-INCH POSITIONING**: Categories menu positioned 1 inch (96px) under header/logo/menu section for mobile
   - **DESKTOP SIDEBAR HIDDEN**: Original right sidebar categories menu hidden on mobile devices
   - **IMPROVED MOBILE NAVIGATION**: Enhanced mobile portfolio navigation with top-positioned category selection
   - **RESPONSIVE DESIGN**: Categories menu adapts to mobile layout with proper spacing and touch-friendly buttons
