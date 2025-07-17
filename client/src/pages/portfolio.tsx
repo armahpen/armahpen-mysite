@@ -334,9 +334,8 @@ export default function Portfolio() {
                       textAlign: 'left',
                       maxWidth: '100%',
                       overflow: 'hidden',
-                      display: '-webkit-box',
-                      WebkitLineClamp: 4,
-                      WebkitBoxOrient: 'vertical'
+                      wordSpacing: '0.1em',
+                      letterSpacing: '0.02em'
                     }}>
                       {project.description}
                     </p>
