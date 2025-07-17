@@ -353,7 +353,7 @@ export default function About() {
       {/* Footer */}
       <div style={{
         position: 'absolute',
-        bottom: '24px',
+        bottom: '120px',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 10
