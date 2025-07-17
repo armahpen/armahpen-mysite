@@ -32,7 +32,7 @@ export default function Contact() {
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none' }}>
             <img 
-              src="./logo.png" 
+              src="/logo.png" 
               alt="HeaVans Logo" 
               style={{
                 height: '30px',

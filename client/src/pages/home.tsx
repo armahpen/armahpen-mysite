@@ -44,7 +44,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-40"
           style={{
-            backgroundImage: `url(./grain.webp)`,
+            backgroundImage: `url(/grain.webp)`,
             backgroundSize: '512px 512px',
             backgroundRepeat: 'repeat',
             animation: 'grainMove 20s linear infinite',
@@ -56,7 +56,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `url(./blur.webp)`,
+            backgroundImage: `url(/blur.webp)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transform: `translate(${mousePos.x * 20 - 10}px, ${mousePos.y * 20 - 10}px) scale(1.1)`,
@@ -125,14 +125,14 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '1rem',
-          maxWidth: '1400px',
+          padding: '1rem 2rem',
+          maxWidth: '1200px',
           margin: '0 auto'
         }}>
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none' }}>
             <img 
-              src="./logo.png" 
+              src="/logo.png" 
               alt="HeaVans Logo" 
               style={{
                 height: '30px',
@@ -151,8 +151,9 @@ export default function Home() {
               background: 'none',
               border: 'none',
               color: 'white',
-              fontSize: '1.5rem',
-              cursor: 'pointer'
+              fontSize: '24px',
+              cursor: 'pointer',
+              padding: '0.5rem'
             }}
           >
             ☰
@@ -190,7 +191,6 @@ export default function Home() {
                 cursor: 'pointer'
               }}>Experience</span>
             </Link>
-
             <Link href="/contact" style={{ textDecoration: 'none' }}>
               <span className="menu-button" style={{
                 color: 'rgba(255, 255, 255, 0.7)',
@@ -199,17 +199,6 @@ export default function Home() {
                 cursor: 'pointer'
               }}>Contact</span>
             </Link>
-          </div>
-          
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'white',
-              fontSize: '20px',
-              cursor: 'pointer'
-            }}>☰</button>
           </div>
         </div>
       </nav>
