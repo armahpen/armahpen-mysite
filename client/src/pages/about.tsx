@@ -147,7 +147,7 @@ export default function About() {
           }} />
           
           <img 
-            src="/profile-image.jpg" 
+            src="/profile-image.jpeg" 
             alt="Evans Profile" 
             className="about-mobile-image"
             style={{
@@ -158,6 +158,14 @@ export default function About() {
               display: 'block',
               objectFit: 'cover',
               border: '3px solid rgba(255, 255, 255, 0.2)'
+            }}
+            onError={(e) => {
+              console.log('Profile image failed to load on mobile');
+              const img = e.target as HTMLImageElement;
+              img.style.display = 'none';
+              if (img.parentElement) {
+                img.parentElement.innerHTML = '<div style="width: 200px; height: 200px; border-radius: 50%; margin: 20px auto; display: flex; align-items: center; justify-content: center; font-size: 80px; color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.1);">👤</div>';
+              }
             }}
           />
           
