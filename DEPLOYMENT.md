@@ -56,15 +56,17 @@ It may take a few minutes for the deployment to complete.
 ```
 armahpen-mysite/
 ├── index.html                    # Main entry point (required)
+├── 404.html                     # GitHub Pages 404 handler for SPA routing
 ├── assets/
-│   ├── index-CKVJlLCB.js        # Compiled React application
-│   ├── index-D3qHZpoL.css       # Compiled styles
+│   ├── index-Bh6QxDEC.js        # Compiled React application
+│   ├── index-Bwc6lpy0.css       # Compiled styles
 │   ├── grain_1751928350011-oAVkLcYF.webp
 │   └── blur_1751928350012-BZ1r5ru2.webp
 ├── logo.png                     # Site logo
 ├── Evans_Armah_CV.pdf          # CV document
 ├── [other-images].png          # Portfolio images
 ├── README.md                   # Project documentation
+├── DEPLOYMENT.md               # This deployment guide
 ├── .gitignore                  # Git ignore file
 └── CNAME                      # Custom domain (optional)
 ```
@@ -76,6 +78,13 @@ If you have a custom domain:
 1. Update the `CNAME` file with your domain name
 2. Configure your domain's DNS settings to point to GitHub Pages
 3. In GitHub repository settings, add your custom domain under "Custom domain"
+
+## 🔄 Single Page Application (SPA) Routing
+
+This portfolio uses client-side routing. The included `404.html` file ensures that:
+- Direct navigation to any page (e.g., `/about`) works correctly
+- Browser refresh on any page maintains the current route
+- GitHub Pages properly handles all route requests
 
 ## 📱 Features Included
 
