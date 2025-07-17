@@ -57,8 +57,8 @@ export default function Portfolio() {
     },
 
     {
-      title: 'UI/UX Design Portfolio',
-      description: 'A collection of purpose-driven, responsive, and user-friendly interfaces built to improve usability, enhance workflows, and drive engagement across platforms.',
+      title: 'UI/UX Designs',
+      description: 'As a UI/UX designer, I focus on creating clean, intuitive, and user-centered interfaces. From research to wireframes to polished visuals, my work is grounded in solving real user problems while delivering a seamless digital experience. I\'ve designed for web apps, dashboards, mobile-first platforms, and AI tools—always balancing function with form.',
       category: 'UI/UX',
       image: '/uiux-designs-preview.png',
       technologies: ['Figma / Adobe XD', 'HTML + Tailwind CSS', 'React / Next.js', 'Framer / Prototyping', 'User Research / Wireframing']
