@@ -6,17 +6,27 @@ console.log('🚀 Building GitHub Pages ready version...');
 // First, build the React app
 console.log('📦 Building React application...');
 
-// Read built CSS and JS files
-const cssContent = fs.readFileSync(path.join(process.cwd(), 'assets/index-BCAGZM60.css'), 'utf8');
-const jsContent = fs.readFileSync(path.join(process.cwd(), 'assets/index-D0Ttwr8g.js'), 'utf8');
+// Read built CSS and JS files from dist/public/assets (correct path)
+const distAssetsPath = path.join(process.cwd(), 'dist/public/assets/');
+const distAssets = fs.readdirSync(distAssetsPath);
+const cssFile = distAssets.find(file => file.startsWith('index-') && file.endsWith('.css'));
+const jsFile = distAssets.find(file => file.startsWith('index-') && file.endsWith('.js'));
 
-// Fix all asset paths in JavaScript to use relative paths
+console.log('Found CSS file:', cssFile);
+console.log('Found JS file:', jsFile);
+
+const cssContent = fs.readFileSync(path.join(distAssetsPath, cssFile), 'utf8');
+const jsContent = fs.readFileSync(path.join(distAssetsPath, jsFile), 'utf8');
+
+// Fix all asset paths in JavaScript to use relative paths for GitHub Pages project
 const fixedJsContent = jsContent
   .replace(/src:["']\//g, 'src:"./') 
   .replace(/href:["']\//g, 'href:"./') 
-  .replace(/["']\//g, '"./') 
-  .replace(/import\("\/assets\//g, 'import("./assets/')
-  .replace(/import\("\/([^"]+)"/g, 'import("./$1"');
+  .replace(/url\(["']?\//g, 'url("./') 
+  .replace(/import\(["']\/assets\//g, 'import("./assets/')
+  .replace(/import\(["']\/([^"']+)["']/g, 'import("./$1"')
+  .replace(/\["'\]\//g, '"./') 
+  .replace(/=["']\/([^"']*\.(png|jpg|jpeg|pdf|webp))["']/g, '="./$1"');
 
 // Create complete GitHub Pages HTML
 const githubPagesHTML = `<!DOCTYPE html>
@@ -31,17 +41,17 @@ const githubPagesHTML = `<!DOCTYPE html>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://armahpen.github.io/">
+    <meta property="og:url" content="https://armahpen.github.io/armahpen-mysite/">
     <meta property="og:title" content="HeaVans - Creative Portfolio">
     <meta property="og:description" content="Creative web developer and data analyst specializing in CRM systems, UI/UX design, and full-stack development.">
-    <meta property="og:image" content="https://armahpen.github.io/profile-image.jpeg">
+    <meta property="og:image" content="https://armahpen.github.io/armahpen-mysite/profile-image.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://armahpen.github.io/">
+    <meta property="twitter:url" content="https://armahpen.github.io/armahpen-mysite/">
     <meta property="twitter:title" content="HeaVans - Creative Portfolio">
     <meta property="twitter:description" content="Creative web developer and data analyst specializing in CRM systems, UI/UX design, and full-stack development.">
-    <meta property="twitter:image" content="https://armahpen.github.io/profile-image.jpeg">
+    <meta property="twitter:image" content="https://armahpen.github.io/armahpen-mysite/profile-image.jpeg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./logo.png">

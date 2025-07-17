@@ -36,7 +36,8 @@ Upload these files from your Replit project to the GitHub repository root:
 6. Click **Save**
 
 ### 4. Access Your Site
-After 5-10 minutes: `https://armahpen.github.io`
+After 5-10 minutes: `https://armahpen.github.io/armahpen-mysite/`
+(Or whatever your repository name is: `https://armahpen.github.io/REPOSITORY-NAME/`)
 
 ## What's Fixed
 ✅ All image paths use relative references  
