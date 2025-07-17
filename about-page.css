@@ -1,0 +1,408 @@
+/* About Page CSS */
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile Navigation Hamburger */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 4rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-overlay.active {
+    display: flex;
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.mobile-nav-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile overlay backdrop */
+.mobile-nav-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.mobile-nav-backdrop.active {
+    display: block;
+}
+
+/* Main Container */
+.main-container {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    background: #1E1E1E;
+    overflow: hidden;
+}
+
+/* Navigation */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Desktop Content */
+.desktop-content {
+    position: absolute;
+    left: 96px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100vw - 192px);
+    height: 400px;
+    display: flex;
+    z-index: 10;
+}
+
+.content-left {
+    flex: 1;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-title {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.3), 0 0 35px rgba(255, 255, 255, 0.2);
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.about-subtitle {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1);
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.underline {
+    width: 100%;
+    height: 2px;
+    background: white;
+    margin-bottom: 32px;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+    max-width: 500px;
+}
+
+.resume-link {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.resume-link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.content-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-container {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 160, 0, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* Mobile Content */
+.mobile-content {
+    padding: 100px 20px 40px 20px;
+    text-align: center;
+}
+
+.mobile-title {
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.mobile-underline {
+    width: 100%;
+    height: 2px;
+    background: white;
+    margin-bottom: 24px;
+}
+
+.mobile-profile-container {
+    margin-bottom: 32px;
+}
+
+.mobile-profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.mobile-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+}
+
+.mobile-resume-link {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes textGlow {
+    0%, 100% { 
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 25px rgba(255, 255, 255, 0.3), 0 0 35px rgba(255, 255, 255, 0.2); 
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.4); 
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block !important;
+    }
+    
+    .nav-menu {
+        display: none !important;
+    }
+    
+    .desktop-content {
+        display: none !important;
+    }
+    
+    .mobile-content {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktop-content {
+        display: flex !important;
+    }
+    
+    .mobile-content {
+        display: none !important;
+    }
+}
+
+/* Additional responsive breakpoints */
+@media (max-width: 640px) {
+    .mobile-title {
+        font-size: 28px;
+    }
+    
+    .mobile-profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .mobile-description {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0.75rem;
+    }
+    
+    .mobile-content {
+        padding: 80px 15px 30px 15px;
+    }
+    
+    .mobile-title {
+        font-size: 24px;
+    }
+    
+    .mobile-profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}
