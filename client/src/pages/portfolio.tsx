@@ -65,8 +65,8 @@ export default function Portfolio() {
     },
 
     {
-      title: 'Brand Identity & Visual Design',
-      description: 'Complete visual identity systems, marketing materials, and brand communications designed to create memorable and impactful brand experiences across all touchpoints.',
+      title: 'Graphic Design Projects',
+      description: 'My graphic design work spans brand identity, marketing materials, and visual communications. I create cohesive visual systems that tell compelling stories and communicate brand values effectively. From logo design to complete brand guidelines, I focus on creating memorable and impactful visual experiences that resonate with target audiences.',
       category: 'Graphic Design',
       image: '/graphic-design-preview.png',
       technologies: ['Adobe Creative Suite', 'Figma', 'Illustrator', 'InDesign', 'Brand Strategy', 'Typography']
