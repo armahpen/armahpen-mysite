@@ -9,49 +9,49 @@ export default function Portfolio() {
       title: 'My Rabbai',
       description: 'AI-powered platform that reads the Bible in the voice of your favorite man of God, making daily devotion more engaging and spiritually enriching.',
       category: 'My Rabbai',
-      image: '/project-ai-bible.jpg',
+      image: './rabbai-preview.png',
       technologies: ['AI', 'React / HTML + Tailwind CSS', 'Python (FastAPI)']
     },
     {
       title: 'Student Help CRM',
       description: 'An intelligent recruitment and learning system that connects students, parents, and teachers—with online testing, AI teacher matching, and performance tracking.',
       category: 'CRMs',
-      image: '/project-crm.jpg',
+      image: './student-help-crm-preview.png',
       technologies: ['Next.js / Tailwind CSS', 'Python (FastAPI)', 'Firebase', 'AI Matching / Vector Search']
     },
     {
       title: 'DEMS CRM Systems',
       description: 'Custom CRM systems for data entry, analysis, and AI-enhanced decision-making, tailored for SMEs and handled by real human operators.',
       category: 'CRMs',
-      image: '/project-crm.jpg',
+      image: './dems-crm-preview.png',
       technologies: ['HTML / CSS / JavaScript', 'PHP / MySQL', 'Prompt Engineering Modules', 'Firebase']
     },
     {
       title: 'School CRM System',
       description: 'CRM system for schools with automated school fee reminders, birthday messages, bulk updates, and AI-driven campaign planning.',
       category: 'CRMs',
-      image: '/project-crm.jpg',
+      image: './dems-crm-preview.png',
       technologies: ['React / Tailwind CSS', 'Node.js / Firebase Functions', 'MongoDB', 'AI API']
     },
     {
       title: 'Ceding - My Saving & CRM App',
       description: 'A savings and CRM platform built with Drupal (PHP), designed to help individuals and financial groups save smarter, stay accountable, and manage member data effectively.',
       category: 'CRMs',
-      image: '/project-crm.jpg',
+      image: './dems-crm-preview.png',
       technologies: ['Figma (UI/UX Design)', 'Drupal (PHP Backend)', 'HTML / Tailwind CSS', 'CRM Dashboard / Smart Reminders']
     },
     {
       title: 'LeadGen CRM',
       description: 'B2B lead generation platform with contact status tracking, analytics, and export tools to help businesses convert leads more efficiently.',
       category: 'CRMs',
-      image: '/project-crm.jpg',
+      image: './dems-crm-preview.png',
       technologies: ['React / Tailwind CSS', 'Node.js / Express', 'MongoDB', 'Chart.js / REST API']
     },
     {
       title: 'Church CRM System',
       description: 'A communication and engagement platform for churches with bulk messaging, attendance analytics, and AI-powered reminder features.',
       category: 'CRMs',
-      image: '/project-crm.jpg',
+      image: './dems-crm-preview.png',
       technologies: ['Vue.js / Tailwind', 'Firebase / Cloud Firestore', 'Twilio SMS API / WhatsApp Cloud API', 'Python (FastAPI)']
     },
 
@@ -59,7 +59,7 @@ export default function Portfolio() {
       title: 'UI/UX Design Portfolio',
       description: 'A collection of purpose-driven, responsive, and user-friendly interfaces built to improve usability, enhance workflows, and drive engagement across platforms.',
       category: 'UI/UX',
-      image: '/project-banking.jpg',
+      image: './uiux-designs-preview.png',
       technologies: ['Figma / Adobe XD', 'HTML + Tailwind CSS', 'React / Next.js', 'Framer / Prototyping', 'User Research / Wireframing']
     },
 
@@ -67,14 +67,14 @@ export default function Portfolio() {
       title: 'Brand Identity & Visual Design',
       description: 'Complete visual identity systems, marketing materials, and brand communications designed to create memorable and impactful brand experiences across all touchpoints.',
       category: 'Graphic Design',
-      image: '/project-branding.jpg',
+      image: './graphic-design-preview.png',
       technologies: ['Adobe Creative Suite', 'Figma', 'Illustrator', 'InDesign', 'Brand Strategy', 'Typography']
     },
     {
       title: 'Poetry',
       description: 'My poetry goes beyond the page—it\'s shaped into visual art, spoken word, and digital expression. From intimate performances to design-integrated poems, I use poetry to tell stories, challenge ideas, and connect with others on a deeper level.',
       category: 'Poetry',
-      image: '/project-poetry.jpg',
+      image: './poetry-preview.png',
       technologies: ['Spoken Word Performances', 'Poetry-Art Hybrids', 'Social Media Poems', 'Zines & Digital Chapbooks']
     }
   ];
@@ -117,7 +117,7 @@ export default function Portfolio() {
         }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <img 
-              src="/logo.png" 
+              src="./logo.png" 
               alt="HeaVans Logo" 
               style={{
                 height: '30px',

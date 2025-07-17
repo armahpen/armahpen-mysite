@@ -114,17 +114,21 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
-- July 17, 2025: **FIXED ROUTING ISSUES AND FINALIZED GITHUB PAGES BUILD**
+- July 17, 2025: **FIXED ALL IMAGE PATHS AND ROUTING FOR GITHUB PAGES**
   - Fixed "Did you forget to add the page to the router?" error by implementing proper routing structure
   - Created 404.html file for GitHub Pages SPA routing support to handle direct navigation
   - Updated all asset paths to use relative references (./assets/) for GitHub Pages compatibility
+  - Fixed ALL image paths throughout the application: logo, profile images, portfolio previews, background textures
+  - Copied all image assets to root directory for GitHub Pages accessibility
+  - Updated CV/resume path to use relative reference (./Evans_Armah_CV.pdf)
   - Removed Replit-specific scripts and banners for clean deployment
   - Fixed React hooks order issue that was causing console errors
   - Updated NotFound page to match portfolio's dark theme and styling
   - Standardized menu spacing between home and contact pages (16px font, 0.75rem gap)
   - Created comprehensive README.md and DEPLOYMENT.md with deployment instructions
   - All routing now works correctly: Home, About, Evans, Experience, Contact, Portfolio, Poetry
-  - Website ready for GitHub Pages deployment with proper SPA routing support
+  - All images now display correctly on GitHub Pages with proper relative paths
+  - Website ready for GitHub Pages deployment with complete image and routing support
 
 - July 18, 2025: **RESTRUCTURED TO STATIC WEBSITE FOR GITHUB PAGES**
   - Converted React-based portfolio to static HTML/CSS/JS structure

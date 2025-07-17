@@ -28,7 +28,7 @@ export default function Evans() {
           cursor: 'pointer'
         }}>
           <img
-            src="/logo.png"
+            src="./logo.png"
             alt="HeaVans Logo"
             style={{
               width: '120px',

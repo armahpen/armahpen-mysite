@@ -34,7 +34,7 @@ export default function About() {
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none' }}>
             <img 
-              src="/logo.png" 
+              src="./logo.png" 
               alt="HeaVans Logo" 
               style={{
                 height: '30px',
@@ -196,7 +196,7 @@ export default function About() {
 
             {/* Resume Download Link */}
             <a 
-              href="/Evans_Armah_CV.pdf" 
+              href="./Evans_Armah_CV.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               style={{
@@ -237,7 +237,7 @@ export default function About() {
             justifyContent: 'center'
           }}>
             <img 
-              src="/profile-image.jpeg"
+              src="./profile-image.jpeg"
               alt="Evans Profile"
               style={{
                 width: '100%',

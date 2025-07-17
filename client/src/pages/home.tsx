@@ -1,7 +1,5 @@
 import { Link } from 'wouter';
 import { useEffect, useState } from 'react';
-import grainTexture from '@assets/grain_1751928350011.webp';
-import blurTexture from '@assets/blur_1751928350012.webp';
 
 export default function Home() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -46,7 +44,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-40"
           style={{
-            backgroundImage: `url(${grainTexture})`,
+            backgroundImage: `url(./grain.webp)`,
             backgroundSize: '512px 512px',
             backgroundRepeat: 'repeat',
             animation: 'grainMove 20s linear infinite',
@@ -58,7 +56,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `url(${blurTexture})`,
+            backgroundImage: `url(./blur.webp)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transform: `translate(${mousePos.x * 20 - 10}px, ${mousePos.y * 20 - 10}px) scale(1.1)`,
@@ -134,7 +132,7 @@ export default function Home() {
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none' }}>
             <img 
-              src="/logo.png" 
+              src="./logo.png" 
               alt="HeaVans Logo" 
               style={{
                 height: '30px',
