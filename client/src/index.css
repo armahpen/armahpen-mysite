@@ -1335,6 +1335,15 @@ h1:hover {
     padding: 1rem 20px !important;
   }
   
+  .mobile-categories-menu {
+    display: block !important;
+    margin-top: 360px !important;
+  }
+  
+  .desktop-categories-sidebar {
+    display: none !important;
+  }
+  
   .portfolio-categories {
     flex-direction: column !important;
     gap: 10px !important;

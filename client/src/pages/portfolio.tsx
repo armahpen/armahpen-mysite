@@ -258,6 +258,60 @@ export default function Portfolio() {
           padding: '2rem 1rem',
           maxWidth: '100%'
         }}>
+          {/* Mobile Categories Menu - 5 inches under header */}
+          <div className="mobile-categories-menu" style={{
+            display: 'none',
+            marginTop: '360px',
+            marginBottom: '40px',
+            padding: '0 1rem'
+          }}>
+            <h3 style={{
+              fontSize: '16px',
+              fontWeight: '500',
+              marginBottom: '24px',
+              letterSpacing: '0.5px',
+              textTransform: 'uppercase',
+              color: 'rgba(255, 255, 255, 0.9)'
+            }}>
+              Categories
+            </h3>
+            
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
+            }}>
+              {categories.map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedCategory(category)}
+                  style={{
+                    background: selectedCategory === category 
+                      ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)' 
+                      : 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                    border: selectedCategory === category 
+                      ? '1px solid rgba(255, 255, 255, 0.2)' 
+                      : '1px solid rgba(255, 255, 255, 0.05)',
+                    borderRadius: '12px',
+                    color: selectedCategory === category ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.7)',
+                    fontSize: '14px',
+                    fontWeight: selectedCategory === category ? '500' : '400',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    padding: '16px 20px',
+                    transition: 'all 0.3s ease',
+                    fontFamily: 'inherit',
+                    backdropFilter: 'blur(10px)',
+                    width: '100%',
+                    maxWidth: '300px'
+                  }}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Header */}
           <div style={{ marginBottom: '60px' }}>
             <h1 style={{
@@ -453,7 +507,7 @@ export default function Portfolio() {
         </div>
 
         {/* Right Sidebar - 3D Project Categories */}
-        <div style={{
+        <div className="desktop-categories-sidebar" style={{
           width: '300px',
           padding: '80px 40px',
           borderLeft: '1px solid rgba(255, 255, 255, 0.1)',

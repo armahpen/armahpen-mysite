@@ -114,6 +114,14 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 17, 2025: **MOBILE CATEGORIES MENU POSITIONING**: Moved Categories menu to top of Portfolio page
+  - **MOBILE-ONLY VISIBILITY**: Categories menu now appears only on mobile devices (≤768px screen width)
+  - **5-INCH POSITIONING**: Categories menu positioned 5 inches (360px) under header/logo/menu section for mobile
+  - **DESKTOP SIDEBAR HIDDEN**: Original right sidebar categories menu hidden on mobile devices
+  - **IMPROVED MOBILE NAVIGATION**: Enhanced mobile portfolio navigation with top-positioned category selection
+  - **RESPONSIVE DESIGN**: Categories menu adapts to mobile layout with proper spacing and touch-friendly buttons
+  - **GITHUB PAGES READY**: Updated build with correct asset paths for deployment
+
 - July 17, 2025: **FIXED PORTFOLIO DESCRIPTION TEXT FORMATTING FOR ALL PROJECTS**
   - **IMPROVED MOBILE TEXT DISPLAY**: Updated description text formatting for all portfolio projects (My Rabbai, Student Help CRM, DEMS CRM Systems, School CRM System, Ceding app, LeadGen CRM, Church CRM System, UI/UX, Graphic Design, Poetry)
   - **RESPONSIVE TEXT STYLING**: Added clamp() font sizing, proper line height, word break, and text overflow handling for mobile and desktop
