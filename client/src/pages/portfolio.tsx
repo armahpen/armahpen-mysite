@@ -314,8 +314,8 @@ export default function Portfolio() {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '40px'
-                }}>
-                  <div style={{ flex: '1' }}>
+                }} className="portfolio-project-layout">
+                  <div style={{ flex: '1' }} className="portfolio-project-content">
                     <h3 style={{
                       fontSize: '24px',
                       fontWeight: '400',
@@ -325,10 +325,18 @@ export default function Portfolio() {
                       {project.title}
                     </h3>
                     <p style={{
-                      fontSize: '16px',
-                      lineHeight: '1.5',
-                      color: 'rgba(255, 255, 255, 0.6)',
-                      marginBottom: '16px'
+                      fontSize: 'clamp(14px, 2.5vw, 16px)',
+                      lineHeight: '1.6',
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      marginBottom: '16px',
+                      wordBreak: 'break-word',
+                      hyphens: 'auto',
+                      textAlign: 'left',
+                      maxWidth: '100%',
+                      overflow: 'hidden',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 4,
+                      WebkitBoxOrient: 'vertical'
                     }}>
                       {project.description}
                     </p>
