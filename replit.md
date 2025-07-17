@@ -114,11 +114,16 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 17, 2025: **UPDATED CEDING CRM APP IMAGE**: Added custom image for Ceding - My Saving & CRM App project
+  - **CUSTOM PROJECT IMAGE**: Replaced default image with user-provided Ceding CRM dashboard interface
+  - **ENHANCED VISUAL REPRESENTATION**: Ceding app now displays with authentic dashboard preview showing savings modules
+  - **IMPROVED PROJECT SHOWCASE**: Better visual representation of the actual savings and CRM platform interface
+  - **GITHUB PAGES READY**: Updated build with correct asset paths for deployment
+
 - July 17, 2025: **UPDATED SCHOOL CRM SYSTEM IMAGE**: Used custom image for School CRM System project
   - **CUSTOM PROJECT IMAGE**: Replaced default image with user-provided School CRM System dashboard screenshot
   - **ENHANCED VISUAL REPRESENTATION**: School CRM System now displays with authentic interface preview
   - **IMPROVED PROJECT SHOWCASE**: Better visual representation of the actual CRM system interface
-  - **GITHUB PAGES READY**: Updated build with correct asset paths for deployment
 
 - July 17, 2025: **RESTORED PORTFOLIO PROJECT IMAGES**: Brought back image previews for all portfolio projects
   - **IMAGE PREVIEW CARDS**: Restored image backgrounds for all project categories with hover overlay effects

@@ -38,7 +38,7 @@ export default function Portfolio() {
       title: 'Ceding - My Saving & CRM App',
       description: 'A savings and CRM platform built with Drupal (PHP), designed to help individuals and financial groups save smarter, stay accountable, and manage member data effectively.',
       category: 'CRMs',
-      image: '/dems-crm-preview.png',
+      image: '/ceding-crm-preview.png',
       technologies: ['Figma (UI/UX Design)', 'Drupal (PHP Backend)', 'HTML / Tailwind CSS', 'CRM Dashboard / Smart Reminders']
     },
     {
