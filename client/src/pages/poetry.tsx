@@ -149,6 +149,33 @@ const poems = [
       "For coders, it's a constant delight"
     ],
     date: "20 March 2023"
+  },
+  {
+    id: 11,
+    title: "SPARTA'S UTTER",
+    lines: [
+      "Disrupt, trash the mundane",
+      "Some may say u're insane",
+      "Make it known and plain",
+      "Give away no more years",
+      "Wipe your tears and starve your fears",
+      "You've got nothing to loose",
+      "You live only once",
+      "Dont loose that chance",
+      "If life plays a different tune",
+      "still choose to dance",
+      "Stand on your own two feet",
+      "You have a feat to achieve",
+      "Live as if it's your last day's eve",
+      "Take your best shot",
+      "Give it all you've got",
+      "Even when you flop",
+      "Do not stop!",
+      "Dare not stop!",
+      "Follow through to your goal",
+      "with all the might in your soul."
+    ],
+    date: "18 July 2025"
   }
 ];
 

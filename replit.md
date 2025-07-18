@@ -114,13 +114,14 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
-- July 18, 2025: **POETRY PAGE WITH 3D EFFECTS**: Added Three.js 3D cloud effects and refined Blood Saved poem elements
+- July 18, 2025: **POETRY PAGE ENHANCED WITH NAVIGATION**: Added interactive poem navigation and new "SPARTA'S UTTER" poem
+  - **NEW POEM ADDED**: "SPARTA'S UTTER" - motivational poem about breaking through mundane limitations and pursuing goals
+  - **INTERACTIVE NAVIGATION**: Added Previous/Next buttons and clickable poem list with glowing selection indicators
   - **3D CLOUD EFFECTS**: Floating 3D clouds with smooth animations for all poems using Three.js
-  - **BLOOD SAVED SPECIAL EFFECTS**: 3D floating blood drop specifically for Blood Saved poem (removed cross and crown per user request)
+  - **BLOOD SAVED SPECIAL EFFECTS**: 3D floating blood drop specifically for Blood Saved poem
+  - **STYLISH POEM LIST**: Left sidebar with all poem titles, circular selection indicators, and hover effects
   - **ELEGANT DESIGN**: Light blue to green gradient background with Dancing Script cursive font
-  - **ANIMATED 3D ELEMENTS**: Blood drop floats gently with realistic materials and transparency
   - **SEAMLESS INTEGRATION**: 3D canvas layer behind text content with proper z-index layering
-  - **AUTO-ADVANCING**: Poems transition automatically with smooth 3D scene updates
   - **DEVELOPMENT ONLY**: Updated React development version, GitHub Pages poetry page remains unchanged
 
 - July 18, 2025: **PORTFOLIO PROJECT LINKS UPDATED**: Added proper View buttons with correct URLs for portfolio projects
