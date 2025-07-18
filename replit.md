@@ -114,13 +114,13 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
-- July 18, 2025: **POETRY PAGE REDESIGNED**: Cloned design from "https://preview--verse-in-motion-three.lovable.app/" with flowing cloud-like animations
-  - **MINIMALIST DESIGN**: Clean gradient background from slate to blue with floating elements
-  - **ANIMATED TEXT FLOW**: Lines appear sequentially with fade-in animations like clouds drifting
-  - **FLOATING HEADER**: "words dance across the sky" animated header matching reference site
-  - **AUTO-ADVANCING**: Poems automatically transition with typewriter-style line reveals
-  - **INTERACTIVE CONTROLS**: Next Poem and Play/Pause buttons for user control
-  - **ALL 10 POEMS**: Complete collection including expanded "Blood Saved" and "Boundless Imagination"
+- July 18, 2025: **POETRY PAGE WITH 3D EFFECTS**: Added Three.js 3D cloud effects and special religious elements for Blood Saved poem
+  - **3D CLOUD EFFECTS**: Floating 3D clouds with smooth animations for all poems using Three.js
+  - **BLOOD SAVED SPECIAL EFFECTS**: 3D Jesus cross, blood drop, and crown of thorns specifically for Blood Saved poem
+  - **ELEGANT DESIGN**: Light blue to green gradient background with Dancing Script cursive font
+  - **ANIMATED 3D ELEMENTS**: Cross rotates, blood drop floats, crown of thorns spins with realistic materials
+  - **SEAMLESS INTEGRATION**: 3D canvas layer behind text content with proper z-index layering
+  - **AUTO-ADVANCING**: Poems transition automatically with smooth 3D scene updates
   - **DEVELOPMENT ONLY**: Updated React development version, GitHub Pages poetry page remains unchanged
 
 - July 18, 2025: **PORTFOLIO PROJECT LINKS UPDATED**: Added proper View buttons with correct URLs for portfolio projects

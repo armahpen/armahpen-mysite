@@ -1,4 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
+declare global {
+  interface Window {
+    THREE: any;
+  }
+}
 
 const poems = [
   {
@@ -151,6 +157,205 @@ export default function Poetry() {
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [displayedLines, setDisplayedLines] = useState<string[]>([]);
   const [isAnimating, setIsAnimating] = useState(true);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const sceneRef = useRef<any>(null);
+
+  // Load Three.js and initialize 3D scene
+  useEffect(() => {
+    const loadScript = (src: string): Promise<void> => {
+      return new Promise((resolve, reject) => {
+        if (document.querySelector(`script[src="${src}"]`)) {
+          resolve();
+          return;
+        }
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = () => resolve();
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    };
+
+    const init3D = async () => {
+      try {
+        if (!window.THREE) {
+          await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js');
+        }
+
+        const THREE = window.THREE;
+        if (!canvasRef.current) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+          canvas: canvasRef.current, 
+          alpha: true,
+          antialias: true 
+        });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0);
+        
+        sceneRef.current = { scene, camera, renderer, clouds: [], specialObjects: [] };
+
+        // Create 3D clouds
+        const createCloud = (x: number, y: number, z: number) => {
+          const cloudGroup = new THREE.Group();
+          
+          for (let i = 0; i < 8; i++) {
+            const geometry = new THREE.SphereGeometry(0.3 + Math.random() * 0.2, 8, 6);
+            const material = new THREE.MeshBasicMaterial({ 
+              color: 0xffffff, 
+              transparent: true, 
+              opacity: 0.3 + Math.random() * 0.2 
+            });
+            const sphere = new THREE.Mesh(geometry, material);
+            sphere.position.set(
+              (Math.random() - 0.5) * 2,
+              (Math.random() - 0.5) * 1,
+              (Math.random() - 0.5) * 1
+            );
+            cloudGroup.add(sphere);
+          }
+          
+          cloudGroup.position.set(x, y, z);
+          return cloudGroup;
+        };
+
+        // Add multiple clouds
+        for (let i = 0; i < 6; i++) {
+          const cloud = createCloud(
+            (Math.random() - 0.5) * 20,
+            (Math.random() - 0.5) * 10,
+            -5 - Math.random() * 10
+          );
+          scene.add(cloud);
+          sceneRef.current.clouds.push(cloud);
+        }
+
+        camera.position.z = 5;
+
+        const animate = () => {
+          requestAnimationFrame(animate);
+          
+          // Animate clouds
+          sceneRef.current.clouds.forEach((cloud: any, index: number) => {
+            cloud.rotation.y += 0.002;
+            cloud.position.x += Math.sin(Date.now() * 0.0005 + index) * 0.001;
+            cloud.position.y += Math.cos(Date.now() * 0.0003 + index) * 0.001;
+          });
+
+          // Animate special objects for Blood Saved poem
+          if (currentPoemIndex === 8) { // Blood Saved poem
+            sceneRef.current.specialObjects.forEach((obj: any) => {
+              if (obj.userData.type === 'cross') {
+                obj.rotation.y += 0.01;
+              } else if (obj.userData.type === 'blood') {
+                obj.position.y += Math.sin(Date.now() * 0.003) * 0.002;
+              } else if (obj.userData.type === 'crown') {
+                obj.rotation.z += 0.005;
+              }
+            });
+          }
+          
+          renderer.render(scene, camera);
+        };
+
+        animate();
+
+        const handleResize = () => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+
+      } catch (error) {
+        console.error('Error loading 3D libraries:', error);
+      }
+    };
+
+    init3D();
+  }, []);
+
+  // Update 3D scene based on current poem
+  useEffect(() => {
+    if (!sceneRef.current) return;
+
+    const { scene, specialObjects } = sceneRef.current;
+
+    // Clear previous special objects
+    specialObjects.forEach((obj: any) => {
+      scene.remove(obj);
+    });
+    specialObjects.length = 0;
+
+    // Add special objects for Blood Saved poem
+    if (currentPoemIndex === 8 && window.THREE) { // Blood Saved poem
+      const THREE = window.THREE;
+
+      // Create 3D Cross
+      const crossGroup = new THREE.Group();
+      
+      // Vertical beam
+      const verticalGeometry = new THREE.BoxGeometry(0.2, 3, 0.2);
+      const crossMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513, transparent: true, opacity: 0.8 });
+      const verticalBeam = new THREE.Mesh(verticalGeometry, crossMaterial);
+      crossGroup.add(verticalBeam);
+      
+      // Horizontal beam
+      const horizontalGeometry = new THREE.BoxGeometry(2, 0.2, 0.2);
+      const horizontalBeam = new THREE.Mesh(horizontalGeometry, crossMaterial);
+      horizontalBeam.position.y = 0.5;
+      crossGroup.add(horizontalBeam);
+      
+      crossGroup.position.set(-3, 2, -3);
+      crossGroup.userData.type = 'cross';
+      scene.add(crossGroup);
+      specialObjects.push(crossGroup);
+
+      // Create 3D Blood Drop
+      const bloodGeometry = new THREE.SphereGeometry(0.15, 8, 6);
+      bloodGeometry.scale(1, 1.5, 1); // Make it droplet shaped
+      const bloodMaterial = new THREE.MeshBasicMaterial({ color: 0x8B0000, transparent: true, opacity: 0.7 });
+      const bloodDrop = new THREE.Mesh(bloodGeometry, bloodMaterial);
+      bloodDrop.position.set(3, 3, -2);
+      bloodDrop.userData.type = 'blood';
+      scene.add(bloodDrop);
+      specialObjects.push(bloodDrop);
+
+      // Create 3D Crown of Thorns
+      const crownGroup = new THREE.Group();
+      
+      // Base circle
+      const crownGeometry = new THREE.TorusGeometry(0.8, 0.05, 8, 16);
+      const crownMaterial = new THREE.MeshBasicMaterial({ color: 0x4A4A4A, transparent: true, opacity: 0.6 });
+      const crownBase = new THREE.Mesh(crownGeometry, crownMaterial);
+      crownGroup.add(crownBase);
+      
+      // Add thorns
+      for (let i = 0; i < 12; i++) {
+        const thornGeometry = new THREE.ConeGeometry(0.02, 0.3, 4);
+        const thorn = new THREE.Mesh(thornGeometry, crownMaterial);
+        const angle = (i / 12) * Math.PI * 2;
+        thorn.position.set(Math.cos(angle) * 0.8, 0.15, Math.sin(angle) * 0.8);
+        thorn.rotation.z = -angle + Math.PI / 2;
+        crownGroup.add(thorn);
+      }
+      
+      crownGroup.position.set(0, -2, -4);
+      crownGroup.userData.type = 'crown';
+      scene.add(crownGroup);
+      specialObjects.push(crownGroup);
+
+      sceneRef.current.specialObjects = specialObjects;
+    }
+  }, [currentPoemIndex]);
 
   useEffect(() => {
     if (!isAnimating) return;
@@ -195,8 +400,15 @@ export default function Poetry() {
     <div className="min-h-screen relative overflow-hidden" style={{
       background: 'linear-gradient(to bottom, #e0f2fe 0%, #bbf7d0 100%)'
     }}>
+      {/* 3D Canvas for clouds and special effects */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none"
+        style={{ zIndex: 1 }}
+      />
+
       {/* Subtle floating elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30" style={{ zIndex: 2 }}>
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
@@ -212,7 +424,7 @@ export default function Poetry() {
       </div>
 
       {/* Main content */}
-      <div className="flex flex-col items-center justify-center min-h-screen px-4">
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 relative" style={{ zIndex: 3 }}>
         {/* Current poem display */}
         <div className="w-full max-w-4xl text-center">
           <div className="mb-16">
