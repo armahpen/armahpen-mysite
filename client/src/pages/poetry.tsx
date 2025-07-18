@@ -1,480 +1,238 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'wouter';
-
-interface Poem {
-  id: number;
-  title: string;
-  content: string[];
-  category: string;
-  excerpt: string;
-}
-
-const poems: Poem[] = [
-  {
-    id: 1,
-    title: "Being You",
-    excerpt: "Being you is different, No one is perfect, Simply you, no effects...",
-    category: "Self-Reflection",
-    content: [
-      "Being you is different",
-      "No one is perfect",
-      "Simply you, no effects",
-      "Show dem you reflect",
-      "Show dem respect but be no pet"
-    ]
-  },
-  {
-    id: 2,
-    title: "The Coder's Journey",
-    excerpt: "Coding can be quite demanding, Errors here and there are commanding...",
-    category: "Technology",
-    content: [
-      "Coding can be quite demanding",
-      "Errors here and there are commanding",
-      "But once you debug and get it right",
-      "The feeling is truly out of sight",
-      "For coders, it's a constant delight"
-    ]
-  },
-  {
-    id: 3,
-    title: "In the Air",
-    excerpt: "In the air, a pulsating vibe, we ride, Harmonic waves, side by side...",
-    category: "Music & Connection",
-    content: [
-      "In the air, a pulsating vibe, we ride,",
-      "Harmonic waves, side by side.",
-      "Through the rhythm, souls collide,",
-      "A dance of energy, amplified.",
-      "In this space, our hearts reside,",
-      "United by the beat, we're sanctified"
-    ]
-  },
-  {
-    id: 4,
-    title: "I Live Again",
-    excerpt: "I live, I die, I live again, His loss became my gain...",
-    category: "Spiritual",
-    content: [
-      "I live",
-      "I die",
-      "I live again",
-      "His loss became my gain",
-      "On the cross He endured my pain",
-      "",
-      "I live",
-      "I die", 
-      "I live again",
-      "'Cause death He overcame"
-    ]
-  },
-  {
-    id: 5,
-    title: "The Bond",
-    excerpt: "Together we laugh, sometimes we stumble, A group of friends, a perfect jumble...",
-    category: "Friendship",
-    content: [
-      "Together we laugh, sometimes we stumble,",
-      "A group of friends, a perfect jumble.",
-      "In silly moments, our words may fumble,",
-      "But in our hearts, love's never humble.",
-      "Through thick and thin, we stand as one,",
-      "A friendship forged, never undone."
-    ]
-  },
-  {
-    id: 6,
-    title: "Spoken Drive",
-    excerpt: "dreams chase dare propel step, spirits swell together break chains quell...",
-    category: "Motivation",
-    content: [
-      "dreams chase dare propel step",
-      "spirits swell together break chains quell",
-      "rising above heroes dwell",
-      "empowerment fire excels",
-      "motivation inspire courage strength",
-      "unity freedom soar uplift",
-      "triumph passion determination success",
-      "elevate breakthrough liberate",
-      "thrive ascend conquer ignite flourish"
-    ]
-  },
-  {
-    id: 7,
-    title: "Greeting Energy",
-    excerpt: "hey greeting notice standing smile, energy beyond compare awesome pair...",
-    category: "Word Storm",
-    content: [
-      "hey greeting notice standing smile",
-      "energy beyond compare awesome pair",
-      "vibrant flood positive energy",
-      "personality traits cascade",
-      "joy presence human warmth",
-      "expressive word collage flows",
-      "energy ideal performance",
-      "visual design creation"
-    ]
-  },
-  {
-    id: 8,
-    title: "Muse Adore",
-    excerpt: "realms boundless imagination roam, colors dance words find home...",
-    category: "Creativity",
-    content: [
-      "realms boundless imagination roam",
-      "colors dance words find home",
-      "canvas page symphony embrace",
-      "creativity fire eternal grace",
-      "whispered dreams bold inventions",
-      "weave thoughts daring intentions",
-      "unleash ideas unchained free",
-      "essence story unfolds melody",
-      "composed masterpiece untold soar",
-      "muse adore"
-    ]
-  },
-  {
-    id: 9,
-    title: "Art is Everything",
-    excerpt: "art gallery museum painting artwork, canvas exhibition creativity imagination...",
-    category: "Visual Art",
-    content: [
-      "art gallery museum painting artwork",
-      "canvas exhibition creativity imagination",
-      "inspiration masterpiece brushstroke color hue",
-      "aesthetic passion artistic life",
-      "visual soul language",
-      "creativity expansive piece",
-      "explores aesthetics passion",
-      "artistic vocabulary stream"
-    ]
-  },
-  {
-    id: 10,
-    title: "Zion's Call", 
-    excerpt: "blood save redemption embrace love, outwit race Caesar Jesus free...",
-    category: "Spiritual",
-    content: [
-      "blood save redemption embrace love",
-      "outwit race Caesar Jesus free",
-      "betray Judas conquer lion light",
-      "Zion poetry spoken word faith",
-      "grace salvation hope mercy forgiveness",
-      "strength victory illumination inspiration spiritual"
-    ]
-  }
-];
+import { useEffect, useRef } from "react";
 
 export default function Poetry() {
-  const [selectedPoem, setSelectedPoem] = useState<Poem | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Simulate loading animation like itssharl.ee
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
+    if (!containerRef.current) return;
+
+    // Clear any existing content
+    containerRef.current.innerHTML = '';
+
+    // Create iframe to embed the 3D Poetry Journey
+    const iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100vh';
+    iframe.style.border = 'none';
+    iframe.style.margin = '0';
+    iframe.style.padding = '0';
+    
+    // Create the HTML content for the 3D Poetry Journey
+    const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Poetry Journey</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: white;
+            font-family: 'Arial', sans-serif;
+        }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #333;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        #info:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        @media (max-width: 600px) {
+            #info {
+                font-size: 1em;
+                padding: 8px 15px;
+                top: 5px;
+                left: 5px;
+            }
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">Click to start the journey</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.min.js"></script>
+    <script>
+        let scene, camera, renderer, planes = [], charMeshes = [], currentIndex = -1;
+        let activeTweens = [];
+
+        const poems = [
+            { text: "Being you is different\\nNo one is perfect\\nSimply you No effects\\nShow dem you reflect\\nShow dem respect but be no pet", date: "20 March 2023" },
+            { text: "I live\\nI die\\nI live again\\nHis lost became my gain\\nOn the cross He endured my pain\\n\\nI live\\nI die\\nI live again\\nCos death He over came", date: "20 March 2023" },
+            { text: "In strokes and hues, the passions start,\\nA canvas whispers from the heart,\\nA symphony of colors, transformed through masterful art.", date: "4 June 2023" },
+            { text: "Hey there, I couldn't help but notice you standing there.\\nHey there, your smile and energy are beyond compare.\\nHey there, I think we could make an awesome pair.\\nHey there, I'd love to get to know you and your flair.\\nHey there, maybe we could grab a drink or a bite to share.\\nHey there, let's start a friendship that's rare and so sincere.", date: "20 March 2023" },
+            { text: "Together we laugh, sometimes we stumble,\\nA group of friends, a perfect jumble.\\nIn silly moments, our words may fumble,\\nBut in our hearts, love's never humble.\\nThrough thick and thin, we stand as one,\\nA friendship forged, never undone.", date: "20 March 2023", author: "dr_johnson @willbos" },
+            { text: "With dreams to chase, we dare to propel,\\nIn every step, our spirits swell.\\nTogether, we break the chains that quell,\\nRising above, where heroes dwell.\\nEmpowerment's fire, in us, excels.", date: "20 March 2023" },
+            { text: "In the air, a pulsing vibe, we ride,\\nHarmonic waves, side by side.\\nThrough the rhythm, souls collide,\\nA dance of energy, amplified.\\nIn this space, our hearts reside,\\nUnited by the beat, we're sanctified", date: "7 April 2023" },
+            { text: "In realms of boundless imagination, I roam,\\nWhere colors dance and words find their home.\\nA canvas, a page, a symphony's embrace,\\nCreativity's fire, an eternal grace.\\nFrom whispered dreams to bold inventions,\\nI weave my thoughts with daring intentions.\\nUnleashing ideas, unchained and free,\\nCreativity, the essence of me.\\nWith every stroke, a story unfolds,\\nA melody composed, a masterpiece untold.\\nIn realms of boundless imagination, I soar,\\nCreativity, my muse, forevermore.", date: "20 March 2023" },
+            { text: "Even when we run from your embrace\\nYour love outwit us in race\\nGive to Caesar what is Caesar's\\nBut thank God for Jesus\\nCos his love freed us\\nEven when we betrayed like Judas.\\nJudah's conquering Lion\\nThe only light brightening Zoin", date: "20 March 2023" },
+            { text: "Coding can be quite demanding\\nErrors here and there are commanding\\nBut once you debug and get it right\\nThe feeling is truly out of sight\\nFor coders, it's a constant delight", date: "20 March 2023" }
+        ];
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            directionalLight.position.set(0, 1, 0);
+            scene.add(directionalLight);
+
+            camera.position.z = 5;
+
+            poems.forEach((poem, index) => {
+                const geometry = new THREE.PlaneGeometry(4, 3);
+                const material = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+                const plane = new THREE.Mesh(geometry, material);
+                plane.position.x = (index - poems.length / 2) * 5;
+                plane.position.z = -10;
+                scene.add(plane);
+                planes.push(plane);
+
+                const loader = new THREE.FontLoader();
+                loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+                    charMeshes[index] = [];
+                    const lines = poem.text.split('\\n');
+                    let yOffset = 0.5;
+                    lines.forEach(line => {
+                        for (let i = 0; i < line.length; i++) {
+                            const charGeo = new THREE.TextGeometry(line[i], { font: font, size: 0.1, height: 0.01, curveSegments: 12 });
+                            const charMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0 });
+                            const charMesh = new THREE.Mesh(charGeo, charMaterial);
+                            charMesh.position.set(-1.8 + i * 0.1, yOffset, 0.01);
+                            plane.add(charMesh);
+                            charMeshes[index].push(charMesh);
+                        }
+                        yOffset -= 0.3;
+                    });
+
+                    const dateGeo = new THREE.TextGeometry(poem.date, { font: font, size: 0.05, height: 0.01, curveSegments: 12 });
+                    const dateMesh = new THREE.Mesh(dateGeo, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                    dateMesh.position.set(-1.8, -1.2, 0.01);
+                    plane.add(dateMesh);
+
+                    if (poem.author) {
+                        const authorGeo = new THREE.TextGeometry(poem.author, { font: font, size: 0.05, height: 0.01, curveSegments: 12 });
+                        const authorMesh = new THREE.Mesh(authorGeo, new THREE.MeshBasicMaterial({ color: 0x000000 }));
+                        authorMesh.position.set(1.5, -1.2, 0.01);
+                        plane.add(authorMesh);
+                    }
+                });
+            });
+
+            document.addEventListener('click', nextPoem);
+            animate();
+        }
+
+        function nextPoem() {
+            if (currentIndex >= 0) {
+                planes[currentIndex].position.z = -10;
+                activeTweens.forEach(t => t.stop());
+                activeTweens = [];
+                charMeshes[currentIndex].forEach(mesh => {
+                    mesh.material.opacity = 0;
+                    mesh.geometry.dispose();
+                });
+            }
+            currentIndex = (currentIndex + 1) % poems.length;
+            planes[currentIndex].position.z = 0;
+            startWritingAnimation();
+        }
+
+        function startWritingAnimation() {
+            const chars = charMeshes[currentIndex];
+            if (chars) {
+                chars.forEach((char, i) => {
+                    const delay = i * 100;
+                    const tween = new TWEEN.Tween({ opacity: 0, z: 0.01 })
+                        .to({ opacity: 1, z: 0.02 }, 300)
+                        .delay(delay)
+                        .easing(TWEEN.Easing.Quadratic.InOut)
+                        .onUpdate(({ opacity, z }) => {
+                            char.material.opacity = opacity;
+                            char.position.z = z;
+                        })
+                        .onComplete(() => {
+                            char.position.z = 0.01;
+                        })
+                        .start();
+                    activeTweens.push(tween);
+                });
+            }
+        }
+
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+            planes.forEach((plane, index) => {
+                if (index !== currentIndex) plane.rotation.y += 0.01;
+            });
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        init();
+        
+        // Audio with error handling for autoplay restrictions
+        try {
+            const audio = new Audio('https://www.bensound.com/bensound-music/bensound-slowmotion.mp3');
+            audio.loop = true;
+            audio.volume = 0.3;
+            audio.play().catch(e => console.log('Audio autoplay blocked'));
+        } catch (e) {
+            console.log('Audio not available');
+        }
+    </script>
+</body>
+</html>`;
+
+    // Set the iframe content
+    iframe.onload = () => {
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+      if (iframeDoc) {
+        iframeDoc.open();
+        iframeDoc.write(htmlContent);
+        iframeDoc.close();
+      }
+    };
+
+    containerRef.current.appendChild(iframe);
+
+    // Cleanup
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.innerHTML = '';
+      }
+    };
   }, []);
 
-  if (selectedPoem) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        background: '#fafafa',
-        fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
-      }}>
-        {/* Header */}
-        <header style={{
-          padding: '1rem 2rem',
-          borderBottom: '1px solid #e5e5e5',
-          background: 'white'
-        }}>
-          <div style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '1rem'
-          }}>
-            <button
-              onClick={() => setSelectedPoem(null)}
-              style={{
-                background: 'none',
-                border: 'none',
-                fontSize: '0.9rem',
-                color: '#666',
-                cursor: 'pointer',
-                fontFamily: 'inherit',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-              }}
-            >
-              <svg 
-                width="16" 
-                height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
-              Back to poetry
-            </button>
-            <Link href="/" style={{
-              fontSize: '1rem',
-              fontWeight: '600',
-              color: '#000',
-              textDecoration: 'none'
-            }}>
-              HeaVans
-            </Link>
-          </div>
-        </header>
-
-        {/* Poem Content */}
-        <main style={{
-          maxWidth: '800px',
-          margin: '0 auto',
-          padding: '2rem 1rem'
-        }}>
-          <div style={{ marginBottom: '2rem' }}>
-            <h1 style={{
-              fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
-              fontWeight: '300',
-              margin: '0 0 0.5rem 0',
-              color: '#000',
-              lineHeight: '1.2'
-            }}>
-              {selectedPoem.title}
-            </h1>
-            <p style={{
-              fontSize: '1rem',
-              color: '#666',
-              margin: 0
-            }}>
-              {selectedPoem.category}
-            </p>
-          </div>
-
-          <div style={{
-            fontSize: 'clamp(1rem, 2.5vw, 1.1rem)',
-            lineHeight: '1.8',
-            color: '#333',
-            fontFamily: 'Georgia, serif'
-          }}>
-            {selectedPoem.content.map((line, index) => (
-              <div key={index} style={{ 
-                marginBottom: line === '' ? '1.5rem' : '0.3rem' 
-              }}>
-                {line}
-              </div>
-            ))}
-          </div>
-        </main>
-      </div>
-    );
-  }
-
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#fafafa',
-      fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
-    }}>
-      {/* Loading Animation */}
-      {isLoading && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: '#fafafa',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 1000
-        }}>
-          <div style={{
-            fontSize: '1rem',
-            color: '#666',
-            animation: 'fade 2s ease-in-out'
-          }}>
-            Materializing verses...
-          </div>
-        </div>
-      )}
-
-      {/* Header */}
-      <header style={{
-        padding: '1rem 2rem',
-        background: 'white',
-        borderBottom: '1px solid #e5e5e5'
-      }}>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem'
-        }}>
-          <Link href="/" style={{
-            fontSize: '1rem',
-            fontWeight: '600',
-            color: '#000',
-            textDecoration: 'none'
-          }}>
-            HeaVans
-          </Link>
-          
-          <nav style={{
-            display: 'flex',
-            gap: '1.5rem',
-            flexWrap: 'wrap'
-          }}>
-            <Link href="/portfolio" style={{
-              color: '#666',
-              textDecoration: 'none',
-              fontSize: '0.9rem'
-            }}>Portfolio</Link>
-            <Link href="/about" style={{
-              color: '#666',
-              textDecoration: 'none',
-              fontSize: '0.9rem'
-            }}>About</Link>
-            <Link href="/contact" style={{
-              color: '#666',
-              textDecoration: 'none',
-              fontSize: '0.9rem'
-            }}>Contact</Link>
-          </nav>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '2rem 1rem'
-      }}>
-        {/* Footer Credit */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '3rem',
-          fontSize: '0.85rem',
-          color: '#999',
-          lineHeight: '1.4',
-          maxWidth: '600px',
-          margin: '0 auto 3rem auto'
-        }}>
-          All poems are the original work of Evans Armah (Heavans) © 2025. Reproduction or use without permission is prohibited.
-        </div>
-
-        {/* Poetry Section Header */}
-        <div style={{
-          marginBottom: '2rem'
-        }}>
-          <h1 style={{
-            fontSize: 'clamp(1.5rem, 4vw, 2rem)',
-            fontWeight: '300',
-            margin: '0 0 1rem 0',
-            color: '#000'
-          }}>
-            Poetry
-          </h1>
-          <div style={{
-            fontSize: 'clamp(1rem, 3vw, 1.25rem)',
-            color: '#666',
-            marginBottom: '1.5rem'
-          }}>
-            ##### {poems.length}
-          </div>
-          <hr style={{
-            border: 'none',
-            height: '1px',
-            background: '#e5e5e5',
-            margin: '1.5rem 0'
-          }} />
-        </div>
-
-        {/* Poems List */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0'
-        }}>
-          {poems.map((poem) => (
-            <div
-              key={poem.id}
-              onClick={() => setSelectedPoem(poem)}
-              style={{
-                padding: '1rem 0',
-                borderBottom: '1px solid #f0f0f0',
-                cursor: 'pointer',
-                transition: 'background-color 0.2s ease',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '0.75rem'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f8f8f8';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-            >
-              <div style={{
-                fontSize: '1rem',
-                color: '#000',
-                fontWeight: '600',
-                flexShrink: 0
-              }}>
-                →
-              </div>
-              <div style={{ flex: 1 }}>
-                <div style={{
-                  fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
-                  fontWeight: '600',
-                  color: '#000',
-                  marginBottom: '0.25rem'
-                }}>
-                  {poem.title}
-                </div>
-                <div style={{
-                  fontSize: 'clamp(0.8rem, 2vw, 0.85rem)',
-                  color: '#666',
-                  marginBottom: '0.5rem'
-                }}>
-                  {poem.category}
-                </div>
-                <div style={{
-                  fontSize: 'clamp(0.8rem, 2vw, 0.85rem)',
-                  color: '#999',
-                  lineHeight: '1.4'
-                }}>
-                  {poem.excerpt}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
-
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes fade {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 1; }
-          }
-        `
-      }} />
-    </div>
+    <div 
+      ref={containerRef}
+      className="w-full h-screen overflow-hidden"
+      style={{ margin: 0, padding: 0 }}
+    />
   );
 }
