@@ -192,75 +192,69 @@ export default function Poetry() {
   const currentPoem = poems[currentPoemIndex];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Floating background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+    <div className="min-h-screen relative overflow-hidden" style={{
+      background: 'linear-gradient(to bottom, #e0f2fe 0%, #bbf7d0 100%)'
+    }}>
+      {/* Subtle floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-blue-200/30 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${4 + Math.random() * 3}s`
             }}
           />
         ))}
       </div>
 
-      {/* Header floating words */}
-      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center">
-        <div className="text-blue-400/60 text-4xl md:text-6xl font-light tracking-wider animate-pulse">
-          words
-        </div>
-        <div className="text-blue-500/40 text-2xl md:text-3xl font-light mt-2 animate-bounce">
-          dance
-        </div>
-        <div className="text-blue-300/50 text-xl md:text-2xl font-light mt-1">
-          across
-        </div>
-        <div className="text-blue-600/30 text-lg md:text-xl font-light mt-1">
-          the sky
-        </div>
-      </div>
-
       {/* Main content */}
-      <div className="flex flex-col items-center justify-center min-h-screen px-4 pt-32">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-light text-slate-700 mb-4">
-            Poetry in Motion
-          </h1>
-          <p className="text-lg md:text-xl text-slate-500 font-light">
-            a collection of verses that flow like clouds
-          </p>
-        </div>
-
+      <div className="flex flex-col items-center justify-center min-h-screen px-4">
         {/* Current poem display */}
-        <div className="w-full max-w-4xl">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-light text-slate-600 mb-2">
+        <div className="w-full max-w-4xl text-center">
+          <div className="mb-16">
+            <h1 
+              className="text-5xl md:text-7xl mb-6 text-gray-700"
+              style={{ 
+                fontFamily: 'Dancing Script, cursive',
+                fontWeight: 600
+              }}
+            >
               {currentPoem.title}
-            </h2>
-            <p className="text-sm text-slate-400">{currentPoem.date}</p>
+            </h1>
           </div>
 
-          <div className="space-y-4 min-h-[400px] flex flex-col justify-center">
+          <div className="space-y-6 min-h-[300px] flex flex-col justify-center">
             {displayedLines.map((line, index) => (
               <div
                 key={index}
-                className={`text-xl md:text-2xl font-light text-slate-600 text-center transition-all duration-1000 transform ${
+                className={`text-lg md:text-xl text-gray-600 text-center transition-all duration-1000 transform ${
                   line === "" ? "h-6" : ""
                 }`}
                 style={{
+                  fontFamily: 'Dancing Script, cursive',
+                  fontWeight: 400,
                   opacity: 1,
                   transform: "translateY(0)",
-                  animation: `fadeInUp 0.8s ease-out ${index * 0.1}s both`
+                  animation: `fadeInUp 1s ease-out ${index * 0.2}s both`
                 }}
               >
                 {line}
               </div>
             ))}
+          </div>
+
+          {/* Date and category */}
+          <div className="mt-12 text-center">
+            <p 
+              className="text-sm text-gray-500"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
+            >
+              {currentPoem.date}
+            </p>
           </div>
         </div>
 
@@ -268,25 +262,40 @@ export default function Poetry() {
         <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
           <button
             onClick={handleClick}
-            className="px-6 py-3 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white/90 transition-all duration-300 shadow-lg"
+            className="px-6 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
           >
             Next Poem
           </button>
           <button
             onClick={toggleAnimation}
-            className="px-6 py-3 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white/90 transition-all duration-300 shadow-lg"
+            className="px-6 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
           >
             {isAnimating ? "Pause" : "Play"}
           </button>
         </div>
 
         {/* Poem counter */}
-        <div className="fixed top-8 right-8 text-slate-400 text-sm">
+        <div 
+          className="fixed bottom-8 right-8 text-gray-500 text-sm"
+          style={{ fontFamily: 'Dancing Script, cursive' }}
+        >
           {currentPoemIndex + 1} / {poems.length}
+        </div>
+
+        {/* Creativity tag */}
+        <div 
+          className="fixed bottom-8 left-8 text-gray-400 text-xs"
+          style={{ fontFamily: 'Dancing Script, cursive' }}
+        >
+          creativity
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+        
         @keyframes fadeInUp {
           from {
             opacity: 0;
