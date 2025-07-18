@@ -114,6 +114,14 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 18, 2025: **PORTFOLIO LINKS & AI CATEGORY**: Added proper project links and AI Project category for My Rabbai
+  - **AI PROJECT CATEGORY**: Created new "AI Project" category button specifically for My Rabbai platform
+  - **PROPER PROJECT LINKS**: Replaced card clicks with dedicated "View" buttons for each project
+  - **MY RABBAI UPDATES**: Moved from CRM to AI category with correct description (AI-powered scripture reading platform)
+  - **EXTERNAL LINKS**: Added proper links - My Rabbai → https://rabbai.com, Design portfolios → https://www.behance.net/armahpen
+  - **BUTTON STYLING**: White View buttons with black & white glow theme, hover effects with enhanced glow
+  - **GITHUB PAGES READY**: Applied to both index.html and 404.html for complete GitHub Pages deployment
+
 - July 18, 2025: **BLACK & WHITE GLOW THEME**: Applied sophisticated black and white theme with glowing text effects
   - **PURE BLACK BACKGROUND**: Changed from dark gray to pure black (#000000) for clean minimal aesthetic
   - **REMOVED GRAIN ANIMATION**: Replaced moving brown grain texture with solid black background

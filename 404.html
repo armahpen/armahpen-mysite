@@ -313,15 +313,33 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
-        .project-link {
+        .project-actions {
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .project-card[onclick]:hover .project-link span {
+        .view-btn {
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        .view-btn:hover {
+            background: #000000;
+            color: #ffffff;
+            box-shadow: 
+                0 0 15px #ffffff,
+                0 0 25px #ffffff;
             text-shadow: 0 0 8px #ffffff;
-            opacity: 1;
+            transform: translateY(-2px);
         }
         
         .project-img {
@@ -545,6 +563,7 @@
         <!-- Portfolio Categories -->
         <div class="portfolio-categories">
             <button class="category-btn active" onclick="filterPortfolio('all')">All Projects</button>
+            <button class="category-btn" onclick="filterPortfolio('ai')">AI Project</button>
             <button class="category-btn" onclick="filterPortfolio('crm')">CRM Systems</button>
             <button class="category-btn" onclick="filterPortfolio('design')">UI/UX Design</button>
             <button class="category-btn" onclick="filterPortfolio('graphics')">Graphic Design</button>
@@ -592,43 +611,46 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="ai">
                 <img src="./rabbai-preview.png" alt="My Rabbai" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">My Rabbai</h3>
-                    <p class="project-desc">Innovative platform for religious education and community building, featuring lesson management, progress tracking, and interactive learning experiences.</p>
+                    <p class="project-desc">AI-powered platform for personalized scripture reading with voice synthesis technology, making daily devotion more engaging and spiritually enriching.</p>
+                    <div class="project-actions">
+                        <button class="view-btn" onclick="window.open('https://rabbai.com', '_blank')">View</button>
+                    </div>
                 </div>
             </div>
             
-            <div class="project-card" onclick="window.open('https://www.behance.net/armahpen', '_blank')" style="cursor: pointer;">
+            <div class="project-card" data-category="design">
                 <img src="./uiux-designs-preview.png" alt="UI/UX Designs" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">UI/UX Design Collection</h3>
                     <p class="project-desc">Showcase of modern interface designs and user experience solutions across various industries, demonstrating creativity and attention to user-centered design principles.</p>
-                    <div class="project-link">
-                        <span style="color: #ffffff; font-size: 0.9rem; opacity: 0.8;">→ View Portfolio</span>
+                    <div class="project-actions">
+                        <button class="view-btn" onclick="window.open('https://www.behance.net/armahpen', '_blank')">View</button>
                     </div>
                 </div>
             </div>
             
-            <div class="project-card" onclick="window.open('https://www.behance.net/armahpen', '_blank')" style="cursor: pointer;">
+            <div class="project-card" data-category="graphics">
                 <img src="./graphic-design-preview.png" alt="Graphic Design" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Graphic Design Portfolio</h3>
                     <p class="project-desc">Collection of visual identity projects, branding materials, and creative designs that combine artistic vision with strategic brand communication.</p>
-                    <div class="project-link">
-                        <span style="color: #ffffff; font-size: 0.9rem; opacity: 0.8;">→ View Portfolio</span>
+                    <div class="project-actions">
+                        <button class="view-btn" onclick="window.open('https://www.behance.net/armahpen', '_blank')">View</button>
                     </div>
                 </div>
             </div>
             
-            <div class="project-card" onclick="window.open('https://www.behance.net/armahpen', '_blank')" style="cursor: pointer;">
+            <div class="project-card" data-category="poetry">
                 <img src="./poetry-preview.png" alt="Poetry Collection" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Poetry Collection</h3>
                     <p class="project-desc">Original poetry and creative writing exploring themes of technology, personal growth, spirituality, and human connection through thoughtful verse and prose.</p>
-                    <div class="project-link">
-                        <span style="color: #ffffff; font-size: 0.9rem; opacity: 0.8;">→ View Collection</span>
+                    <div class="project-actions">
+                        <button class="view-btn" onclick="window.open('https://www.behance.net/armahpen', '_blank')">View</button>
                     </div>
                 </div>
             </div>
