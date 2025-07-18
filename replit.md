@@ -115,7 +115,8 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 ## Recent Changes
 
 - July 18, 2025: **POETRY COLLECTION COMPLETED**: Added final poem to complete comprehensive collection with 14 original works
-  - **FINAL POEM ADDED**: "We never really die. We are spirits wearing a physical body" - spiritual reflection on life, transcendence, and inner power (from 2018)
+  - **FINAL POEM ADDED**: "We never really die" - spiritual reflection on life, transcendence, and inner power (from 2018)
+  - **UPDATED POEM TITLES**: Fixed poem titles and dates per user corrections: "I'm ~not~ wrong" (Nov 15, 2018), "We never really die" (Jun 5, 2018), "SPARTA'S UTTER" (August 2017)
   - **COMPLETE COLLECTION**: Now featuring 14 original poems spanning multiple years (2015-2025) with themes of spirituality, motivation, love, technology, and personal growth
   - **INTERACTIVE NAVIGATION**: Previous/Next buttons and clickable poem list with glowing selection indicators
   - **3D CLOUD EFFECTS**: Floating 3D clouds with smooth animations for all poems using Three.js

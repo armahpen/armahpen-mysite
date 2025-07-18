@@ -175,7 +175,7 @@ const poems = [
       "Follow through to your goal",
       "with all the might in your soul."
     ],
-    date: "18 July 2025"
+    date: "August 2017"
   },
   {
     id: 12,
@@ -206,7 +206,7 @@ const poems = [
   },
   {
     id: 13,
-    title: "I'm not wrong. I'll stay strong even when I'm wrong",
+    title: "I'm ~not~ wrong",
     lines: [
       "I'll consider your advice while you speak",
       "Truth shouldn't make one weak",
@@ -222,11 +222,11 @@ const poems = [
       "Ignorantly or intentionally, it is up to you to stay strong,",
       "filter the advice and return love to the fellow"
     ],
-    date: "18 July 2025"
+    date: "15 November 2018"
   },
   {
     id: 14,
-    title: "We never really die. We are spirits wearing a physical body",
+    title: "We never really die",
     lines: [
       "The true you is the you in the body",
       "Let's live strongly and beautifully in the body while we are wearing it",
@@ -246,7 +246,7 @@ const poems = [
       "Man is never a weakling even in a lowly state...",
       "This is our real state; mini versions of God himself."
     ],
-    date: "2 May 2018"
+    date: "5 June 2018"
   }
 ];
 
