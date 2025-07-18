@@ -114,6 +114,13 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 18, 2025: **POETRY PAGE NAVIGATION FIX**: Fixed poetry page navigation for GitHub Pages deployment
+  - **POETRY PAGE CREATED**: Added complete poetry page with original poems (Being You, The Coder's Journey, Connected Hearts, Rise Above)
+  - **FIXED NAVIGATION**: Changed from showPage() to navigateTo() function for proper GitHub Pages compatibility
+  - **POETRY STYLES**: Added comprehensive CSS styling with black & white glow theme for poetry page
+  - **ROUTER UPDATED**: Added 'poetry' to allowed routes in JavaScript navigation system
+  - **GITHUB PAGES READY**: Applied to both index.html and 404.html for complete deployment
+
 - July 18, 2025: **PORTFOLIO LINKS & AI CATEGORY**: Added proper project links and AI Project category for My Rabbai
   - **AI PROJECT CATEGORY**: Created new "AI Project" category button specifically for My Rabbai platform
   - **PROPER PROJECT LINKS**: Replaced card clicks with dedicated "View" buttons for each project

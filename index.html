@@ -562,6 +562,97 @@
                 margin-bottom: 2rem;
             }
         }
+        
+        /* Poetry page styles */
+        .poetry-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .poetry-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .poetry-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+        
+        .poetry-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .poetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .poem-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .poem-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+        
+        .poem-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            margin-bottom: 1.5rem;
+        }
+        
+        .poem-content {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+        
+        .poem-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .poetry-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .poetry-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .poem-card {
+                padding: 1.5rem;
+            }
+            
+            .poetry-container {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -726,7 +817,7 @@
                     <h3 class="project-title">Poetry Collection</h3>
                     <p class="project-desc">Original poetry and creative writing exploring themes of technology, personal growth, spirituality, and human connection through thoughtful verse and prose.</p>
                     <div class="project-actions">
-                        <button class="view-btn" onclick="showPage('poetry')">View</button>
+                        <button class="view-btn" onclick="navigateTo('poetry')">View</button>
                     </div>
                 </div>
             </div>
@@ -757,6 +848,83 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Poetry Page -->
+    <div id="poetry-page" class="page-content">
+        <div class="poetry-container">
+            <div class="poetry-header">
+                <h1 class="poetry-title">Poetry Collection</h1>
+                <p class="poetry-subtitle">Original verses exploring life, technology, and human connection</p>
+            </div>
+            
+            <div class="poetry-grid">
+                <div class="poem-card">
+                    <h3 class="poem-title">Being You</h3>
+                    <div class="poem-content">
+                        <p>Being you is different,<br>
+                        No one is perfect,<br>
+                        Simply you, no effects,<br>
+                        Show dem you reflect.</p>
+                        
+                        <p>Share your love and care,<br>
+                        Let the world know you dare,<br>
+                        Show them you're aware,<br>
+                        That life is meant to share.</p>
+                    </div>
+                </div>
+                
+                <div class="poem-card">
+                    <h3 class="poem-title">The Coder's Journey</h3>
+                    <div class="poem-content">
+                        <p>In lines of code I find my way,<br>
+                        Through bugs and features, night and day,<br>
+                        Each function tells a story true,<br>
+                        Of dreams we build and visions new.</p>
+                        
+                        <p>From React hooks to database calls,<br>
+                        Through testing suites and system halls,<br>
+                        We craft the future, line by line,<br>
+                        In digital realms, our souls shine.</p>
+                    </div>
+                </div>
+                
+                <div class="poem-card">
+                    <h3 class="poem-title">Connected Hearts</h3>
+                    <div class="poem-content">
+                        <p>In this world of screens and lights,<br>
+                        We search for genuine sights,<br>
+                        Beyond the pixels, beyond the call,<br>
+                        True connection conquers all.</p>
+                        
+                        <p>Hearts that beat in rhythm true,<br>
+                        Souls that see what others do,<br>
+                        In every smile, in every tear,<br>
+                        We find the love that draws us near.</p>
+                    </div>
+                </div>
+                
+                <div class="poem-card">
+                    <h3 class="poem-title">Rise Above</h3>
+                    <div class="poem-content">
+                        <p>When darkness falls and hope seems lost,<br>
+                        Remember dreams are worth the cost,<br>
+                        Each challenge faced, each battle won,<br>
+                        Brings us closer to the sun.</p>
+                        
+                        <p>Rise above the noise and doubt,<br>
+                        Let your inner light break out,<br>
+                        For in your struggle, strength is born,<br>
+                        And victory greets each new dawn.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="poetry-footer">
+                <p class="copyright">All poems are the original work of Evans Armah (HeaVans) © 2025.<br>
+                Reproduction or use without permission is prohibited.</p>
             </div>
         </div>
     </div>
@@ -817,7 +985,7 @@
         // Handle browser back/forward
         window.addEventListener('popstate', function() {
             const hash = window.location.hash.slice(1);
-            if (hash && ['home', 'about', 'portfolio', 'contact'].includes(hash)) {
+            if (hash && ['home', 'about', 'portfolio', 'contact', 'poetry'].includes(hash)) {
                 navigateTo(hash);
             } else {
                 navigateTo('home');
@@ -827,7 +995,7 @@
         // Initialize page from URL hash
         window.addEventListener('load', function() {
             const hash = window.location.hash.slice(1);
-            if (hash && ['home', 'about', 'portfolio', 'contact'].includes(hash)) {
+            if (hash && ['home', 'about', 'portfolio', 'contact', 'poetry'].includes(hash)) {
                 navigateTo(hash);
             } else {
                 navigateTo('home');
