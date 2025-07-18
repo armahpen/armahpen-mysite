@@ -176,6 +176,53 @@ const poems = [
       "with all the might in your soul."
     ],
     date: "18 July 2025"
+  },
+  {
+    id: 12,
+    title: "Rope-a-dope",
+    lines: [
+      "Back and forth",
+      "Lean on hope",
+      "The battle ought to be fought",
+      "The ball has always been in our court",
+      "Nothing can bore our core",
+      "We're tougher than titanium",
+      "Let's make our thoughts premium",
+      "Facing each day as it unfolds",
+      "The power in man's soul just can't be told",
+      "Never look down",
+      "Give not a frown",
+      "When some take you for a clown",
+      "Yes of course life may be coarse",
+      "Let's have a purpose",
+      "It won't make us pause",
+      "May it be felt in our pulse",
+      "From our Center, let's leave open the Gate of Greatness to emanate",
+      "In your Very Own Thoughts is our own fate",
+      "Thoughts we harbor are like writings on destiny's slate",
+      "Let's meditate, and develop a healthy mental state"
+    ],
+    date: "8 November 2015"
+  },
+  {
+    id: 13,
+    title: "I'm not wrong. I'll stay strong even when I'm wrong",
+    lines: [
+      "I'll consider your advice while you speak",
+      "Truth shouldn't make one weak",
+      "Truth is part of love",
+      "Love doesn't bring the recipient down",
+      "Love builds the receiver up",
+      "Allow nobody to bring you down on the pretext of truth",
+      "Such a fellow makes you think it is for your own good",
+      "His 'good' for you is bad",
+      "Correction outside of love is not right",
+      "The intended 'good' then turns the victim worst",
+      "However, some do this out of ignorance",
+      "Ignorantly or intentionally, it is up to you to stay strong,",
+      "filter the advice and return love to the fellow"
+    ],
+    date: "18 July 2025"
   }
 ];
 
