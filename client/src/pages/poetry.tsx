@@ -223,6 +223,30 @@ const poems = [
       "filter the advice and return love to the fellow"
     ],
     date: "18 July 2025"
+  },
+  {
+    id: 14,
+    title: "We never really die. We are spirits wearing a physical body",
+    lines: [
+      "The true you is the you in the body",
+      "Let's live strongly and beautifully in the body while we are wearing it",
+      "Outward cleanliness is necessary",
+      "Cleanliness of our true selves is essential",
+      "Cleanse yourself even as you clean your physical body",
+      "Feed yourself with the finest thought and inspiration",
+      "Even as you feed your stomach",
+      "We never really die, there is nothing to fear",
+      "We just transcend to our real realm...soo sure and surreal",
+      "Isn't it wise we live fully and intensely in every passing moment",
+      "while we live in this physical plane?",
+      "Vow to live profoundly amidst all turns and twists",
+      "",
+      "The best part is that we have more than enough power within",
+      "to be who we want to be.",
+      "Man is never a weakling even in a lowly state...",
+      "This is our real state; mini versions of God himself."
+    ],
+    date: "2 May 2018"
   }
 ];
 
