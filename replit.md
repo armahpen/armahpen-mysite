@@ -114,10 +114,13 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
-- July 18, 2025: **3D POETRY PAGE UPDATED**: Updated poems in 3D Poetry Journey with new content including expanded "Blood Saved" and "Creativity's muse, forever I adore" versions
-  - **POEM 8 UPDATED**: Creativity poem expanded with full "forever I adore" ending instead of "forevermore"
-  - **POEM 9 UPDATED**: Blood Saved poem significantly expanded with additional verses about Gilead's balm, storms, Heaven, and angels
-  - **MAINTAINED 3D EXPERIENCE**: All poems preserved in interactive 3D format with typewriter animations
+- July 18, 2025: **POETRY PAGE REDESIGNED**: Cloned design from "https://preview--verse-in-motion-three.lovable.app/" with flowing cloud-like animations
+  - **MINIMALIST DESIGN**: Clean gradient background from slate to blue with floating elements
+  - **ANIMATED TEXT FLOW**: Lines appear sequentially with fade-in animations like clouds drifting
+  - **FLOATING HEADER**: "words dance across the sky" animated header matching reference site
+  - **AUTO-ADVANCING**: Poems automatically transition with typewriter-style line reveals
+  - **INTERACTIVE CONTROLS**: Next Poem and Play/Pause buttons for user control
+  - **ALL 10 POEMS**: Complete collection including expanded "Blood Saved" and "Boundless Imagination"
   - **DEVELOPMENT ONLY**: Updated React development version, GitHub Pages poetry page remains unchanged
 
 - July 18, 2025: **PORTFOLIO PROJECT LINKS UPDATED**: Added proper View buttons with correct URLs for portfolio projects

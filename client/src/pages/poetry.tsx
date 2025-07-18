@@ -1,241 +1,303 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
-declare global {
-  interface Window {
-    THREE: any;
-    TWEEN: any;
+const poems = [
+  {
+    id: 1,
+    title: "Being You",
+    lines: [
+      "Being you is different",
+      "No one is perfect", 
+      "Simply you No effects",
+      "Show dem you reflect",
+      "Show dem respect but be no pet"
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 2,
+    title: "I Live Again", 
+    lines: [
+      "I live",
+      "I die",
+      "I live again",
+      "His lost became my gain",
+      "On the cross He endured my pain",
+      "",
+      "I live",
+      "I die",
+      "I live again", 
+      "Cos death He over came"
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 3,
+    title: "Canvas Whispers",
+    lines: [
+      "In strokes and hues, the passions start,",
+      "A canvas whispers from the heart,",
+      "A symphony of colors, transformed through masterful art."
+    ],
+    date: "4 June 2023"
+  },
+  {
+    id: 4,
+    title: "Hey There",
+    lines: [
+      "Hey there, I couldn't help but notice you standing there.",
+      "Hey there, your smile and energy are beyond compare.",
+      "Hey there, I think we could make an awesome pair.",
+      "Hey there, I'd love to get to know you and your flair.",
+      "Hey there, maybe we could grab a drink or a bite to share.",
+      "Hey there, let's start a friendship that's rare and so sincere."
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 5,
+    title: "Perfect Jumble",
+    lines: [
+      "Together we laugh, sometimes we stumble,",
+      "A group of friends, a perfect jumble.",
+      "In silly moments, our words may fumble,", 
+      "But in our hearts, love's never humble.",
+      "Through thick and thin, we stand as one,",
+      "A friendship forged, never undone."
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 6,
+    title: "Empowerment's Fire",
+    lines: [
+      "With dreams to chase, we dare to propel,",
+      "In every step, our spirits swell.",
+      "Together, we break the chains that quell,",
+      "Rising above, where heroes dwell.",
+      "Empowerment's fire, in us, excels."
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 7,
+    title: "In the Air",
+    lines: [
+      "In the air, a pulsing vibe, we ride,",
+      "Harmonic waves, side by side.",
+      "Through the rhythm, souls collide,",
+      "A dance of energy, amplified.",
+      "In this space, our hearts reside,",
+      "United by the beat, we're sanctified"
+    ],
+    date: "7 April 2023"
+  },
+  {
+    id: 8,
+    title: "Boundless Imagination",
+    lines: [
+      "In realms of boundless imagination, I roam,",
+      "Where colors dance and words find their home.",
+      "A canvas, a page, a symphony's embrace,",
+      "Creativity's fire, an eternal grace.",
+      "From whispered dreams to bold inventions,",
+      "I weave my thoughts with daring intentions.",
+      "Unleashing ideas, unchained and free,",
+      "Creativity, the essence of me.",
+      "With every stroke, a story unfolds,",
+      "A melody composed, a masterpiece untold.",
+      "In realms of boundless imagination, I soar,",
+      "Creativity's muse, forever I adore."
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 9,
+    title: "Blood Saved",
+    lines: [
+      "Blood Saved",
+      "Blood Saved even when we run from your embrace",
+      "Your love outwit us in the race",
+      "Give to Caesar what is Caesar's",
+      "But thank God for Jesus",
+      "Cos his love freed us",
+      "Even when we betrayed like Judas.",
+      "Judah's conquering Lion",
+      "The only light brightening Zoin",
+      "He heals, He's Gilead's balm, He save see the nails in his palm,",
+      "If he is in the boat the storm will be calm,",
+      "As you are Christ bids you to come",
+      "O you should see in Heaven",
+      "Angels clapping, they wings flapping,",
+      "singing Hallelujah Amen"
+    ],
+    date: "20 March 2023"
+  },
+  {
+    id: 10,
+    title: "The Coder's Journey",
+    lines: [
+      "Coding can be quite demanding",
+      "Errors here and there are commanding",
+      "But once you debug and get it right",
+      "The feeling is truly out of sight",
+      "For coders, it's a constant delight"
+    ],
+    date: "20 March 2023"
   }
-}
+];
 
 export default function Poetry() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [currentPoemIndex, setCurrentPoemIndex] = useState(0);
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!isAnimating) return;
 
-    // Clear any existing content
-    containerRef.current.innerHTML = '';
+    const currentPoem = poems[currentPoemIndex];
+    const currentLine = currentPoem.lines[currentLineIndex];
 
-    // Create info div
-    const infoDiv = document.createElement('div');
-    infoDiv.id = 'info';
-    infoDiv.textContent = 'Click to start the journey';
-    infoDiv.style.cssText = `
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      color: #333;
-      font-size: 1.2em;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-      z-index: 1000;
-      font-family: Arial, sans-serif;
-    `;
+    if (currentLineIndex < currentPoem.lines.length) {
+      const timer = setTimeout(() => {
+        setDisplayedLines(prev => [...prev, currentLine]);
+        setCurrentLineIndex(prev => prev + 1);
+      }, 800);
 
-    infoDiv.addEventListener('mouseenter', () => {
-      infoDiv.style.transform = 'scale(1.05)';
-      infoDiv.style.background = 'rgba(255, 255, 255, 0.95)';
-    });
+      return () => clearTimeout(timer);
+    } else {
+      // Poem finished, wait a bit then move to next poem
+      const timer = setTimeout(() => {
+        const nextPoemIndex = (currentPoemIndex + 1) % poems.length;
+        setCurrentPoemIndex(nextPoemIndex);
+        setCurrentLineIndex(0);
+        setDisplayedLines([]);
+      }, 3000);
 
-    infoDiv.addEventListener('mouseleave', () => {
-      infoDiv.style.transform = 'scale(1)';
-      infoDiv.style.background = 'rgba(255, 255, 255, 0.8)';
-    });
+      return () => clearTimeout(timer);
+    }
+  }, [currentPoemIndex, currentLineIndex, isAnimating]);
 
-    containerRef.current.appendChild(infoDiv);
+  const handleClick = () => {
+    const nextPoemIndex = (currentPoemIndex + 1) % poems.length;
+    setCurrentPoemIndex(nextPoemIndex);
+    setCurrentLineIndex(0);
+    setDisplayedLines([]);
+  };
 
-    // Load Three.js and TWEEN libraries
-    const loadScript = (src: string): Promise<void> => {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = () => resolve();
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    };
+  const toggleAnimation = () => {
+    setIsAnimating(!isAnimating);
+  };
 
-    const init3D = async () => {
-      try {
-        // Load libraries if not already loaded
-        if (!window.THREE) {
-          await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js');
-        }
-        if (!window.TWEEN) {
-          await loadScript('https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.min.js');
-        }
-
-        const THREE = window.THREE;
-        const TWEEN = window.TWEEN;
-
-        let scene, camera, renderer, planes: any[] = [], charMeshes: any[][] = [], currentIndex = -1;
-        let activeTweens: any[] = [];
-
-        const poems = [
-          { text: "Being you is different\nNo one is perfect\nSimply you No effects\nShow dem you reflect\nShow dem respect but be no pet", date: "20 March 2023" },
-          { text: "I live\nI die\nI live again\nHis lost became my gain\nOn the cross He endured my pain\n\nI live\nI die\nI live again\nCos death He over came", date: "20 March 2023" },
-          { text: "In strokes and hues, the passions start,\nA canvas whispers from the heart,\nA symphony of colors, transformed through masterful art.", date: "4 June 2023" },
-          { text: "Hey there, I couldn't help but notice you standing there.\nHey there, your smile and energy are beyond compare.\nHey there, I think we could make an awesome pair.\nHey there, I'd love to get to know you and your flair.\nHey there, maybe we could grab a drink or a bite to share.\nHey there, let's start a friendship that's rare and so sincere.", date: "20 March 2023" },
-          { text: "Together we laugh, sometimes we stumble,\nA group of friends, a perfect jumble.\nIn silly moments, our words may fumble,\nBut in our hearts, love's never humble.\nThrough thick and thin, we stand as one,\nA friendship forged, never undone.", date: "20 March 2023" },
-          { text: "With dreams to chase, we dare to propel,\nIn every step, our spirits swell.\nTogether, we break the chains that quell,\nRising above, where heroes dwell.\nEmpowerment's fire, in us, excels.", date: "20 March 2023" },
-          { text: "In the air, a pulsing vibe, we ride,\nHarmonic waves, side by side.\nThrough the rhythm, souls collide,\nA dance of energy, amplified.\nIn this space, our hearts reside,\nUnited by the beat, we're sanctified", date: "7 April 2023" },
-          { text: "In realms of boundless imagination, I roam,\nWhere colors dance and words find their home.\nA canvas, a page, a symphony's embrace,\nCreativity's fire, an eternal grace.\nFrom whispered dreams to bold inventions,\nI weave my thoughts with daring intentions.\nUnleashing ideas, unchained and free,\nCreativity, the essence of me.\nWith every stroke, a story unfolds,\nA melody composed, a masterpiece untold.\nIn realms of boundless imagination, I soar,\nCreativity's muse, forever I adore.", date: "20 March 2023" },
-          { text: "Blood Saved\nBlood Saved even when we run from your embrace\nYour love outwit us in the race\nGive to Caesar what is Caesar's\nBut thank God for Jesus\nCos his love freed us\nEven when we betrayed like Judas.\nJudah's conquering Lion\nThe only light brightening Zoin\nHe heals, He's Gilead's balm, He save see the nails in his palm,\nIf he is in the boat the storm will be calm,\nAs you are Christ bids you to come\nO you should see in Heaven\nAngels clapping, they wings flapping,\nsinging Hallelujah Amen", date: "20 March 2023" },
-          { text: "Coding can be quite demanding\nErrors here and there are commanding\nBut once you debug and get it right\nThe feeling is truly out of sight\nFor coders, it's a constant delight", date: "20 March 2023" }
-        ];
-
-        function initScene() {
-          scene = new THREE.Scene();
-          camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-          renderer = new THREE.WebGLRenderer({ antialias: true });
-          renderer.setSize(window.innerWidth, window.innerHeight);
-          renderer.setClearColor(0xffffff);
-          
-          if (containerRef.current) {
-            containerRef.current.appendChild(renderer.domElement);
-          }
-
-          const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-          scene.add(ambientLight);
-          const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-          directionalLight.position.set(0, 1, 0);
-          scene.add(directionalLight);
-
-          camera.position.z = 5;
-
-          poems.forEach((poem, index) => {
-            const geometry = new THREE.PlaneGeometry(4, 3);
-            const material = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-            const plane = new THREE.Mesh(geometry, material);
-            plane.position.x = (index - poems.length / 2) * 5;
-            plane.position.z = -10;
-            scene.add(plane);
-            planes.push(plane);
-
-            const loader = new THREE.FontLoader();
-            loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
-              charMeshes[index] = [];
-              const lines = poem.text.split('\n');
-              let yOffset = 0.5;
-              lines.forEach(line => {
-                for (let i = 0; i < line.length; i++) {
-                  const charGeo = new THREE.TextGeometry(line[i], { font: font, size: 0.1, height: 0.01, curveSegments: 12 });
-                  const charMaterial = new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0 });
-                  const charMesh = new THREE.Mesh(charGeo, charMaterial);
-                  charMesh.position.set(-1.8 + i * 0.1, yOffset, 0.01);
-                  plane.add(charMesh);
-                  charMeshes[index].push(charMesh);
-                }
-                yOffset -= 0.3;
-              });
-
-              const dateGeo = new THREE.TextGeometry(poem.date, { font: font, size: 0.05, height: 0.01, curveSegments: 12 });
-              const dateMesh = new THREE.Mesh(dateGeo, new THREE.MeshBasicMaterial({ color: 0x000000 }));
-              dateMesh.position.set(-1.8, -1.2, 0.01);
-              plane.add(dateMesh);
-            });
-          });
-
-          infoDiv.addEventListener('click', nextPoem);
-          animate();
-        }
-
-        function nextPoem() {
-          if (currentIndex >= 0) {
-            planes[currentIndex].position.z = -10;
-            activeTweens.forEach(t => t.stop());
-            activeTweens = [];
-            if (charMeshes[currentIndex]) {
-              charMeshes[currentIndex].forEach(mesh => {
-                mesh.material.opacity = 0;
-              });
-            }
-          }
-          currentIndex = (currentIndex + 1) % poems.length;
-          planes[currentIndex].position.z = 0;
-          startWritingAnimation();
-        }
-
-        function startWritingAnimation() {
-          const chars = charMeshes[currentIndex];
-          if (chars) {
-            chars.forEach((char, i) => {
-              const delay = i * 100;
-              const tween = new TWEEN.Tween({ opacity: 0, z: 0.01 })
-                .to({ opacity: 1, z: 0.02 }, 300)
-                .delay(delay)
-                .easing(TWEEN.Easing.Quadratic.InOut)
-                .onUpdate(({ opacity, z }) => {
-                  char.material.opacity = opacity;
-                  char.position.z = z;
-                })
-                .onComplete(() => {
-                  char.position.z = 0.01;
-                })
-                .start();
-              activeTweens.push(tween);
-            });
-          }
-        }
-
-        function animate(time?: number) {
-          requestAnimationFrame(animate);
-          TWEEN.update(time);
-          planes.forEach((plane, index) => {
-            if (index !== currentIndex) plane.rotation.y += 0.01;
-          });
-          renderer.render(scene, camera);
-        }
-
-        const handleResize = () => {
-          if (renderer && camera) {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-          }
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        initScene();
-
-        return () => {
-          window.removeEventListener('resize', handleResize);
-        };
-
-      } catch (error) {
-        console.error('Error loading 3D libraries:', error);
-        // Fallback to simple text display
-        if (containerRef.current) {
-          containerRef.current.innerHTML = `
-            <div style="padding: 20px; text-align: center; color: #333;">
-              <h2>3D Poetry Journey</h2>
-              <p>Loading 3D environment...</p>
-            </div>
-          `;
-        }
-      }
-    };
-
-    init3D();
-
-    // Cleanup
-    return () => {
-      if (containerRef.current) {
-        containerRef.current.innerHTML = '';
-      }
-    };
-  }, []);
+  const currentPoem = poems[currentPoemIndex];
 
   return (
-    <div 
-      ref={containerRef}
-      className="w-full h-screen overflow-hidden bg-white"
-      style={{ margin: 0, padding: 0, position: 'relative' }}
-    />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Floating background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-blue-200/30 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${3 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Header floating words */}
+      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 text-center">
+        <div className="text-blue-400/60 text-4xl md:text-6xl font-light tracking-wider animate-pulse">
+          words
+        </div>
+        <div className="text-blue-500/40 text-2xl md:text-3xl font-light mt-2 animate-bounce">
+          dance
+        </div>
+        <div className="text-blue-300/50 text-xl md:text-2xl font-light mt-1">
+          across
+        </div>
+        <div className="text-blue-600/30 text-lg md:text-xl font-light mt-1">
+          the sky
+        </div>
+      </div>
+
+      {/* Main content */}
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 pt-32">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-light text-slate-700 mb-4">
+            Poetry in Motion
+          </h1>
+          <p className="text-lg md:text-xl text-slate-500 font-light">
+            a collection of verses that flow like clouds
+          </p>
+        </div>
+
+        {/* Current poem display */}
+        <div className="w-full max-w-4xl">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-light text-slate-600 mb-2">
+              {currentPoem.title}
+            </h2>
+            <p className="text-sm text-slate-400">{currentPoem.date}</p>
+          </div>
+
+          <div className="space-y-4 min-h-[400px] flex flex-col justify-center">
+            {displayedLines.map((line, index) => (
+              <div
+                key={index}
+                className={`text-xl md:text-2xl font-light text-slate-600 text-center transition-all duration-1000 transform ${
+                  line === "" ? "h-6" : ""
+                }`}
+                style={{
+                  opacity: 1,
+                  transform: "translateY(0)",
+                  animation: `fadeInUp 0.8s ease-out ${index * 0.1}s both`
+                }}
+              >
+                {line}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Controls */}
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
+          <button
+            onClick={handleClick}
+            className="px-6 py-3 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white/90 transition-all duration-300 shadow-lg"
+          >
+            Next Poem
+          </button>
+          <button
+            onClick={toggleAnimation}
+            className="px-6 py-3 bg-white/80 backdrop-blur-sm text-slate-600 rounded-full hover:bg-white/90 transition-all duration-300 shadow-lg"
+          >
+            {isAnimating ? "Pause" : "Play"}
+          </button>
+        </div>
+
+        {/* Poem counter */}
+        <div className="fixed top-8 right-8 text-slate-400 text-sm">
+          {currentPoemIndex + 1} / {poems.length}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+    </div>
   );
 }
