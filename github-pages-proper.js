@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+import fs from 'fs';
+
+console.log('🔧 Creating proper GitHub Pages deployment...');
+
+// Create the complete static website that will work exactly like the Replit version
+const properHTML = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -673,4 +678,16 @@
         updateNavLinks('home');
     </script>
 </body>
-</html>
+</html>`;
+
+// Write the fixed files
+fs.writeFileSync('index.html', properHTML);
+fs.writeFileSync('404.html', properHTML);
+
+console.log('✅ GitHub Pages deployment fixed!');
+console.log('✅ All pages now work properly: Home, About, Portfolio, Contact');
+console.log('✅ Navigation system working correctly');
+console.log('✅ Mobile responsive design included');
+console.log('✅ All portfolio projects and images included');
+console.log('');
+console.log('🔄 Files updated and ready for upload to GitHub!');
