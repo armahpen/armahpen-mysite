@@ -180,21 +180,29 @@
         
         .cta-btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #7877c6, #ff77c6);
-            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            background: #ffffff;
+            color: #000000;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             cursor: pointer;
-            border: none;
-            font-size: 1rem;
+            border: 2px solid #ffffff;
+            font-size: 0.9rem;
+            text-shadow: none;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
         
         .cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(120, 119, 198, 0.4);
+            background: #000000;
+            color: #ffffff;
+            box-shadow: 
+                0 0 20px #ffffff,
+                0 0 30px #ffffff,
+                0 0 40px #ffffff;
+            text-shadow: 0 0 10px #ffffff;
         }
         
         /* About Page Styles */
