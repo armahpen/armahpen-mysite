@@ -248,15 +248,8 @@ export default function Poetry() {
           // Animate special objects for Blood Saved poem
           if (currentPoemIndex === 8) { // Blood Saved poem
             sceneRef.current.specialObjects.forEach((obj: any) => {
-              if (obj.userData.type === 'cross') {
-                obj.rotation.y += 0.01;
-              } else if (obj.userData.type === 'blood') {
+              if (obj.userData.type === 'blood') {
                 obj.position.y += Math.sin(Date.now() * 0.003) * 0.002;
-              } else if (obj.userData.type === 'crown') {
-                // Multiple rotation axes for realistic 3D spinning
-                obj.rotation.y += 0.008;
-                obj.rotation.z += 0.003;
-                obj.position.y += Math.sin(Date.now() * 0.002) * 0.001; // Slight floating
               }
             });
           }
@@ -302,26 +295,6 @@ export default function Poetry() {
     if (currentPoemIndex === 8 && window.THREE) { // Blood Saved poem
       const THREE = window.THREE;
 
-      // Create 3D Cross
-      const crossGroup = new THREE.Group();
-      
-      // Vertical beam
-      const verticalGeometry = new THREE.BoxGeometry(0.2, 3, 0.2);
-      const crossMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513, transparent: true, opacity: 0.8 });
-      const verticalBeam = new THREE.Mesh(verticalGeometry, crossMaterial);
-      crossGroup.add(verticalBeam);
-      
-      // Horizontal beam
-      const horizontalGeometry = new THREE.BoxGeometry(2, 0.2, 0.2);
-      const horizontalBeam = new THREE.Mesh(horizontalGeometry, crossMaterial);
-      horizontalBeam.position.y = 0.5;
-      crossGroup.add(horizontalBeam);
-      
-      crossGroup.position.set(-3, 2, -3);
-      crossGroup.userData.type = 'cross';
-      scene.add(crossGroup);
-      specialObjects.push(crossGroup);
-
       // Create 3D Blood Drop
       const bloodGeometry = new THREE.SphereGeometry(0.15, 8, 6);
       bloodGeometry.scale(1, 1.5, 1); // Make it droplet shaped
@@ -331,56 +304,6 @@ export default function Poetry() {
       bloodDrop.userData.type = 'blood';
       scene.add(bloodDrop);
       specialObjects.push(bloodDrop);
-
-      // Create 3D Crown of Thorns
-      const crownGroup = new THREE.Group();
-      
-      // Create multiple circular bands for 3D depth
-      for (let band = 0; band < 3; band++) {
-        const radius = 0.7 + band * 0.1;
-        const bandGroup = new THREE.Group();
-        
-        // Base circle ring
-        const crownGeometry = new THREE.TorusGeometry(radius, 0.03 + band * 0.01, 6, 12);
-        const crownMaterial = new THREE.MeshBasicMaterial({ 
-          color: band === 1 ? 0x2D2D2D : 0x4A4A4A, 
-          transparent: true, 
-          opacity: 0.7 - band * 0.1 
-        });
-        const crownBase = new THREE.Mesh(crownGeometry, crownMaterial);
-        crownBase.position.y = band * 0.05;
-        bandGroup.add(crownBase);
-        
-        // Add thorns around each band
-        const thornCount = 10 + band * 2;
-        for (let i = 0; i < thornCount; i++) {
-          const thornGeometry = new THREE.ConeGeometry(0.015 + band * 0.005, 0.25 + band * 0.05, 5);
-          const thornMaterial = new THREE.MeshBasicMaterial({ 
-            color: 0x3D3D3D, 
-            transparent: true, 
-            opacity: 0.8 
-          });
-          const thorn = new THREE.Mesh(thornGeometry, thornMaterial);
-          const angle = (i / thornCount) * Math.PI * 2;
-          thorn.position.set(
-            Math.cos(angle) * radius, 
-            0.12 + band * 0.03, 
-            Math.sin(angle) * radius
-          );
-          thorn.rotation.z = -angle + Math.PI / 2;
-          thorn.rotation.x = (Math.random() - 0.5) * 0.3; // Random tilt for realism
-          bandGroup.add(thorn);
-        }
-        
-        crownGroup.add(bandGroup);
-      }
-      
-      // Position crown on the right side
-      crownGroup.position.set(4, 1, -3);
-      crownGroup.rotation.x = Math.PI / 6; // Slight tilt for 3D effect
-      crownGroup.userData.type = 'crown';
-      scene.add(crownGroup);
-      specialObjects.push(crownGroup);
 
       sceneRef.current.specialObjects = specialObjects;
     }

@@ -114,11 +114,11 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
-- July 18, 2025: **POETRY PAGE WITH 3D EFFECTS**: Added Three.js 3D cloud effects and special religious elements for Blood Saved poem
+- July 18, 2025: **POETRY PAGE WITH 3D EFFECTS**: Added Three.js 3D cloud effects and refined Blood Saved poem elements
   - **3D CLOUD EFFECTS**: Floating 3D clouds with smooth animations for all poems using Three.js
-  - **BLOOD SAVED SPECIAL EFFECTS**: 3D Jesus cross, blood drop, and crown of thorns specifically for Blood Saved poem
+  - **BLOOD SAVED SPECIAL EFFECTS**: 3D floating blood drop specifically for Blood Saved poem (removed cross and crown per user request)
   - **ELEGANT DESIGN**: Light blue to green gradient background with Dancing Script cursive font
-  - **ANIMATED 3D ELEMENTS**: Cross rotates, blood drop floats, crown of thorns spins with realistic materials
+  - **ANIMATED 3D ELEMENTS**: Blood drop floats gently with realistic materials and transparency
   - **SEAMLESS INTEGRATION**: 3D canvas layer behind text content with proper z-index layering
   - **AUTO-ADVANCING**: Poems transition automatically with smooth 3D scene updates
   - **DEVELOPMENT ONLY**: Updated React development version, GitHub Pages poetry page remains unchanged
