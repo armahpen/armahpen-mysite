@@ -114,6 +114,19 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 18, 2025: **PORTFOLIO PROJECT LINKS UPDATED**: Added proper View buttons with correct URLs for portfolio projects
+  - **SCHOOL CRM SYSTEM**: Added View button linking to https://www.behance.net/gallery/183081607/School-database-site
+  - **CEDING CRM APP**: Added View button linking to https://www.behance.net/gallery/183088961/Saving-Project-work
+  - **STUDENT HELP CRM**: Added View button linking to https://studenthelp-teacher.netlify.app/
+  - **CONSISTENT STYLING**: All View buttons maintain white glow theme with hover effects
+  - **GITHUB PAGES READY**: Updated both index.html and 404.html files for complete deployment
+
+- July 18, 2025: **DESKTOP BUTTON OPTIMIZATION**: Reduced "View My Work" button size for better PC viewing experience
+  - **IMPROVED PROPORTIONS**: Reduced button padding from 1rem 2rem to 0.75rem 1.5rem
+  - **OPTIMIZED FONT SIZE**: Reduced font-size from 1rem to 0.9rem for desktop viewing
+  - **MAINTAINED STYLING**: Preserved black & white glow theme and smooth hover effects
+  - **APPLIED TO ALL FILES**: Updated both index.html and 404.html for consistent experience
+
 - July 18, 2025: **POETRY PAGE NAVIGATION FIX**: Fixed poetry page navigation for GitHub Pages deployment
   - **POETRY PAGE CREATED**: Added complete poetry page with original poems (Being You, The Coder's Journey, Connected Hearts, Rise Above)
   - **FIXED NAVIGATION**: Changed from showPage() to navigateTo() function for proper GitHub Pages compatibility
