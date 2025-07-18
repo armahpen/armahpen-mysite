@@ -253,7 +253,10 @@ export default function Poetry() {
               } else if (obj.userData.type === 'blood') {
                 obj.position.y += Math.sin(Date.now() * 0.003) * 0.002;
               } else if (obj.userData.type === 'crown') {
-                obj.rotation.z += 0.005;
+                // Multiple rotation axes for realistic 3D spinning
+                obj.rotation.y += 0.008;
+                obj.rotation.z += 0.003;
+                obj.position.y += Math.sin(Date.now() * 0.002) * 0.001; // Slight floating
               }
             });
           }
@@ -332,23 +335,49 @@ export default function Poetry() {
       // Create 3D Crown of Thorns
       const crownGroup = new THREE.Group();
       
-      // Base circle
-      const crownGeometry = new THREE.TorusGeometry(0.8, 0.05, 8, 16);
-      const crownMaterial = new THREE.MeshBasicMaterial({ color: 0x4A4A4A, transparent: true, opacity: 0.6 });
-      const crownBase = new THREE.Mesh(crownGeometry, crownMaterial);
-      crownGroup.add(crownBase);
-      
-      // Add thorns
-      for (let i = 0; i < 12; i++) {
-        const thornGeometry = new THREE.ConeGeometry(0.02, 0.3, 4);
-        const thorn = new THREE.Mesh(thornGeometry, crownMaterial);
-        const angle = (i / 12) * Math.PI * 2;
-        thorn.position.set(Math.cos(angle) * 0.8, 0.15, Math.sin(angle) * 0.8);
-        thorn.rotation.z = -angle + Math.PI / 2;
-        crownGroup.add(thorn);
+      // Create multiple circular bands for 3D depth
+      for (let band = 0; band < 3; band++) {
+        const radius = 0.7 + band * 0.1;
+        const bandGroup = new THREE.Group();
+        
+        // Base circle ring
+        const crownGeometry = new THREE.TorusGeometry(radius, 0.03 + band * 0.01, 6, 12);
+        const crownMaterial = new THREE.MeshBasicMaterial({ 
+          color: band === 1 ? 0x2D2D2D : 0x4A4A4A, 
+          transparent: true, 
+          opacity: 0.7 - band * 0.1 
+        });
+        const crownBase = new THREE.Mesh(crownGeometry, crownMaterial);
+        crownBase.position.y = band * 0.05;
+        bandGroup.add(crownBase);
+        
+        // Add thorns around each band
+        const thornCount = 10 + band * 2;
+        for (let i = 0; i < thornCount; i++) {
+          const thornGeometry = new THREE.ConeGeometry(0.015 + band * 0.005, 0.25 + band * 0.05, 5);
+          const thornMaterial = new THREE.MeshBasicMaterial({ 
+            color: 0x3D3D3D, 
+            transparent: true, 
+            opacity: 0.8 
+          });
+          const thorn = new THREE.Mesh(thornGeometry, thornMaterial);
+          const angle = (i / thornCount) * Math.PI * 2;
+          thorn.position.set(
+            Math.cos(angle) * radius, 
+            0.12 + band * 0.03, 
+            Math.sin(angle) * radius
+          );
+          thorn.rotation.z = -angle + Math.PI / 2;
+          thorn.rotation.x = (Math.random() - 0.5) * 0.3; // Random tilt for realism
+          bandGroup.add(thorn);
+        }
+        
+        crownGroup.add(bandGroup);
       }
       
-      crownGroup.position.set(0, -2, -4);
+      // Position crown on the right side
+      crownGroup.position.set(4, 1, -3);
+      crownGroup.rotation.x = Math.PI / 6; // Slight tilt for 3D effect
       crownGroup.userData.type = 'crown';
       scene.add(crownGroup);
       specialObjects.push(crownGroup);
