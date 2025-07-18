@@ -249,9 +249,47 @@
         /* Portfolio Page Styles */
         .portfolio-header {
             text-align: center;
-            margin-bottom: 3rem;
-            color: #7877c6;
+            margin-bottom: 2rem;
+            color: #ffffff;
             font-size: 2.5rem;
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #ffffff,
+                0 0 15px #ffffff;
+        }
+        
+        /* Portfolio Categories */
+        .portfolio-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            text-shadow: 0 0 10px #ffffff;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .mobile-categories {
+            display: none;
         }
         
         .portfolio-gallery {
@@ -287,15 +325,17 @@
         .project-title {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
-            color: #7877c6;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
         
         .project-desc {
-            color: #b0b0b0;
+            color: #cccccc;
             line-height: 1.6;
             font-size: 0.95rem;
             word-wrap: break-word;
             hyphens: auto;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
         }
         
         /* Contact Page Styles */
@@ -308,8 +348,12 @@
         .contact-title {
             text-align: center;
             margin-bottom: 2rem;
-            color: #7877c6;
+            color: #ffffff;
             font-size: 2.5rem;
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #ffffff,
+                0 0 15px #ffffff;
         }
         
         .contact-form {
@@ -326,8 +370,9 @@
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #7877c6;
+            color: #ffffff;
             font-weight: 500;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
         }
         
         .form-input {
@@ -355,18 +400,26 @@
         .submit-btn {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, #7877c6, #ff77c6);
-            color: #ffffff;
-            border: none;
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid #ffffff;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
         .submit-btn:hover {
             transform: translateY(-2px);
+            background: #000000;
+            color: #ffffff;
+            box-shadow: 
+                0 0 15px #ffffff,
+                0 0 25px #ffffff,
+                0 0 35px #ffffff;
+            text-shadow: 0 0 8px #ffffff;
         }
         
         /* Footer */
@@ -476,6 +529,16 @@
     <!-- Portfolio Page -->
     <div id="portfolio-page" class="page-content">
         <h2 class="portfolio-header">My Portfolio</h2>
+        
+        <!-- Portfolio Categories -->
+        <div class="portfolio-categories">
+            <button class="category-btn active" onclick="filterPortfolio('all')">All Projects</button>
+            <button class="category-btn" onclick="filterPortfolio('crm')">CRM Systems</button>
+            <button class="category-btn" onclick="filterPortfolio('design')">UI/UX Design</button>
+            <button class="category-btn" onclick="filterPortfolio('graphics')">Graphic Design</button>
+            <button class="category-btn" onclick="filterPortfolio('poetry')">Poetry</button>
+        </div>
+        
         <div class="portfolio-gallery">
             <div class="project-card">
                 <img src="./school-crm-system-preview.jpg" alt="School CRM System" class="project-img">

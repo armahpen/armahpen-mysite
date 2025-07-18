@@ -306,13 +306,47 @@
         /* Portfolio Page Styles */
         .portfolio-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             color: #ffffff;
             font-size: 2.5rem;
             text-shadow: 
                 0 0 5px #ffffff,
                 0 0 10px #ffffff,
                 0 0 15px #ffffff;
+        }
+        
+        /* Portfolio Categories */
+        .portfolio-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            text-shadow: 0 0 10px #ffffff;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .mobile-categories {
+            display: none;
         }
         
         .portfolio-gallery {
@@ -479,6 +513,25 @@
             .page-content {
                 padding: 1rem;
             }
+            
+            .portfolio-categories {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .category-btn {
+                width: 100%;
+                max-width: 300px;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .mobile-categories {
+                display: block;
+                margin-top: 96px;
+                margin-bottom: 2rem;
+            }
         }
     </style>
 </head>
@@ -553,8 +606,18 @@
     <!-- Portfolio Page -->
     <div id="portfolio-page" class="page-content">
         <h2 class="portfolio-header">My Portfolio</h2>
+        
+        <!-- Portfolio Categories -->
+        <div class="portfolio-categories">
+            <button class="category-btn active" onclick="filterPortfolio('all')">All Projects</button>
+            <button class="category-btn" onclick="filterPortfolio('crm')">CRM Systems</button>
+            <button class="category-btn" onclick="filterPortfolio('design')">UI/UX Design</button>
+            <button class="category-btn" onclick="filterPortfolio('graphics')">Graphic Design</button>
+            <button class="category-btn" onclick="filterPortfolio('poetry')">Poetry</button>
+        </div>
+        
         <div class="portfolio-gallery">
-            <div class="project-card">
+            <div class="project-card" data-category="crm">
                 <img src="./school-crm-system-preview.jpg" alt="School CRM System" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">School CRM System</h3>
@@ -562,7 +625,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="crm">
                 <img src="./ceding-crm-preview.png" alt="Ceding CRM App" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Ceding - My Saving & CRM App</h3>
@@ -570,7 +633,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="crm">
                 <img src="./church-crm-preview.png" alt="Church CRM System" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Church CRM System</h3>
@@ -578,7 +641,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="crm">
                 <img src="./dems-crm-preview.png" alt="DEMS CRM" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">DEMS CRM Systems</h3>
@@ -586,7 +649,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="crm">
                 <img src="./student-help-crm-preview.png" alt="Student Help CRM" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Student Help CRM</h3>
@@ -594,7 +657,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="crm">
                 <img src="./rabbai-preview.png" alt="My Rabbai" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">My Rabbai</h3>
@@ -602,7 +665,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="design">
                 <img src="./uiux-designs-preview.png" alt="UI/UX Designs" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">UI/UX Design Collection</h3>
@@ -610,7 +673,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="graphics">
                 <img src="./graphic-design-preview.png" alt="Graphic Design" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Graphic Design Portfolio</h3>
@@ -618,7 +681,7 @@
                 </div>
             </div>
             
-            <div class="project-card">
+            <div class="project-card" data-category="poetry">
                 <img src="./poetry-preview.png" alt="Poetry Collection" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Poetry Collection</h3>
@@ -738,6 +801,25 @@
                 mobileNav.classList.remove('open');
             }
         });
+        
+        // Portfolio filtering functionality
+        function filterPortfolio(category) {
+            const projects = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // Update button states
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter projects
+            projects.forEach(project => {
+                if (category === 'all' || project.dataset.category === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
         
         // Initialize navigation
         updateNavLinks('home');
