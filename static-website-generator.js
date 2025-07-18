@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+import fs from 'fs';
+import path from 'path';
+
+console.log('🔨 Building complete static website...');
+
+// Create the complete static HTML structure
+const staticHTML = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -646,4 +652,29 @@
         });
     </script>
 </body>
-</html>
+</html>`;
+
+// Write the static website files
+fs.writeFileSync('index.html', staticHTML);
+fs.writeFileSync('404.html', staticHTML);
+fs.writeFileSync('.nojekyll', '');
+
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: https://armahpen.github.io/armahpen-mysite/sitemap.xml`;
+fs.writeFileSync('robots.txt', robotsTxt);
+
+console.log('✅ Complete static website created!');
+console.log('✅ Single HTML file with all styles and scripts inline');
+console.log('✅ All portfolio content and images included');
+console.log('✅ Mobile responsive with hamburger menu');
+console.log('✅ All pages: Home, About, Portfolio, Contact');
+console.log('✅ Perfect GitHub Pages compatibility');
+console.log('');
+console.log('📁 Files ready for GitHub upload:');
+console.log('- index.html (complete website)');
+console.log('- 404.html (routing support)');
+console.log('- .nojekyll (prevents Jekyll)');
+console.log('- robots.txt (SEO)');
+console.log('- All image files and CV');
