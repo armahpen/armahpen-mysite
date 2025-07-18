@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 
 declare global {
   interface Window {
@@ -257,6 +258,7 @@ export default function Poetry() {
   const [isAnimating, setIsAnimating] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<any>(null);
+  const [, setLocation] = useLocation();
 
   // Load Three.js and initialize 3D scene
   useEffect(() => {
@@ -485,6 +487,15 @@ export default function Poetry() {
           />
         ))}
       </div>
+
+      {/* Home button */}
+      <button
+        onClick={() => setLocation('/')}
+        className="fixed top-8 right-8 px-4 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm border border-white/30"
+        style={{ fontFamily: 'Dancing Script, cursive', zIndex: 10 }}
+      >
+        Home
+      </button>
 
       {/* Main content */}
       <div className="flex flex-col items-center justify-center min-h-screen px-4 relative" style={{ zIndex: 3 }}>
