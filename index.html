@@ -370,6 +370,17 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
+        .project-link {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card[onclick]:hover .project-link span {
+            text-shadow: 0 0 8px #ffffff;
+            opacity: 1;
+        }
+        
         .project-img {
             width: 100%;
             height: 200px;
@@ -665,27 +676,36 @@
                 </div>
             </div>
             
-            <div class="project-card" data-category="design">
+            <div class="project-card" data-category="design" onclick="window.open('https://www.behance.net/armahpen', '_blank')" style="cursor: pointer;">
                 <img src="./uiux-designs-preview.png" alt="UI/UX Designs" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">UI/UX Design Collection</h3>
                     <p class="project-desc">Showcase of modern interface designs and user experience solutions across various industries, demonstrating creativity and attention to user-centered design principles.</p>
+                    <div class="project-link">
+                        <span style="color: #ffffff; font-size: 0.9rem; opacity: 0.8;">→ View Portfolio</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="project-card" data-category="graphics">
+            <div class="project-card" data-category="graphics" onclick="window.open('https://www.behance.net/armahpen', '_blank')" style="cursor: pointer;">
                 <img src="./graphic-design-preview.png" alt="Graphic Design" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Graphic Design Portfolio</h3>
                     <p class="project-desc">Collection of visual identity projects, branding materials, and creative designs that combine artistic vision with strategic brand communication.</p>
+                    <div class="project-link">
+                        <span style="color: #ffffff; font-size: 0.9rem; opacity: 0.8;">→ View Portfolio</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="project-card" data-category="poetry">
+            <div class="project-card" data-category="poetry" onclick="window.open('https://www.behance.net/armahpen', '_blank')" style="cursor: pointer;">
                 <img src="./poetry-preview.png" alt="Poetry Collection" class="project-img">
                 <div class="project-info">
                     <h3 class="project-title">Poetry Collection</h3>
                     <p class="project-desc">Original poetry and creative writing exploring themes of technology, personal growth, spirituality, and human connection through thoughtful verse and prose.</p>
+                    <div class="project-link">
+                        <span style="color: #ffffff; font-size: 0.9rem; opacity: 0.8;">→ View Collection</span>
+                    </div>
                 </div>
             </div>
         </div>
