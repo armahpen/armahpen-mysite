@@ -335,9 +335,22 @@ export default function Poetry() {
     }
   }, [currentPoemIndex, currentLineIndex, isAnimating]);
 
-  const handleClick = () => {
+  const handleNextPoem = () => {
     const nextPoemIndex = (currentPoemIndex + 1) % poems.length;
     setCurrentPoemIndex(nextPoemIndex);
+    setCurrentLineIndex(0);
+    setDisplayedLines([]);
+  };
+
+  const handlePrevPoem = () => {
+    const prevPoemIndex = (currentPoemIndex - 1 + poems.length) % poems.length;
+    setCurrentPoemIndex(prevPoemIndex);
+    setCurrentLineIndex(0);
+    setDisplayedLines([]);
+  };
+
+  const selectPoem = (index: number) => {
+    setCurrentPoemIndex(index);
     setCurrentLineIndex(0);
     setDisplayedLines([]);
   };
@@ -423,17 +436,24 @@ export default function Poetry() {
         </div>
 
         {/* Controls */}
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
           <button
-            onClick={handleClick}
-            className="px-6 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
+            onClick={handlePrevPoem}
+            className="px-5 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
             style={{ fontFamily: 'Dancing Script, cursive' }}
           >
-            Next Poem
+            Previous
+          </button>
+          <button
+            onClick={handleNextPoem}
+            className="px-5 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
+            style={{ fontFamily: 'Dancing Script, cursive' }}
+          >
+            Next
           </button>
           <button
             onClick={toggleAnimation}
-            className="px-6 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
+            className="px-5 py-2 bg-white/70 backdrop-blur-sm text-gray-600 rounded-full hover:bg-white/85 transition-all duration-300 shadow-md text-sm"
             style={{ fontFamily: 'Dancing Script, cursive' }}
           >
             {isAnimating ? "Pause" : "Play"}
@@ -446,6 +466,44 @@ export default function Poetry() {
           style={{ fontFamily: 'Dancing Script, cursive' }}
         >
           {currentPoemIndex + 1} / {poems.length}
+        </div>
+
+        {/* Poem List */}
+        <div className="fixed left-8 top-1/2 transform -translate-y-1/2 space-y-3">
+          {poems.map((poem, index) => (
+            <div
+              key={poem.id}
+              className="relative cursor-pointer group"
+              onClick={() => selectPoem(index)}
+            >
+              {/* Circular selection indicator */}
+              <div
+                className={`absolute -left-6 top-1/2 transform -translate-y-1/2 w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentPoemIndex
+                    ? 'bg-blue-400 scale-125 shadow-lg shadow-blue-400/50'
+                    : 'bg-white/30 group-hover:bg-white/50 group-hover:scale-110'
+                }`}
+                style={{
+                  boxShadow: index === currentPoemIndex ? '0 0 20px rgba(59, 130, 246, 0.6)' : 'none'
+                }}
+              />
+              
+              {/* Poem title */}
+              <div
+                className={`text-sm transition-all duration-300 ${
+                  index === currentPoemIndex
+                    ? 'text-blue-600 font-semibold transform scale-105'
+                    : 'text-gray-500 group-hover:text-gray-700'
+                }`}
+                style={{ 
+                  fontFamily: 'Dancing Script, cursive',
+                  textShadow: index === currentPoemIndex ? '0 0 10px rgba(59, 130, 246, 0.3)' : 'none'
+                }}
+              >
+                {poem.title}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Creativity tag */}
@@ -468,6 +526,41 @@ export default function Poetry() {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+        
+        .poem-list-item {
+          position: relative;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .poem-list-item:hover {
+          transform: translateX(5px);
+        }
+        
+        .selection-circle {
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(59, 130, 246, 0.4) 100%);
+        }
+        
+        .selection-circle.active {
+          transform: scale(1.3);
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+          animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+          0%, 100% { 
+            transform: scale(1.3);
+            opacity: 1;
+          }
+          50% { 
+            transform: scale(1.5);
+            opacity: 0.8;
           }
         }
       `}</style>
