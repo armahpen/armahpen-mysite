@@ -114,6 +114,16 @@ This is a modern portfolio website built for Evans Armah (HeaVans), showcasing e
 
 ## Recent Changes
 
+- July 18, 2025: **BLACK & WHITE GLOW THEME**: Applied sophisticated black and white theme with glowing text effects
+  - **PURE BLACK BACKGROUND**: Changed from dark gray to pure black (#000000) for clean minimal aesthetic
+  - **REMOVED GRAIN ANIMATION**: Replaced moving brown grain texture with solid black background
+  - **GLOWING TEXT EFFECTS**: Added white glow effects to all headings and titles with smooth animations
+  - **UPDATED HEADER NAME**: Changed from "HeaVans" to "Evans" for GitHub Pages deployment
+  - **GLOWING NAVIGATION**: Menu items now glow when hovered with white light effects
+  - **ENHANCED BUTTONS**: White buttons with glowing hover effects and smooth transitions
+  - **PROFILE IMAGE GLOW**: Added white border with glowing effect around profile photo
+  - **GITHUB PAGES OPTIMIZED**: All changes applied to both index.html and 404.html for deployment
+
 - July 18, 2025: **GITHUB PAGES NAVIGATION FIX**: Fixed page switching issue where only home page was showing
   - **PROPER PAGE NAVIGATION**: Fixed JavaScript navigation system to properly show/hide pages (Home, About, Portfolio, Contact)
   - **WORKING MENU SYSTEM**: All navigation links now correctly switch between pages

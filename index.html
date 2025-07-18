@@ -36,11 +36,9 @@
         .grain-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: url('./grain.webp') repeat;
-            background-size: 200px;
-            opacity: 0.4;
+            background: #000000;
+            opacity: 0.3;
             z-index: -1;
-            animation: grainMove 8s steps(10) infinite;
         }
         
         @keyframes bgShift {
@@ -48,12 +46,7 @@
             50% { opacity: 0.8; }
         }
         
-        @keyframes grainMove {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(-5%, -10%); }
-            50% { transform: translate(12%, 9%); }
-            75% { transform: translate(-1%, 7%); }
-        }
+
         
         /* Navigation */
         nav {
@@ -524,7 +517,7 @@
     <!-- Home Page -->
     <div id="home-page" class="page-content active">
         <div class="hero-section">
-            <h1 class="hero-title">HeaVans</h1>
+            <h1 class="hero-title">Evans</h1>
             <p class="hero-subtitle">Creative Web Developer & Data Analyst specializing in innovative CRM systems, UI/UX design, and full-stack development solutions.</p>
             <button class="cta-btn" onclick="navigateTo('portfolio')">View My Work</button>
         </div>
