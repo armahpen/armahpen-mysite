@@ -160,45 +160,55 @@
         }
         
         .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #7877c6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: clamp(48px, 8vw, 120px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1);
+            animation: textGlow 2s ease-in-out infinite alternate;
         }
         
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: #b0b0b0;
-            margin-bottom: 2rem;
+            font-size: clamp(18px, 3vw, 24px);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 48px;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-description {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 64px auto;
+            letter-spacing: 0.3px;
         }
         
         .cta-btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: transparent;
-            color: #ffffff;
-            text-decoration: none;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 8px;
-            font-weight: 400;
-            transition: all 0.3s;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
             cursor: pointer;
-            border: 1px solid #ffffff;
-            font-size: 0.9rem;
-            text-shadow: none;
-            box-shadow: none;
         }
         
         .cta-btn:hover {
-            background: #ffffff;
-            color: #000000;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
         }
         
         /* About Page Styles */
@@ -619,7 +629,10 @@
     <div id="home-page" class="page-content active">
         <div class="hero-section">
             <h1 class="hero-title">Evans</h1>
-            <p class="hero-subtitle">Creative Web Developer & Data Analyst specializing in innovative CRM systems, UI/UX design, and full-stack development solutions.</p>
+            <p class="hero-subtitle">Designer & Developer</p>
+            <div class="hero-description">
+                I'm Evans but you can call me Heavans, I'm a versatile Web Developer, web designer & Data Analyst with a strong foundation in UI/UX, research, and data-driven development. I build responsive, user-focused platforms that solve real problems and support meaningful impact.
+            </div>
             <button class="cta-btn" onclick="navigateTo('portfolio')">View My Work</button>
         </div>
     </div>
