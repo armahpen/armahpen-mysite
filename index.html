@@ -65,21 +65,25 @@
         .poetry-home-btn {
             position: fixed;
             top: 2rem; right: 2rem;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(8px);
             color: #4b5563;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 25px;
             font-family: 'Dancing Script', cursive;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            z-index: 10;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .poetry-home-btn:hover {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
         
         .poetry-main-content {
