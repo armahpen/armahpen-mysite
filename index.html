@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Base Reset */
@@ -44,6 +45,269 @@
         @keyframes bgShift {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.8; }
+        }
+        
+        /* Poetry Page Styles */
+        .poetry-background {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, #e0f2fe 0%, #bbf7d0 100%);
+            z-index: 0;
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .poetry-home-btn {
+            position: fixed;
+            top: 2rem; right: 2rem;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            color: #4b5563;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .poetry-home-btn:hover {
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .poetry-main-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        
+        .current-poem-display {
+            width: 100%;
+            max-width: 64rem;
+            text-align: center;
+        }
+        
+        .poem-title-container {
+            margin-bottom: 4rem;
+        }
+        
+        .current-poem-title {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            color: #374151;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 600;
+        }
+        
+        .poem-lines-container {
+            margin: 1.5rem 0;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .poem-line {
+            font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+            color: #4b5563;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+            line-height: 1.6;
+        }
+        
+        .poem-line.empty {
+            height: 1.5rem;
+        }
+        
+        .poem-date-container {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .current-poem-date {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .poetry-controls {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+        
+        .poetry-control-btn {
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            color: #4b5563;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .poetry-control-btn:hover {
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .poem-counter {
+            position: fixed;
+            bottom: 2rem; right: 2rem;
+            color: #6b7280;
+            font-size: 14px;
+            font-family: 'Dancing Script', cursive;
+            z-index: 10;
+        }
+        
+        .poem-list {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+        
+        .poem-list-item {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .poem-list-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .selection-circle {
+            position: absolute;
+            left: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .selection-circle.active {
+            background: #60a5fa;
+            transform: translateY(-50%) scale(1.25);
+            box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
+            animation: pulse 2s infinite;
+        }
+        
+        .poem-list-item:hover .selection-circle:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .poem-list-title {
+            font-size: 14px;
+            color: #6b7280;
+            font-family: 'Dancing Script', cursive;
+            transition: all 0.3s ease;
+        }
+        
+        .poem-list-item.active .poem-list-title {
+            color: #2563eb;
+            font-weight: 600;
+            transform: scale(1.05);
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+        }
+        
+        .poem-list-item:hover .poem-list-title {
+            color: #374151;
+        }
+        
+        .creativity-tag {
+            position: fixed;
+            bottom: 2rem; left: 2rem;
+            color: #9ca3af;
+            font-size: 12px;
+            font-family: 'Dancing Script', cursive;
+            z-index: 10;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { 
+                transform: translateY(-50%) scale(1.25);
+                opacity: 1;
+            }
+            50% { 
+                transform: translateY(-50%) scale(1.5);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Mobile responsiveness for poetry page */
+        @media (max-width: 768px) {
+            .poem-list {
+                display: none;
+            }
+            
+            .poetry-home-btn {
+                top: 1rem; right: 1rem;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            .poetry-controls {
+                bottom: 1rem;
+                gap: 0.5rem;
+            }
+            
+            .poetry-control-btn {
+                padding: 6px 16px;
+                font-size: 12px;
+            }
+            
+            .poem-counter {
+                bottom: 1rem; right: 1rem;
+                font-size: 12px;
+            }
+            
+            .creativity-tag {
+                bottom: 1rem; left: 1rem;
+                font-size: 10px;
+            }
         }
         
 
@@ -865,95 +1129,55 @@
     
     <!-- Poetry Page -->
     <div id="poetry-page" class="page-content">
-        <div class="poetry-container">
-            <div class="poetry-header">
-                <h1 class="poetry-title">Poetry Collection</h1>
-                <p class="poetry-subtitle">Original verses exploring life, technology, and human connection</p>
-            </div>
-            
-            <div class="poetry-grid">
-                <div class="poem-card">
-                    <h3 class="poem-title">Being You</h3>
-                    <div class="poem-content">
-                        <p>Being you is different<br>
-                        No one is perfect<br>
-                        Simply you, no effects<br>
-                        Show dem you reflect<br>
-                        Show dem respect but be no pet</p>
-                    </div>
+        <!-- 3D Canvas for clouds and special effects -->
+        <canvas id="poetry-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+        
+        <!-- Gradient Background -->
+        <div class="poetry-background"></div>
+        
+        <!-- Floating elements -->
+        <div class="floating-particles"></div>
+        
+        <!-- Home button -->
+        <button onclick="navigateTo('home')" class="poetry-home-btn">Home</button>
+        
+        <!-- Main content -->
+        <div class="poetry-main-content">
+            <!-- Current poem display -->
+            <div class="current-poem-display">
+                <div class="poem-title-container">
+                    <h1 id="current-poem-title" class="current-poem-title">Being You</h1>
                 </div>
                 
-                <div class="poem-card">
-                    <h3 class="poem-title">The Coder's Journey</h3>
-                    <div class="poem-content">
-                        <p>Coding can be quite demanding<br>
-                        Errors here and there are commanding<br>
-                        But once you debug and get it right<br>
-                        The feeling is truly out of sight<br>
-                        For coders, it's a constant delight</p>
-                    </div>
+                <div id="poem-lines-container" class="poem-lines-container">
+                    <!-- Lines will be added dynamically -->
                 </div>
                 
-                <div class="poem-card">
-                    <h3 class="poem-title">In the Air</h3>
-                    <div class="poem-content">
-                        <p>In the air, a pulsating vibe, we ride,<br>
-                        Harmonic waves, side by side.<br>
-                        Through the rhythm, souls collide,<br>
-                        A dance of energy, amplified.<br>
-                        In this space, our hearts reside,<br>
-                        United by the beat, we're sanctified</p>
-                    </div>
-                </div>
-                
-                <div class="poem-card">
-                    <h3 class="poem-title">I Live Again</h3>
-                    <div class="poem-content">
-                        <p>I live<br>
-                        I die<br>
-                        I live again<br>
-                        His loss became my gain<br>
-                        On the cross He endured my pain</p>
-                        
-                        <p>I live<br>
-                        I die<br>
-                        I live again<br>
-                        'Cause death He overcame</p>
-                    </div>
-                </div>
-                
-                <div class="poem-card">
-                    <h3 class="poem-title">The Bond</h3>
-                    <div class="poem-content">
-                        <p>Together we laugh, sometimes we stumble,<br>
-                        A group of friends, a perfect jumble.<br>
-                        In silly moments, our words may fumble,<br>
-                        But in our hearts, love's never humble.<br>
-                        Through thick and thin, we stand as one,<br>
-                        A friendship forged, never undone.</p>
-                    </div>
-                </div>
-                
-                <div class="poem-card">
-                    <h3 class="poem-title">Spoken Drive</h3>
-                    <div class="poem-content">
-                        <p>dreams chase dare propel step<br>
-                        spirits swell together break chains quell<br>
-                        rising above heroes dwell<br>
-                        empowerment fire excels<br>
-                        motivation inspire courage strength<br>
-                        unity freedom soar uplift<br>
-                        triumph passion determination success<br>
-                        elevate breakthrough liberate<br>
-                        thrive ascend conquer ignite flourish</p>
-                    </div>
+                <!-- Date and category -->
+                <div class="poem-date-container">
+                    <p id="current-poem-date" class="current-poem-date">20 March 2023</p>
                 </div>
             </div>
             
-            <div class="poetry-footer">
-                <p class="copyright">All poems are the original work of Evans Armah (HeaVans) © 2025.<br>
-                Reproduction or use without permission is prohibited.</p>
+            <!-- Controls -->
+            <div class="poetry-controls">
+                <button onclick="previousPoem()" class="poetry-control-btn">Previous</button>
+                <button onclick="nextPoem()" class="poetry-control-btn">Next</button>
+                <button onclick="toggleAnimation()" class="poetry-control-btn" id="play-pause-btn">Pause</button>
             </div>
+            
+            <!-- Poem counter -->
+            <div class="poem-counter">
+                <span id="poem-counter">1 / 14</span>
+            </div>
+            
+            <!-- Poem List -->
+            <div class="poem-list">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            
+            <!-- Creativity tag -->
+            <div class="creativity-tag">creativity</div>
         </div>
     </div>
     
@@ -962,9 +1186,547 @@
         <p>&copy; 2025 HeaVans. All rights reserved. | Designed & Developed by Evans Armah</p>
     </footer>
     
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    
     <script>
+        // Poetry data - all 14 poems
+        const poems = [
+            {
+                id: 1,
+                title: "Being You",
+                lines: [
+                    "Being you is different",
+                    "No one is perfect", 
+                    "Simply you No effects",
+                    "Show dem you reflect",
+                    "Show dem respect but be no pet"
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 2,
+                title: "I Live Again", 
+                lines: [
+                    "I live",
+                    "I die",
+                    "I live again",
+                    "His lost became my gain",
+                    "On the cross He endured my pain",
+                    "",
+                    "I live",
+                    "I die",
+                    "I live again", 
+                    "Cos death He over came"
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 3,
+                title: "Canvas Whispers",
+                lines: [
+                    "In strokes and hues, the passions start,",
+                    "A canvas whispers from the heart,",
+                    "A symphony of colors, transformed through masterful art."
+                ],
+                date: "4 June 2023"
+            },
+            {
+                id: 4,
+                title: "Hey There",
+                lines: [
+                    "Hey there, I couldn't help but notice you standing there.",
+                    "Hey there, your smile and energy are beyond compare.",
+                    "Hey there, I think we could make an awesome pair.",
+                    "Hey there, I'd love to get to know you and your flair.",
+                    "Hey there, maybe we could grab a drink or a bite to share.",
+                    "Hey there, let's start a friendship that's rare and so sincere."
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 5,
+                title: "Perfect Jumble",
+                lines: [
+                    "Together we laugh, sometimes we stumble,",
+                    "A group of friends, a perfect jumble.",
+                    "In silly moments, our words may fumble,", 
+                    "But in our hearts, love's never humble.",
+                    "Through thick and thin, we stand as one,",
+                    "A friendship forged, never undone."
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 6,
+                title: "Empowerment's Fire",
+                lines: [
+                    "With dreams to chase, we dare to propel,",
+                    "In every step, our spirits swell.",
+                    "Together, we break the chains that quell,",
+                    "Rising above, where heroes dwell.",
+                    "Empowerment's fire, in us, excels."
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 7,
+                title: "In the Air",
+                lines: [
+                    "In the air, a pulsing vibe, we ride,",
+                    "Harmonic waves, side by side.",
+                    "Through the rhythm, souls collide,",
+                    "A dance of energy, amplified.",
+                    "In this space, our hearts reside,",
+                    "United by the beat, we're sanctified"
+                ],
+                date: "7 April 2023"
+            },
+            {
+                id: 8,
+                title: "Boundless Imagination",
+                lines: [
+                    "In realms of boundless imagination, I roam,",
+                    "Where colors dance and words find their home.",
+                    "A canvas, a page, a symphony's embrace,",
+                    "Creativity's fire, an eternal grace.",
+                    "From whispered dreams to bold inventions,",
+                    "I weave my thoughts with daring intentions.",
+                    "Unleashing ideas, unchained and free,",
+                    "Creativity, the essence of me.",
+                    "With every stroke, a story unfolds,",
+                    "A melody composed, a masterpiece untold.",
+                    "In realms of boundless imagination, I soar,",
+                    "Creativity's muse, forever I adore."
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 9,
+                title: "Blood Saved",
+                lines: [
+                    "Blood Saved",
+                    "Blood Saved even when we run from your embrace",
+                    "Your love outwit us in the race",
+                    "Give to Caesar what is Caesar's",
+                    "But thank God for Jesus",
+                    "Cos his love freed us",
+                    "Even when we betrayed like Judas.",
+                    "Judah's conquering Lion",
+                    "The only light brightening Zoin",
+                    "He heals, He's Gilead's balm, He save see the nails in his palm,",
+                    "If he is in the boat the storm will be calm,",
+                    "As you are Christ bids you to come",
+                    "O you should see in Heaven",
+                    "Angels clapping, they wings flapping,",
+                    "singing Hallelujah Amen"
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 10,
+                title: "The Coder's Journey",
+                lines: [
+                    "Coding can be quite demanding",
+                    "Errors here and there are commanding",
+                    "But once you debug and get it right",
+                    "The feeling is truly out of sight",
+                    "For coders, it's a constant delight"
+                ],
+                date: "20 March 2023"
+            },
+            {
+                id: 11,
+                title: "SPARTA'S UTTER",
+                lines: [
+                    "Disrupt, trash the mundane",
+                    "Some may say u're insane",
+                    "Make it known and plain",
+                    "Give away no more years",
+                    "Wipe your tears and starve your fears",
+                    "You've got nothing to loose",
+                    "You live only once",
+                    "Dont loose that chance",
+                    "If life plays a different tune",
+                    "still choose to dance",
+                    "Stand on your own two feet",
+                    "You have a feat to achieve",
+                    "Live as if it's your last day's eve",
+                    "Take your best shot",
+                    "Give it all you've got",
+                    "Even when you flop",
+                    "Do not stop!",
+                    "Dare not stop!",
+                    "Follow through to your goal",
+                    "with all the might in your soul."
+                ],
+                date: "August 2017"
+            },
+            {
+                id: 12,
+                title: "Rope-a-dope",
+                lines: [
+                    "Back and forth",
+                    "Lean on hope",
+                    "The battle ought to be fought",
+                    "The ball has always been in our court",
+                    "Nothing can bore our core",
+                    "We're tougher than titanium",
+                    "Let's make our thoughts premium",
+                    "Facing each day as it unfolds",
+                    "The power in man's soul just can't be told",
+                    "Never look down",
+                    "Give not a frown",
+                    "When some take you for a clown",
+                    "Yes of course life may be coarse",
+                    "Let's have a purpose",
+                    "It won't make us pause",
+                    "May it be felt in our pulse",
+                    "From our Center, let's leave open the Gate of Greatness to emanate",
+                    "In your Very Own Thoughts is our own fate",
+                    "Thoughts we harbor are like writings on destiny's slate",
+                    "Let's meditate, and develop a healthy mental state"
+                ],
+                date: "8 November 2015"
+            },
+            {
+                id: 13,
+                title: "I'm ~not~ wrong",
+                lines: [
+                    "I'll consider your advice while you speak",
+                    "Truth shouldn't make one weak",
+                    "Truth is part of love",
+                    "Love doesn't bring the recipient down",
+                    "Love builds the receiver up",
+                    "Allow nobody to bring you down on the pretext of truth",
+                    "Such a fellow makes you think it is for your own good",
+                    "His 'good' for you is bad",
+                    "Correction outside of love is not right",
+                    "The intended 'good' then turns the victim worst",
+                    "However, some do this out of ignorance",
+                    "Ignorantly or intentionally, it is up to you to stay strong,",
+                    "filter the advice and return love to the fellow"
+                ],
+                date: "15 November 2018"
+            },
+            {
+                id: 14,
+                title: "We never really die",
+                lines: [
+                    "The true you is the you in the body",
+                    "Let's live strongly and beautifully in the body while we are wearing it",
+                    "Outward cleanliness is necessary",
+                    "Cleanliness of our true selves is essential",
+                    "Cleanse yourself even as you clean your physical body",
+                    "Feed yourself with the finest thought and inspiration",
+                    "Even as you feed your stomach",
+                    "We never really die, there is nothing to fear",
+                    "We just transcend to our real realm...soo sure and surreal",
+                    "Isn't it wise we live fully and intensely in every passing moment",
+                    "while we live in this physical plane?",
+                    "Vow to live profoundly amidst all turns and twists",
+                    "",
+                    "The best part is that we have more than enough power within",
+                    "to be who we want to be.",
+                    "Man is never a weakling even in a lowly state...",
+                    "This is our real state; mini versions of God himself."
+                ],
+                date: "5 June 2018"
+            }
+        ];
+
+        // Poetry page variables
+        let currentPoemIndex = 0;
+        let currentLineIndex = 0;
+        let displayedLines = [];
+        let isAnimating = true;
+        let poetryScene = null;
+        let poetryAnimationId = null;
+
         // Current page tracker
         let currentPage = 'home';
+
+        // Poetry page functions
+        function initPoetryPage() {
+            if (currentPage !== 'poetry') return;
+            
+            initPoetry3D();
+            initFloatingParticles();
+            initPoemList();
+            displayCurrentPoem();
+            startPoemAnimation();
+        }
+
+        function initPoetry3D() {
+            const canvas = document.getElementById('poetry-canvas');
+            if (!canvas || !window.THREE) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+            
+            poetryScene = { scene, camera, renderer, clouds: [], specialObjects: [] };
+
+            // Create 3D clouds
+            const createCloud = (x, y, z) => {
+                const cloudGroup = new THREE.Group();
+                
+                for (let i = 0; i < 8; i++) {
+                    const geometry = new THREE.SphereGeometry(0.3 + Math.random() * 0.2, 8, 6);
+                    const material = new THREE.MeshBasicMaterial({ 
+                        color: 0xffffff, 
+                        transparent: true, 
+                        opacity: 0.3 + Math.random() * 0.2 
+                    });
+                    const sphere = new THREE.Mesh(geometry, material);
+                    sphere.position.set(
+                        (Math.random() - 0.5) * 2,
+                        (Math.random() - 0.5) * 1,
+                        (Math.random() - 0.5) * 1
+                    );
+                    cloudGroup.add(sphere);
+                }
+                
+                cloudGroup.position.set(x, y, z);
+                return cloudGroup;
+            };
+
+            // Add multiple clouds
+            for (let i = 0; i < 6; i++) {
+                const cloud = createCloud(
+                    (Math.random() - 0.5) * 20,
+                    (Math.random() - 0.5) * 10,
+                    -5 - Math.random() * 10
+                );
+                scene.add(cloud);
+                poetryScene.clouds.push(cloud);
+            }
+
+            camera.position.z = 5;
+
+            const animate = () => {
+                if (currentPage !== 'poetry') return;
+                
+                poetryAnimationId = requestAnimationFrame(animate);
+                
+                // Animate clouds
+                poetryScene.clouds.forEach((cloud, index) => {
+                    cloud.rotation.y += 0.002;
+                    cloud.position.x += Math.sin(Date.now() * 0.0005 + index) * 0.001;
+                    cloud.position.y += Math.cos(Date.now() * 0.0003 + index) * 0.001;
+                });
+
+                // Animate special objects for Blood Saved poem
+                if (currentPoemIndex === 8) { // Blood Saved poem
+                    poetryScene.specialObjects.forEach((obj) => {
+                        if (obj.userData.type === 'blood') {
+                            obj.position.y += Math.sin(Date.now() * 0.003) * 0.002;
+                        }
+                    });
+                }
+                
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            // Handle resize
+            const handleResize = () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            };
+
+            window.addEventListener('resize', handleResize);
+        }
+
+        function updatePoetry3DScene() {
+            if (!poetryScene) return;
+
+            const { scene, specialObjects } = poetryScene;
+
+            // Clear previous special objects
+            specialObjects.forEach((obj) => {
+                scene.remove(obj);
+            });
+            specialObjects.length = 0;
+
+            // Add special objects for Blood Saved poem
+            if (currentPoemIndex === 8 && window.THREE) { // Blood Saved poem
+                const THREE = window.THREE;
+
+                // Create 3D Blood Drop
+                const bloodGeometry = new THREE.SphereGeometry(0.15, 8, 6);
+                bloodGeometry.scale(1, 1.5, 1); // Make it droplet shaped
+                const bloodMaterial = new THREE.MeshBasicMaterial({ color: 0x8B0000, transparent: true, opacity: 0.7 });
+                const bloodDrop = new THREE.Mesh(bloodGeometry, bloodMaterial);
+                bloodDrop.position.set(3, 3, -2);
+                bloodDrop.userData.type = 'blood';
+                scene.add(bloodDrop);
+                specialObjects.push(bloodDrop);
+
+                poetryScene.specialObjects = specialObjects;
+            }
+        }
+
+        function initFloatingParticles() {
+            const container = document.querySelector('.floating-particles');
+            if (!container) return;
+
+            container.innerHTML = '';
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    background: white;
+                    border-radius: 50%;
+                    opacity: 0.3;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: float ${4 + Math.random() * 3}s linear infinite ${Math.random() * 5}s;
+                `;
+                container.appendChild(particle);
+            }
+
+            // Add floating animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+                    50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function initPoemList() {
+            const poemListContainer = document.querySelector('.poem-list');
+            if (!poemListContainer) return;
+
+            poemListContainer.innerHTML = '';
+            poems.forEach((poem, index) => {
+                const poemItem = document.createElement('div');
+                poemItem.className = `poem-list-item ${index === currentPoemIndex ? 'active' : ''}`;
+                poemItem.onclick = () => selectPoem(index);
+                
+                poemItem.innerHTML = `
+                    <div class="selection-circle ${index === currentPoemIndex ? 'active' : ''}"></div>
+                    <div class="poem-list-title">${poem.title}</div>
+                `;
+                
+                poemListContainer.appendChild(poemItem);
+            });
+        }
+
+        function displayCurrentPoem() {
+            const currentPoem = poems[currentPoemIndex];
+            
+            // Update title
+            document.getElementById('current-poem-title').textContent = currentPoem.title;
+            
+            // Update date
+            document.getElementById('current-poem-date').textContent = currentPoem.date;
+            
+            // Update counter
+            document.getElementById('poem-counter').textContent = `${currentPoemIndex + 1} / ${poems.length}`;
+            
+            // Clear and display lines
+            const linesContainer = document.getElementById('poem-lines-container');
+            linesContainer.innerHTML = '';
+            displayedLines = [];
+            currentLineIndex = 0;
+            
+            updatePoetry3DScene();
+            updatePoemList();
+        }
+
+        function updatePoemList() {
+            const poemItems = document.querySelectorAll('.poem-list-item');
+            const circles = document.querySelectorAll('.selection-circle');
+            
+            poemItems.forEach((item, index) => {
+                if (index === currentPoemIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            circles.forEach((circle, index) => {
+                if (index === currentPoemIndex) {
+                    circle.classList.add('active');
+                } else {
+                    circle.classList.remove('active');
+                }
+            });
+        }
+
+        function startPoemAnimation() {
+            if (!isAnimating) return;
+
+            const currentPoem = poems[currentPoemIndex];
+            const linesContainer = document.getElementById('poem-lines-container');
+            
+            if (currentLineIndex < currentPoem.lines.length) {
+                const line = currentPoem.lines[currentLineIndex];
+                const lineElement = document.createElement('div');
+                lineElement.className = line === "" ? 'poem-line empty' : 'poem-line';
+                lineElement.textContent = line;
+                lineElement.style.animationDelay = `${currentLineIndex * 0.2}s`;
+                
+                linesContainer.appendChild(lineElement);
+                displayedLines.push(line);
+                currentLineIndex++;
+                
+                setTimeout(() => startPoemAnimation(), 800);
+            } else {
+                // Poem finished, wait then move to next
+                setTimeout(() => {
+                    if (isAnimating) {
+                        nextPoem();
+                    }
+                }, 3000);
+            }
+        }
+
+        function nextPoem() {
+            currentPoemIndex = (currentPoemIndex + 1) % poems.length;
+            displayCurrentPoem();
+            if (isAnimating) {
+                startPoemAnimation();
+            }
+        }
+
+        function previousPoem() {
+            currentPoemIndex = (currentPoemIndex - 1 + poems.length) % poems.length;
+            displayCurrentPoem();
+            if (isAnimating) {
+                startPoemAnimation();
+            }
+        }
+
+        function selectPoem(index) {
+            currentPoemIndex = index;
+            displayCurrentPoem();
+            if (isAnimating) {
+                startPoemAnimation();
+            }
+        }
+
+        function toggleAnimation() {
+            isAnimating = !isAnimating;
+            const button = document.getElementById('play-pause-btn');
+            button.textContent = isAnimating ? 'Pause' : 'Play';
+            
+            if (isAnimating) {
+                startPoemAnimation();
+            }
+        }
         
         // Page navigation function
         function navigateTo(pageId) {
@@ -983,6 +1745,17 @@
                 
                 // Update navigation links
                 updateNavLinks(pageId);
+                
+                // Initialize poetry page if needed
+                if (pageId === 'poetry') {
+                    setTimeout(() => initPoetryPage(), 100);
+                } else {
+                    // Stop poetry animation when leaving page
+                    if (poetryAnimationId) {
+                        cancelAnimationFrame(poetryAnimationId);
+                        poetryAnimationId = null;
+                    }
+                }
             }
         }
         
