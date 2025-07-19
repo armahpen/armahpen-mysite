@@ -963,6 +963,14 @@
         .delay-1400 { animation-delay: 1.4s; opacity: 0; }
         .delay-1600 { animation-delay: 1.6s; opacity: 0; }
 
+        /* Force Header Visibility */
+        h1.experience-main-title,
+        h1.contact-main-title {
+            opacity: 1 !important;
+            display: block !important;
+            visibility: visible !important;
+        }
+
         /* Experience Page Styles */
         #experience-page {
             min-height: 100vh;
@@ -1116,21 +1124,28 @@
         }
 
         .experience-main-title {
-            font-size: 48px;
-            font-weight: 700;
-            margin: 0 0 24px 0;
-            letter-spacing: 2px;
+            font-size: 48px !important;
+            font-weight: 700 !important;
+            margin: 0 0 24px 0 !important;
+            letter-spacing: 2px !important;
             color: #ffffff !important;
+            background: none !important;
             text-shadow: 
                 0 0 5px #ffffff,
                 0 0 10px #ffffff,
                 0 0 15px #ffffff,
-                0 0 20px #ffffff;
-            animation: textGlow 3s ease-in-out infinite;
-            text-align: center;
+                0 0 20px #ffffff !important;
+            animation: textGlow 3s ease-in-out infinite !important;
+            text-align: center !important;
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
+            position: relative !important;
+            z-index: 999 !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            line-height: 1.2 !important;
+            width: 100% !important;
+            min-height: 60px !important;
         }
 
         .experience-title-divider {
@@ -1469,21 +1484,28 @@
         }
 
         .contact-main-title {
-            font-size: 48px;
-            font-weight: 700;
-            margin: 0 0 24px 0;
-            letter-spacing: 2px;
+            font-size: 48px !important;
+            font-weight: 700 !important;
+            margin: 0 0 24px 0 !important;
+            letter-spacing: 2px !important;
             color: #ffffff !important;
+            background: none !important;
             text-shadow: 
                 0 0 5px #ffffff,
                 0 0 10px #ffffff,
                 0 0 15px #ffffff,
-                0 0 20px #ffffff;
-            animation: textGlow 3s ease-in-out infinite;
-            text-align: center;
+                0 0 20px #ffffff !important;
+            animation: textGlow 3s ease-in-out infinite !important;
+            text-align: center !important;
             display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
+            position: relative !important;
+            z-index: 999 !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            line-height: 1.2 !important;
+            width: 100% !important;
+            min-height: 60px !important;
         }
 
         .contact-title-divider {
@@ -1843,7 +1865,7 @@
         <div class="experience-container">
             <!-- Header Section -->
             <div class="experience-header-section">
-                <h1 class="experience-main-title animate-fadeInUp delay-200">PROFESSIONAL EXPERIENCE</h1>
+                <h1 class="experience-main-title">PROFESSIONAL EXPERIENCE</h1>
                 <div class="experience-title-divider animate-fadeInUp delay-400"></div>
                 <p class="experience-main-subtitle animate-fadeInUp delay-600">A journey through my professional experiences, showcasing growth, impact, and continuous learning across diverse roles and industries.</p>
             </div>
@@ -1960,7 +1982,7 @@
         <div class="contact-container">
             <!-- Header Section -->
             <div class="contact-header-section">
-                <h1 class="contact-main-title animate-fadeInUp delay-200">CONTACT</h1>
+                <h1 class="contact-main-title">CONTACT</h1>
                 <div class="contact-title-divider animate-fadeInUp delay-400"></div>
                 <p class="contact-main-subtitle animate-fadeInUp delay-600">Let's connect and explore how we can create something amazing together.</p>
             </div>
