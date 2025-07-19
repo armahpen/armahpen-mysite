@@ -2546,20 +2546,50 @@
             const volumeSlider = document.getElementById('volume-slider');
             const volumeDisplay = document.getElementById('volume-display');
             
-            if (!audio || !volumeSlider || !volumeDisplay) return;
+            if (!audio || !volumeSlider || !volumeDisplay) {
+                console.log('Audio elements not found');
+                return;
+            }
             
             // Set initial volume (4/10 = 0.4)
             audio.volume = 0.4;
             
-            // Auto play audio when poetry page loads
-            audio.play().catch(error => {
-                console.log('Audio autoplay prevented:', error);
-                // Fallback: play on first user interaction
-                document.addEventListener('click', function playOnFirstClick() {
-                    audio.play().catch(e => console.log('Audio play failed:', e));
-                    document.removeEventListener('click', playOnFirstClick);
-                }, { once: true });
+            // Wait for audio to load then try to play
+            audio.addEventListener('canplaythrough', function() {
+                console.log('Audio ready to play');
+                audio.play().catch(error => {
+                    console.log('Audio autoplay prevented:', error.message);
+                    // Show user interaction hint if autoplay fails
+                    addPlayOnClickFallback();
+                });
             });
+            
+            // Handle audio loading errors
+            audio.addEventListener('error', function(e) {
+                console.log('Audio loading error:', e);
+                console.log('Audio source:', audio.src);
+            });
+            
+            // Add fallback for user interaction
+            function addPlayOnClickFallback() {
+                const playOnClick = function() {
+                    audio.play().then(() => {
+                        console.log('Audio started playing after user interaction');
+                    }).catch(e => console.log('Audio play failed:', e.message));
+                    document.removeEventListener('click', playOnClick);
+                    document.removeEventListener('touchstart', playOnClick);
+                };
+                document.addEventListener('click', playOnClick, { once: true });
+                document.addEventListener('touchstart', playOnClick, { once: true });
+            }
+            
+            // Try immediate play for browsers that allow it
+            setTimeout(() => {
+                audio.play().catch(error => {
+                    console.log('Initial autoplay prevented:', error.message);
+                    addPlayOnClickFallback();
+                });
+            }, 500);
             
             // Handle volume slider changes
             volumeSlider.addEventListener('input', function() {
@@ -2575,13 +2605,15 @@
                 if (volume === 0) {
                     audio.pause();
                 } else if (audio.paused) {
-                    audio.play().catch(e => console.log('Audio play failed:', e));
+                    audio.play().catch(e => console.log('Audio play failed:', e.message));
                 }
             });
             
             // Initialize slider background
             const initialPercentage = 40; // 4/10 * 100
             volumeSlider.style.background = `linear-gradient(90deg, #60a5fa 0%, #60a5fa ${initialPercentage}%, #e5e7eb ${initialPercentage}%, #e5e7eb 100%)`;
+            
+            console.log('Audio initialization complete. File:', audio.src);
         }
 
         function initPoetry3D() {
