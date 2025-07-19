@@ -1787,32 +1787,34 @@
     
     <!-- Experience Page -->
     <div id="experience-page" class="page-content">
-        <!-- Fixed Navigation -->
-        <nav class="experience-nav">
-            <div class="nav-container-experience">
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
                 <img src="./logo.png" alt="HeaVans Logo" class="logo-img" onclick="navigateTo('home')">
-                <div class="nav-menu-experience">
-                    <span onclick="navigateTo('home')" class="menu-button-experience">Home</span>
-                    <span onclick="navigateTo('about')" class="menu-button-experience">About</span>
-                    <span onclick="navigateTo('experience')" class="menu-button-experience active">Experience</span>
-                    <span onclick="navigateTo('portfolio')" class="menu-button-experience">Portfolio</span>
-                    <span onclick="navigateTo('contact')" class="menu-button-experience">Contact</span>
+                <ul class="nav-links">
+                    <li><a onclick="navigateTo('home')" class="nav-link">Home</a></li>
+                    <li><a onclick="navigateTo('about')" class="nav-link">About</a></li>
+                    <li><a onclick="navigateTo('experience')" class="nav-link active">Experience</a></li>
+                    <li><a onclick="navigateTo('portfolio')" class="nav-link">Portfolio</a></li>
+                    <li><a onclick="navigateTo('contact')" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMobile()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <button class="mobile-menu-btn-experience" onclick="toggleExperienceMobile()">☰</button>
             </div>
         </nav>
 
-        <!-- Mobile Navigation Backdrop -->
-        <div class="mobile-nav-backdrop-experience" id="experienceBackdrop" onclick="toggleExperienceMobile()"></div>
-
-        <!-- Mobile Navigation Overlay -->
-        <div class="mobile-nav-overlay-experience" id="experienceOverlay">
-            <button class="mobile-nav-close-experience" onclick="toggleExperienceMobile()">×</button>
-            <a onclick="navigateTo('home'); toggleExperienceMobile()">Home</a>
-            <a onclick="navigateTo('about'); toggleExperienceMobile()">About</a>
-            <a onclick="navigateTo('experience'); toggleExperienceMobile()" class="active">Experience</a>
-            <a onclick="navigateTo('portfolio'); toggleExperienceMobile()">Portfolio</a>
-            <a onclick="navigateTo('contact'); toggleExperienceMobile()">Contact</a>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a onclick="navigateTo('home'); toggleMobile()">Home</a></li>
+                <li><a onclick="navigateTo('about'); toggleMobile()">About</a></li>
+                <li><a onclick="navigateTo('experience'); toggleMobile()" class="active">Experience</a></li>
+                <li><a onclick="navigateTo('portfolio'); toggleMobile()">Portfolio</a></li>
+                <li><a onclick="navigateTo('contact'); toggleMobile()">Contact</a></li>
+            </ul>
         </div>
 
         <!-- Main Content -->
@@ -1902,32 +1904,34 @@
     
     <!-- Contact Page -->
     <div id="contact-page" class="page-content">
-        <!-- Fixed Navigation -->
-        <nav class="contact-nav">
-            <div class="nav-container-contact">
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
                 <img src="./logo.png" alt="HeaVans Logo" class="logo-img" onclick="navigateTo('home')">
-                <div class="nav-menu-contact">
-                    <span onclick="navigateTo('home')" class="menu-button-contact">Home</span>
-                    <span onclick="navigateTo('about')" class="menu-button-contact">About</span>
-                    <span onclick="navigateTo('experience')" class="menu-button-contact">Experience</span>
-                    <span onclick="navigateTo('portfolio')" class="menu-button-contact">Portfolio</span>
-                    <span onclick="navigateTo('contact')" class="menu-button-contact active">Contact</span>
+                <ul class="nav-links">
+                    <li><a onclick="navigateTo('home')" class="nav-link">Home</a></li>
+                    <li><a onclick="navigateTo('about')" class="nav-link">About</a></li>
+                    <li><a onclick="navigateTo('experience')" class="nav-link">Experience</a></li>
+                    <li><a onclick="navigateTo('portfolio')" class="nav-link">Portfolio</a></li>
+                    <li><a onclick="navigateTo('contact')" class="nav-link active">Contact</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMobile()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <button class="mobile-menu-btn-contact" onclick="toggleContactMobile()">☰</button>
             </div>
         </nav>
 
-        <!-- Mobile Navigation Backdrop -->
-        <div class="mobile-nav-backdrop-contact" id="contactBackdrop" onclick="toggleContactMobile()"></div>
-
-        <!-- Mobile Navigation Overlay -->
-        <div class="mobile-nav-overlay-contact" id="contactOverlay">
-            <button class="mobile-nav-close-contact" onclick="toggleContactMobile()">×</button>
-            <a onclick="navigateTo('home'); toggleContactMobile()">Home</a>
-            <a onclick="navigateTo('about'); toggleContactMobile()">About</a>
-            <a onclick="navigateTo('experience'); toggleContactMobile()">Experience</a>
-            <a onclick="navigateTo('portfolio'); toggleContactMobile()">Portfolio</a>
-            <a onclick="navigateTo('contact'); toggleContactMobile()" class="active">Contact</a>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a onclick="navigateTo('home'); toggleMobile()">Home</a></li>
+                <li><a onclick="navigateTo('about'); toggleMobile()">About</a></li>
+                <li><a onclick="navigateTo('experience'); toggleMobile()">Experience</a></li>
+                <li><a onclick="navigateTo('portfolio'); toggleMobile()">Portfolio</a></li>
+                <li><a onclick="navigateTo('contact'); toggleMobile()" class="active">Contact</a></li>
+            </ul>
         </div>
 
         <!-- Main Content -->
