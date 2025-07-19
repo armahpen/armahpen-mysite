@@ -152,11 +152,14 @@
         /* Home Page Styles */
         .hero-section {
             text-align: center;
-            padding: 4rem 0;
-            min-height: 80vh;
+            padding: 2rem 1rem;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .hero-title {
@@ -182,33 +185,35 @@
         .hero-description {
             font-size: 1rem;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
             max-width: 700px;
-            margin: 0 auto 64px auto;
+            margin: 0 auto 48px auto;
             letter-spacing: 0.3px;
+            text-align: center;
         }
         
         .cta-btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
             color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 16px;
+            font-weight: 400;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
             cursor: pointer;
+            font-family: 'Inter', sans-serif;
         }
         
         .cta-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
         
         /* About Page Styles */
